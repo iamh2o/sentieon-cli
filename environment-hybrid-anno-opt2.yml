@@ -1,0 +1,13 @@
+name: sentieon-cli-1.7.0-opt2
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - bcftools=1.24
+  - htslib=1.24
+  - pip
+  - pytest
+  - pytest-asyncio
+  - pip:
+      - -e .
