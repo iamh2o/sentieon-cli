@@ -112,19 +112,12 @@ diff -u "$result/headers/derived.command-header.txt" \
 canonicalize() {
   input_vcf=$1
   output_prefix=$2
-  if "$bcftools" view --no-version -h "$input_vcf" |
-    grep -q '^##INFO=<ID=ML_PROB,'
-  then
-    ml_prob_format='%INFO/ML_PROB'
-  else
-    ml_prob_format='.'
-  fi
   "$bcftools" norm --threads 32 -f "$reference" -m -any -Ou "$input_vcf" |
     "$bcftools" sort -T "${work}/sort-${output_prefix}" -Oz \
       -o "${work}/${output_prefix}.norm.vcf.gz"
   "$tabix" -f -p vcf "${work}/${output_prefix}.norm.vcf.gz"
-  "$bcftools" query \
-    -f "%CHROM:%POS:%REF:%ALT\t%CHROM\t%POS\t%REF\t%ALT\t[%GT]\t%QUAL\t%FILTER\t%INFO/LHC\t${ml_prob_format}\t%INFO\n" \
+  "$bcftools" query --allow-undef-tags \
+    -f '%CHROM:%POS:%REF:%ALT\t%CHROM\t%POS\t%REF\t%ALT\t[%GT]\t%QUAL\t%FILTER\t%INFO/LHC\t%INFO/ML_PROB\t%INFO\n' \
     "${work}/${output_prefix}.norm.vcf.gz" |
     LC_ALL=C sort -T "$TMPDIR" -S 24G -t $'\t' -k1,1 \
     > "${work}/${output_prefix}.canonical.tsv"
@@ -149,8 +142,11 @@ printf 'category\tderived_records\tnative_records\tnet_native_minus_derived\n' \
 for category in tp tp-baseline fp fn; do
   derived_input="$work/derived-rtg/${category}.vcf.gz"
   native_input="$native_rtg/${category}.vcf.gz"
-  derived_count=$("$bcftools" index -n "$derived_input")
-  native_count=$("$bcftools" index -n "$native_input")
+  # RTG's tabix indexes do not retain a usable record total: bcftools index -n
+  # reports zero even when the category contains millions of records. Count
+  # the records while streaming the same files that are canonicalized below.
+  derived_count=$("$bcftools" view -H "$derived_input" | wc -l)
+  native_count=$("$bcftools" view -H "$native_input" | wc -l)
   printf '%s\t%s\t%s\t%s\n' "$category" "$derived_count" "$native_count" \
     "$((native_count - derived_count))" >> "$result/rtg/category-record-counts.tsv"
   canonicalize "$derived_input" "derived-${category}"

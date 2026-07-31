@@ -60,7 +60,7 @@ final RTG equivalence.
 |---|---|---|---|---|---|---|---|---|---|
 | INV-001 | Local source | Freeze upstream/fork commits, branch scope, authentication, and local dirty state | SUCCESS | feature_implementation | Gate 0 | orchestrator | Gate 0 baseline; `gh auth status` authenticated as `iamh2o` |  | Exact local and GitHub source boundary recorded |
 | INV-002 | Take49 | Record read/write visit, acquire the analysis-root write lock, and freeze exact valid input paths | SUCCESS | legitimate_safety_handling | Gate 0 | orchestrator | Take49 visit receipts; active write lock owned by `codex-hg003-sentieon-issue-pr-20260731`; frozen paths in Slurm 2057 input contract |  | Valid lanes 1767/1769/1770 retained; invalid 1768 explicitly excluded |
-| INV-003 | Take49 | Inventory hashes, sizes, indexes, samples, commands, resources, versions, and valid RTG provenance | IN_PROGRESS | contract_test | Gate 0 | orchestrator | Slurm 2057 failed before comparison on model-path inventory; Slurm 2093 normalized the derived hard VCF, then failed on unconditional `INFO/ML_PROB` query; both direct FSx stderr logs and failed scratch retained; header-aware Slurm 2122 submitted | First defect: installed model is the bundle file itself. Second defect: derived hard VCF intentionally lacks the native-only `ML_PROB` header, so unconditional field extraction is invalid | Bundle path is exact; canonical export now emits `.` when `ML_PROB` is absent; compared VCF/RTG inputs remain unchanged |
+| INV-003 | Take49 | Inventory hashes, sizes, indexes, samples, commands, resources, versions, and valid RTG provenance | ATTEMPTING_BUGFIX | contract_test | Gate 0 | orchestrator | Slurm 2057 failed before comparison on model-path inventory; Slurm 2093 failed on absent derived `ML_PROB`; Slurm 2122 completed hard-VCF normalization and advanced into RTG categories, then failed because truth-side `tp-baseline.vcf.gz` has no `LHC`; Slurm 2125 canonicalized all full and RTG inputs but rejected zero counts returned by `bcftools index -n`; direct streaming probe counted native-minus-derived `tp=40`, `tp-baseline=38`, `fp=-27`, and `fn=-38`; corrected Slurm 2127 and dependent postprocess 2128 submitted | Installed model is the bundle file itself. Optional Hybrid annotations vary by source and RTG category. RTG-created tabix indexes do not retain a usable total for `bcftools index -n`, which reports zero for nonempty category VCFs | Canonical query uses `--allow-undef-tags`; RTG reconciliation now streams records with `bcftools view -H`; full commands will be collected separately from immutable VCF headers, the raw rule log, native manifest, and installed CLI `direct_url.json`; compared VCF/RTG inputs remain unchanged |
 | HDR-001 | Full coverage | Produce exact and semantic hard-VCF header comparisons without inspection-added header lines | OPEN | contract_test | Gate 1 | orchestrator | Slurm 2057 never reached header extraction |  |  |
 | DIF-001 | Full coverage | Normalize/decompose both hard VCFs and publish complete bidirectional symmetric differences | OPEN | contract_test | Gate 1 | orchestrator | Slurm 2057 never reached comparison |  |  |
 | DIF-002 | Full coverage | Enumerate bidirectional TP-call, TP-baseline, FP, and FN RTG category differences | OPEN | contract_test | Gate 1 | orchestrator | Slurm 2057 never reached comparison |  |  |
@@ -73,7 +73,7 @@ final RTG equivalence.
 | S3-001 | Evidence export | Build checksum manifest and private evidence bundle without reads, alignments, references, credentials, or scratch trees | OPEN | legitimate_safety_handling | Gate 3 | orchestrator | Pending |  |  |
 | S3-002 | Evidence export | Upload three full-coverage products/indexes and compact evidence, verify objects, and create seven-day URLs | OPEN | feature_implementation | Gate 3 | orchestrator | Pending |  |  |
 | ISSUE-001 | GitHub | File the public upstream investigation issue only after difference and upstream-reproduction gates pass | OPEN | feature_implementation | Gate 4 | orchestrator | Pending |  |  |
-| PR-001 | GitHub | Create clean upstream-main branch with only optimized script, focused tests, and minimal CI support | IN_PROGRESS | feature_implementation | Gate 4 | orchestrator | Clean worktree `/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-anno-pr-v1.7.0`, branch `codex/hybrid-anno-performance-v1.7.0`; current diff is script, focused test, and CI tabix install only |  | No LSMC ledger, environment YAML, DayOA, or HIOMR2 file in PR worktree |
+| PR-001 | GitHub | Create clean upstream-main branch with only optimized script, focused tests, and minimal CI support | SUCCESS | feature_implementation | Gate 4 | orchestrator | Clean upstream-based commit `bf150c3` on local branch `codex/hybrid-anno-performance-v1.7.0`; exactly `.github/workflows/ci.yml`, optimized script, and focused unit test |  | Script SHA-256 `887d281dcf9aba7513d268790fdd601cf7b4a904103226624fdd5403e2574f7e`, exactly matching the optimized implementation under live control |
 | PR-002 | GitHub | Reproduce focused tests and upstream checks in the pinned environment | SUCCESS | contract_test | Gate 4 | orchestrator | Pinned `sentieon-cli-1.7.0-opt2` environment: focused `12 passed`; full `137 passed`; doctest `137 passed`; configured Flake8 RC 0; Black check RC 0; mypy RC 0 |  | The initial raw Flake8 invocation lacked `Flake8-pyproject` and exposed pre-existing excluded files; rerun with the project-declared plugin honored the upstream configuration and passed |
 | PR-003 | GitHub | Push fork branch and open ready-for-review upstream PR with issue and benchmark evidence | OPEN | feature_implementation | Gate 4 | orchestrator | Pending |  |  |
 | LOCK-001 | Take49 | Release the analysis-root lock only after durable evidence and terminal ledger updates | OPEN | legitimate_safety_handling | Gate 5 | orchestrator | Pending |  |  |
@@ -103,10 +103,10 @@ Objective complete: no
 
 Status counts:
 
-- SUCCESS: 4
+- SUCCESS: 5
 - OPEN: 12
-- IN_PROGRESS: 4
-- ATTEMPTING_BUGFIX: 0
+- IN_PROGRESS: 2
+- ATTEMPTING_BUGFIX: 1
 - DUPLICATE: 0
 - NO_LONGER_NEEDED: 0
 - FAIL: 0

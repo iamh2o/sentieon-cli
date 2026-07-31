@@ -20,9 +20,7 @@ derived_rtg_tar="${analysis_root}/results/day/hg38/${analysis_unit}/align/sentmm
 raw_rtg="${analysis_root}/manual/rtg-three-way/${analysis_unit}/cli170_gvcf_raw_hc/1769"
 native_rtg="${analysis_root}/manual/rtg-three-way/${analysis_unit}/cli170_native_hard_hc/1770"
 
-aws_cli="$(command -v aws)"
 for required in \
-  "$aws_cli" \
   "$raw_gvcf" "$raw_gvcf.tbi" \
   "$derived_hard" "$derived_hard.tbi" \
   "$native_hard" "$native_hard.tbi" \
@@ -30,15 +28,16 @@ for required in \
   "$raw_rtg/summary.txt" "$native_rtg/summary.txt" \
   "$evidence_root/full-coverage-evidence.receipt" \
   "$evidence_root/postprocess/completion.receipt" \
-  "$evidence_root/control/comparison/completion.receipt"
+  "$evidence_root/control/comparison/completion.receipt" \
+  "$evidence_root/control/final-verification/completion.receipt"
 do
   [[ -s "$required" ]] || {
     printf 'required S3 evidence input is missing or empty: %s\n' "$required" >&2
     exit 2
   }
 done
-[[ ! -e "$evidence_root/s3-export.receipt" ]] || {
-  printf 'refusing to repeat completed S3 export\n' >&2
+[[ ! -e "$evidence_root/s3-staging" ]] || {
+  printf 'refusing to overwrite completed S3 staging\n' >&2
   exit 2
 }
 
@@ -87,7 +86,8 @@ readme="${work}/README.md"
 bundle="${work}/HG003-sentieon-cli-hard-vs-gvcf-evidence.tar.gz"
 tar -czf "$bundle" \
   -C "$evidence_root" \
-  headers inventory differences rtg postprocess control/comparison \
+  headers inventory differences rtg provenance postprocess \
+  control/comparison control/final-verification \
   full-coverage-evidence.receipt
 
 add_file() {
@@ -97,6 +97,16 @@ add_file() {
   sha="$(sha256sum "$source_path" | awk '{print $1}')"
   printf '%s\t%s\t%s\t%s\n' "$object_key" "$source_path" "$size" "$sha" \
     >> "$manifest"
+}
+
+add_file_as() {
+  hash_source=$1
+  durable_source=$2
+  object_key=$3
+  size="$(stat -c %s "$hash_source")"
+  sha="$(sha256sum "$hash_source" | awk '{print $1}')"
+  printf '%s\t%s\t%s\t%s\n' \
+    "$object_key" "$durable_source" "$size" "$sha" >> "$manifest"
 }
 
 add_file "$raw_gvcf" "vcf/raw-cli-gvcf/$(basename "$raw_gvcf")"
@@ -124,79 +134,90 @@ do
   done
 done
 
-for evidence_dir in headers inventory differences rtg postprocess control/comparison
+for evidence_dir in \
+  headers inventory differences rtg provenance postprocess \
+  control/comparison control/final-verification
 do
   while IFS= read -r -d '' source_path; do
     relative="${source_path#${evidence_root}/}"
     add_file "$source_path" "evidence/${relative}"
   done < <(find "$evidence_root/$evidence_dir" -type f -print0)
 done
-add_file "$readme" README.md
-add_file "$bundle" "$(basename "$bundle")"
 
-manifest_sha="$(sha256sum "$manifest" | awk '{print $1}')"
-manifest_size="$(stat -c %s "$manifest")"
-
-upload_receipt="${work}/upload-receipt.tsv"
-printf 'object_key\texpected_size\tobserved_size\texpected_sha256\tobserved_sha256\tverification\n' \
-  > "$upload_receipt"
-tail -n +2 "$manifest" |
-while IFS=$'\t' read -r object_key source_path size sha; do
-  "$aws_cli" s3 cp \
-    "$source_path" \
-    "s3://${bucket}/${prefix}/${object_key}" \
-    --region us-west-2 \
-    --only-show-errors \
-    --no-progress \
-    --metadata "sha256=${sha}"
-  read -r observed_size observed_sha < <(
-    "$aws_cli" s3api head-object \
-      --bucket "$bucket" \
-      --key "${prefix}/${object_key}" \
-      --region us-west-2 \
-      --query '[ContentLength,Metadata.sha256]' \
-      --output text
-  )
-  verification=SUCCESS
-  if [[ "$observed_size" != "$size" || "$observed_sha" != "$sha" ]]; then
-    verification=FAIL
-  fi
-  printf '%s\t%s\t%s\t%s\t%s\t%s\n' \
-    "$object_key" "$size" "$observed_size" "$sha" "$observed_sha" \
-    "$verification" >> "$upload_receipt"
-  [[ "$verification" == SUCCESS ]]
+staging="${evidence_root}/.publish-s3-staging-${SLURM_JOB_ID}"
+final_staging="${evidence_root}/s3-staging"
+[[ ! -e "$staging" ]] || {
+  printf 'S3 staging path already exists: %s\n' "$staging" >&2
+  exit 2
+}
+mkdir -p "$staging/derived-rtg"
+cp "$readme" "$staging/README.md"
+cp "$bundle" "$staging/$(basename "$bundle")"
+for name in summary.txt tp.vcf.gz tp.vcf.gz.tbi tp-baseline.vcf.gz \
+  tp-baseline.vcf.gz.tbi fp.vcf.gz fp.vcf.gz.tbi fn.vcf.gz fn.vcf.gz.tbi
+do
+  cp "$work/derived-rtg/$name" "$staging/derived-rtg/$name"
 done
 
-"$aws_cli" s3 cp \
-  "$manifest" \
-  "s3://${bucket}/${prefix}/SHA256SUMS.tsv" \
-  --region us-west-2 \
-  --only-show-errors \
-  --no-progress \
-  --metadata "sha256=${manifest_sha}"
-read -r observed_size observed_sha < <(
-  "$aws_cli" s3api head-object \
-    --bucket "$bucket" \
-    --key "${prefix}/SHA256SUMS.tsv" \
-    --region us-west-2 \
-    --query '[ContentLength,Metadata.sha256]' \
-    --output text
-)
-[[ "$observed_size" == "$manifest_size" && "$observed_sha" == "$manifest_sha" ]]
-printf 'SHA256SUMS.tsv\t%s\t%s\t%s\t%s\tSUCCESS\n' \
-  "$manifest_size" "$observed_size" "$manifest_sha" "$observed_sha" \
-  >> "$upload_receipt"
+# Replace the ephemeral extracted-tar sources with the durable published
+# staging copies before the presigned upload manifest leaves this job.
+python3 - "$manifest" "$work/derived-rtg" "$final_staging/derived-rtg" <<'PY'
+import csv
+import pathlib
+import sys
 
-cp "$manifest" "$evidence_root/S3-SHA256SUMS.tsv"
-cp "$upload_receipt" "$evidence_root/S3-upload-receipt.tsv"
+manifest = pathlib.Path(sys.argv[1])
+ephemeral = str(pathlib.Path(sys.argv[2]))
+durable = str(pathlib.Path(sys.argv[3]))
+with manifest.open(newline="") as source:
+    rows = list(csv.DictReader(source, delimiter="\t"))
+with manifest.open("w", newline="") as output:
+    writer = csv.DictWriter(
+        output,
+        fieldnames=("object_key", "source_path", "size_bytes", "sha256"),
+        delimiter="\t",
+        lineterminator="\n",
+    )
+    writer.writeheader()
+    for row in rows:
+        if row["source_path"].startswith(f"{ephemeral}/"):
+            row["source_path"] = row["source_path"].replace(
+                f"{ephemeral}/", f"{durable}/", 1
+            )
+        writer.writerow(row)
+PY
+
+add_file_as \
+  "$staging/README.md" \
+  "$final_staging/README.md" \
+  README.md
+add_file_as \
+  "$staging/$(basename "$bundle")" \
+  "$final_staging/$(basename "$bundle")" \
+  "$(basename "$bundle")"
+
 {
-  printf 'status=SUCCESS\n'
+  printf 'object_key\tsize_bytes\tsha256\n'
+  tail -n +2 "$manifest" |
+    awk -F '\t' 'BEGIN {OFS="\t"} {print $1, $3, $4}'
+} > "$staging/SHA256SUMS.tsv"
+add_file_as \
+  "$staging/SHA256SUMS.tsv" \
+  "$final_staging/SHA256SUMS.tsv" \
+  SHA256SUMS.tsv
+
+manifest_sha="$(sha256sum "$manifest" | awk '{print $1}')"
+cp "$manifest" "$staging/S3-upload-manifest.tsv"
+{
+  printf 'status=STAGED\n'
   printf 'completed_utc=%s\n' "$(date -u +%FT%TZ)"
   printf 'slurm_job_id=%s\n' "$SLURM_JOB_ID"
   printf 's3_prefix=s3://%s/%s/\n' "$bucket" "$prefix"
-  printf 'manifest_sha256=%s\n' "$(sha256sum "$manifest" | awk '{print $1}')"
-} > "$evidence_root/s3-export.receipt"
+  printf 'manifest_sha256=%s\n' "$manifest_sha"
+  printf 'upload_authority=local-lsmc-presigned-put-required\n'
+} > "$staging/s3-staging.receipt"
+mv "$staging" "$final_staging"
 
-printf 's3_prefix=s3://%s/%s/\ncompleted_utc=%s\n' \
-  "$bucket" "$prefix" "$(date -u +%FT%TZ)"
+printf 'staged=%s\ns3_prefix=s3://%s/%s/\ncompleted_utc=%s\n' \
+  "$final_staging" "$bucket" "$prefix" "$(date -u +%FT%TZ)"
 success=1
