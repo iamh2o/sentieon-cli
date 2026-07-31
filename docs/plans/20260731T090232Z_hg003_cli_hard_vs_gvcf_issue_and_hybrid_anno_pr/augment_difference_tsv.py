@@ -17,9 +17,11 @@ POPULATION_FIELDS = (
     "AC_genomes",
     "AF_genomes",
     "AN_genomes",
+    "Entropy_genomes",
     "AC_v20",
     "AF_v20",
     "AN_v20",
+    "Entropy_v20",
 )
 
 

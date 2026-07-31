@@ -28,6 +28,7 @@ for required in \
   "$raw_rtg/summary.txt" "$native_rtg/summary.txt" \
   "$evidence_root/full-coverage-evidence.receipt" \
   "$evidence_root/postprocess/completion.receipt" \
+  "$evidence_root/provenance/rtg-runtime/rtg-version.txt" \
   "$evidence_root/control/comparison/completion.receipt" \
   "$evidence_root/control/final-verification/completion.receipt"
 do
