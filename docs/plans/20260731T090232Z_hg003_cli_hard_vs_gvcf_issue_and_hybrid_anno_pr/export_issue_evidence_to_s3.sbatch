@@ -84,7 +84,10 @@ readme="${work}/README.md"
 } > "$readme"
 
 bundle="${work}/HG003-sentieon-cli-hard-vs-gvcf-evidence.tar.gz"
-tar -czf "$bundle" \
+tar \
+  --exclude='control/comparison/rtg/*/*.vcf.gz' \
+  --exclude='control/comparison/rtg/*/*.vcf.gz.tbi' \
+  -czf "$bundle" \
   -C "$evidence_root" \
   headers inventory differences rtg provenance postprocess \
   control/comparison control/final-verification \
@@ -141,7 +144,13 @@ do
   while IFS= read -r -d '' source_path; do
     relative="${source_path#${evidence_root}/}"
     add_file "$source_path" "evidence/${relative}"
-  done < <(find "$evidence_root/$evidence_dir" -type f -print0)
+  done < <(
+    find "$evidence_root/$evidence_dir" \
+      -type f \
+      ! -path "$evidence_root/control/comparison/rtg/*/*.vcf.gz" \
+      ! -path "$evidence_root/control/comparison/rtg/*/*.vcf.gz.tbi" \
+      -print0
+  )
 done
 
 staging="${evidence_root}/.publish-s3-staging-${SLURM_JOB_ID}"

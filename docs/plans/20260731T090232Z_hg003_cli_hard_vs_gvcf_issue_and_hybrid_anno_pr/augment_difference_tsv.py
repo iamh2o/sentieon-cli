@@ -70,6 +70,13 @@ def augment(
     output_path: Path,
     category: str,
 ) -> None:
+    if category in {"tp-baseline", "fn"}:
+        derived_lane = "giab-hg003-v4.2.1-derived-evaluation"
+        native_lane = "giab-hg003-v4.2.1-native-evaluation"
+    else:
+        derived_lane = "gvcftyper-derived-hard"
+        native_lane = "native-cli-hard"
+
     with open_text(input_path, "rt") as source, open_text(
         output_path, "wt"
     ) as output:
@@ -111,10 +118,10 @@ def augment(
             row["rtg_category"] = category
             row["interpretation"] = interpretation(row)
             row["derived_source_lane"] = (
-                "gvcftyper-derived-hard" if derived_present else "."
+                derived_lane if derived_present else "."
             )
             row["native_source_lane"] = (
-                "native-cli-hard" if native_present else "."
+                native_lane if native_present else "."
             )
             for side in ("derived", "native"):
                 info = parse_info(row[f"{side}_info"])
