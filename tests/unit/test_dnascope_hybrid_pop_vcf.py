@@ -129,8 +129,8 @@ class TestDNAscopeHybridPopVcf:
             pipeline.validate_bundle()
             mock_exit.assert_called_with(2)
 
-    def test_transfer_jobs_creation(self):
-        """Test that transfer jobs are added to the DAG when pop_vcf is present"""
+    def test_fused_transfer_job_creation(self):
+        """The Hybrid DAG has one bounded population-transfer job."""
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
         
@@ -138,12 +138,18 @@ class TestDNAscopeHybridPopVcf:
         with patch("sentieon_cli.dnascope_hybrid.check_version", return_value=True):
              dag = pipeline.build_dag()
         
-        # Verify transfer jobs exist
-        job_names = [job.name for job in dag.waiting_jobs]
-        
-        # Expect merge-trim jobs
-        assert any("merge-trim" in name for name in job_names)
-        assert "merge-trim-concat" in job_names
+        transfer_jobs = [
+            job for job in dag.waiting_jobs if job.name == "population-transfer"
+        ]
+        assert len(transfer_jobs) == 1
+        transfer_job = transfer_jobs[0]
+        assert transfer_job.threads == pipeline.cores
+        assert [job.name for job in dag.waiting_jobs[transfer_job]] == [
+            "anno-calls"
+        ]
+        assert not any(
+            job.name.startswith("merge-trim") for job in dag.waiting_jobs
+        )
 
     def test_model_apply_input_with_pop_vcf(self):
         """Test that model apply uses the transfer output when pop_vcf is present"""
@@ -162,7 +168,35 @@ class TestDNAscopeHybridPopVcf:
         
         assert apply_job is not None
         
-        # Check dependency: apply_job should depend on merge-trim-concat
+        # ModelApply consumes the single atomically published transfer VCF.
         deps = dag.waiting_jobs[apply_job]
         dep_names = [j.name for j in deps]
-        assert "merge-trim-concat" in dep_names
+        assert dep_names == ["population-transfer"]
+
+    def test_multithreaded_python_jobs_claim_their_budget(self):
+        """Python worker pools cannot bypass scheduler accounting."""
+
+        pipeline = self.create_pipeline()
+        pipeline.pop_vcf = self.mock_pop_vcf
+        with patch(
+            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
+        ):
+            dag = pipeline.build_dag()
+
+        all_jobs = [*dag.ready_jobs, *dag.waiting_jobs]
+        by_name = {job.name: job for job in all_jobs}
+        for name in (
+            "hybrid-select",
+            "anno-calls",
+            "population-transfer",
+            "final-norm",
+        ):
+            assert by_name[name].threads == pipeline.cores
+
+        zero_thread_jobs = {
+            job.name for job in all_jobs if job.threads == 0
+        }
+        assert "hybrid-select" not in zero_thread_jobs
+        assert "anno-calls" not in zero_thread_jobs
+        assert "population-transfer" not in zero_thread_jobs
+        assert "final-norm" not in zero_thread_jobs

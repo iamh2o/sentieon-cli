@@ -139,7 +139,11 @@ def emit(
     output.write("\n")
 
 
-def compare(left_path: Path, right_path: Path, output_path: Path) -> dict[str, int]:
+def compare(
+    left_path: Path,
+    right_path: Path,
+    output_path: Path,
+) -> dict[str, int]:
     left_iter = iter(read_groups(left_path))
     right_iter = iter(read_groups(right_path))
     left_group = next(left_iter, None)

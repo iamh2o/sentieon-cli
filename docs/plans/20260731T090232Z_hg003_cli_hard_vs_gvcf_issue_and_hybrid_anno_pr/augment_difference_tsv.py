@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add source, category, population, and interpretation columns to VCF deltas."""
+"""Add source, category, population, and interpretation to VCF deltas."""
 
 from __future__ import annotations
 
