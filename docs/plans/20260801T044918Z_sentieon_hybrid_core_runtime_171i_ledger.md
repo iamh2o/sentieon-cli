@@ -190,11 +190,11 @@ and 14,010 realigned records in both lanes.
 | NATIVE-001 | Native Sentieon | Profile pass 1, Stage1, Stage3, and pass 2; retain only parity-proven >=5% stage wins | NO_LONGER_NEEDED | feature_implementation | Gate 3 | orchestrator | No native Sentieon algorithm, interval, stage thread setting, or shard boundary is changed in the release; user directed release after the core-script result |  | No native candidate is present in the release diff |
 | QA-001 | Local QA | Pass focused tests, complete tests/doctests, formatting, typing, build/install, and version checks | SUCCESS | contract_test | Gate 4 | orchestrator | Final functional suite and doctest invocation each report `153 passed, 1 skipped`; the single skip is the local-only legacy-bedtools selector oracle, which passed in the deployed headnode environment. CI-exact Black, Flake8, and mypy are green. Poetry 2.1.3 built `sentieon_cli-1.7.1+i` wheel and sdist in an isolated output directory. A separate target install resolved `sentieon_cli`, `hybrid_transfer.py`, and metadata from installed site-packages and reported `sentieon-cli --version` as `1.7.1+i`. `git diff --check` is green. |  | Final source, package, and installed CLI gates pass |
 | SMOKE-001 | HG003 direct smoke | Run matched direct upstream-1.7.0/optimized hard-VCF jobs on HG003 raw 5x ILMN plus raw 5x ONT-derived frozen preparations | SUCCESS | contract_test | Gate 4 | orchestrator | Jobs `2467`/`2468`: exact upstream `1bf377d` 3,485.27 s versus reset candidate `501b57d` 2,510.35 s; exit 0; exact bodies for 5,661,729 main, 15,847 SV, and 2,942 CNV records; exact contigs and queries; only volatile provenance headers differ | Earlier installed/fork version strings did not prove source identity, so both source SHAs and imported module paths were frozen explicitly. | Amended live release gate passes with 27.97% wall-time reduction |
-| DAYOA-001 | Downstream environment | If SMOKE-001 passes, create a new immutable HIOMR2 CLI environment YAML and update its explicit rule/profile references and tests | OPEN | feature_implementation | Gate 4 | orchestrator | User authorization recorded; no DayOA file changed before the smoke gate |  |  |
+| DAYOA-001 | Downstream environment | If SMOKE-001 passes, create a new immutable HIOMR2 CLI environment YAML and update its explicit rule/profile references and tests | BLOCKED | config_or_startup_contract | Gate 4 | orchestrator | The completed live comparison emitted native hard VCF, not gVCF. The requested DayOA environment pin would govern both modes. After the release, the user explicitly asked whether the evidence was gVCF or VCF; no DayOA file was changed. | The only matched live proof is hard-VCF mode, so promoting the package to a shared hard/gVCF environment would extend beyond the proven semantic boundary. | Unblock with a matched upstream-1.7.0 versus 1.7.1i gVCF lane, or an explicit decision to accept the untested gVCF risk. The exact future pip entry is `sentieon-cli @ git+https://github.com/iamh2o/sentieon-cli.git@1.7.1i`. |
 | LIVE-001 | Full CLI A/B | Complete eight direct core-CLI lanes: two samples by two modes by exact upstream-1.7.0 baseline/optimized | NO_LONGER_NEEDED | feature_implementation | Gate 5 | orchestrator | User-directed 2026-08-01 release-gate amendment; matched HG003 hard lane is complete |  | Not run and not claimed for `1.7.1i`; retained as residual follow-up evidence scope |
 | PERF-001 | Acceptance | Prove semantic parity, >=20% median wall-time reduction, no lane >5% slower, and report CPU-hours/RSS/I/O | NO_LONGER_NEEDED | contract_test | Gate 5 | orchestrator | Original matrix gate superseded by AMEND-001; HG003 evidence table reports wall time, CPU time, RSS, and I/O and passes the amended >=20% threshold |  | Eight-lane median claim is not made |
-| RELEASE-001 | Fork release | Merge validated fork PR, tag the clean merge commit, verify remote annotated tag, create the GitHub Release, and close the ledger | IN_PROGRESS | feature_implementation | Gate 6 | orchestrator | Package version and release evidence are being finalized |  |  |
-| UPSTREAM-001 | Upstream PR | Open a focused PR to `Sentieon/sentieon-cli:main` for the retained runtime improvements | IN_PROGRESS | feature_implementation | Gate 6 | orchestrator | Explicit user authorization recorded; upstream main is exact `1bf377d` |  |  |
+| RELEASE-001 | Fork release | Merge validated fork PR, tag the clean merge commit, verify remote annotated tag, create the GitHub Release, and close the ledger | SUCCESS | feature_implementation | Gate 6 | orchestrator | Fork PR `iamh2o/sentieon-cli#1` merged normally as `e4f0ff8`; annotated tag object `085ad246` peels to that merge; GitHub Release `1.7.1i` published at `https://github.com/iamh2o/sentieon-cli/releases/tag/1.7.1i` |  | Fork release is published; no PyPI or Docker publication occurred |
+| UPSTREAM-001 | Upstream PR | Open a focused PR to `Sentieon/sentieon-cli:main` for the retained runtime improvements | SUCCESS | feature_implementation | Gate 6 | orchestrator | Focused source/test commit `4dcf906` from exact upstream `1bf377d`; 153 passed, 1 expected local oracle skip; PR `https://github.com/Sentieon/sentieon-cli/pull/28` is open and mergeable |  | Upstream review is now owned by Sentieon maintainers |
 
 ## Candidate disposition rules
 
@@ -219,19 +219,41 @@ and 14,010 realigned records in both lanes.
 - Retain only exact-parity candidates with at least 5% median stage reduction;
   within 2%, choose lower allocated vCPU-hours.
 
+## Publication closeout
+
+- Fork PR: `https://github.com/iamh2o/sentieon-cli/pull/1`, merged normally at
+  `2026-08-01T09:54:37Z` as
+  `e4f0ff8bf4ddd882cb154774178d2b40babba056`.
+- Annotated tag: `1.7.1i`; remote tag object
+  `085ad246163eb8e220b66f52d11dcc241893b12f`, peeled commit
+  `e4f0ff8bf4ddd882cb154774178d2b40babba056`.
+- GitHub Release: `https://github.com/iamh2o/sentieon-cli/releases/tag/1.7.1i`,
+  published `2026-08-01T09:55:38Z`.
+- Upstream PR: `https://github.com/Sentieon/sentieon-cli/pull/28`; focused
+  commit `4dcf906660215266ee9ad2121d7aed7113540557` is based directly on
+  upstream `main` at `1bf377d3ce79fc4d8c2dc221e1f696441e38349d` and omits
+  fork-specific release/version/evidence files.
+- No PyPI, Docker, Slurm-administration, or DayOA workflow action occurred.
+- The DayOA environment update is intentionally held because only native
+  hard-VCF mode was tested; gVCF was not emitted by jobs `2467` or `2468`.
+
 ## Final report
 
-All rows terminal: no
+All rows terminal: yes
 
 Objective complete: no
 
+The fork release and upstream-PR objectives are complete. The downstream
+DayOA environment promotion is not complete because its shared hard/gVCF
+runtime contract exceeds the completed hard-VCF-only evidence.
+
 Status counts:
 
-- SUCCESS: 9
+- SUCCESS: 11
 - DUPLICATE: 0
 - NO_LONGER_NEEDED: 4
 - FAIL: 0
-- BLOCKED: 0
-- OPEN: 1
-- IN_PROGRESS: 2
+- BLOCKED: 1
+- OPEN: 0
+- IN_PROGRESS: 0
 - ATTEMPTING_BUGFIX: 0
