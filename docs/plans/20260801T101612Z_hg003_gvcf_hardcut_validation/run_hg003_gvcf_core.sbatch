@@ -61,8 +61,7 @@ analysis_unit=HG003-5X-CLI-RUNTIME
 sr_cram=$analysis_root/prepared/$analysis_unit.sr.prepared.cram
 lr_cram=$analysis_root/prepared/$analysis_unit.lr.aligned.cram
 publish_dir=$analysis_root/results/$candidate/gvcf
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-checkout_runner=$script_dir/../20260801T044918Z_sentieon_hybrid_core_runtime_171i_assets/run_checkout_cli.py
+checkout_runner=$analysis_root/validation-source/docs/plans/20260801T044918Z_sentieon_hybrid_core_runtime_171i_assets/run_checkout_cli.py
 
 [[ ! -e $publish_dir ]] || die "publish destination already exists: $publish_dir"
 [[ -d $source_checkout/.git || -f $source_checkout/.git ]] \
