@@ -5,6 +5,7 @@ import subprocess
 import sys
 
 import pytest
+import vcflib
 
 from sentieon_cli.command_strings import cmd_pyexec_hybrid_select
 from sentieon_cli.scripts.hybrid_select import cut_shards
@@ -39,6 +40,95 @@ chr1\t0\t8
 chr1\t21\t29
 chr2\t0\t4
 """
+
+LEGACY_EXTRA_HEADERS = (
+    '##FILTER=<ID=PASS,Description="Accept as a confident somatic mutation">',
+    '##FILTER=<ID=longread_lowdepth,Description="low depth in long read sample">',
+    '##FILTER=<ID=longread_lowconf,Description="low confidence in long read sample">',
+    '##FILTER=<ID=shortread_lowconf,Description="low confidence in short read sample">',
+    '##FILTER=<ID=same_gt,Description="same gt in long/sort read sample">',
+    '##FILTER=<ID=longread_str,Description="str region in long read sample">',
+)
+
+
+def run_v170_object_pipeline(
+    tmp_path: pathlib.Path,
+    input_vcf: pathlib.Path,
+    reference_index: pathlib.Path,
+) -> bytes:
+    """Run the deployed vcflib -> bcftools -> bedtools selector oracle."""
+
+    legacy_vcf = tmp_path / "legacy.filtered.vcf.gz"
+    input_handle = vcflib.VCF(str(input_vcf), "r")
+    output_handle = vcflib.VCF(str(legacy_vcf), "w")
+    try:
+        output_handle.copy_header(
+            input_handle,
+            LEGACY_EXTRA_HEADERS,
+            ("##source=*",),
+        )
+        output_handle.emit_header()
+        for variant in input_handle:
+            filters = []
+            lad = variant.samples[0].get("LAD") or [0, 0, 0]
+            lpl = variant.samples[0].get("LPL") or [0, 0, 0]
+            spl = variant.samples[0].get("SPL") or [0, 0, 0]
+            long_minimum = lpl.index(0)
+            short_minimum = spl.index(0)
+            long_reference = lpl[0]
+            lpl.remove(0)
+            spl.remove(0)
+            long_confidence = min(lpl)
+            short_confidence = min(spl)
+
+            if sum(lad) < 2:
+                filters.append("longread_lowdepth")
+            if not filters:
+                if variant.info.get("STR") is None and long_minimum != 0:
+                    long_confidence = long_reference
+                if long_confidence < 30.0:
+                    filters.append("longread_lowconf")
+            if not filters and short_confidence >= 30.0:
+                if long_minimum == short_minimum:
+                    filters.append("same_gt")
+                elif long_minimum == 0 and variant.info.get("STR") is not None:
+                    filters.append("longread_str")
+
+            columns = variant.line.split("\t")
+            columns[6] = ";".join(sorted(set(filters))) if filters else "PASS"
+            variant.line = "\t".join(columns)
+            output_handle.emit(variant)
+    finally:
+        output_handle.close()
+        input_handle.close()
+
+    view = subprocess.run(
+        ["bcftools", "view", "-f", "PASS,.", str(legacy_vcf)],
+        check=True,
+        stdout=subprocess.PIPE,
+    )
+    query = subprocess.run(
+        ["bcftools", "query", "-f", "%CHROM\\t%POS0\\t%END\\n", "-"],
+        check=True,
+        input=view.stdout,
+        stdout=subprocess.PIPE,
+    )
+    slop = subprocess.run(
+        [
+            "bedtools",
+            "slop",
+            "-b",
+            "3",
+            "-g",
+            str(reference_index),
+            "-i",
+            "-",
+        ],
+        check=True,
+        input=query.stdout,
+        stdout=subprocess.PIPE,
+    )
+    return slop.stdout
 
 
 def require_htslib_tools() -> tuple[str, str]:
@@ -114,6 +204,24 @@ def test_cross_contig_shard_carry_matches_vcflib() -> None:
         (2, "chr2", 0, 5),
         (3, "chr2", 5, 10),
     ]
+
+
+@pytest.mark.skipif(
+    shutil.which("bedtools") is None,
+    reason="exact deployed selector oracle requires legacy bedtools",
+)
+def test_direct_bed_matches_exact_v170_object_pipeline(
+    tmp_path: pathlib.Path,
+) -> None:
+    input_vcf = make_indexed_vcf(tmp_path)
+    output, result = run_selector(tmp_path, input_vcf, 4, 13)
+    assert result.returncode == 0, result.stderr
+    reference_index = tmp_path / "reference.fa.fai"
+    assert output.read_bytes() == run_v170_object_pipeline(
+        tmp_path,
+        input_vcf,
+        reference_index,
+    )
 
 
 def test_missing_index_fails_atomically(tmp_path: pathlib.Path) -> None:
