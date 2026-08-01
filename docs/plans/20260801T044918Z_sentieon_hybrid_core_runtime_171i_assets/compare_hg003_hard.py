@@ -19,7 +19,8 @@ SENTIEON_DATE_PATTERN = re.compile(
 )
 SENTIEON_SCRATCH_PATTERN = re.compile(
     rb"/scratch/sentieon-cli-171i-hg003-5x/"
-    rb"(?:baseline|optimized|official170)/\d+/job\.[^/\s\"]+"
+    rb"(?:baseline|optimized|optimized-norm-reset|official170)/"
+    rb"\d+/job\.[^/\s\"]+"
 )
 
 
@@ -27,7 +28,7 @@ def canonicalize_header(line: bytes) -> bytes:
     """Normalize only explicitly volatile native-command provenance."""
     if not line.startswith(b"##SentieonCommandLine."):
         return line
-    line = SENTIEON_DATE_PATTERN.sub(rb'\1<VOLATILE_DATE>\2', line)
+    line = SENTIEON_DATE_PATTERN.sub(rb"\1<VOLATILE_DATE>\2", line)
     return SENTIEON_SCRATCH_PATTERN.sub(b"<VOLATILE_SCRATCH>", line)
 
 

@@ -2,7 +2,8 @@
 # Run one directly timed HG003 hard-VCF Hybrid CLI candidate.
 # Submit only with:
 #   sbatch --partition i128nvme --comment RnD --cpus-per-task=128 ... \
-#     ./run_hg003_hard_core.sbatch <baseline|optimized> <analysis-root> \
+#     ./run_hg003_hard_core.sbatch \
+#     <baseline|optimized|optimized-norm-reset> <analysis-root> \
 #     <optimized-checkout-or-dash>
 
 set -euo pipefail
@@ -12,12 +13,16 @@ die() {
     exit 2
 }
 
-[[ $# -eq 3 ]] || die "usage: $0 <baseline|optimized> <analysis-root> <checkout-or-dash>"
+[[ $# -eq 3 ]] \
+    || die "usage: $0 <baseline|optimized|optimized-norm-reset> <analysis-root> <checkout-or-dash>"
 candidate=$1
 analysis_root=$2
 source_checkout=$3
 expected_root=/fsx/analysis_results/preval-hiomr2/sentieon-cli-hybrid-core-runtime-1.7.1i-hg003-5x
-[[ $candidate == baseline || $candidate == optimized ]] || die "invalid candidate: $candidate"
+[[ $candidate == baseline \
+    || $candidate == optimized \
+    || $candidate == optimized-norm-reset ]] \
+    || die "invalid candidate: $candidate"
 [[ $analysis_root == "$expected_root" ]] || die "unexpected analysis root: $analysis_root"
 [[ ${SLURM_JOB_ID-} =~ ^[0-9]+$ ]] || die "run this payload through sbatch"
 [[ ${SLURM_CPUS_PER_TASK-} == 128 ]] || die "requires --cpus-per-task=128"
@@ -60,7 +65,8 @@ if [[ $candidate == baseline ]]; then
     cli=("$oracle_prefix/bin/sentieon-cli")
     source_sha=$oracle_sha
 else
-    [[ -d $source_checkout/.git ]] || die "optimized checkout is not a Git checkout"
+    [[ -d $source_checkout/.git || -f $source_checkout/.git ]] \
+        || die "optimized checkout is not a Git checkout"
     source_sha=$(git -C "$source_checkout" rev-parse HEAD)
     [[ -z $(git -C "$source_checkout" status --porcelain) ]] \
         || die "optimized checkout is dirty"

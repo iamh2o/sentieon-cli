@@ -61,6 +61,7 @@ MIN_BUNDLE_VERSION = {
 }
 
 HYBRID_TRANSFER_WORKERS = 32
+FINAL_NORM_PROCESSES = 3
 
 
 class RgInfo:
@@ -1090,21 +1091,15 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         )
 
         # Final normalize
-        hybrid_norm = pathlib.Path(
-            str(files("sentieon_cli.scripts").joinpath("hybrid_norm.py"))
-        ).resolve()
         norm_job = Job(
-            cmds.cmd_pyexec_hybrid_norm(
-                out_vcf=self.output_vcf,
-                input_vcf=apply_vcf,
-                reference=self.reference,
-                temp_dir=self.tmp_dir,
-                hybrid_norm=hybrid_norm,
-                threads=self.cores,
+            cmds.filter_norm(
+                self.output_vcf,
+                apply_vcf,
+                self.reference,
                 exclude_homref=not self.gvcf,
             ),
             "final-norm",
-            self.cores,
+            min(FINAL_NORM_PROCESSES, self.cores),
         )
         return (
             call_job,

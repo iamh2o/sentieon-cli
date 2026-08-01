@@ -11,7 +11,9 @@ import json
 from unittest.mock import patch, MagicMock
 
 # Add the parent directory to the path to import sentieon_cli
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+)
 
 from sentieon_cli.dnascope_hybrid import DNAscopeHybridPipeline
 from sentieon_cli.dag import DAG
@@ -50,10 +52,10 @@ class TestDNAscopeHybridPopVcf:
         # We need to mock sys.exit to avoid exiting during initialization if validation fails
         with patch("sys.exit"):
             pipeline = DNAscopeHybridPipeline()
-        
+
         # Setup mocks
         pipeline.logger = MagicMock()
-        
+
         # Configure arguments
         pipeline.output_vcf = self.mock_vcf
         pipeline.reference = self.mock_ref
@@ -65,14 +67,14 @@ class TestDNAscopeHybridPopVcf:
         pipeline.tmp_dir = self.mock_dir
         pipeline.pop_vcf = None
         pipeline.skip_pop_vcf_id_check = False
-        
+
         # Mock fai related
         pipeline.fai_data = {"chr1": {"length": 1000}}
         pipeline.shards = [MagicMock()]
         pipeline.shards[0].contig = "chr1"
         pipeline.shards[0].start = 1
         pipeline.shards[0].stop = 1000
-        
+
         # Mock pop vcf contigs
         pipeline.pop_vcf_contigs = {"chr1": 1000}
 
@@ -85,7 +87,7 @@ class TestDNAscopeHybridPopVcf:
         pipeline.longread_tech = "ONT"
         pipeline.sr_aln = self.mock_sr_aln
         pipeline.lr_aln = self.mock_lr_aln
-        
+
         return pipeline
 
     @patch("sentieon_cli.dnascope_hybrid.ar_load")
@@ -93,39 +95,43 @@ class TestDNAscopeHybridPopVcf:
     def test_validation_requires_pop_vcf(self, mock_vcf_id, mock_ar_load):
         """Test that validation fails if model bundle requires pop_vcf but none provided"""
         pipeline = self.create_pipeline()
-        
+
         # Mock bundle info requiring SentieonVcfID
         mock_bundle_info = {
             "longReadPlatform": "ONT",
             "shortReadPlatform": "Illumina",
             "SentieonVcfID": "some_id",
-            "minScriptVersion": "2.0"
+            "minScriptVersion": "2.0",
         }
         mock_ar_load.return_value = json.dumps(mock_bundle_info).encode()
         pipeline.dry_run = False
-        
+
         with patch("sys.exit") as mock_exit:
-             pipeline.validate_bundle()
-             mock_exit.assert_called_with(2)
+            pipeline.validate_bundle()
+            mock_exit.assert_called_with(2)
 
     @patch("sentieon_cli.dnascope_hybrid.ar_load")
     def test_validation_pop_vcf_mismatch(self, mock_ar_load):
         """Test validation fails if pop_vcf ID mismatches"""
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
-        
+
         mock_bundle_info = {
             "longReadPlatform": "ONT",
             "shortReadPlatform": "Illumina",
             "SentieonVcfID": "expected_id",
-            "minScriptVersion": "2.0"
+            "minScriptVersion": "2.0",
         }
         mock_ar_load.return_value = json.dumps(mock_bundle_info).encode()
         pipeline.dry_run = False
 
-        with patch("sentieon_cli.dnascope_hybrid.vcf_id", return_value="wrong_id"), \
-             patch("sys.exit") as mock_exit:
-                 
+        with (
+            patch(
+                "sentieon_cli.dnascope_hybrid.vcf_id", return_value="wrong_id"
+            ),
+            patch("sys.exit") as mock_exit,
+        ):
+
             pipeline.validate_bundle()
             mock_exit.assert_called_with(2)
 
@@ -133,13 +139,17 @@ class TestDNAscopeHybridPopVcf:
         """The Hybrid DAG has one bounded population-transfer job."""
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
-        
+
         # Build DAG
-        with patch("sentieon_cli.dnascope_hybrid.check_version", return_value=True):
-             dag = pipeline.build_dag()
-        
+        with patch(
+            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
+        ):
+            dag = pipeline.build_dag()
+
         transfer_jobs = [
-            job for job in dag.waiting_jobs if job.name == "population-transfer"
+            job
+            for job in dag.waiting_jobs
+            if job.name == "population-transfer"
         ]
         assert len(transfer_jobs) == 1
         transfer_job = transfer_jobs[0]
@@ -155,19 +165,21 @@ class TestDNAscopeHybridPopVcf:
         """Test that model apply uses the transfer output when pop_vcf is present"""
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
-        
-        with patch("sentieon_cli.dnascope_hybrid.check_version", return_value=True):
-             dag = pipeline.build_dag()
-        
+
+        with patch(
+            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
+        ):
+            dag = pipeline.build_dag()
+
         # Find model-apply job
         apply_job = None
         for job in dag.waiting_jobs:
             if job.name == "model-apply":
                 apply_job = job
                 break
-        
+
         assert apply_job is not None
-        
+
         # ModelApply consumes the single atomically published transfer VCF.
         deps = dag.waiting_jobs[apply_job]
         dep_names = [j.name for j in deps]
@@ -189,13 +201,18 @@ class TestDNAscopeHybridPopVcf:
             "hybrid-select",
             "anno-calls",
             "population-transfer",
-            "final-norm",
         ):
             assert by_name[name].threads == pipeline.cores
 
-        zero_thread_jobs = {
-            job.name for job in all_jobs if job.threads == 0
-        }
+        final_norm = by_name["final-norm"]
+        assert final_norm.threads == min(3, pipeline.cores)
+        assert [node.executable for node in final_norm.shell.nodes] == [
+            "bcftools",
+            "bcftools",
+            "sentieon",
+        ]
+
+        zero_thread_jobs = {job.name for job in all_jobs if job.threads == 0}
         assert "hybrid-select" not in zero_thread_jobs
         assert "anno-calls" not in zero_thread_jobs
         assert "population-transfer" not in zero_thread_jobs

@@ -319,34 +319,6 @@ def cmd_pyexec_hybrid_transfer(
     )
 
 
-def cmd_pyexec_hybrid_norm(
-    out_vcf: pathlib.Path,
-    input_vcf: pathlib.Path,
-    reference: pathlib.Path,
-    temp_dir: pathlib.Path,
-    hybrid_norm: pathlib.Path,
-    threads: int,
-    exclude_homref: bool,
-) -> Pipeline:
-    """Selectively normalize and publish a final Hybrid VCF."""
-
-    arguments = [
-        str(hybrid_norm),
-        "--input-vcf",
-        str(input_vcf),
-        "--reference",
-        str(reference),
-        "--temp-dir",
-        str(temp_dir),
-        "--threads",
-        str(threads),
-    ]
-    if exclude_homref:
-        arguments.append("--exclude-homref")
-    arguments.append(str(out_vcf))
-    return Pipeline(Command(sys.executable, *arguments))
-
-
 def hybrid_stage1(
     out_aln: pathlib.Path,
     reference: pathlib.Path,
