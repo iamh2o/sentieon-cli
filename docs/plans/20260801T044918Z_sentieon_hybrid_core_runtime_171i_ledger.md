@@ -27,10 +27,10 @@ annotated tag `1.7.1i` for package version `1.7.1+i`.
 - Fork default branch: `iamh2o/sentieon-cli:main`.
 - Pushed candidate commit:
   `bddecacee15d0aec922f4a9e7782b877366beb14` on
-  `origin/codex/hybrid-core-runtime-1.7.1i`; evidence-only selector-oracle and
-  Slurm-harness follow-ups advance the branch tip to
-  `fec179c8e0e98fffc09621fb4f8b59f7a074b1bc` without changing runtime code
-  after `0bf2b2f7f15ca75d14cc110af4fcd07086cd88da`.
+  `origin/codex/hybrid-core-runtime-1.7.1i`; the first live runtime candidate
+  was `0bf2b2f7f15ca75d14cc110af4fcd07086cd88da`. Live regression evidence then
+  removed the selective normalizer, producing current reset candidate
+  `501b57d48de49ec17e91fe1675ad3714c0d4173a`.
 - `codex/hybrid-core-runtime-1.7.1i`, tag `1.7.1i`, and tag `v1.7.1i` were
   absent remotely at Gate 0.
 - Fresh checkout status: clean on the work branch.
@@ -100,6 +100,18 @@ annotated tag `1.7.1i` for package version `1.7.1+i`.
 - The downstream DayOA environment pin changes only if record-body/header,
   index/query, and required side-product parity pass and the optimized core
   lane shows a material wall-time win without higher failure risk.
+- Live lane status at the normalizer-reset decision:
+  - Job `2464`, deployed iamh2o `c7d9fd4` reference: completed, 2,459 timed
+    CLI seconds.
+  - Job `2465`, first optimized candidate `0bf2b2f`: completed, 3,075 seconds.
+    Main, SV, and CNV decompressed record bodies, counts, contig indexes, and
+    sampled tabix queries exactly match job `2464`; volatile/provenance header
+    classification remains in the harness. The 25.1% regression rejects the
+    selective normalizer.
+  - Job `2467`, exact upstream `v1.7.0` baseline `1bf377d`: running.
+  - Job `2468`, reset candidate `501b57d` with the original final normalizer:
+    submitted under the same `i128nvme`, `Comment=RnD`, one-node/task,
+    128-CPU, four-hour contract.
 
 ## Control ledger
 
@@ -110,7 +122,7 @@ annotated tag `1.7.1i` for package version `1.7.1+i`.
 | ORACLE-001 | Differential tests | Build deterministic old-versus-new harnesses for selection, transfer, normalization, scheduler behavior, and failure atomicity | IN_PROGRESS | contract_test | Gate 1 | orchestrator | Transfer and normalization differentials are green. The deployed headnode oracle environment supplied legacy bedtools 2.31.1; the checked-in exact vcflib object filter -> `bcftools view` -> `bcftools query` -> `bedtools slop` differential passed against the direct selector. Scheduler-budget and atomic-failure fixtures are green; final proprietary-publisher/full-output A/B proof remains. | The local evidence environment omitted one legacy-only executable removed by this change; the exact deployed runtime resolved it without changing the candidate. |  |
 | SELECT-001 | Hybrid selection | Replace the internal selector chain with direct indexed raw-VCF-to-BED generation | IN_PROGRESS | feature_implementation | Gate 2 | orchestrator | Direct indexed raw-record-to-BED implementation and six focused tests are green; full oracle and live timing pending | Object parsing plus three downstream processes scan and serialize avoidable intermediate data |  |
 | TRANSFER-001 | Population transfer | Replace 493 transfer jobs and concat with one bounded ordered transfer engine | IN_PROGRESS | feature_implementation | Gate 2 | orchestrator | One full-budget DAG job now runs bounded ordered merge/trim workers and one BGZF/index publisher; exact old-pipeline differential, unusual-contig, shard-boundary, Number=A/R/G, tabix, budget, and atomic validation tests: `12 passed`; live cap sweep pending | Hundreds of independently compressed/indexed shards amplify process, I/O, and DAG overhead |  |
-| NORM-001 | Final normalization | Preserve exact view semantics while selectively normalizing candidates and publishing once | NO_LONGER_NEEDED | feature_implementation | Gate 2 | orchestrator | The HG003 hard-VCF lane preserved exact record bodies but sent 1,110,521 of 5,661,729 records through 136 candidate batches. The optimized CLI took 3,075 seconds versus 2,459 seconds for the deployed iamh2o reference, a 616-second/25.1% regression; timing boundaries attribute approximately nine minutes of added wall time to the selective normalizer. The candidate script, command builder, and 325 focused tests were removed, and the exact original `view -a` -> `norm -f` -> `vcfconvert` chain was restored for the next lane. | Candidate detection was much broader than actual realignment: the original normalizer reported only 14,010 realigned records, while Python orchestration and 136 subprocess batches dominated runtime. | Removed from release diff; original normalization retained |
+| NORM-001 | Final normalization | Preserve exact view semantics while selectively normalizing candidates and publishing once | NO_LONGER_NEEDED | feature_implementation | Gate 2 | orchestrator | The HG003 hard-VCF lane preserved exact record bodies but sent 1,110,521 of 5,661,729 records through 136 candidate batches. The optimized CLI took 3,075 seconds versus 2,459 seconds for the deployed iamh2o reference, a 616-second/25.1% regression; timing boundaries attribute approximately nine minutes of added wall time to the selective normalizer. The candidate script, command builder, and 325-line focused test module were removed, and the exact original `view -a` -> `norm -f` -> `vcfconvert` chain was restored for the next lane. | Candidate detection was much broader than actual realignment: the original normalizer reported only 14,010 realigned records, while Python orchestration and 136 subprocess batches dominated runtime. | Removed from release diff; original normalization retained |
 | SCHED-001 | Scheduler | Correct thread claims for every multithreaded Python and fused job | IN_PROGRESS | feature_implementation | Gate 2 | orchestrator | Selector, annotation, and transfer worker jobs claim the full configured core budget; DAG non-overlap tests pass. Fused transfer budgets two processes per merge/trim worker plus the final BGZF publisher within the claimed allocation. After resetting final normalization, its three-process legacy pipeline claims `min(3, cores)` rather than zero. Focused DAG tests: `18 passed`; live scheduler observation remains. | Multithreaded Python jobs were declared as zero-thread scheduler work |  |
 | NATIVE-001 | Native Sentieon | Profile pass 1, Stage1, Stage3, and pass 2; retain only parity-proven >=5% stage wins | OPEN | feature_implementation | Gate 3 | orchestrator | Pending |  |  |
 | QA-001 | Local QA | Pass focused tests, complete tests/doctests, formatting, typing, build/install, and version checks | IN_PROGRESS | contract_test | Gate 4 | orchestrator | After adding the exact selector oracle, the functional and doctest suite reports `160 passed, 1 skipped`; the skip is only the unavailable local legacy bedtools executable, and the same test passed on the deployed headnode runtime. CI-exact Black, focused new-script/test Black, Flake8, and mypy are green. Poetry 2.1.3 built the 1.7.0 wheel and sdist in an isolated temporary environment; the wheel installed successfully into a separate target, reported `sentieon-cli 1.7.0`, and resolved the three new runtime scripts from installed site-packages. The pre-gate version intentionally remains 1.7.0; final post-profile rerun and 1.7.1+i version proof remain. |  |  |
