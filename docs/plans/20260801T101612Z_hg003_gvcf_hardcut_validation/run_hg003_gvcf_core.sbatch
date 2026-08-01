@@ -38,13 +38,13 @@ case $candidate in
     official170)
         expected_sha=1bf377d3ce79fc4d8c2dc221e1f696441e38349d
         expected_tag=v1.7.0
-        expected_version=1.7.0
+        expected_source_version=1.7.0
         source_repository=https://github.com/Sentieon/sentieon-cli.git
         ;;
     release171i)
         expected_sha=e4f0ff8bf4ddd882cb154774178d2b40babba056
         expected_tag=1.7.1i
-        expected_version=1.7.1+i
+        expected_source_version=1.7.1+i
         source_repository=https://github.com/iamh2o/sentieon-cli.git
         ;;
 esac
@@ -114,8 +114,15 @@ expected_module=$(readlink -f "$source_checkout/sentieon_cli/__init__.py")
 [[ $resolved_module == "$expected_module" ]] \
     || die "CLI imports $resolved_module, expected $expected_module"
 cli_version=$("${cli[@]}" --version 2>&1)
-[[ $cli_version == "$expected_version" ]] \
+[[ $cli_version == 1.7.0 ]] \
     || die "unexpected CLI version: $cli_version"
+source_version=$(
+    "$oracle_prefix/bin/python" -c \
+        'import sys, tomllib; print(tomllib.load(open(sys.argv[1], "rb"))["tool"]["poetry"]["version"])' \
+        "$source_checkout/pyproject.toml"
+)
+[[ $source_version == "$expected_source_version" ]] \
+    || die "unexpected source package version: $source_version"
 genomics_version=$($sentieon_root/bin/sentieon driver --version 2>&1)
 [[ $genomics_version == *"sentieon-genomics-202503.03"* ]] \
     || die "unexpected Sentieon version: $genomics_version"
@@ -216,6 +223,9 @@ cp -p \
     printf 'end_epoch=%s\n' "$end_epoch"
     printf 'wall_seconds=%s\n' "$((end_epoch - start_epoch))"
     printf 'sentieon_cli=%s\n' "$cli_version"
+    printf 'source_package_version=%s\n' "$source_version"
+    printf 'version_note=%s\n' \
+        'PYTHONPATH source injection retains installed distribution metadata for --version'
     printf 'sentieon_genomics=%s\n' "$genomics_version"
     printf 'reference=%s\n' "$reference"
     printf 'model_bundle=%s\n' "$model_bundle"
