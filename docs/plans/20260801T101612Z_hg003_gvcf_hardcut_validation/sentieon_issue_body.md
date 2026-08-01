@@ -23,9 +23,8 @@ slightly different vcfeval metrics.
 - Population VCF: `pop-v20g41-20251216.vcf.gz`
 - Truth/evaluation: GIAB HG003 v4.2.1 high-confidence VCF and BED
 
-The native-hard and gVCF commands used the same prepared SR/LR inputs,
-reference, model, dbSNP, population VCF, interval scope, Sentieon core, and
-sample name.
+The native-hard and gVCF commands used the same SR/LR input data, reference,
+model, dbSNP, population VCF, interval scope, Sentieon core, and sample name.
 
 ## gVCF-to-hard command
 

@@ -393,7 +393,9 @@ cp "$release_native_manifest" "$result/provenance/release171i-native-run-manifes
 } > "$result/provenance/comparison-manifest.txt"
 (
     cd "$result"
-    find . -type f -print0 | LC_ALL=C sort -z | xargs -0 sha256sum
+    find . -type f ! -name SHA256SUMS -print0 \
+        | LC_ALL=C sort -z \
+        | xargs -0 sha256sum
 ) > "$result/SHA256SUMS"
 
 publish_parent=$(dirname "$publish_dir")
