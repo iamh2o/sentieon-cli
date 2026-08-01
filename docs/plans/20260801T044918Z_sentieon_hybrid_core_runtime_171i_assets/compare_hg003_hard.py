@@ -8,11 +8,27 @@ import gzip
 import hashlib
 import json
 import pathlib
+import re
 import subprocess
 import sys
 
 VOLATILE_HEADER_PREFIXES = (b"##bcftools_",)
 QUERY_REGIONS = ("chr1:1-1000000", "chr21:1-1000000", "chrX:1-1000000")
+SENTIEON_DATE_PATTERN = re.compile(
+    rb'(##SentieonCommandLine\.[^\n]*,Date=")[^"]+(".*)'
+)
+SENTIEON_SCRATCH_PATTERN = re.compile(
+    rb"/scratch/sentieon-cli-171i-hg003-5x/"
+    rb"(?:baseline|optimized|official170)/\d+/job\.[^/\s\"]+"
+)
+
+
+def canonicalize_header(line: bytes) -> bytes:
+    """Normalize only explicitly volatile native-command provenance."""
+    if not line.startswith(b"##SentieonCommandLine."):
+        return line
+    line = SENTIEON_DATE_PATTERN.sub(rb'\1<VOLATILE_DATE>\2', line)
+    return SENTIEON_SCRATCH_PATTERN.sub(b"<VOLATILE_SCRATCH>", line)
 
 
 def summarize(path: pathlib.Path) -> dict[str, object]:
@@ -23,7 +39,11 @@ def summarize(path: pathlib.Path) -> dict[str, object]:
         for line in stream:
             if line.startswith(b"#"):
                 if not line.startswith(VOLATILE_HEADER_PREFIXES):
-                    header.append(line.decode(errors="strict").rstrip("\n"))
+                    header.append(
+                        canonicalize_header(line)
+                        .decode(errors="strict")
+                        .rstrip("\n")
+                    )
                 continue
             body_hash.update(line)
             records += 1
