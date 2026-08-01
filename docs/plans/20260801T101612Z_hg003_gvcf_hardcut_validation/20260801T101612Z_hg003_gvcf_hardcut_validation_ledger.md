@@ -123,3 +123,12 @@ After `bcftools norm -f REF -m -both`, native hard versus GVCFtyper hard had
 native-only records, 925,199 were `MLrejected`. These data establish the
 construction-path distinction but do not substitute for the still-missing
 exact upstream-1.7.0 versus released-1.7.1i gVCF parity lane.
+
+## Continuation handoff
+
+The exact live-job snapshot, source/input contracts, safe resume procedure,
+publication paths, and closeout checklist are recorded in
+`docs/plans/20260801T111727Z_hg003_gvcf_validation_handoff.md`. The handoff was
+created while jobs 2606 and 2611 were running and job 2612 was validly held on
+their `afterok` dependency; it does not authorize manipulation of those jobs or
+the stale dependency-only jobs 2600 and 2608.
