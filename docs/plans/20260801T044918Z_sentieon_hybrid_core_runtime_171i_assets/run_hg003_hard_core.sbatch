@@ -37,7 +37,7 @@ analysis_unit=HG003-5X-CLI-RUNTIME
 sr_cram=$prepared_dir/$analysis_unit.sr.prepared.cram
 lr_cram=$prepared_dir/$analysis_unit.lr.aligned.cram
 publish_dir=$analysis_root/results/$candidate/hard
-assets_dir=$(cd -- "$(dirname -- "$0")" && pwd)
+assets_dir=$analysis_root/source/docs/plans/20260801T044918Z_sentieon_hybrid_core_runtime_171i_assets
 
 [[ ! -e $publish_dir ]] || die "publish destination already exists: $publish_dir"
 for input_path in \
