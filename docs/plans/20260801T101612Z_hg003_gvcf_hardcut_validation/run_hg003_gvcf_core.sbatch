@@ -191,9 +191,11 @@ start_epoch=$(date +%s)
 end_epoch=$(date +%s)
 
 [[ -s $output_gvcf ]] || die "CLI did not produce $output_gvcf"
-if [[ ! -s $output_gvcf.tbi ]]; then
-    bcftools index --threads "$SLURM_CPUS_PER_TASK" --tbi --force "$output_gvcf"
-fi
+# Sentieon's emitted TBI is queryable but does not carry htslib record-count
+# statistics (`bcftools index --nrecords` reports 0). Rebuild it with the
+# pinned bcftools before using those statistics as a publication gate.
+bcftools index --threads "$SLURM_CPUS_PER_TASK" --tbi --force "$output_gvcf"
+[[ -s $output_gvcf.tbi ]] || die "bcftools did not produce $output_gvcf.tbi"
 bgzip -t "$output_gvcf"
 tabix -l "$output_gvcf" > "$work/contigs.txt"
 bcftools query -l "$output_gvcf" > "$work/samples.txt"

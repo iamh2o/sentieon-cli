@@ -347,3 +347,29 @@ dyec analysis lock status --analysis-root "$analysis_root"
 
 These are monitoring commands only. No scheduler or resource intervention is
 authorized by this handoff.
+
+## Post-handoff update at 2026-08-01T17:19:33Z
+
+All three comparison jobs shown as pending are now permanently stale:
+
+- `2600` depended on `afterok:2598:2599`; both parents failed preflight.
+- `2608` depended on `afterok:2606:2607`; parent 2607 failed preflight and
+  parent 2606 later failed post-run.
+- `2612` depended on `afterok:2606:2611`; both direct parents failed post-run.
+
+The final direct jobs were computationally complete but failed the publication
+validator: job 2606 ran `03:00:58`, job 2611 ran `01:58:13`, and both ended
+`2:0` on `ERROR: invalid indexed record count: 0`. The runners had already
+passed BGZF integrity, contig-list, and sample-list checks. No direct gVCF or
+comparison directory was published.
+
+The cause was the Sentieon-emitted TBI's missing htslib record-count statistics,
+not an empty gVCF. A separate pinned-bcftools reindex of an existing native-hard
+VCF changed `--nrecords` from zero to 5,661,729. The corrected direct payload
+therefore force-rebuilds the TBI before checking the record count.
+
+Do not attempt `scontrol release`: `DependencyNeverSatisfied` is not a releasable
+hold. The minimal replacement is to cancel only 2600, 2608, and 2612, rerun the
+two corrected direct lanes, and submit one new comparison child with `afterok`
+on their new IDs. This scheduler action still requires the user's explicit
+approval after receiving that exact proposal.
