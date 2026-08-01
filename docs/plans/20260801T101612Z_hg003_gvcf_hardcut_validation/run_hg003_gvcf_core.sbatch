@@ -118,7 +118,7 @@ cli_version=$("${cli[@]}" --version 2>&1)
     || die "unexpected CLI version: $cli_version"
 source_version=$(
     "$oracle_prefix/bin/python" -c \
-        'import sys, tomllib; print(tomllib.load(open(sys.argv[1], "rb"))["tool"]["poetry"]["version"])' \
+        'import sys, tomllib; print(tomllib.load(open(sys.argv[1], "rb"))["project"]["version"])' \
         "$source_checkout/pyproject.toml"
 )
 [[ $source_version == "$expected_source_version" ]] \
