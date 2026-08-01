@@ -1,7 +1,7 @@
 
 [project]
 name = "sentieon_cli"
-version = "1.7.0"
+version = "1.7.1+i"
 description = "Pipeline implementations for the Sentieon software"
 authors = [
     {name = "Don Freed", email = "don.freed@sentieon.com"},
@@ -35,7 +35,7 @@ line-length = 79
 
 [tool.flake8]
 max-line-length = 79
-extend-ignore = ["E231", "E221"]
+extend-ignore = ["E203", "E231", "E221"]
 exclude = [
     ".github/scripts/license_message.py",
     "sentieon_cli/scripts/combine_cnv.py",
