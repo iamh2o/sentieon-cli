@@ -64,5 +64,41 @@ The `sentieon-cli` supports the following global arguments:
 - [**DNAscope Hybrid**](https://support.sentieon.com/docs/sentieon_cli/#dnascope-hybrid) - DNAscope short-long-hybrid pipeline.
 - [**DNAscope Pangenome**](https://support.sentieon.com/docs/sentieon_cli/#dnascope-pangenome) - DNAscope pangenome alignment and variant calling. Our recommended pipeline for short-read small variant calling.
 
+## Hybrid model checkpoint and finalization
+
+`dnascope-hybrid --stop-after-model-apply` keeps the ordinary Hybrid DAG
+through `DNAModelApply`, including LongReadSV, CNVscope, and realigned-read
+outputs, but writes the positional VCF before the historical final
+normalization pipeline. The option is additive and off by default. It cannot
+be combined with `--skip-model-apply`.
+
+The checkpoint can be finalized as independently scheduled whole-contig jobs:
+
+```sh
+sentieon-cli dnascope-hybrid-finalize-contig \
+    -r reference.fa -t 4 --contig chr19 --emit-mode gvcf \
+    model-applied.g.vcf.gz chr19.final.g.vcf.gz
+```
+
+Each finalizer preserves the established `view -a`, `norm -f`, and Sentieon
+`vcfconvert` order. It requires the checkpoint's `.tbi`, accepts only an exact
+FAI contig, and uses its declared CPU budget sequentially rather than
+oversubscribing a shell pipeline.
+
+Gather finalized contigs by supplying the same number of ordered contigs and
+VCFs:
+
+```sh
+sentieon-cli dnascope-hybrid-gather \
+    --reference-fai reference.fa.fai --contigs chr19,chr20 -t 8 \
+    --input-vcf chr19.final.g.vcf.gz \
+    --input-vcf chr20.final.g.vcf.gz \
+    gathered.g.vcf.gz
+```
+
+Gather rejects unknown, duplicate, or out-of-FAI-order contigs and creates the
+final tabix index. There is no implicit contig discovery or filename-order
+fallback.
+
 ## License
 Unless otherwise indicated, files in this repository are licensed under a BSD 2-Clause License.

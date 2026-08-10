@@ -2,6 +2,7 @@ from . import argh_parser
 from .dnascope import DNAscopePipeline
 from .dnascope_hybrid import DNAscopeHybridPipeline
 from .dnascope_longread import DNAscopeLRPipeline
+from .hybrid_vcf import HybridFinalizeContigPipeline, HybridGatherPipeline
 from .sentieon_pangenome import SentieonPangenome
 from .util import __version__
 
@@ -49,6 +50,18 @@ def main():
     dnascope_hybrid_subparser = subparsers.add_parser("dnascope-hybrid")
     pipeline.add_arguments(dnascope_hybrid_subparser)
     dnascope_hybrid_subparser.set_defaults(pipeline=pipeline.main)
+
+    pipeline = HybridFinalizeContigPipeline()
+    hybrid_finalize_subparser = subparsers.add_parser(
+        "dnascope-hybrid-finalize-contig"
+    )
+    pipeline.add_arguments(hybrid_finalize_subparser)
+    hybrid_finalize_subparser.set_defaults(pipeline=pipeline.main)
+
+    pipeline = HybridGatherPipeline()
+    hybrid_gather_subparser = subparsers.add_parser("dnascope-hybrid-gather")
+    pipeline.add_arguments(hybrid_gather_subparser)
+    hybrid_gather_subparser.set_defaults(pipeline=pipeline.main)
 
     # DNAscope pangenome
     pipeline = SentieonPangenome()

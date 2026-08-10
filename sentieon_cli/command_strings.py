@@ -403,12 +403,16 @@ def bcftools_subset(
     out_vcf: pathlib.Path,
     mix_vcf: pathlib.Path,
     regions_bed: pathlib.Path,
+    bcftools_threads: int = 0,
+    vcfconvert_threads: int = 1,
 ) -> Pipeline:
     """Subset a vcf with bcftools"""
     bcftools_subset_cmd = shlex.join(
         [
             "bcftools",
             "view",
+            "--threads",
+            str(bcftools_threads),
             "-T",
             "^" + str(regions_bed),
             str(mix_vcf),
@@ -419,6 +423,8 @@ def bcftools_subset(
             "sentieon",
             "util",
             "vcfconvert",
+            "-t",
+            str(vcfconvert_threads),
             "-",
             str(out_vcf),
         ]
@@ -428,6 +434,8 @@ def bcftools_subset(
             "sentieon",
             "util",
             "vcfconvert",
+            "-t",
+            str(vcfconvert_threads),
             str(mix_vcf),
             str(out_vcf),
         ]
@@ -448,11 +456,14 @@ def bcftools_concat(
     out_vcf: pathlib.Path,
     in_vcfs: List[pathlib.Path],
     xargs: List[str] = ["-aD"],
+    threads: Optional[int] = None,
 ) -> Pipeline:
     """VCF processing through bcftools concat"""
+    thread_args = [] if threads is None else ["--threads", str(threads)]
     concat_cmd = Command(
         "bcftools",
         "concat",
+        *thread_args,
         "-W=tbi",
         "--output",
         str(out_vcf),
@@ -467,15 +478,32 @@ def filter_norm(
     in_vcf: pathlib.Path,
     reference: pathlib.Path,
     exclude_homref: bool = True,
+    bcftools_threads: int = 0,
+    vcfconvert_threads: int = 1,
 ) -> Pipeline:
     """Trim and normalize"""
-    view_args = ["-a"]
+    view_args = ["--threads", str(bcftools_threads), "-a"]
     if exclude_homref:
         view_args.extend(["-e", 'GT="0/0"'])
     view_args.append(str(in_vcf))
     view_cmd = Command("bcftools", "view", *view_args)
-    norm_cmd = Command("bcftools", "norm", "-f", str(reference))
-    convert_cmd = Command("sentieon", "util", "vcfconvert", "-", str(out_vcf))
+    norm_cmd = Command(
+        "bcftools",
+        "norm",
+        "--threads",
+        str(bcftools_threads),
+        "-f",
+        str(reference),
+    )
+    convert_cmd = Command(
+        "sentieon",
+        "util",
+        "vcfconvert",
+        "-t",
+        str(vcfconvert_threads),
+        "-",
+        str(out_vcf),
+    )
     return Pipeline(view_cmd, norm_cmd, convert_cmd)
 
 

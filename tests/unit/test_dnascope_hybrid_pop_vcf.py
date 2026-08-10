@@ -205,7 +205,7 @@ class TestDNAscopeHybridPopVcf:
             assert by_name[name].threads == pipeline.cores
 
         final_norm = by_name["final-norm"]
-        assert final_norm.threads == min(3, pipeline.cores)
+        assert final_norm.threads == min(6, pipeline.cores)
         assert [node.executable for node in final_norm.shell.nodes] == [
             "bcftools",
             "bcftools",

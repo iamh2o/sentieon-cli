@@ -61,7 +61,8 @@ MIN_BUNDLE_VERSION = {
 }
 
 HYBRID_TRANSFER_WORKERS = 32
-FINAL_NORM_PROCESSES = 3
+HYBRID_VCF_POSTPROCESS_THREADS = 4
+FINAL_NORM_PROCESSES = 6
 
 
 class RgInfo:
@@ -278,6 +279,14 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 "help": argparse.SUPPRESS,
                 "action": "store_true",
             },
+            "stop_after_model_apply": {
+                "help": (
+                    "Write the post-DNAModelApply VCF to output_vcf and stop "
+                    "before final normalization. SV, CNV, and realigned-read "
+                    "branches still complete."
+                ),
+                "action": "store_true",
+            },
             "skip_pop_vcf_id_check": {
                 "help": argparse.SUPPRESS,
                 "action": "store_true",
@@ -311,9 +320,16 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         self.lr_read_filter: Optional[str] = None
         self.assay = "WGS"
         self.skip_model_apply = False
+        self.stop_after_model_apply = False
         self.skip_pop_vcf_id_check = False
 
     def validate(self) -> None:
+        if self.stop_after_model_apply and self.skip_model_apply:
+            self.logger.error(
+                "--stop_after_model_apply and --skip_model_apply are "
+                "mutually exclusive"
+            )
+            sys.exit(2)
         self.fai_data = parse_fai(pathlib.Path(str(self.reference) + ".fai"))
         self.pop_vcf_contigs: Dict[str, Optional[int]] = {}
         if self.pop_vcf:
@@ -969,6 +985,10 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         )
 
         # Merge and normalize the VCFs
+        postprocess_threads = min(HYBRID_VCF_POSTPROCESS_THREADS, self.cores)
+        subset_bcftools_threads = 1 if postprocess_threads >= 4 else 0
+        subset_vcfconvert_threads = 2 if postprocess_threads >= 4 else 1
+        concat_bcftools_threads = max(0, postprocess_threads - 1)
         subset_vcf = self.tmp_dir.joinpath("mix_subset.vcf.gz")
         combined_tmp_vcf = self.tmp_dir.joinpath("combined_tmp.vcf.gz")
         subset_job = Job(
@@ -976,17 +996,20 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 subset_vcf,
                 combined_vcf,
                 stage2_bed,
+                bcftools_threads=subset_bcftools_threads,
+                vcfconvert_threads=subset_vcfconvert_threads,
             ),
             "subset-calls",
-            0,
+            postprocess_threads,
         )
         concat_job = Job(
             cmds.bcftools_concat(
                 combined_tmp_vcf,
                 [subset_vcf, pass2_vcf],
+                threads=concat_bcftools_threads,
             ),
             "concat-calls",
-            0,
+            postprocess_threads,
         )
         rm_cmd = ["rm", str(combined_vcf), str(subset_vcf), str(pass2_vcf)]
         rm_job5 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp5", 0)
@@ -1073,7 +1096,11 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             )
 
         # Model Apply
-        apply_vcf = self.tmp_dir.joinpath("combined_apply.vcf.gz")
+        apply_vcf = (
+            self.output_vcf
+            if self.stop_after_model_apply
+            else self.tmp_dir.joinpath("combined_apply.vcf.gz")
+        )
         driver = Driver(
             reference=self.reference,
             thread_count=self.cores,
@@ -1090,16 +1117,47 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*driver.build_cmd())), "model-apply", self.cores
         )
 
+        if self.stop_after_model_apply:
+            return (
+                call_job,
+                select_job,
+                mapq0_job,
+                mapq0_slop_job,
+                cat_merge_job,
+                rm_job1,
+                stage1_job,
+                rm_job2,
+                second_stage_job,
+                rm_job3,
+                third_stage_job,
+                rm_job4,
+                call2_job,
+                subset_job,
+                concat_job,
+                rm_job5,
+                anno_job,
+                transfer_job,
+                apply_job,
+                None,
+            )
+
         # Final normalize
+        norm_thread_budget = min(FINAL_NORM_PROCESSES, self.cores)
+        norm_bcftools_threads = 1 if norm_thread_budget >= 6 else 0
+        norm_vcfconvert_threads = (
+            2 if norm_thread_budget >= 6 else max(1, norm_thread_budget - 2)
+        )
         norm_job = Job(
             cmds.filter_norm(
                 self.output_vcf,
                 apply_vcf,
                 self.reference,
                 exclude_homref=not self.gvcf,
+                bcftools_threads=norm_bcftools_threads,
+                vcfconvert_threads=norm_vcfconvert_threads,
             ),
             "final-norm",
-            min(FINAL_NORM_PROCESSES, self.cores),
+            norm_thread_budget,
         )
         return (
             call_job,
