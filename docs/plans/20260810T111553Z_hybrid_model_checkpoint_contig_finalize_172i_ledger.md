@@ -62,12 +62,12 @@ Linked DayOA ledger:
 | LIVE-002 | Terminal parity | Final gVCF, SV, CNV, and normalized RSR evidence satisfy the matched parity contract | SUCCESS | contract_test | Gate 3 | orchestrator | Final gVCF: identical SHA-256 over 32,377,132 record bodies (`6dfc7a86555882cd550afd130f8be1b128e86b768623d8a7a06b978fb75ca737`), sample/order/index/region queries. SV: 1,525 identical records. CNV: 97 identical records. RSR: quickcheck PASS; identical non-`@PG` header, all 24,351,770 decoded alignments (`5e5a3c797103b1b78047007ddcd216ecd095650c3049a93cbdf79dfbd71919fa`), region queries, and idxstats. |  | VCF differences are confined to classified command/version/date/path headers; RSR differences are confined to `@PG` command provenance including the intentional 128-to-64 RSR thread change. |
 | PERF-001 | Runtime | Record core-release, per-contig, gather, vCPU-hour, and task-cost evidence | SUCCESS | contract_test | Gate 3 | orchestrator | Authoritative combined benchmark rows: baseline monolith 1,791.0826 s / 63.682937 vCPU-h / $2.321840; candidate core 1,829.3714 s / 65.044316 vCPU-h / $2.531748; chr19 379.9492 s / 0.422166 vCPU-h / $0.016432; chr20 376.5950 s / 0.418439 vCPU-h / $0.016287; gather 124.7048 s / 0.277122 vCPU-h / $0.010787. All four candidate non-local raw rows match exactly one combined-TSV row. |  | The two-contig candidate critical task path was 2,334.0254 s and $2.575254; core products preceded final gather by 598.8 s, and canonical RSR publication preceded gather by 586.5 s. This correctness subset intentionally does not model full-genome 24-contig parallelism. |
 | DOC-001 | Documentation | Document the new boundary, commands, thread accounting, and failure contract | SUCCESS | feature_implementation | Gate 2 | orchestrator | README command examples and strict no-discovery/no-oversubscription behavior |  | Ledger retains the complete gate contract |
-| RELEASE-001 | Release | Merge validated PR and create immutable annotated `1.7.2i` tag | OPEN | feature_implementation | Gate 4 | orchestrator | Tag must not precede live parity |  |  |
+| RELEASE-001 | Release | Merge validated PR and create immutable annotated `1.7.2i` tag | SUCCESS | feature_implementation | Gate 4 | orchestrator | PR #3 merged to `main` at `45e7e1ac5f20d018530cb9f9819898e0b763834c`; annotated tag object `a2a5947d837ca2f73222a9bfdf6fe6483477f2b4` peels to that exact merge commit and is verified on `origin`. |  | The tag was created only after live checkpoint, terminal-product, and benchmark acceptance. |
 
 ## Final Report
 
-All rows terminal: no
+All rows terminal: yes
 
-Objective complete: no
+Objective complete: yes
 
-The release tag is forbidden until `LIVE-001` and `LIVE-002` are `SUCCESS`.
+Sentieon CLI `1.7.2i` is released from the clean live-validated merge tree.
