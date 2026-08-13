@@ -17,7 +17,7 @@ def main():
         action="store_const",
         dest="loglevel",
         const="INFO",
-        default="WARNING",
+        default="INFO",
     )
     parser.add_argument(
         "-d",
