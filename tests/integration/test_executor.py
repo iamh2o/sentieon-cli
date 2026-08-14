@@ -44,6 +44,7 @@ def test_local_executor_simple_job():
         job = Job(
             Pipeline(Command("echo", "hello executor"), file_output=cmd_out),
             "echo-job",
+            task_name="test",
         )
         dag.add_job(job)
 
@@ -65,7 +66,7 @@ def test_local_executor_pipeline_job():
             Command("cat"),
             file_output=cmd_out,
         )
-        job = Job(pipeline, "pipeline-job")
+        job = Job(pipeline, "pipeline-job", task_name="test")
         dag.add_job(job)
 
         scheduler = ThreadScheduler(dag, 1)
@@ -82,7 +83,11 @@ def test_local_executor_failing_job():
         cmd_in = pathlib.Path(tmp_dir_str) / "test_in.txt"
         dag = DAG()
         # This command will fail: the input file does not exist
-        job = Job(Pipeline(Command("cat", str(cmd_in))), "failing-job")
+        job = Job(
+            Pipeline(Command("cat", str(cmd_in))),
+            "failing-job",
+            task_name="test",
+        )
         dag.add_job(job)
 
         scheduler = ThreadScheduler(dag, 1)
@@ -103,7 +108,11 @@ def test_local_executor_proc_sub_job():
             InputProcSub(Pipeline(Command("echo", "a"))),
             InputProcSub(Pipeline(Command("echo", "b"))),
         )
-        job = Job(Pipeline(command, file_output=cmd_out), "proc-sub-job")
+        job = Job(
+            Pipeline(command, file_output=cmd_out),
+            "proc-sub-job",
+            task_name="test",
+        )
         dag.add_job(job)
 
         # Need at least 2 threads for the two proc subs
@@ -129,6 +138,7 @@ def test_dry_run_executor_prints_without_running(capsys):
         job = Job(
             Pipeline(Command("echo", "dryrun"), file_output=cmd_out),
             "dry-job",
+            task_name="test",
         )
         dag.add_job(job)
 
@@ -157,7 +167,7 @@ def test_executor_runs_with_env_without_logging_it(tmp_path):
         exec_kwargs={"env": child_env},
     )
     dag = DAG()
-    dag.add_job(Job(Pipeline(command), "env-job", outputs=[output]))
+    dag.add_job(Job(Pipeline(command), "env-job", task_name="test"))
 
     stream = io.StringIO()
     handler = logging.StreamHandler(stream)
@@ -180,8 +190,8 @@ def test_executor_runs_with_env_without_logging_it(tmp_path):
 def test_dry_run_executor_drains_dependencies(capsys):
     """DryRunExecutor walks the whole DAG, including dependent jobs"""
     dag = DAG()
-    a = Job(Pipeline(Command("echo", "a")), "a")
-    b = Job(Pipeline(Command("echo", "b")), "b")
+    a = Job(Pipeline(Command("echo", "a")), "a", task_name="test")
+    b = Job(Pipeline(Command("echo", "b")), "b", task_name="test")
     dag.add_job(a)
     dag.add_job(b, {a})
 
@@ -210,6 +220,7 @@ def test_fail_ok_subcommand_does_not_fail_job():
                 file_output=out,
             ),
             "tolerant-job",
+            task_name="test",
         )
         dag.add_job(job)
 
@@ -227,8 +238,20 @@ def test_independent_jobs_all_complete():
         o1 = tmp_dir / "o1.txt"
         o2 = tmp_dir / "o2.txt"
         dag = DAG()
-        dag.add_job(Job(Pipeline(Command("echo", "1"), file_output=o1), "j1"))
-        dag.add_job(Job(Pipeline(Command("echo", "2"), file_output=o2), "j2"))
+        dag.add_job(
+            Job(
+                Pipeline(Command("echo", "1"), file_output=o1),
+                "j1",
+                task_name="test",
+            )
+        )
+        dag.add_job(
+            Job(
+                Pipeline(Command("echo", "2"), file_output=o2),
+                "j2",
+                task_name="test",
+            )
+        )
 
         scheduler = ThreadScheduler(dag, 2)
         executor = LocalExecutor(scheduler)
@@ -246,8 +269,16 @@ def test_dependent_job_runs_after_dependency():
         first = tmp_dir / "first.txt"
         second = tmp_dir / "second.txt"
         dag = DAG()
-        a = Job(Pipeline(Command("echo", "a"), file_output=first), "a")
-        b = Job(Pipeline(Command("echo", "b"), file_output=second), "b")
+        a = Job(
+            Pipeline(Command("echo", "a"), file_output=first),
+            "a",
+            task_name="test",
+        )
+        b = Job(
+            Pipeline(Command("echo", "b"), file_output=second),
+            "b",
+            task_name="test",
+        )
         dag.add_job(a)
         dag.add_job(b, {a})
 
@@ -263,7 +294,7 @@ def test_dependent_job_runs_after_dependency():
 def test_job_that_fails_to_start_is_recorded():
     """A job whose command cannot be spawned is recorded as an error."""
     dag = DAG()
-    job = Job(Pipeline(Command("no_such_cmd_zzz")), "ghost")
+    job = Job(Pipeline(Command("no_such_cmd_zzz")), "ghost", task_name="test")
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
     executor.execute()
@@ -277,7 +308,9 @@ def test_launch_loop_stops_after_a_failed_launch():
     for i in range(5):
         # Distinct args -> distinct pipeline identities (else the DAG
         # rejects them as duplicates).
-        dag.add_job(Job(Pipeline(Command("true", str(i))), f"j{i}"))
+        dag.add_job(
+            Job(Pipeline(Command("true", str(i))), f"j{i}", task_name="test")
+        )
     executor = LocalExecutor(ThreadScheduler(dag, 5))
 
     launched = []
@@ -297,14 +330,18 @@ def test_launch_loop_stops_after_a_failed_launch():
 def test_infeasible_job_raises_instead_of_deadlocking():
     """A job larger than the budget raises rather than stalling silently."""
     dag = DAG()
-    dag.add_job(Job(Pipeline(Command("echo", "hi")), "big", 100))
+    dag.add_job(
+        Job(Pipeline(Command("echo", "hi")), "big", 100, task_name="test")
+    )
     with pytest.raises(DagExecutionError):
         LocalExecutor(ThreadScheduler(dag, 2)).execute()
 
 
 def test_dry_run_also_rejects_infeasible_job():
     dag = DAG()
-    dag.add_job(Job(Pipeline(Command("echo", "hi")), "big", 100))
+    dag.add_job(
+        Job(Pipeline(Command("echo", "hi")), "big", 100, task_name="test")
+    )
     with pytest.raises(DagExecutionError):
         DryRunExecutor(ThreadScheduler(dag, 2)).execute()
 
@@ -317,7 +354,7 @@ def test_non_oserror_on_start_propagates(monkeypatch):
 
     monkeypatch.setattr("sentieon_cli.shell_pipeline.Pipeline.run", boom)
     dag = DAG()
-    dag.add_job(Job(Pipeline(Command("echo", "x")), "j"))
+    dag.add_job(Job(Pipeline(Command("echo", "x")), "j", task_name="test"))
     with pytest.raises(RuntimeError):
         LocalExecutor(ThreadScheduler(dag, 1)).execute()
 
@@ -363,6 +400,7 @@ def test_procsub_job_with_early_exiting_outer_does_not_hang():
             Command("false", InputProcSub(Pipeline(Command("echo", "x"))))
         ),
         "early-exit",
+        task_name="test",
     )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -382,6 +420,7 @@ def test_procsub_job_with_unspawnable_outer_does_not_hang():
             )
         ),
         "ghost-with-procsub",
+        task_name="test",
     )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -402,6 +441,7 @@ def test_procsub_inner_that_fails_to_launch_is_recorded():
             )
         ),
         "inner-fail",
+        task_name="test",
     )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -422,8 +462,9 @@ def test_procsub_inner_failure_does_not_skip_sibling_bookkeeping():
             )
         ),
         "inner-fail",
+        task_name="test",
     )
-    good = Job(Pipeline(Command("true")), "sibling")
+    good = Job(Pipeline(Command("true")), "sibling", task_name="test")
     dag.add_job(bad)
     dag.add_job(good)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -457,6 +498,7 @@ def test_mid_pipeline_spawn_failure_terminates_running_stages(monkeypatch):
             Command("no_such_cmd_zzz"),
         ),
         "leak",
+        task_name="test",
     )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -491,8 +533,12 @@ def test_error_in_the_run_loop_terminates_running_jobs(monkeypatch):
     monkeypatch.setattr(executor_mod, "Context", RecordingContext)
 
     dag = DAG()
-    dag.add_job(Job(Pipeline(Command("sleep", "30")), "slow"))
-    dag.add_job(Job(Pipeline(Command("true")), "quick"))
+    dag.add_job(
+        Job(Pipeline(Command("sleep", "30")), "slow", task_name="test")
+    )
+    dag.add_job(
+        Job(Pipeline(Command("true")), "quick", task_name="test")
+    )
 
     scheduler = ThreadScheduler(dag, 2)
 
@@ -536,6 +582,7 @@ def test_sigpipe_producer_does_not_fail_job(tmp_path):
             file_output=out,
         ),
         "sigpipe",
+        task_name="test",
     )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
@@ -548,7 +595,11 @@ def test_nonzero_producer_still_fails_job():
     """SIGPIPE forgiveness must not mask a producer that exits non-zero
     for another reason: `false | cat` still fails the job."""
     dag = DAG()
-    job = Job(Pipeline(Command("false"), Command("cat")), "real-fail")
+    job = Job(
+        Pipeline(Command("false"), Command("cat")),
+        "real-fail",
+        task_name="test",
+    )
     dag.add_job(job)
     executor = LocalExecutor(ThreadScheduler(dag, 2))
     _execute_bounded(executor)
@@ -600,13 +651,13 @@ async def test_shutdown_releases_all_contexts_despite_cleanup_error():
 
     executor.running = [
         (
-            Job(Pipeline(Command("true")), "j1"),
+            Job(Pipeline(Command("true")), "j1", task_name="test"),
             bad,
             asyncio.create_task(_done()),
             0,
         ),
         (
-            Job(Pipeline(Command("false")), "j2"),
+            Job(Pipeline(Command("false")), "j2", task_name="test"),
             good,
             asyncio.create_task(_done()),
             0,

@@ -17,7 +17,11 @@ def _stage1_dag(tmp_path: pathlib.Path) -> tuple[DAG, dict[str, pathlib.Path]]:
     aligned_bam = tmp_path / "hybrid_stage1.bam"
     stage2 = tmp_path / "stage2.txt"
 
-    mkfifo = Job(Pipeline(Command("mkfifo", str(fifo))), "stage1-fifo")
+    mkfifo = Job(
+        Pipeline(Command("mkfifo", str(fifo))),
+        "stage1-fifo",
+        task_name="hybrid-realignment",
+    )
 
     # The real HybridStage1 command writes FASTQ through the named FIFO while
     # its unsorted haplotype BAM travels on stdout into sentieon util sort.
@@ -35,7 +39,7 @@ def _stage1_dag(tmp_path: pathlib.Path) -> tuple[DAG, dict[str, pathlib.Path]]:
         ),
         "first-stage-hap",
         0,
-        outputs=[hap_bam],
+        task_name="hybrid-realignment",
     )
 
     # The real companion job concatenates the FIFO before an insertion-model
@@ -60,7 +64,7 @@ def _stage1_dag(tmp_path: pathlib.Path) -> tuple[DAG, dict[str, pathlib.Path]]:
         ),
         "first-stage",
         2,
-        outputs=[aligned_bam],
+        task_name="hybrid-realignment",
     )
 
     stage2_code = (
@@ -82,8 +86,7 @@ def _stage1_dag(tmp_path: pathlib.Path) -> tuple[DAG, dict[str, pathlib.Path]]:
         ),
         "second-stage",
         2,
-        inputs=[hap_bam, aligned_bam],
-        outputs=[stage2],
+        task_name="hybrid-realignment",
     )
 
     dag = DAG()

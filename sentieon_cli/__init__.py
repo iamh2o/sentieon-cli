@@ -3,6 +3,7 @@ from .dnascope import DNAscopePipeline
 from .dnascope_hybrid import DNAscopeHybridPipeline
 from .dnascope_longread import DNAscopeLRPipeline
 from .hybrid_vcf import HybridFinalizeContigPipeline, HybridGatherPipeline
+from .job import Job
 from .sentieon_pangenome import SentieonPangenome
 from .util import __version__
 
@@ -72,6 +73,9 @@ def main():
     dnascope_pangenome_subparser.set_defaults(pipeline=pipeline.main)
 
     args = parser.parse_args()
+    # Job ids must be unique for the whole run, which may execute more than
+    # one DAG, so numbering restarts here rather than per DAG.
+    Job.reset_ids()
     args.pipeline(args)
 
 

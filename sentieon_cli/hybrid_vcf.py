@@ -152,6 +152,7 @@ class HybridFinalizeContigPipeline(BasePipeline):
             Pipeline(Command("bcftools", *view_args)),
             "select-contig",
             self.cores,
+            task_name="hybrid-finalize",
         )
         repair_reference_job = Job(
             Pipeline(
@@ -174,6 +175,7 @@ class HybridFinalizeContigPipeline(BasePipeline):
             ),
             "repair-reference",
             self.cores,
+            task_name="hybrid-finalize",
         )
         normalize_job = Job(
             Pipeline(
@@ -196,6 +198,7 @@ class HybridFinalizeContigPipeline(BasePipeline):
             ),
             "normalize-contig",
             self.cores,
+            task_name="hybrid-finalize",
         )
         convert_job = Job(
             Pipeline(
@@ -211,6 +214,7 @@ class HybridFinalizeContigPipeline(BasePipeline):
             ),
             "convert-contig",
             self.cores,
+            task_name="hybrid-finalize",
         )
 
         dag = DAG()
@@ -323,6 +327,7 @@ class HybridGatherPipeline(BasePipeline):
             ),
             "gather-contigs",
             self.cores,
+            task_name="hybrid-gather",
         )
         index_job = Job(
             Pipeline(
@@ -338,6 +343,7 @@ class HybridGatherPipeline(BasePipeline):
             ),
             "index-gathered-vcf",
             self.cores,
+            task_name="hybrid-gather",
         )
         dag = DAG()
         dag.add_job(gather_job)

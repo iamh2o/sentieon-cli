@@ -732,6 +732,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*scope_driver.build_cmd())),
             f"CNVscope-{label}" if label else "CNVscope",
             self.cores,
+            task_name="cnv",
         )
 
         apply_driver = Driver(
@@ -749,6 +750,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*apply_driver.build_cmd())),
             f"CNVModelApply-{label}" if label else "CNVModelApply",
             self.cores,
+            task_name="cnv",
         )
         return scope_job, apply_job
 
@@ -799,6 +801,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "combine-ploidy-cnv",
             self.cores,
+            task_name="cnv",
         )
         return (
             [diploid_scope, haploid_scope],
@@ -844,6 +847,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*driver.build_cmd())),
             "LongReadSV",
             self.cores,
+            task_name="sv-calling",
         )
 
     def build_dag(self) -> DAG:
@@ -945,6 +949,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                     ),
                     "hybrid-sv-region-union",
                     0,
+                    task_name="sv-calling",
                 )
                 dag.add_job(sv_union_job)
                 sv_dependencies.add(sv_union_job)
@@ -1114,7 +1119,10 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             )
         )
         call_job = Job(
-            Pipeline(Command(*driver.build_cmd())), "calling-1", self.cores
+            Pipeline(Command(*driver.build_cmd())),
+            "calling-1",
+            self.cores,
+            task_name="variant-calling",
         )
 
         # Region selection
@@ -1132,6 +1140,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "hybrid-select",
             self.cores,
+            task_name="region-selection",
         )
 
         mapq0_bed = self.tmp_dir.joinpath("hybrid_mapq0.bed")
@@ -1152,6 +1161,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*driver.build_cmd())),
             "mapq0-bed",
             self.cores,
+            task_name="region-selection",
         )
 
         mapq0_slop_bed = self.tmp_dir.joinpath("hybrid_mapq0.ex1000.bed")
@@ -1164,6 +1174,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "mapq0-bed-slop",
             0,
+            task_name="region-selection",
         )
 
         diff_bed = self.tmp_dir.joinpath("merged_diff.bed")
@@ -1175,9 +1186,15 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "concat-merge-bed",
             0,
+            task_name="region-selection",
         )
         rm_cmd = ["rm", str(selected_bed), str(mapq0_slop_bed)]
-        rm_job1 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp1", 0)
+        rm_job1 = Job(
+            Pipeline(Command(*rm_cmd, fail_ok=True)),
+            "rm-tmp1",
+            0,
+            task_name="cleanup",
+        )
 
         stage1_ins_fa = self.tmp_dir.joinpath("stage1_ins.fa")
         stage1_ins_bed = self.tmp_dir.joinpath("stage1_ins.bed")
@@ -1208,6 +1225,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command("mkfifo", str(stage1_fifo))),
             "stage1-fifo",
             1,
+            task_name="hybrid-realignment",
         )
 
         stage1_driver = Driver(
@@ -1238,6 +1256,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             # A zero scheduler-thread request lets it start beside the
             # full-core first-stage job without deadlocking on the FIFO.
             0,
+            task_name="hybrid-realignment",
         )
 
         stage1_bam = self.tmp_dir.joinpath("hybrid_stage1.bam")
@@ -1253,6 +1272,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "first-stage",
             self.cores,
+            task_name="hybrid-realignment",
         )
         rm_cmd = [
             "rm",
@@ -1260,7 +1280,12 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             str(stage1_ins_bed),
             str(stage1_hap_vcf),
         ]
-        rm_job2 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp2", 0)
+        rm_job2 = Job(
+            Pipeline(Command(*rm_cmd, fail_ok=True)),
+            "rm-tmp2",
+            0,
+            task_name="cleanup",
+        )
 
         stage2_bed = self.tmp_dir.joinpath("hybrid_stage2.bed")
         stage2_unmap_bam = self.tmp_dir.joinpath("hybrid_stage2_unmap.bam")
@@ -1283,10 +1308,16 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             Pipeline(Command(*driver.build_cmd())),
             "second-stage",
             self.cores,
+            task_name="hybrid-realignment",
         )
 
         rm_cmd = ["rm", str(stage1_bam), str(stage1_hap_bam)]
-        rm_job3 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp3", 0)
+        rm_job3 = Job(
+            Pipeline(Command(*rm_cmd, fail_ok=True)),
+            "rm-tmp3",
+            0,
+            task_name="cleanup",
+        )
 
         suffix = "bam" if self.bam_format else "cram"
         stage3_aln = pathlib.Path(
@@ -1315,9 +1346,15 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "third-stage",
             self.cores,
+            task_name="hybrid-realignment",
         )
         rm_cmd = ["rm", str(stage2_unmap_bam), str(stage2_alt_bam)]
-        rm_job4 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp4", 0)
+        rm_job4 = Job(
+            Pipeline(Command(*rm_cmd, fail_ok=True)),
+            "rm-tmp4",
+            0,
+            task_name="cleanup",
+        )
 
         # pass 2 of variant calling
         pass2_vcf = self.tmp_dir.joinpath("hybrid_pass2.vcf.gz")
@@ -1339,7 +1376,10 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             )
         )
         call2_job = Job(
-            Pipeline(Command(*driver.build_cmd())), "call2", self.cores
+            Pipeline(Command(*driver.build_cmd())),
+            "call2",
+            self.cores,
+            task_name="variant-calling",
         )
 
         # Merge and normalize the VCFs
@@ -1359,6 +1399,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "subset-calls",
             postprocess_threads,
+            task_name="vcf-merge",
         )
         concat_job = Job(
             cmds.bcftools_concat(
@@ -1368,9 +1409,15 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "concat-calls",
             postprocess_threads,
+            task_name="vcf-merge",
         )
         rm_cmd = ["rm", str(combined_vcf), str(subset_vcf), str(pass2_vcf)]
-        rm_job5 = Job(Pipeline(Command(*rm_cmd, fail_ok=True)), "rm-tmp5", 0)
+        rm_job5 = Job(
+            Pipeline(Command(*rm_cmd, fail_ok=True)),
+            "rm-tmp5",
+            0,
+            task_name="cleanup",
+        )
 
         # Annotate the output VCF
         hybrid_anno = pathlib.Path(
@@ -1390,6 +1437,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "anno-calls",
             self.cores,
+            task_name="annotation",
         )
 
         transfer_job: Optional[Job] = None
@@ -1426,6 +1474,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 ),
                 "population-transfer",
                 self.cores,
+                task_name="population-transfer",
             )
             input_to_apply = transfer_target
 
@@ -1474,7 +1523,10 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             )
         )
         apply_job = Job(
-            Pipeline(Command(*driver.build_cmd())), "model-apply", self.cores
+            Pipeline(Command(*driver.build_cmd())),
+            "model-apply",
+            self.cores,
+            task_name="model-apply",
         )
 
         if self.stop_after_model_apply:
@@ -1520,6 +1572,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             ),
             "final-norm",
             norm_thread_budget,
+            task_name="vcf-norm",
         )
         return (
             call_job,
