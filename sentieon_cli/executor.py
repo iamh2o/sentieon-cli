@@ -3,6 +3,8 @@
 import asyncio
 import concurrent.futures
 import contextlib
+import os
+import pathlib
 import signal
 import sys
 import threading
@@ -12,10 +14,34 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from .job import Job
 from .logging import get_logger
+from .run_logs import JobLogSink, RunLogs
 from .scheduler import BaseScheduler
-from .shell_pipeline import Context
+from .shell_pipeline import Command, Context
 
 logger = get_logger(__name__)
+
+# Lines of a failing process's log to quote in the failure report
+TAIL_LINES = 20
+# Only the tail of a log is read; tool logs can be arbitrarily large
+TAIL_BYTES = 64 * 1024
+
+
+def _log_tail(path: pathlib.Path, lines: int = TAIL_LINES) -> List[str]:
+    """Return the last ``lines`` lines of a log file.
+
+    Reads at most ``TAIL_BYTES`` from the end, so quoting the tail of a
+    multi-gigabyte log is cheap. A line split by the seek is dropped with the
+    rest of the truncated prefix.
+    """
+    try:
+        with open(path, "rb") as handle:
+            size = handle.seek(0, os.SEEK_END)
+            handle.seek(max(0, size - TAIL_BYTES))
+            data = handle.read()
+    except OSError as exc:
+        logger.debug("could not read %s: %s", path, exc)
+        return []
+    return data.decode("utf-8", errors="replace").splitlines()[-lines:]
 
 
 def _signal_procs(context: Context, sig: int) -> None:
@@ -241,6 +267,7 @@ class LocalExecutor(AsyncExecutor):
         install_signal_handlers: bool = False,
         shutdown_grace_period: float = 10.0,
         thread_pool_size: int = 512,
+        run_logs: Optional[RunLogs] = None,
     ) -> None:
         super().__init__(
             scheduler,
@@ -248,6 +275,7 @@ class LocalExecutor(AsyncExecutor):
             thread_pool_size=thread_pool_size,
         )
         self.shutdown_grace_period = shutdown_grace_period
+        self.run_logs = run_logs
         self.running: List[
             Tuple[
                 Job,
@@ -261,13 +289,19 @@ class LocalExecutor(AsyncExecutor):
         """Run a job"""
         cmd = job.shell
         logger.info("Running: %s", cmd)
-        context = Context()
+        sink = self.run_logs.job_sink(job) if self.run_logs else None
+        context = Context() if sink is None else Context(log_sink=sink)
         start_time = time.monotonic_ns()
         try:
-            proc = await cmd.run(
-                context,
-                stderr=sys.stderr,
-            )
+            if sink is None:
+                # No log directory: the processes inherit our stderr
+                proc = await cmd.run(
+                    context,
+                    stderr=sys.stderr,
+                )
+            else:
+                # Unset streams are resolved against the sink
+                proc = await cmd.run(context)
             self.running.append(
                 (
                     job,
@@ -282,6 +316,8 @@ class LocalExecutor(AsyncExecutor):
             # the caller's pipeline and is left to propagate.
             logger.error("failed to start command: %s", job.shell)
             logger.error("Error: %s", str(e))
+            # Stages that did spawn have logs; keep them and point at them.
+            self._report_logs(job, sink)
             self.jobs_with_errors.append(job)
             self.start_new_jobs = False
             # A later pipeline stage can fail to spawn after earlier stages
@@ -291,6 +327,47 @@ class LocalExecutor(AsyncExecutor):
             # race): the job is already recorded, so swallow it.
             await self._terminate_context(context)
             await _cleanup_quietly(context)
+
+    def _report_logs(self, job: Job, sink: Optional[JobLogSink]) -> None:
+        """Point at the logs of a job that was aborted rather than reaped."""
+        if sink is None:
+            return
+        paths = sink.log_paths()
+        if paths:
+            logger.error(
+                "Logs from %s: %s",
+                job,
+                ", ".join(str(path) for path in paths),
+            )
+
+    def _report_failure(
+        self,
+        job: Job,
+        subcommand: Command,
+        ret: int,
+        sink: Optional[JobLogSink],
+    ) -> None:
+        """Report a failed sub-command with its pid, log path and log tail.
+
+        Without a log -- no log directory, or a process that never spawned --
+        the caller's messages are the whole report.
+        """
+        log_path = sink.stderr_log_for(subcommand) if sink else None
+        if log_path is None:
+            return
+        pid = subcommand.proc.pid if subcommand.proc else None
+        report = [
+            f"Failed sub-command of {job}: {subcommand}",
+            f"  exit code: {ret}, pid: {pid}",
+            f"  log: {log_path}",
+        ]
+        tail = _log_tail(log_path)
+        if tail:
+            report.append(f"  last {len(tail)} line(s) of the log:")
+            report.extend(f"    {line}" for line in tail)
+        else:
+            report.append("  the log is empty")
+        logger.error("\n".join(report))
 
     async def _terminate_context(self, context: Context) -> None:
         """Tear down processes already spawned in an aborted context.
@@ -350,6 +427,7 @@ class LocalExecutor(AsyncExecutor):
 
                     # Check if the command failed
                     cmd_failed = False
+                    failures: List[Tuple[Command, int]] = []
                     for subcommand in context.commands:
                         if not subcommand.proc:
                             logger.error(
@@ -377,6 +455,7 @@ class LocalExecutor(AsyncExecutor):
                                 f"{subcommand}"
                             )
                             cmd_failed = True
+                            failures.append((subcommand, ret))
                             if ret == -9:
                                 logger.error(
                                     "Sub-command received SIGKILL. "
@@ -395,8 +474,18 @@ class LocalExecutor(AsyncExecutor):
                         logger.error("Error: %s", str(exc))
                         cmd_failed = True
 
+                    sink = context.log_sink
                     if cmd_failed:
                         logger.error("Command failure: %s", job.shell)
+                        # The sink's files are closed by cleanup(), so their
+                        # tails can be read now.
+                        for failed, code in failures:
+                            self._report_failure(job, failed, code, sink)
+                        if self.run_logs is not None:
+                            logger.error(
+                                "Task logs for debugging: %s",
+                                self.run_logs.task_logs,
+                            )
                         self.jobs_with_errors.append(job)
                         self.start_new_jobs = False
                     else:
@@ -404,6 +493,8 @@ class LocalExecutor(AsyncExecutor):
                             f"Finished command in "
                             f"{total_seconds:.2f}: {job.shell}"
                         )
+                    if sink is not None:
+                        sink.finalize(success=not cmd_failed)
 
                 if not self.start_new_jobs:
                     # Don't start new jobs
@@ -446,8 +537,11 @@ class LocalExecutor(AsyncExecutor):
         if tasks:
             await asyncio.wait(tasks)
 
-        for _job, context, _task, _start in running:
+        for job, context, _task, _start in running:
             # A proc-sub inner launch failure can surface from cleanup() as we
             # tear down after an interrupt; log it rather than let it escape,
             # and keep releasing the remaining contexts.
             await _cleanup_quietly(context)
+            # An interrupted job keeps all of its logs; they explain how far
+            # it got.
+            self._report_logs(job, context.log_sink)
