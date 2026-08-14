@@ -306,7 +306,7 @@ class LocalExecutor(AsyncExecutor):
                 (
                     job,
                     context,
-                    asyncio.create_task(proc.wait()),
+                    asyncio.create_task(proc.async_wait()),
                     start_time,
                 )
             )
@@ -386,7 +386,7 @@ class LocalExecutor(AsyncExecutor):
         if not live:
             return
         _signal_procs(context, signal.SIGTERM)
-        waits = [asyncio.create_task(proc.wait()) for proc in live]
+        waits = [asyncio.create_task(proc.async_wait()) for proc in live]
         await asyncio.wait(waits, timeout=self.shutdown_grace_period)
         _kill_survivors(context)
         await asyncio.wait(waits)
@@ -437,7 +437,7 @@ class LocalExecutor(AsyncExecutor):
                             cmd_failed = True
                             continue
                         ret = (
-                            await subcommand.proc.wait()
+                            await subcommand.proc.async_wait()
                         )  # Wait on all sub-commands
                         # A subcommand killed by SIGPIPE is not a failure:
                         # it was writing to a pipe whose reader exited early
