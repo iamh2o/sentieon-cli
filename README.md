@@ -115,10 +115,10 @@ requires all Hybrid small-variant model members plus the CNV and SV members
 unless those components are explicitly skipped; a missing member is never
 silently converted into a skipped component.
 
-`--haploid_bed` is not currently accepted while Hybrid small-variant calling
-is enabled. A compatible vendor-supported Hybrid SNV/gVCF model contract must
-be established before that mode is enabled; the CLI fails instead of silently
-calling those regions as diploid.
+`--haploid_bed` is accepted only with `--only_cnv` or `--only_svs`. Ordinary
+Hybrid small-variant/gVCF mode keeps its documented diploid BED contract; the
+CLI rejects haploid BED input instead of silently inventing unsupported Hybrid
+small-variant semantics.
 
 ## License
 Unless otherwise indicated, files in this repository are licensed under a BSD 2-Clause License.

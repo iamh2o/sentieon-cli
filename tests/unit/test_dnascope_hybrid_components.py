@@ -182,6 +182,30 @@ class TestHybridComponentValidation:
 
         assert exc.value.code == 2
 
+    def test_haploid_bed_is_rejected_even_when_core_is_manually_skipped(self):
+        pipeline = self._pipeline()
+        pipeline.bed = pathlib.Path("diploid.bed")
+        pipeline.haploid_bed = pathlib.Path("haploid.bed")
+        pipeline.skip_small_variants = True
+
+        with pytest.raises(SystemExit) as exc:
+            pipeline.validate()
+
+        assert exc.value.code == 2
+
+    def test_overlapping_ploidy_beds_are_rejected(self, tmp_path):
+        pipeline = self._pipeline()
+        pipeline.only_cnv = True
+        pipeline.bed = tmp_path / "diploid.bed"
+        pipeline.haploid_bed = tmp_path / "haploid.bed"
+        pipeline.bed.write_text("chrX\t0\t100\n")
+        pipeline.haploid_bed.write_text("chrX\t90\t200\n")
+
+        with pytest.raises(SystemExit) as exc:
+            pipeline.validate()
+
+        assert exc.value.code == 2
+
     def test_only_modes_are_mutually_exclusive(self):
         pipeline = self._pipeline()
         pipeline.only_cnv = True

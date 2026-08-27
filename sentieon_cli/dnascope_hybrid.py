@@ -78,6 +78,58 @@ HYBRID_CORE_MODEL_MEMBERS = {
 }
 
 
+def _bed_intervals(path: pathlib.Path) -> Dict[str, List[Tuple[int, int]]]:
+    """Read the three required BED columns for ploidy-overlap validation."""
+    intervals: Dict[str, List[Tuple[int, int]]] = {}
+    with path.open(encoding="utf-8") as bed_handle:
+        for line_number, line in enumerate(bed_handle, start=1):
+            line = line.strip()
+            if not line or line.startswith(("#", "browser", "track")):
+                continue
+            fields = line.split("\t")
+            if len(fields) < 3:
+                raise ValueError(
+                    f"{path}:{line_number}: expected at least 3 BED columns"
+                )
+            try:
+                start, end = int(fields[1]), int(fields[2])
+            except ValueError as exc:
+                raise ValueError(
+                    f"{path}:{line_number}: BED coordinates must be integers"
+                ) from exc
+            if start < 0 or end <= start:
+                raise ValueError(
+                    f"{path}:{line_number}: invalid BED interval "
+                    f"{fields[0]}:{start}-{end}"
+                )
+            intervals.setdefault(fields[0], []).append((start, end))
+    return intervals
+
+
+def _first_bed_overlap(
+    diploid_bed: pathlib.Path, haploid_bed: pathlib.Path
+) -> Optional[Tuple[str, int, int]]:
+    """Return the first diploid/haploid overlap, if one exists."""
+    diploid = _bed_intervals(diploid_bed)
+    haploid = _bed_intervals(haploid_bed)
+    for contig in set(diploid).intersection(haploid):
+        left = sorted(diploid[contig])
+        right = sorted(haploid[contig])
+        left_index = right_index = 0
+        while left_index < len(left) and right_index < len(right):
+            left_start, left_end = left[left_index]
+            right_start, right_end = right[right_index]
+            overlap_start = max(left_start, right_start)
+            overlap_end = min(left_end, right_end)
+            if overlap_start < overlap_end:
+                return contig, overlap_start, overlap_end
+            if left_end <= right_end:
+                left_index += 1
+            else:
+                right_index += 1
+    return None
+
+
 class RgInfo:
     """A container class for short and long-read readgroups"""
 
@@ -205,11 +257,10 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             },
             "haploid_bed": {
                 "help": (
-                    "A BED file of haploid regions. It is used for the "
-                    "documented second CNVscope pass and is unioned with "
-                    "the diploid BED for LongReadSV. Hybrid haploid small-"
-                    "variant calling requires separately confirmed vendor "
-                    "support."
+                    "A BED file of haploid regions. Valid only with "
+                    "--only_cnv or --only_svs. It is used for the second "
+                    "CNVscope pass and is unioned with the diploid BED for "
+                    "LongReadSV."
                 ),
                 "type": path_arg(exists=True, is_file=True),
             },
@@ -398,13 +449,29 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 "regions are explicit"
             )
             sys.exit(2)
-        if self.haploid_bed and not self.skip_small_variants:
+        if self.haploid_bed and not (self.only_cnv or self.only_svs):
             self.logger.error(
-                "Hybrid haploid SNV/gVCF calling is not enabled: the "
-                "installed Hybrid model contract must first be confirmed by "
-                "Sentieon"
+                "--haploid_bed is valid only with --only_cnv or --only_svs; "
+                "Hybrid small-variant/gVCF calling keeps the documented "
+                "diploid BED contract"
             )
             sys.exit(2)
+        if self.haploid_bed and self.bed:
+            try:
+                overlap = _first_bed_overlap(self.bed, self.haploid_bed)
+            except (OSError, ValueError) as exc:
+                self.logger.error("Cannot validate ploidy BEDs: %s", exc)
+                sys.exit(2)
+            if overlap:
+                contig, start, end = overlap
+                self.logger.error(
+                    "Diploid and haploid BEDs must be disjoint; overlap "
+                    "found at %s:%d-%d",
+                    contig,
+                    start,
+                    end,
+                )
+                sys.exit(2)
 
         if self.stop_after_model_apply and self.skip_model_apply:
             self.logger.error(
