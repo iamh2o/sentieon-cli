@@ -19,15 +19,18 @@ from . import command_strings as cmds
 from .dag import DAG
 from .driver import (
     BaseDriver,
+    CNVModelApply,
+    CNVscope,
     Driver,
     DNAscope,
     DNAModelApply,
     HybridStage1,
     HybridStage2,
     HybridStage3,
+    LongReadSV,
 )
-from .dnascope import call_cnvs, DNAscopePipeline
-from .dnascope_longread import DNAscopeLRPipeline
+from .dnascope import CNV_MIN_VERSIONS, DNAscopePipeline
+from .dnascope_longread import DNAscopeLRPipeline, SV_MIN_VERSIONS
 from .job import Job
 from .pipeline import BasePipeline
 from .shell_pipeline import Command, Pipeline
@@ -63,6 +66,68 @@ MIN_BUNDLE_VERSION = {
 HYBRID_TRANSFER_WORKERS = 32
 HYBRID_VCF_POSTPROCESS_THREADS = 4
 FINAL_NORM_PROCESSES = 6
+
+HYBRID_CORE_MODEL_MEMBERS = {
+    "hybrid.model",
+    "HybridStage1.model",
+    "HybridStage1_bwa.model",
+    "HybridStage1_ins.model",
+    "HybridStage2.model",
+    "HybridStage2_region.model",
+    "HybridStage3.model",
+}
+
+
+def _bed_intervals(path: pathlib.Path) -> Dict[str, List[Tuple[int, int]]]:
+    """Read the three required BED columns for ploidy-overlap validation."""
+    intervals: Dict[str, List[Tuple[int, int]]] = {}
+    with path.open(encoding="utf-8") as bed_handle:
+        for line_number, line in enumerate(bed_handle, start=1):
+            line = line.strip()
+            if not line or line.startswith(("#", "browser", "track")):
+                continue
+            fields = line.split("\t")
+            if len(fields) < 3:
+                raise ValueError(
+                    f"{path}:{line_number}: expected at least 3 BED columns"
+                )
+            try:
+                start, end = int(fields[1]), int(fields[2])
+            except ValueError as exc:
+                raise ValueError(
+                    f"{path}:{line_number}: BED coordinates must be integers"
+                ) from exc
+            if start < 0 or end <= start:
+                raise ValueError(
+                    f"{path}:{line_number}: invalid BED interval "
+                    f"{fields[0]}:{start}-{end}"
+                )
+            intervals.setdefault(fields[0], []).append((start, end))
+    return intervals
+
+
+def _first_bed_overlap(
+    diploid_bed: pathlib.Path, haploid_bed: pathlib.Path
+) -> Optional[Tuple[str, int, int]]:
+    """Return the first diploid/haploid overlap, if one exists."""
+    diploid = _bed_intervals(diploid_bed)
+    haploid = _bed_intervals(haploid_bed)
+    for contig in set(diploid).intersection(haploid):
+        left = sorted(diploid[contig])
+        right = sorted(haploid[contig])
+        left_index = right_index = 0
+        while left_index < len(left) and right_index < len(right):
+            left_start, left_end = left[left_index]
+            right_start, right_end = right[right_index]
+            overlap_start = max(left_start, right_start)
+            overlap_end = min(left_end, right_end)
+            if overlap_start < overlap_end:
+                return contig, overlap_start, overlap_end
+            if left_end <= right_end:
+                left_index += 1
+            else:
+                right_index += 1
+    return None
 
 
 class RgInfo:
@@ -190,6 +255,15 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 ),
                 "action": "store_true",
             },
+            "haploid_bed": {
+                "help": (
+                    "A BED file of haploid regions. Valid only with "
+                    "--only_cnv or --only_svs. It is used for the second "
+                    "CNVscope pass and is unioned with the diploid BED for "
+                    "LongReadSV."
+                ),
+                "type": path_arg(exists=True, is_file=True),
+            },
             "lr_align_input": {
                 "help": (
                     "Align the input long-read BAM/CRAM/uBAM file to the "
@@ -235,6 +309,21 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             },
             "skip_svs": {
                 "help": "Skip SV calling",
+                "action": "store_true",
+            },
+            "only_cnv": {
+                "help": (
+                    "Run only the Hybrid CNV component. With --haploid_bed, "
+                    "run separate diploid and haploid CNVscope/ModelApply "
+                    "passes and combine them in reference order."
+                ),
+                "action": "store_true",
+            },
+            "only_svs": {
+                "help": (
+                    "Run only the Hybrid LongReadSV component over the union "
+                    "of --bed and --haploid_bed."
+                ),
                 "action": "store_true",
             },
             "sr_duplicate_marking": {
@@ -322,8 +411,68 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         self.skip_model_apply = False
         self.stop_after_model_apply = False
         self.skip_pop_vcf_id_check = False
+        self.haploid_bed: Optional[pathlib.Path] = None
+        self.only_cnv = False
+        self.only_svs = False
 
     def validate(self) -> None:
+        if self.only_cnv and self.only_svs:
+            self.logger.error(
+                "--only_cnv and --only_svs are mutually exclusive"
+            )
+            sys.exit(2)
+        if self.only_cnv and self.skip_cnv:
+            self.logger.error("--only_cnv cannot be combined with --skip_cnv")
+            sys.exit(2)
+        if self.only_svs and self.skip_svs:
+            self.logger.error("--only_svs cannot be combined with --skip_svs")
+            sys.exit(2)
+        if (self.only_cnv or self.only_svs) and (
+            self.stop_after_model_apply or self.skip_model_apply or self.gvcf
+        ):
+            self.logger.error(
+                "component-only Hybrid modes cannot be combined with gVCF "
+                "or small-variant model-apply controls"
+            )
+            sys.exit(2)
+
+        if self.only_cnv:
+            self.skip_small_variants = True
+            self.skip_svs = True
+        elif self.only_svs:
+            self.skip_small_variants = True
+            self.skip_cnv = True
+
+        if self.haploid_bed and not self.bed:
+            self.logger.error(
+                "--haploid_bed requires -b/--bed so diploid and haploid "
+                "regions are explicit"
+            )
+            sys.exit(2)
+        if self.haploid_bed and not (self.only_cnv or self.only_svs):
+            self.logger.error(
+                "--haploid_bed is valid only with --only_cnv or --only_svs; "
+                "Hybrid small-variant/gVCF calling keeps the documented "
+                "diploid BED contract"
+            )
+            sys.exit(2)
+        if self.haploid_bed and self.bed:
+            try:
+                overlap = _first_bed_overlap(self.bed, self.haploid_bed)
+            except (OSError, ValueError) as exc:
+                self.logger.error("Cannot validate ploidy BEDs: %s", exc)
+                sys.exit(2)
+            if overlap:
+                contig, start, end = overlap
+                self.logger.error(
+                    "Diploid and haploid BEDs must be disjoint; overlap "
+                    "found at %s:%d-%d",
+                    contig,
+                    start,
+                    end,
+                )
+                sys.exit(2)
+
         if self.stop_after_model_apply and self.skip_model_apply:
             self.logger.error(
                 "--stop_after_model_apply and --skip_model_apply are "
@@ -434,15 +583,22 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 sys.exit(2)
 
         bundle_members = set(ar_load(str(self.model_bundle)))
-        if "longreadsv.model" not in bundle_members:
-            self.logger.info("No LongReadSV model found. Skipping SV calling")
-            self.skip_svs = True
-        if "cnv.model" not in bundle_members:
-            self.logger.info("No CNVscope model found. Skipping CNV calling")
-            self.skip_cnv = True
-        if "bwa.model" not in bundle_members and len(self.sr_r1_fastq) > 0:
+        required_members: Set[str] = set()
+        if not self.skip_small_variants:
+            required_members.update(HYBRID_CORE_MODEL_MEMBERS)
+        if not self.skip_svs:
+            required_members.add("longreadsv.model")
+        if not self.skip_cnv:
+            required_members.add("cnv.model")
+        if self.sr_r1_fastq:
+            required_members.add("bwa.model")
+
+        missing_members = required_members - bundle_members
+        if missing_members:
             self.logger.error(
-                "Alignment with bwa is not supported with this model bundle"
+                "The Hybrid model bundle is missing files required by the "
+                "requested component set: %s",
+                sorted(missing_members),
             )
             sys.exit(2)
 
@@ -538,6 +694,156 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                     for aln_rg in rg_list:
                         self.sr_aln_readgroups[-1].append(aln_rg)
 
+    def _build_cnv_pair(
+        self,
+        sample_input: List[pathlib.Path],
+        interval: Optional[pathlib.Path],
+        output_vcf: pathlib.Path,
+        label: Optional[str],
+        replace_rg: Optional[List[List[str]]],
+    ) -> Tuple[Job, Job]:
+        """Build one CNVscope and CNVModelApply pass."""
+        if not self.model_bundle:
+            self.logger.error("model_bundle is required")
+            sys.exit(2)
+        if not self.reference:
+            self.logger.error("reference is required")
+            sys.exit(2)
+        if not self.skip_version_check:
+            for cmd, min_version in CNV_MIN_VERSIONS.items():
+                if not check_version(cmd, min_version):
+                    sys.exit(2)
+
+        suffix = f".{label}" if label else ""
+        raw_vcf = self.tmp_dir.joinpath(f"cnvscope{suffix}.vcf.gz")
+        scope_driver = Driver(
+            reference=self.reference,
+            thread_count=self.cores,
+            replace_rg=replace_rg,
+            input=sample_input,
+            interval=interval,
+        )
+        scope_driver.add_algo(
+            CNVscope(raw_vcf, self.model_bundle.joinpath("cnv.model"))
+        )
+        scope_job = Job(
+            Pipeline(Command(*scope_driver.build_cmd())),
+            f"CNVscope-{label}" if label else "CNVscope",
+            self.cores,
+        )
+
+        apply_driver = Driver(
+            reference=self.reference,
+            thread_count=self.cores,
+        )
+        apply_driver.add_algo(
+            CNVModelApply(
+                output_vcf,
+                self.model_bundle.joinpath("cnv.model"),
+                vcf=raw_vcf,
+            )
+        )
+        apply_job = Job(
+            Pipeline(Command(*apply_driver.build_cmd())),
+            f"CNVModelApply-{label}" if label else "CNVModelApply",
+            self.cores,
+        )
+        return scope_job, apply_job
+
+    def call_hybrid_cnvs(
+        self,
+        sample_input: List[pathlib.Path],
+        replace_rg: Optional[List[List[str]]],
+    ) -> Tuple[List[Job], List[Job], Optional[Job]]:
+        """Build one diploid pass, or documented diploid/haploid passes."""
+        if not self.output_vcf:
+            self.logger.error("output_vcf is required")
+            sys.exit(2)
+
+        final_vcf = pathlib.Path(
+            str(self.output_vcf).replace(".vcf.gz", ".cnv.vcf.gz")
+        )
+        if not self.haploid_bed:
+            scope, apply = self._build_cnv_pair(
+                sample_input,
+                self.bed,
+                final_vcf,
+                None,
+                replace_rg,
+            )
+            return [scope], [apply], None
+
+        diploid_vcf = self.tmp_dir.joinpath("cnvscope.diploid.applied.vcf.gz")
+        haploid_vcf = self.tmp_dir.joinpath("cnvscope.haploid.applied.vcf.gz")
+        diploid_scope, diploid_apply = self._build_cnv_pair(
+            sample_input,
+            self.bed,
+            diploid_vcf,
+            "diploid",
+            replace_rg,
+        )
+        haploid_scope, haploid_apply = self._build_cnv_pair(
+            sample_input,
+            self.haploid_bed,
+            haploid_vcf,
+            "haploid",
+            replace_rg,
+        )
+        combine_job = Job(
+            cmds.combine_hybrid_cnvs(
+                final_vcf,
+                [diploid_vcf, haploid_vcf],
+                self.cores,
+            ),
+            "combine-ploidy-cnv",
+            self.cores,
+        )
+        return (
+            [diploid_scope, haploid_scope],
+            [diploid_apply, haploid_apply],
+            combine_job,
+        )
+
+    def call_hybrid_svs(
+        self,
+        sample_input: List[pathlib.Path],
+        interval: Optional[pathlib.Path],
+        replace_rg: Optional[List[List[str]]] = None,
+    ) -> Job:
+        """Build the LongReadSV component over the supplied routed regions."""
+        if not self.model_bundle:
+            self.logger.error("model_bundle is required")
+            sys.exit(2)
+        if not self.output_vcf:
+            self.logger.error("output_vcf is required")
+            sys.exit(2)
+        if not self.skip_version_check:
+            for cmd, min_version in SV_MIN_VERSIONS.items():
+                if not check_version(cmd, min_version):
+                    sys.exit(2)
+
+        sv_vcf = pathlib.Path(
+            str(self.output_vcf).replace(".vcf.gz", ".sv.vcf.gz")
+        )
+        driver = Driver(
+            reference=self.reference,
+            thread_count=self.cores,
+            replace_rg=replace_rg,
+            input=sample_input,
+            interval=interval,
+        )
+        driver.add_algo(
+            LongReadSV(
+                sv_vcf,
+                self.model_bundle.joinpath("longreadsv.model"),
+            )
+        )
+        return Job(
+            Pipeline(Command(*driver.build_cmd())),
+            "LongReadSV",
+            self.cores,
+        )
+
     def build_dag(self) -> DAG:
         """Build the DAG for the pipeline"""
         self.logger.info("Building the DAG")
@@ -623,33 +929,55 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 dag.add_job(multiqc_job, multiqc_dependencies)
 
         if not self.skip_svs:
-            longreadsv_job = self.call_svs(
-                lr_aln, replace_rg=rg_info.replace_rg_args[0]
+            sv_interval = self.bed
+            sv_dependencies = set(realign_jobs)
+            if self.haploid_bed:
+                if not self.bed:
+                    raise ValueError("haploid_bed requires a diploid bed")
+                sv_interval = self.tmp_dir.joinpath("hybrid_sv_regions.bed")
+                sv_union_job = Job(
+                    cmds.cmd_bedtools_cat_sort_merge(
+                        sv_interval,
+                        [self.bed, self.haploid_bed],
+                        pathlib.Path(str(self.reference) + ".fai"),
+                    ),
+                    "hybrid-sv-region-union",
+                    0,
+                )
+                dag.add_job(sv_union_job)
+                sv_dependencies.add(sv_union_job)
+            longreadsv_job = self.call_hybrid_svs(
+                lr_aln,
+                sv_interval,
+                replace_rg=rg_info.replace_rg_args[0],
             )
-            dag.add_job(longreadsv_job, realign_jobs)
+            dag.add_job(longreadsv_job, sv_dependencies)
 
         sr_preprocessing_jobs: Set[Job] = set()
         sr_preprocessing_jobs.update(align_fastq_jobs)
         if dedup_job:
             sr_preprocessing_jobs.add(dedup_job)
         if not self.skip_cnv:
-            cnvscope_job, cnvmodelapply_job = call_cnvs(
-                self.tmp_dir,
-                self.output_vcf,
-                self.reference,
-                sr_aln,
-                self.model_bundle,
-                self.bed,
-                self.cores,
-                self.skip_version_check,
-                replace_rg=(
-                    rg_info.replace_rg_args[1]
-                    if rg_info.replace_rg_args[1]
-                    else None
-                ),
+            cnvscope_jobs, cnvmodelapply_jobs, cnv_combine_job = (
+                self.call_hybrid_cnvs(
+                    sr_aln,
+                    replace_rg=(
+                        rg_info.replace_rg_args[1]
+                        if rg_info.replace_rg_args[1]
+                        else None
+                    ),
+                )
             )
-            dag.add_job(cnvscope_job, sr_preprocessing_jobs)
-            dag.add_job(cnvmodelapply_job, {cnvscope_job})
+            for cnvscope_job, cnvmodelapply_job in zip(
+                cnvscope_jobs, cnvmodelapply_jobs
+            ):
+                dag.add_job(cnvscope_job, sr_preprocessing_jobs)
+                dag.add_job(cnvmodelapply_job, {cnvscope_job})
+            if cnv_combine_job:
+                dag.add_job(cnv_combine_job, set(cnvmodelapply_jobs))
+
+        if self.skip_small_variants:
+            return dag
 
         (
             call_job,

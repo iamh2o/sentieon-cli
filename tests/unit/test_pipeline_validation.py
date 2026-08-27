@@ -11,11 +11,16 @@ import json
 from unittest.mock import patch
 
 # Add the parent directory to the path so we can import sentieon_cli
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+)
 
 from sentieon_cli.dnascope import DNAscopePipeline
 from sentieon_cli.dnascope_longread import DNAscopeLRPipeline
-from sentieon_cli.dnascope_hybrid import DNAscopeHybridPipeline
+from sentieon_cli.dnascope_hybrid import (
+    DNAscopeHybridPipeline,
+    HYBRID_CORE_MODEL_MEMBERS,
+)
 from tests.utils.test_helpers import create_mock_args
 
 
@@ -40,7 +45,12 @@ class TestDNAscopePipelineValidation:
         self.mock_bundle = pathlib.Path(self.temp_dir) / "model.bundle"
 
         # Create empty files
-        for file_path in [self.mock_ref, self.mock_bam, self.mock_fastq, self.mock_bundle]:
+        for file_path in [
+            self.mock_ref,
+            self.mock_bam,
+            self.mock_fastq,
+            self.mock_bundle,
+        ]:
             file_path.touch()
 
         # Create BWA index files next to the reference
@@ -109,7 +119,9 @@ class TestDNAscopePipelineValidation:
         self.pipeline.model_bundle = self.mock_bundle
         self.pipeline.sample_input = []
         self.pipeline.sr_r1_fastq = [self.mock_fastq]
-        self.pipeline.sr_readgroups = []  # Empty readgroups with non-empty fastq
+        self.pipeline.sr_readgroups = (
+            []
+        )  # Empty readgroups with non-empty fastq
 
         with pytest.raises(SystemExit):
             self.pipeline.validate()
@@ -152,7 +164,14 @@ class TestDNAscopeLRPipelineValidation:
         self.mock_bed = pathlib.Path(self.temp_dir) / "regions.bed"
 
         # Create empty files
-        for file_path in [self.mock_ref, self.mock_fai, self.mock_bam, self.mock_fastq, self.mock_bundle, self.mock_bed]:
+        for file_path in [
+            self.mock_ref,
+            self.mock_fai,
+            self.mock_bam,
+            self.mock_fastq,
+            self.mock_bundle,
+            self.mock_bed,
+        ]:
             file_path.touch()
 
     def test_valid_configuration_with_bam_input(self):
@@ -165,12 +184,12 @@ class TestDNAscopeLRPipelineValidation:
         self.pipeline.readgroups = []
 
         # Mock archive loading
-        with patch('sentieon_cli.dnascope_longread.ar_load') as mock_ar_load:
+        with patch("sentieon_cli.dnascope_longread.ar_load") as mock_ar_load:
             # Mock bundle info
             bundle_info = {
                 "platform": "HiFi",
                 "minScriptVersion": "1.5.2",
-                "pipeline": "DNAscope LongRead"
+                "pipeline": "DNAscope LongRead",
             }
             bundle_members = [
                 "diploid_hp_model",
@@ -184,7 +203,9 @@ class TestDNAscopeLRPipelineValidation:
             ]
             mock_ar_load.side_effect = [
                 bundle_members,  # First call for bundle members
-                json.dumps(bundle_info).encode(),  # Second call for bundle_info.json
+                json.dumps(
+                    bundle_info
+                ).encode(),  # Second call for bundle_info.json
             ]
 
             try:
@@ -202,12 +223,12 @@ class TestDNAscopeLRPipelineValidation:
         self.pipeline.readgroups = ["@RG\\tID:test\\tSM:sample"]
 
         # Mock archive loading
-        with patch('sentieon_cli.dnascope_longread.ar_load') as mock_ar_load:
+        with patch("sentieon_cli.dnascope_longread.ar_load") as mock_ar_load:
             # Mock bundle info
             bundle_info = {
                 "platform": "HiFi",
                 "minScriptVersion": "1.5.2",
-                "pipeline": "DNAscope LongRead"
+                "pipeline": "DNAscope LongRead",
             }
             bundle_members = [
                 "diploid_hp_model",
@@ -221,7 +242,9 @@ class TestDNAscopeLRPipelineValidation:
             ]
             mock_ar_load.side_effect = [
                 bundle_members,  # First call for bundle members
-                json.dumps(bundle_info).encode(),  # Second call for bundle_info.json
+                json.dumps(
+                    bundle_info
+                ).encode(),  # Second call for bundle_info.json
             ]
 
             try:
@@ -241,12 +264,12 @@ class TestDNAscopeLRPipelineValidation:
         self.pipeline.skip_cnv = False
 
         # Mock archive loading
-        with patch('sentieon_cli.dnascope_longread.ar_load') as mock_ar_load:
+        with patch("sentieon_cli.dnascope_longread.ar_load") as mock_ar_load:
             # Mock bundle info
             bundle_info = {
                 "platform": "HiFi",
                 "minScriptVersion": "1.5.2",
-                "pipeline": "DNAscope LongRead"
+                "pipeline": "DNAscope LongRead",
             }
             bundle_members = [
                 "diploid_hp_model",
@@ -260,7 +283,9 @@ class TestDNAscopeLRPipelineValidation:
             ]
             mock_ar_load.side_effect = [
                 bundle_members,  # First call for bundle members
-                json.dumps(bundle_info).encode(),  # Second call for bundle_info.json
+                json.dumps(
+                    bundle_info
+                ).encode(),  # Second call for bundle_info.json
             ]
 
             self.pipeline.validate()
@@ -316,14 +341,20 @@ class TestDNAscopeHybridPipelineValidation:
         self.mock_fastq = pathlib.Path(self.temp_dir) / "sample_R1.fastq.gz"
 
         # Create empty files
-        for file_path in [self.mock_ref, self.mock_fai, self.mock_lr_bam, self.mock_sr_bam, self.mock_fastq]:
+        for file_path in [
+            self.mock_ref,
+            self.mock_fai,
+            self.mock_lr_bam,
+            self.mock_sr_bam,
+            self.mock_fastq,
+        ]:
             file_path.touch()
 
         # Create mock bundle file (content will be mocked by ar_load)
         self.mock_bundle = pathlib.Path(self.temp_dir) / "model.bundle"
         self.mock_bundle.write_bytes(b"mock_ar_archive")
 
-    @patch('sentieon_cli.dnascope_hybrid.ar_load')
+    @patch("sentieon_cli.dnascope_hybrid.ar_load")
     def test_valid_hybrid_configuration(self, mock_ar_load):
         """Test valid hybrid pipeline configuration"""
         # Setup ar_load mock
@@ -331,11 +362,14 @@ class TestDNAscopeHybridPipelineValidation:
             "longReadPlatform": "HiFi",
             "shortReadPlatform": "Illumina",
             "minScriptVersion": "1.0.0",
-            "pipeline": "DNAscope Hybrid"
+            "pipeline": "DNAscope Hybrid",
         }
         mock_ar_load.side_effect = [
             json.dumps(bundle_info).encode(),  # bundle_info.json
-            ["longreadsv.model", "cnv.model", "bwa.model"]  # bundle members
+            sorted(
+                HYBRID_CORE_MODEL_MEMBERS
+                | {"longreadsv.model", "cnv.model", "bwa.model"}
+            ),  # bundle members
         ]
 
         self.pipeline.output_vcf = self.mock_vcf
@@ -352,20 +386,25 @@ class TestDNAscopeHybridPipelineValidation:
         except SystemExit:
             pytest.fail("Valid bundle should not raise SystemExit")
 
-    @patch('sentieon_cli.dnascope_hybrid.ar_load')
-    @patch('sentieon_cli.command_strings.get_rg_lines')
-    def test_missing_short_read_input_raises_error(self, mock_get_rg, mock_ar_load):
+    @patch("sentieon_cli.dnascope_hybrid.ar_load")
+    @patch("sentieon_cli.command_strings.get_rg_lines")
+    def test_missing_short_read_input_raises_error(
+        self, mock_get_rg, mock_ar_load
+    ):
         """Test that missing short-read input raises an error"""
         # Setup ar_load mock
         bundle_info = {
             "longReadPlatform": "HiFi",
             "shortReadPlatform": "Illumina",
             "minScriptVersion": "1.0.0",
-            "pipeline": "DNAscope Hybrid"
+            "pipeline": "DNAscope Hybrid",
         }
         mock_ar_load.side_effect = [
             json.dumps(bundle_info).encode(),  # bundle_info.json
-            ["longreadsv.model", "cnv.model", "bwa.model"]  # bundle members
+            sorted(
+                HYBRID_CORE_MODEL_MEMBERS
+                | {"longreadsv.model", "cnv.model", "bwa.model"}
+            ),  # bundle members
         ]
 
         # Mock readgroup lines
@@ -382,7 +421,7 @@ class TestDNAscopeHybridPipelineValidation:
         with pytest.raises(SystemExit):
             self.pipeline.validate()
 
-    @patch('sentieon_cli.dnascope_hybrid.ar_load')
+    @patch("sentieon_cli.dnascope_hybrid.ar_load")
     def test_invalid_bundle_pipeline_raises_error(self, mock_ar_load):
         """Test that invalid bundle pipeline type raises an error"""
         # Create bundle with wrong pipeline type
@@ -390,12 +429,15 @@ class TestDNAscopeHybridPipelineValidation:
             "longReadPlatform": "HiFi",
             "shortReadPlatform": "Illumina",
             "minScriptVersion": "1.0.0",
-            "pipeline": "DNAscope"  # Wrong pipeline
+            "pipeline": "DNAscope",  # Wrong pipeline
         }
         # Mock both calls: first for bundle_info.json, second for member list
         mock_ar_load.side_effect = [
             json.dumps(bundle_info).encode(),  # bundle_info.json
-            ["longreadsv.model", "cnv.model", "bwa.model"]  # bundle members
+            sorted(
+                HYBRID_CORE_MODEL_MEMBERS
+                | {"longreadsv.model", "cnv.model", "bwa.model"}
+            ),  # bundle members
         ]
 
         self.pipeline.model_bundle = self.mock_bundle
@@ -444,6 +486,7 @@ class TestPipelineConfigurationHelpers:
         pipeline.set_bwt_max_mem(0, 1)
 
         import os
+
         assert os.environ.get("bwt_max_mem") == "10G"
 
 
