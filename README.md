@@ -100,5 +100,25 @@ Gather rejects unknown, duplicate, or out-of-FAI-order contigs and creates the
 final tabix index. There is no implicit contig discovery or filename-order
 fallback.
 
+## Hybrid component and ploidy modes
+
+`dnascope-hybrid --only_cnv` runs only CNVscope. With both `-b` and
+`--haploid_bed`, it runs separate diploid and haploid CNVscope/ModelApply
+passes and combines their records in reference-header order.
+
+`dnascope-hybrid --only_svs` runs only LongReadSV. With both BED arguments,
+LongReadSV receives a reference-sorted merged union of the diploid and haploid
+regions.
+
+The requested component's model member is mandatory. Ordinary Hybrid mode
+requires all Hybrid small-variant model members plus the CNV and SV members
+unless those components are explicitly skipped; a missing member is never
+silently converted into a skipped component.
+
+`--haploid_bed` is not currently accepted while Hybrid small-variant calling
+is enabled. A compatible vendor-supported Hybrid SNV/gVCF model contract must
+be established before that mode is enabled; the CLI fails instead of silently
+calling those regions as diploid.
+
 ## License
 Unless otherwise indicated, files in this repository are licensed under a BSD 2-Clause License.

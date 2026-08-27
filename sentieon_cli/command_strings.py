@@ -473,6 +473,34 @@ def bcftools_concat(
     return Pipeline(concat_cmd)
 
 
+def combine_hybrid_cnvs(
+    out_vcf: pathlib.Path,
+    in_vcfs: List[pathlib.Path],
+    threads: int,
+) -> Pipeline:
+    """Combine disjoint ploidy CNV callsets in reference-header order."""
+    concat_cmd = Command(
+        "bcftools",
+        "concat",
+        "--threads",
+        str(max(0, threads - 1)),
+        "-aD",
+        "-Ou",
+        *[str(vcf) for vcf in in_vcfs],
+    )
+    sort_cmd = Command("bcftools", "sort", "-Ou")
+    convert_cmd = Command(
+        "sentieon",
+        "util",
+        "vcfconvert",
+        "-t",
+        str(max(1, threads)),
+        "-",
+        str(out_vcf),
+    )
+    return Pipeline(concat_cmd, sort_cmd, convert_cmd)
+
+
 def filter_norm(
     out_vcf: pathlib.Path,
     in_vcf: pathlib.Path,
