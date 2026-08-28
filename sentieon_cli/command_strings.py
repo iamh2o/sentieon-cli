@@ -488,7 +488,9 @@ def combine_hybrid_cnvs(
         "-Ou",
         *[str(vcf) for vcf in in_vcfs],
     )
-    sort_cmd = Command("bcftools", "sort", "-Ou")
+    # sentieon util vcfconvert consumes textual VCF on stdin.  ``-Ou`` emits
+    # uncompressed BCF and causes vcfconvert to report "Too few fields".
+    sort_cmd = Command("bcftools", "sort", "-Ov")
     convert_cmd = Command(
         "sentieon",
         "util",

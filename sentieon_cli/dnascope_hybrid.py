@@ -987,6 +987,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             cat_merge_job,
             rm_job1,
             stage1_job,
+            stage1_hap_index_job,
             rm_job2,
             second_stage_job,
             rm_job3,
@@ -1007,7 +1008,8 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         dag.add_job(mapq0_slop_job, {mapq0_job})
         dag.add_job(cat_merge_job, {mapq0_slop_job, select_job})
         dag.add_job(stage1_job, {cat_merge_job})
-        dag.add_job(second_stage_job, {stage1_job})
+        dag.add_job(stage1_hap_index_job, {stage1_job})
+        dag.add_job(second_stage_job, {stage1_hap_index_job})
         dag.add_job(third_stage_job, {second_stage_job})
         dag.add_job(call2_job, {third_stage_job})
         dag.add_job(subset_job, {second_stage_job})
@@ -1041,6 +1043,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
         rg_info: RgInfo,
         **_kwargs: Any,
     ) -> Tuple[
+        Job,
         Job,
         Job,
         Job,
@@ -1222,6 +1225,21 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 bwa_model=self.model_bundle.joinpath("HybridStage1_bwa.model"),
             ),
             "first-stage",
+            self.cores,
+        )
+        stage1_hap_bai = self.tmp_dir.joinpath("stage1_hap.bai")
+        stage1_hap_index_job = Job(
+            Pipeline(
+                Command(
+                    "samtools",
+                    "index",
+                    "-@",
+                    str(self.cores),
+                    str(stage1_hap_bam),
+                    str(stage1_hap_bai),
+                )
+            ),
+            "index-stage1-hap",
             self.cores,
         )
         rm_cmd = [
@@ -1408,6 +1426,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 cat_merge_job,
                 rm_job1,
                 stage1_job,
+                stage1_hap_index_job,
                 rm_job2,
                 second_stage_job,
                 rm_job3,
@@ -1454,6 +1473,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
                 cat_merge_job,
                 rm_job1,
                 stage1_job,
+                stage1_hap_index_job,
                 rm_job2,
                 second_stage_job,
                 rm_job3,
@@ -1495,6 +1515,7 @@ class DNAscopeHybridPipeline(DNAscopePipeline, DNAscopeLRPipeline):
             cat_merge_job,
             rm_job1,
             stage1_job,
+            stage1_hap_index_job,
             rm_job2,
             second_stage_job,
             rm_job3,
