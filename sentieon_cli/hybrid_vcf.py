@@ -131,6 +131,7 @@ class HybridFinalizeContigPipeline(BasePipeline):
 
         worker_threads = max(0, self.cores - 1)
         selected_vcf = self.tmp_dir / "selected.vcf.gz"
+        repaired_vcf = self.tmp_dir / "reference-repaired.vcf.gz"
         normalized_vcf = self.tmp_dir / "normalized.vcf.gz"
 
         view_args = [
@@ -152,6 +153,28 @@ class HybridFinalizeContigPipeline(BasePipeline):
             "select-contig",
             self.cores,
         )
+        repair_reference_job = Job(
+            Pipeline(
+                Command(
+                    "bcftools",
+                    "norm",
+                    "--no-version",
+                    "--threads",
+                    str(worker_threads),
+                    "--check-ref",
+                    "s",
+                    "-f",
+                    str(self.reference),
+                    "-O",
+                    "z",
+                    "-o",
+                    str(repaired_vcf),
+                    str(selected_vcf),
+                )
+            ),
+            "repair-reference",
+            self.cores,
+        )
         normalize_job = Job(
             Pipeline(
                 Command(
@@ -160,13 +183,15 @@ class HybridFinalizeContigPipeline(BasePipeline):
                     "--no-version",
                     "--threads",
                     str(worker_threads),
+                    "--check-ref",
+                    "e",
                     "-f",
                     str(self.reference),
                     "-O",
                     "z",
                     "-o",
                     str(normalized_vcf),
-                    str(selected_vcf),
+                    str(repaired_vcf),
                 )
             ),
             "normalize-contig",
@@ -190,7 +215,8 @@ class HybridFinalizeContigPipeline(BasePipeline):
 
         dag = DAG()
         dag.add_job(select_job)
-        dag.add_job(normalize_job, {select_job})
+        dag.add_job(repair_reference_job, {select_job})
+        dag.add_job(normalize_job, {repair_reference_job})
         dag.add_job(convert_job, {normalize_job})
         return dag
 

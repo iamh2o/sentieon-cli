@@ -123,7 +123,7 @@ def test_reachable_subset_and_concat_commands_use_thread_flags(
     assert "bcftools sort --threads" not in str(subset) + str(concat)
 
 
-def test_finalize_contig_builds_three_sequential_full_budget_jobs(
+def test_finalize_contig_repairs_then_strictly_validates_reference(
     tmp_path,
 ) -> None:
     reference = tmp_path / "reference.fa"
@@ -152,12 +152,16 @@ def test_finalize_contig_builds_three_sequential_full_budget_jobs(
     jobs = {job.name: job for job in _all_jobs(dag)}
     assert list(jobs) == [
         "select-contig",
+        "repair-reference",
         "normalize-contig",
         "convert-contig",
     ]
     assert all(job.threads == 4 for job in jobs.values())
-    assert dag.waiting_jobs[jobs["normalize-contig"]] == {
+    assert dag.waiting_jobs[jobs["repair-reference"]] == {
         jobs["select-contig"]
+    }
+    assert dag.waiting_jobs[jobs["normalize-contig"]] == {
+        jobs["repair-reference"]
     }
     assert dag.waiting_jobs[jobs["convert-contig"]] == {
         jobs["normalize-contig"]
@@ -165,9 +169,13 @@ def test_finalize_contig_builds_three_sequential_full_budget_jobs(
     assert "view --no-version --threads 3 --regions chr19 -a" in str(
         jobs["select-contig"].shell
     )
-    assert "norm --no-version --threads 3" in str(
-        jobs["normalize-contig"].shell
-    )
+    repair_shell = str(jobs["repair-reference"].shell)
+    normalize_shell = str(jobs["normalize-contig"].shell)
+    assert "norm --no-version --threads 3 --check-ref s" in repair_shell
+    assert "reference-repaired.vcf.gz" in repair_shell
+    assert "norm --no-version --threads 3 --check-ref e" in normalize_shell
+    assert "reference-repaired.vcf.gz" in normalize_shell
+    assert "normalized.vcf.gz" in normalize_shell
     assert "vcfconvert -t 4" in str(jobs["convert-contig"].shell)
 
 
