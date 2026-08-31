@@ -153,6 +153,7 @@ class Context:
             if exc is not None and not isinstance(exc, asyncio.CancelledError):
                 raise exc
 
+
 class RusagePopen(subprocess.Popen[bytes]):
     """A Popen that records the child's rusage when it is reaped.
 
@@ -185,6 +186,7 @@ class RusagePopen(subprocess.Popen[bytes]):
             # Already reaped; no need for a pool thread.
             return self.returncode
         return await asyncio.to_thread(self.wait)
+
 
 class ShellNode(ABC):
     """Abstract base class for any node in the shell syntax tree."""
