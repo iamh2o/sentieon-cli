@@ -24,6 +24,7 @@ from .driver import (
     PangenomeSV,
     PGHapUpdateAlgo,
 )
+from .executor import BaseExecutor
 from .job import Job
 from .logging import get_logger
 from .shard import (
@@ -52,6 +53,7 @@ from .stages.small_variants import (
 )
 from .stages.sv import LongReadSVStage
 from .stages.transfer import TransferConfig
+from .ultima_pangenome import UltimaProfile
 from .util import (
     __version__,
     check_kmc_patch,
@@ -91,6 +93,21 @@ class HybridPangenome(BasePangenome):
     params = copy.deepcopy(BasePangenome.params)
     params.update(
         {
+            "experimental_ultima": {
+                "help": (
+                    "Experimental aligned Ultima+ONT calling with the "
+                    "Illumina+ONT joint pangenome model. Requires "
+                    "--sr_model_bundle; scientific validation is pending."
+                ),
+                "action": "store_true",
+            },
+            "sr_model_bundle": {
+                "help": (
+                    "Ultima pangenome bundle providing minimap2.model; "
+                    "required only with --experimental_ultima."
+                ),
+                "type": path_arg(exists=True, is_file=True),
+            },
             # Required arguments
             "lr_aln": {
                 "nargs": "*",
@@ -195,6 +212,9 @@ class HybridPangenome(BasePangenome):
 
     def __init__(self) -> None:
         super().__init__()
+        self.experimental_ultima = False
+        self.sr_model_bundle: Optional[pathlib.Path] = None
+        self.ultima_profile: Optional[UltimaProfile] = None
         self.lr_aln: List[pathlib.Path] = []
         self.pop_vcf: Optional[pathlib.Path] = None
         self.readgroup: Optional[str] = None
@@ -234,6 +254,12 @@ class HybridPangenome(BasePangenome):
 
     def validate(self) -> None:
         """Validate pipeline inputs"""
+        if self.experimental_ultima:
+            self.ultima_profile = UltimaProfile(self)
+            self.ultima_profile.start()
+            self.ultima_profile.validate_options()
+        elif self.sr_model_bundle is not None:
+            raise ValueError("--sr_model_bundle requires --experimental_ultima")
         self.validate_ref()
         self.fai_data = parse_fai(pathlib.Path(str(self.reference) + ".fai"))
         self.shards = determine_shards_from_fai(
@@ -303,6 +329,28 @@ class HybridPangenome(BasePangenome):
         # is only logged for runs that proceed. The `reference_build` it
         # sets is the value `validate_cnv` already resolved.
         self.resolve_gfa2fa_tool()
+        if self.ultima_profile is not None:
+            self.ultima_profile.validate_assets()
+
+    def log_completion(self, success: bool, start_time: float) -> None:
+        """Use the shared lifecycle, including failure and interruption exits."""
+        if self.ultima_profile is not None:
+            try:
+                self.ultima_profile.finish(success, sys.exc_info()[1])
+            except BaseException:
+                super().log_completion(False, start_time)
+                raise
+        super().log_completion(success, start_time)
+
+    def check_execution(self, dag: DAG, executor: BaseExecutor) -> None:
+        """A received stop signal is never a completed experimental run."""
+        if self.ultima_profile is not None:
+            signum = getattr(executor, "interrupted_signal", None)
+            if signum is not None:
+                raise InterruptedError(
+                    f"Pipeline interrupted by signal {signum}"
+                )
+        super().check_execution(dag, executor)
 
     def validate_segdup(self) -> None:
         """Validate the arguments used by segdup-caller"""
@@ -421,6 +469,8 @@ class HybridPangenome(BasePangenome):
 
     def validate_bundle(self) -> None:
         """Validate the model bundle"""
+        if self.ultima_profile is not None:
+            self.ultima_profile.validate_bundles()
         bundle_info_bytes = ar_load(
             str(self.model_bundle) + "/bundle_info.json"
         )
@@ -449,7 +499,9 @@ class HybridPangenome(BasePangenome):
         # Prefer a reference-specific extract model. Fall back to the generic
         # 'extract.model' only for the default 'GRCh38' reference.
         extract_candidate = f"extract.{self.pangenome_ref_name}.model"
-        if extract_candidate in bundle_members:
+        if self.experimental_ultima:
+            self.extract_model_name = "extract.model"
+        elif extract_candidate in bundle_members:
             self.extract_model_name = extract_candidate
         elif self.pangenome_ref_name == "GRCh38":
             self.extract_model_name = "extract.model"
@@ -486,6 +538,9 @@ class HybridPangenome(BasePangenome):
 
     def collect_readgroups(self) -> None:
         """Collect readgroup tags from the inputs"""
+        if self.ultima_profile is not None:
+            self.ultima_profile.collect_readgroups()
+            return
         if self.readgroup:
             try:
                 parsed_rg = parse_rg_line(self.readgroup.replace(r"\t", "\t"))
@@ -572,7 +627,7 @@ class HybridPangenome(BasePangenome):
                         str(aln_rg),
                     )
                     sys.exit(2)
-                if self.dry_run or self.rgsm:
+                if (self.dry_run and not self.experimental_ultima) or self.rgsm:
                     continue
                 if sm != rg_sm:
                     self.logger.error(
@@ -588,7 +643,7 @@ class HybridPangenome(BasePangenome):
 
         # The dry-run readgroups are synthetic and identical for every
         # input, so they would always collide
-        if not self.dry_run:
+        if not self.dry_run or self.experimental_ultima:
             self.validate_rg_ids(aln_inputs, aln_readgroups)
 
         if not self.rgsm and not rg_sm:
@@ -853,6 +908,9 @@ class HybridPangenome(BasePangenome):
             pangenome_gfa,
         )
         dag.add_job(mm2_job, mm2_dependencies | {faidx_job, update_job})
+        lift_ready_job = mm2_job
+        if self.ultima_profile is not None:
+            lift_ready_job = self.ultima_profile.add_lift_index(dag, mm2_job)
 
         # Variant calling with the short reads, the lifted reads, and the
         # long reads
@@ -907,7 +965,7 @@ class HybridPangenome(BasePangenome):
             # supplementary reads are excluded from the lifted alignment
             # during read extraction
             calling_bams = list(self.sr_aln) + [out_lift_aln] + calling_lr
-            calling_dependencies = {mm2_job}
+            calling_dependencies = {lift_ready_job}
             sr_alignments = list(self.sr_aln)
             sr_deps = set()
         calling_dependencies |= realign_jobs
@@ -926,7 +984,10 @@ class HybridPangenome(BasePangenome):
         # sex-aware callers.
         ploidy_result = PloidyStage(
             ctx=ctx,
-            inputs=[sr_alignments[0]],
+            inputs=(
+                sr_alignments if self.experimental_ultima
+                else [sr_alignments[0]]
+            ),
             reference_build=self.reference_build,
         ).add_to(dag, sr_deps)
         self.ploidy_json = ploidy_result.ploidy_json
@@ -961,13 +1022,14 @@ class HybridPangenome(BasePangenome):
             inputs=calling_bams,
             interval=self.bed,
             replace_rg=replace_rg,
+            read_filter=self.ultima_read_filters(),
         ).add_to(dag, calling_dependencies)
 
         # transfer annotations from the pop_vcf, then apply the model
         transfer_target = (
             transfer_vcf if not self.skip_model_apply else ctx.output_vcf
         )
-        TransferApplyStage(
+        applied = TransferApplyStage(
             ctx=ctx,
             raw_vcf=raw_vcf,
             transfer=TransferSpec(
@@ -979,6 +1041,11 @@ class HybridPangenome(BasePangenome):
                 else None
             ),
         ).add_to(dag, call.terminal)
+
+        if self.ultima_profile is not None:
+            self.ultima_profile.add_indexes(
+                dag, applied.terminal, pangenomesv_job
+            )
 
         return dag
 
@@ -1254,6 +1321,10 @@ class HybridPangenome(BasePangenome):
         rg["ID"] = rg["ID"] + "-pg"
         rg["SM"] = self.sample_sm
         rg["LR"] = "2"
+        mapping_bundle = (
+            self.required(self.sr_model_bundle, "sr_model_bundle")
+            if self.experimental_ultima else self.model_bundle
+        )
         mm2_job = Job(
             cmds.cmd_minimap2_lift(
                 out_bam,
@@ -1262,9 +1333,11 @@ class HybridPangenome(BasePangenome):
                 pangenome_gfa,
                 self.reference,
                 "@RG\\t" + "\\t".join([f"{x[0]}:{x[1]}" for x in rg.items()]),
-                self.model_bundle.joinpath("minimap2.model"),
+                mapping_bundle.joinpath("minimap2.model"),
                 threads=self.cores,
-                mm2_xargs=["--secondary=yes"],
+                mm2_xargs=(
+                    [] if self.experimental_ultima else ["--secondary=yes"]
+                ),
                 lift_prefix=self.contig_prefix(),
             ),
             "mm2-lift",
@@ -1272,6 +1345,14 @@ class HybridPangenome(BasePangenome):
             task_name="pangenome-alignment",
         )
         return mm2_job
+
+    def ultima_read_filters(self) -> Optional[List[str]]:
+        """Filter original and lifted Ultima RGs, leaving ONT untouched."""
+        if not self.experimental_ultima:
+            return None
+        ids = [rg["ID"] for group in self.sr_readgroups for rg in group]
+        ids.append(self.sr_readgroups[0][0]["ID"] + "-pg")
+        return [f"UltimaReadFilter,rgid={rg_id}" for rg_id in ids]
 
     def _replace_rg_arg(self, aln_rg: Dict[str, str], lr: str) -> str:
         """A `--replace_rg` argument setting the LR attribute of an input
@@ -1320,6 +1401,7 @@ class HybridPangenome(BasePangenome):
             thread_count=self.cores,
             input=input_bams,
             replace_rg=replace_rg,
+            read_filter=self.ultima_read_filters(),
         )
         driver.add_algo(
             PangenomeSV(

@@ -22,10 +22,16 @@ branch merge, deployment, DayOA/DYEC adoption, or container build is authorized
 by this implementation. Vendor bundles and existing tags remain immutable.
 
 Completed: baseline frozen and upstream source delta integrated with fork
-features preserved. Refresh commit is the commit containing this ledger state.
-No tests, runtime evaluation, publication, release, or deployment performed.
-Next action: add the experimental Ultima mode to the upstream HybridPangenome
-class, with strict asset/input validation and provenance lifecycle.
+features preserved in `ec7d533`. The experimental adapter, fixed-profile
+validation, failure-aware provenance, explicit indexing, documentation and
+focused regression cases are source-complete and statically reviewed. The
+implementation is in the commit containing this continuation state; exact IDs
+are recorded in the closeout below after commit. All eight rows are terminal:
+6 SUCCESS, 2 BLOCKED. No tests, CLI dry run, runtime evaluation, publication,
+release, or deployment performed. Next executable validation action requires
+two explicit approvals for the proposed G3 scope; G4 additionally needs named
+matched inputs/truth/reference provenance and compute scope. Source delivery
+is complete; the full objective remains incomplete pending validation.
 
 ## Gate 0 inventory and evidence
 
@@ -86,12 +92,12 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 |---|---|---|---|---|---|---|---|
 | UOP-001 | Freeze fork, upstream, and model baseline | SUCCESS | config_or_startup_contract | G0 | Implementer | Gate 0 above; model evidence below | Research and fresh Git identities recorded; runtime assets not locally verified |
 | UOP-002 | Refresh fork to upstream 2.0.0 preserving fork features | SUCCESS | feature_implementation | G1 | Implementer | Refresh review below; retained public-command inventory | Source integration complete; executable regression evidence gated in UOP-006 |
-| UOP-003 | Model-role selection and asset validation | OPEN | config_or_startup_contract | G2 | Implementer | Member routing, immutable bundles, graph/population identities | — |
-| UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | OPEN | feature_implementation | G2 | Implementer | Joint DAG, scoped filtering, three read-group channels | — |
-| UOP-005 | Outputs, errors, logs, experimental provenance | OPEN | feature_implementation | G2 | Implementer | Output/index contract and failure-aware receipt | — |
+| UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | `ultima_pangenome.py` model/header/reference validation; G2 source evidence | Source complete; fixture/runtime proof remains gated |
+| UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
+| UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
 | UOP-006 | Focused CLI and fork regression checks | BLOCKED | contract_test | G3 | Implementer | Prepare cases and commands; execution pending | User policy requires two explicit test approvals; not granted |
 | UOP-007 | Bounded matched-input scientific evaluation | BLOCKED | contract_test | G4 | Operator | Paired inputs, truth, reference set, compute scope, metrics | Named assets and approved execution scope absent |
-| UOP-008 | Document, commit, close out implementation | OPEN | feature_implementation | G5 | Implementer | Usage, model matrix, limitations, commits, terminal counts | Publication/release separate |
+| UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 
 ## Model research evidence
 
@@ -159,3 +165,103 @@ ledgers, finalize/gather source, and regression modules are preserved.
 Package metadata is `2.0.0+i.ultima.dev0` for this unreleased fork development
 revision. No new Git tag or package publication. Source/diff inspection only;
 no tests, lint, builds, CLI dry runs, or runtime execution were performed.
+
+## G2 implementation evidence (source review)
+
+- `sentieon_cli/hybrid_pangenome.py`: opt-in flags; shared upstream DAG;
+  Ultima-only mapping bundle; explicit original/LR/lifted channels; scoped
+  UltimaReadFilter on joint calling/PangenomeSV; all Ultima inputs used for
+  ploidy; explicit indexing terminal jobs. Existing ILMN model routing and
+  secondary-alignment setting remain the ordinary mode.
+- `sentieon_cli/ultima_pangenome.py`: fixed metadata/member checks, immutable
+  bundle/member SHA256 receipts, real header validation even in dry runs,
+  sample/unique RG/PL/coordinate/reference dictionary and index requirements,
+  duplicate-marking header evidence, unsupported-mode rejection, and strict
+  graph/HAPL/population checks. No bypass flags or replacement assets.
+- Extraction reuses upstream `_readwriter_extract_cmds`: `-T tp,t0`,
+  `--output_flag_filter 0xf00:0`; mapper/lift keeps `-y`. No ONT read group is
+  included in the Ultima filters.
+- `sentieon_cli/executor.py`: exposes received signal number without changing
+  shared executor scheduling. Experimental `check_execution` uses it to reject
+  completion even if a signal arrived as the DAG drained.
+- Receipt has independent experimental/acceptance fields and atomically written
+  states. Fresh-prefix enforcement prevents old artifacts from satisfying a
+  new run. Output/index/ploidy/log/resource-row checks occur before completion.
+  Inputs/reference/bundle stat identities must remain unchanged. Preflight
+  errors are captured before native run logs start.
+- `tests/unit/test_ultima_pangenome.py`: prepared cases for model routing,
+  channels/filters/tags/index dependencies, ordinary Illumina behavior, invalid
+  options/headers/models/references, sample/RG failures, preserved bundles,
+  dry-run/failure/interruption/missing-output/changed-input receipt handling.
+  These cases have **not been executed**.
+- `tests/unit/test_hybrid_vcf.py`: checkpoint assertion follows the upstream
+  sex-aware second CNV DAG while retaining the checkpoint/finalization contract.
+- `docs/experimental_ultima_ont_pangenome.md` and README: invocation, asset roles,
+  validation limits, output/receipt semantics and later evaluation requirements.
+
+Reference assurance limits: no authoritative GBZ/HAPL content-checksum manifest
+was supplied. This profile requires the exact selected filenames and actual
+metadata/contig/k/path consistency; it records the limitation rather than
+claiming content-certified vendor identity. Large reads/reference files are
+identified by resolved paths, size/mtime and inspected metadata; full hashes
+are recorded for models/bundles and small CLI/FAI/header provenance. Complete
+reference/download provenance remains part of UOP-007's asset freeze.
+
+Duplicate-marking acceptance uses explicit @PG evidence plus the required input
+precondition; it does not scan all reads or certify biological sample identity.
+A small BED bounds small-variant calling only, not graph construction or SV
+work. The later runtime scope must account for whole-input work.
+
+## G3 prepared regression scope — NOT EXECUTED
+
+After the required two explicit approvals for this scope, in an environment
+with this checkout installed and its development dependencies available:
+
+```bash
+python -m pytest \
+  tests/unit/test_ultima_pangenome.py \
+  tests/unit/test_hybrid_pangenome.py \
+  tests/unit/test_dnascope_hybrid_components.py \
+  tests/unit/test_hybrid_vcf.py \
+  tests/unit/test_dnascope_hybrid_cnv.py \
+  tests/unit/test_dnascope_hybrid_pop_vcf.py \
+  tests/unit/test_dnascope_hybrid_stage1.py \
+  tests/unit/test_fork_hybrid_stage1.py \
+  tests/unit/test_hybrid_anno.py \
+  tests/unit/test_hybrid_select.py \
+  tests/unit/test_hybrid_transfer.py \
+  tests/unit/test_pipeline_lifecycle.py \
+  tests/unit/test_pipeline_params.py \
+  tests/unit/test_shell_pipeline.py \
+  tests/unit/test_run_logs.py \
+  tests/unit/test_rusage_metrics.py \
+  tests/integration/test_hybrid_stage1_executor.py \
+  tests/integration/test_executor.py \
+  tests/integration/test_signals.py -q
+```
+
+This is a proposed bounded regression command, not an execution receipt or
+approval. No pytest, lint, compilation/build, CLI dry run, model inference, or
+scientific evaluation has been run for this implementation.
+
+## Source review closeout
+
+Reviewed `git diff` against the imported upstream revision and retained fork
+features, inspected model/driver signatures, shared lifecycle and DAG edges,
+and searched source/tests for unresolved conflict markers (none found).
+These are read-only source inspections, not executed regression checks.
+
+Source review corrected an index-consumer race: the experimental lifted
+alignment index now finishes before DNAscope or PangenomeSV opens that input.
+Prepared DAG assertions cover these edges. Final VCF indexes depend on their
+own producers. The ordinary Illumina path retains its upstream dependencies.
+
+Status counts: SUCCESS 6; BLOCKED 2; OPEN/IN_PROGRESS/ATTEMPTING_BUGFIX/FAIL 0.
+All rows terminal: **yes**. Full objective/validation complete: **no**.
+UOP-006 is blocked on the user's two-approval test gate. UOP-007 is blocked on
+named assets, authoritative reference provenance, matched evaluation scope,
+and execution approval. Runtime compatibility and accuracy remain unknown.
+
+No tests, lint, builds, CLI dry runs, package installation, cloud jobs,
+publication, tag creation, PR, branch merge, or DayOA/DYEC changes occurred.
+Local source/ledger commits only. The fork's remote default branch is unchanged.

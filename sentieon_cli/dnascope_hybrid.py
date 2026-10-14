@@ -79,8 +79,6 @@ CALLING_MIN_VERSIONS = {
     "samtools": packaging.version.Version("1.16"),
 }
 
-SV_MIN_VERSIONS = LONGREADSV_MIN_VERSIONS
-
 MIN_BUNDLE_VERSION = {
     "ONT": packaging.version.Version("1.2"),
 }
@@ -902,7 +900,7 @@ class DNAscopeHybridPipeline(BasePipeline):
             self.logger.error("output_vcf is required")
             sys.exit(2)
         if not self.skip_version_check:
-            for cmd, min_version in SV_MIN_VERSIONS.items():
+            for cmd, min_version in LONGREADSV_MIN_VERSIONS.items():
                 if not check_version(cmd, min_version):
                     sys.exit(2)
 

@@ -63,6 +63,9 @@ The `sentieon-cli` supports the following global arguments:
 Each run writes its log files to a directory next to the output VCF, named after the output file with the `.vcf.gz` suffix replaced by `_logs`, so `sample.vcf.gz` produces `sample_logs/`. The directory records the invocation in `command.txt`, the pipeline's own messages in `run.log`, and the output of each tool under `task_logs/`. Run metrics are also written as tab-separated tables for analysis: `process_metrics.txt` (one row per process, with its CPU time, peak memory and exit code) and `job_metrics.txt` (one row per pipeline job). Every pipeline accepts a `--log_dir` argument to write these files elsewhere. Rerunning a pipeline with the same output overwrites the logs of the previous run.
 
 ## Supported pipelines
+- **Experimental Ultima + ONT hybrid pangenome (fork)** — opt in with
+  `hybrid-pangenome --experimental_ultima --sr_model_bundle PATH`.
+  [Usage, fixed model profile, provenance, and validation status](docs/experimental_ultima_ont_pangenome.md).
 - [**DNAscope**](https://support.sentieon.com/docs/sentieon_cli/#dnascope) - DNAscope pipeline implementation for germline SNV and indel calling from short read data.
 - [**DNAscope LongRead**](https://support.sentieon.com/docs/sentieon_cli/#dnascope-longread) - DNAscope LongRead pipeline implementations for germline SNV and indel calling from long read data.
 - [**DNAscope Hybrid**](https://support.sentieon.com/docs/sentieon_cli/#dnascope-hybrid) - DNAscope short-long-hybrid pipeline.

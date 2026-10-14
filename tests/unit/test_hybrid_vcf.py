@@ -9,6 +9,7 @@ import pytest
 
 import sentieon_cli
 from sentieon_cli import command_strings as cmds
+from sentieon_cli.util import SampleSex
 from sentieon_cli.hybrid_vcf import (
     HybridFinalizeContigPipeline,
     HybridGatherPipeline,
@@ -61,13 +62,17 @@ def test_stop_after_model_apply_omits_only_final_norm() -> None:
         pipeline = helper.create_hybrid_pipeline(cores=8)
         _prepare_hybrid_dag_pipeline(pipeline)
         pipeline.stop_after_model_apply = True
+        pipeline.sample_sex = SampleSex.FEMALE
         dag = pipeline.build_dag()
         jobs = {job.name: job for job in _all_jobs(dag)}
 
         assert "model-apply" in jobs
         assert "final-norm" not in jobs
         assert "LongReadSV" in jobs
-        assert "CNVModelApply" in jobs
+        second_jobs = {
+            job.name: job for job in _all_jobs(pipeline.build_second_dag())
+        }
+        assert "cnv-model-apply" in second_jobs
         assert str(pipeline.output_vcf) in str(jobs["model-apply"].shell)
     finally:
         helper.cleanup()

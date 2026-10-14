@@ -161,6 +161,7 @@ class AsyncExecutor(BaseExecutor, ABC):
         self.install_signal_handlers = install_signal_handlers
         self.thread_pool_size = thread_pool_size
         self.start_new_jobs = True
+        self.interrupted_signal: Optional[int] = None
 
     def _install_signal_handlers(
         self,
@@ -181,6 +182,7 @@ class AsyncExecutor(BaseExecutor, ABC):
             return lambda: None
 
         def on_signal(signum: int) -> None:
+            self.interrupted_signal = signum
             logger.error(
                 "Received %s; terminating jobs.",
                 signal.Signals(signum).name,
