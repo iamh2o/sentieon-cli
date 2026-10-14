@@ -141,10 +141,7 @@ class TestDNAscopeHybridPopVcf:
         pipeline.pop_vcf = self.mock_pop_vcf
 
         # Build DAG
-        with patch(
-            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
-        ):
-            dag = pipeline.build_dag()
+        dag = pipeline.build_dag()
 
         transfer_jobs = [
             job
@@ -166,10 +163,7 @@ class TestDNAscopeHybridPopVcf:
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
 
-        with patch(
-            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
-        ):
-            dag = pipeline.build_dag()
+        dag = pipeline.build_dag()
 
         # Find model-apply job
         apply_job = None
@@ -190,10 +184,7 @@ class TestDNAscopeHybridPopVcf:
 
         pipeline = self.create_pipeline()
         pipeline.pop_vcf = self.mock_pop_vcf
-        with patch(
-            "sentieon_cli.dnascope_hybrid.check_version", return_value=True
-        ):
-            dag = pipeline.build_dag()
+        dag = pipeline.build_dag()
 
         all_jobs = [*dag.ready_jobs, *dag.waiting_jobs]
         by_name = {job.name: job for job in all_jobs}

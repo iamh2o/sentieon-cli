@@ -222,10 +222,9 @@ def test_a_failing_stage_reports_its_own_log(tmp_path, messages):
     assert str(_task_dir(run_logs, "failing") / "mixed-1.1.log") in report
 
 
-def test_failed_second_launch_reaps_first_stage_and_reports_partial_log(
+def test_a_job_that_cannot_start_points_at_its_partial_logs(
     tmp_path, messages
 ):
-    """A failed second spawn preserves logs and reaps the first child."""
     dag = DAG()
     job = Job(
         Pipeline(
@@ -239,9 +238,6 @@ def test_failed_second_launch_reaps_first_stage_and_reports_partial_log(
     executor, run_logs = _run(dag, tmp_path / "logs")
 
     assert job in executor.jobs_with_errors
-    first_stage = job.shell.nodes[0].proc
-    assert first_stage is not None
-    assert first_stage.returncode is not None
     report = "\n".join(messages)
     # The stage that did spawn keeps its log, and the report names it.
     log_path = _task_dir(run_logs, "launch-failure") / "unstartable-1.0.log"

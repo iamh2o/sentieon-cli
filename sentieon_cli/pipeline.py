@@ -4,13 +4,14 @@ A pipeline class
 
 from abc import ABC, abstractmethod
 import argparse
+import json
 import multiprocessing as mp
 import os
 import pathlib
 import shutil
 import sys
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, TypeVar
 
 import packaging.version
 
@@ -22,13 +23,27 @@ from .job import Job
 from .logging import get_logger, set_console_level
 from .run_logs import RunLogs
 from .scheduler import ThreadScheduler
-from .util import __version__, check_version, path_arg, tmp
+from .shard import (
+    detect_reference_build,
+    par_bed_for_build,
+)
+from .stages.base import StageContext
+from .stages.metrics import MetricsPaths
+from .util import (
+    SampleSex,
+    __version__,
+    path_arg,
+    tmp,
+    versions_available,
+)
 
 MULTIQC_MIN_VERSION = {
     "multiqc": packaging.version.Version("1.18"),
 }
 
 BWA_INDEX_SUFFIXES = (".amb", ".ann", ".bwt", ".pac", ".sa")
+
+T = TypeVar("T")
 
 
 class BasePipeline(ABC):
@@ -124,6 +139,9 @@ class BasePipeline(ABC):
         self.log_dir: Optional[pathlib.Path] = None
         self.output_vcf: Optional[pathlib.Path] = None
         self.run_logs: Optional[RunLogs] = None
+        self.sample_sex: Optional[SampleSex] = None
+        self.cnv_par_bed: Optional[pathlib.Path] = None
+        self.reference_build: Optional[str] = None
 
     def setup_logging(self, args: argparse.Namespace) -> None:
         """Configure console logging"""
@@ -194,6 +212,13 @@ class BasePipeline(ABC):
                 dag = self.build_dag()
                 executor = self.run(dag)
                 self.check_execution(dag, executor)
+
+                # Jobs that depend on the results of the first DAG, such
+                # as sex-aware calling after ploidy estimation
+                second_dag = self.build_second_dag()
+                if second_dag is not None:
+                    executor = self.run(second_dag)
+                    self.check_execution(second_dag, executor)
             finally:
                 if not self.retain_tmpdir:
                     shutil.rmtree(tmp_dir_str)
@@ -220,6 +245,47 @@ class BasePipeline(ABC):
                 f"Waiting jobs: {dag.waiting_jobs}\n"
                 f"Ready jobs: {dag.ready_jobs}\n"
             )
+
+    def required(self, value: Optional[T], name: str) -> T:
+        """Return `value`, ending the run when it was not supplied.
+
+        Narrows an optional pipeline attribute to its value, so callers do
+        not have to repeat the "missing argument" check.
+        """
+        if value is None:
+            self.logger.error("%s is required", name)
+            sys.exit(2)
+        return value
+
+    def stage_context(self) -> StageContext:
+        """The run-wide settings this pipeline's stages need.
+
+        Built fresh on every call, so it always reflects the pipeline's
+        current attributes. Only available once `main` has created the
+        run's temporary directory.
+        """
+        if self.reference is None:
+            self.logger.error("reference is required")
+            sys.exit(2)
+        if self.output_vcf is None:
+            self.logger.error("output_vcf is required")
+            sys.exit(2)
+        tmp_dir: Optional[pathlib.Path] = getattr(self, "tmp_dir", None)
+        if tmp_dir is None:
+            self.logger.error(
+                "The temporary directory has not been created yet; "
+                "`stage_context` is only available after `main` sets "
+                "`tmp_dir`"
+            )
+            sys.exit(2)
+        return StageContext(
+            reference=self.reference,
+            output_vcf=self.output_vcf,
+            tmp_dir=tmp_dir,
+            cores=self.cores,
+            dry_run=self.dry_run,
+            skip_version_check=self.skip_version_check,
+        )
 
     @abstractmethod
     def validate(self) -> None:
@@ -278,25 +344,85 @@ class BasePipeline(ABC):
     def build_dag(self) -> DAG:
         pass
 
+    def build_second_dag(self) -> Optional[DAG]:
+        """Build a second DAG, run after the first one has finished.
+
+        Pipelines with jobs that depend on the results of the first DAG,
+        such as sex-aware calling after ploidy estimation, override this
+        hook. Returning `None` runs a single DAG.
+        """
+        return None
+
+    def get_sex(self, ploidy_json: pathlib.Path) -> None:
+        """Retrieve the sample sex"""
+        if self.sample_sex is not None:
+            # Supplied through `--sample_sex`
+            return
+        if self.dry_run:
+            self.logger.info("Setting sample sex to MALE for dry-run")
+            self.sample_sex = SampleSex.MALE
+            return
+        with open(ploidy_json) as fh:
+            data = json.load(fh)
+            sex = data["sex"]
+            if sex == "female":
+                self.sample_sex = SampleSex.FEMALE
+            elif sex == "male":
+                self.sample_sex = SampleSex.MALE
+            else:
+                self.sample_sex = SampleSex.UNKNOWN
+
+    def resolve_cnv_par_bed(
+        self,
+        fai_data: Dict[str, Dict[str, int]],
+        par_bed: Optional[pathlib.Path] = None,
+        cnv_will_run: bool = True,
+    ) -> None:
+        """Identify the reference build and select the PAR BED file.
+
+        `self.reference_build` is always identified, as the ploidy
+        estimation contigs follow it. The PAR BED file is only used by
+        CNV calling, so it is looked up only when CNVs will be called.
+        """
+        self.reference_build = detect_reference_build(fai_data)
+        if not cnv_will_run:
+            return
+        if par_bed is not None:
+            self.cnv_par_bed = par_bed
+            return
+        self.cnv_par_bed = par_bed_for_build(self.reference_build)
+
+    def validate_cnv_par(self, cnv_will_run: bool) -> None:
+        """Confirm a PAR BED file is available for CNV calling.
+
+        The check runs during validation, before any job starts, and does
+        not depend on the sample sex.
+        """
+        if not cnv_will_run or self.cnv_par_bed is not None:
+            return
+
+        self.logger.error(
+            "CNV calling uses a BED file of the pseudo-autosomal regions "
+            "(PAR), and no PAR BED file is available for this reference "
+            "genome. Please supply the `--par_bed` argument."
+        )
+        sys.exit(2)
+
     def multiqc(self) -> Optional[Job]:
         """Run MultiQC on the metrics files"""
 
-        if not self.skip_version_check:
-            if not all(
-                [
-                    check_version(cmd, min_version)
-                    for (cmd, min_version) in MULTIQC_MIN_VERSION.items()
-                ]
-            ):
-                self.logger.warning(
-                    "Skipping MultiQC. MultiQC version %s or later not found",
-                    MULTIQC_MIN_VERSION["multiqc"],
-                )
-                return None
+        if not versions_available(
+            MULTIQC_MIN_VERSION, skip=self.skip_version_check
+        ):
+            self.logger.warning(
+                "Skipping MultiQC. MultiQC version %s or later not found",
+                MULTIQC_MIN_VERSION["multiqc"],
+            )
+            return None
 
-        metrics_dir = pathlib.Path(
-            str(self.output_vcf).replace(".vcf.gz", "_metrics")
-        )
+        metrics_dir = MetricsPaths.from_output_vcf(
+            pathlib.Path(str(self.output_vcf))
+        ).metrics_dir
         multiqc_job = Job(
             cmds.cmd_multiqc(
                 metrics_dir,

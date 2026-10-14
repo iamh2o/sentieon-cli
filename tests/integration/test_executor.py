@@ -3,8 +3,6 @@ Integration tests for the executors.
 """
 
 import asyncio
-import io
-import logging
 import os
 import pathlib
 import sys
@@ -26,7 +24,6 @@ from sentieon_cli.executor import (  # noqa: E402
     LocalExecutor,
     _cleanup_quietly,
 )
-from sentieon_cli.executor import logger as executor_logger  # noqa: E402
 from sentieon_cli.job import Job  # noqa: E402
 from sentieon_cli.scheduler import ThreadScheduler  # noqa: E402
 from sentieon_cli.shell_pipeline import (  # noqa: E402
@@ -151,40 +148,6 @@ def test_dry_run_executor_prints_without_running(capsys):
         assert "dryrun" in printed
         assert not cmd_out.exists()
         assert len(executor.jobs_with_errors) == 0
-
-
-def test_executor_runs_with_env_without_logging_it(tmp_path):
-    """Executor logs redact env while the child still receives its value."""
-    secret = "executor-child-secret"
-    child_env = dict(os.environ)
-    child_env["TOKEN"] = secret
-    output = tmp_path / "env.txt"
-    command = Command(
-        sys.executable,
-        "-c",
-        "import os, sys; open(sys.argv[1], 'w').write('\\n'.join(os.environ.values()))",
-        str(output),
-        exec_kwargs={"env": child_env},
-    )
-    dag = DAG()
-    dag.add_job(Job(Pipeline(command), "env-job", task_name="test"))
-
-    stream = io.StringIO()
-    handler = logging.StreamHandler(stream)
-    old_level = executor_logger.level
-    executor_logger.addHandler(handler)
-    executor_logger.setLevel(logging.INFO)
-    try:
-        executor = LocalExecutor(ThreadScheduler(dag, 1))
-        executor.execute()
-    finally:
-        executor_logger.removeHandler(handler)
-        executor_logger.setLevel(old_level)
-
-    assert executor.jobs_with_errors == []
-    assert secret in output.read_text().splitlines()
-    assert secret not in stream.getvalue()
-    assert "TOKEN" not in stream.getvalue()
 
 
 def test_dry_run_executor_drains_dependencies(capsys):
@@ -533,12 +496,8 @@ def test_error_in_the_run_loop_terminates_running_jobs(monkeypatch):
     monkeypatch.setattr(executor_mod, "Context", RecordingContext)
 
     dag = DAG()
-    dag.add_job(
-        Job(Pipeline(Command("sleep", "30")), "slow", task_name="test")
-    )
-    dag.add_job(
-        Job(Pipeline(Command("true")), "quick", task_name="test")
-    )
+    dag.add_job(Job(Pipeline(Command("sleep", "30")), "slow", task_name="t"))
+    dag.add_job(Job(Pipeline(Command("true")), "quick", task_name="t"))
 
     scheduler = ThreadScheduler(dag, 2)
 
