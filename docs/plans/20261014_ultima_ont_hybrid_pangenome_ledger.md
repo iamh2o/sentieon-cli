@@ -24,9 +24,8 @@ by this implementation. Vendor bundles and existing tags remain immutable.
 Completed: baseline frozen and upstream source delta integrated with fork
 features preserved in `ec7d533`. The experimental adapter, fixed-profile
 validation, failure-aware provenance, explicit indexing, documentation and
-focused regression cases are source-complete and statically reviewed. The
-implementation is in the commit containing this continuation state; exact IDs
-are recorded in the closeout below after commit. All eight rows are terminal:
+focused regression cases are committed in `e2f37ed` and statically reviewed.
+Exact commit IDs are recorded below. All eight rows are terminal:
 6 SUCCESS, 2 BLOCKED. No tests, CLI dry run, runtime evaluation, publication,
 release, or deployment performed. Next executable validation action requires
 two explicit approvals for the proposed G3 scope; G4 additionally needs named
@@ -265,3 +264,16 @@ and execution approval. Runtime compatibility and accuracy remain unknown.
 No tests, lint, builds, CLI dry runs, package installation, cloud jobs,
 publication, tag creation, PR, branch merge, or DayOA/DYEC changes occurred.
 Local source/ledger commits only. The fork's remote default branch is unchanged.
+
+## Commit receipts
+
+| Scope | Local commit |
+|---|---|
+| Upstream refresh plus retained fork behavior | `ec7d53322bf67c98d63abb41ee39c8d281e85f53` |
+| Experimental adapter, validation/provenance, docs and prepared cases | `e2f37edfd177b629831282c0e49cb022aa44b8cb` |
+| Final ledger receipts | The documentation-only commit containing this section |
+
+After the implementation commit, `git status --short --branch` showed only
+`## codex/ultima-ont-hybrid-pangenome-20261014` (clean). A final source search
+for unresolved patch-conflict markers returned no matches. This closeout
+updates only this ledger. Commits are local; no push or release was performed.
