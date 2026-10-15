@@ -1006,10 +1006,12 @@ class DNAscopeLRPipeline(BasePipeline):
             bcftools_subset_phased_job = Job(
                 Pipeline(
                     Command(
-                        "bcftools",
-                        "view",
-                        "-T",
+                        sys.executable,
+                        "-m",
+                        "sentieon_cli.bed_subset",
+                        "--bed",
                         str(phased_bed),
+                        "--vcf",
                         str(phased_vcf),
                     ),
                     Command(
@@ -1073,10 +1075,12 @@ class DNAscopeLRPipeline(BasePipeline):
         bcftools_subset_unphased_job = Job(
             Pipeline(
                 Command(
-                    "bcftools",
-                    "view",
-                    "-T",
+                    sys.executable,
+                    "-m",
+                    "sentieon_cli.bed_subset",
+                    "--bed",
                     str(unphased_bed),
+                    "--vcf",
                     str(phased_vcf),
                 ),
                 Command(
