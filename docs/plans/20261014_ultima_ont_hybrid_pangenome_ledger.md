@@ -19,10 +19,15 @@ authorized. No Ganon, Ganon2, VEP, container builds, budget increases,
 PRs/merges, resource deletion or cleanup. Evidence will remain under
 `docs/plans/20261020T123800Z_ashg_etc_cli_runtime/`.
 
-Current action: publish and qualify fork release `2.0.3`, adding the explicit
-typed vendor Ultima duplicate-marking preparation receipt. The final candidate
-passed 232 focused cases in 17.91s on ashg-etc. Release `2.0.2` is already
-published and installed; it fixed the incorrect assumption that 184 HAPL snarl
+Completed source/runtime: immutable annotated fork `2.0.3` is published,
+installed and qualified on ashg-etc, adding the explicit typed vendor Ultima
+duplicate-marking preparation receipt. Final candidate: 232 passed in 17.91s;
+exact tagged source after wheel installation: 232 passed in 50.19s. Release
+commit `1358db44816e01d20f32856eebbc496d45638060`, annotated tag object
+`8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel SHA256
+`09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`.
+Native `evidence/env_ready.json` records final CLI/tool identities; copied as
+`env_ready-2.0.3.json`. Release `2.0.2` fixed the incorrect assumption that 184 HAPL snarl
 chains must equal 195 reference paths and now pins the actual GBZ/HAPL hashes.
 All three missing assets are downloaded, independently hashed, published to
 their declared shared S3 keys by the explicitly approved operator-signed
@@ -39,6 +44,9 @@ MD/NM refresh, rather than a blind dictionary substitution. Existing canonical
 BED has 24 rows (chr1-22/X/Y), 3,088,269,832 bases; 171 contigs including chrM
 are excluded. No mismatch is bypassed. No biological run was launched by this
 workstream; functional completion and scientific suitability remain unproven.
+Next action belongs to the campaign root: native rule-environment admission,
+completed input preparation and the same-capsule dry/live workflow gates.
+No CLI/runtime install or model download blocker remains in this workstream.
 
 ### Historical continuation freeze: 2026-10-14
 
@@ -134,7 +142,7 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 | UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | `ultima_pangenome.py` model/header/reference validation; G2 source evidence | Source complete; fixture/runtime proof remains gated |
 | UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
 | UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
-| UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: nine focused modules, final 2.0.3 candidate 232 passed in 17.91s; native evidence below | Later two-message approval supersedes original hold; prior 2.0.1/2.0.2 evidence preserved |
+| UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: nine focused modules; 2.0.3 candidate 232 passed in 17.91s, exact tag 232 passed in 50.19s; test_receipt-2.0.3.json | Later two-message approval supersedes original hold; prior 2.0.1/2.0.2 evidence preserved |
 | UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | Approved ashg-etc HG002 inputs/preparation/runtime freeze in progress; no accuracy claim | Historical named-asset/approval hold superseded; caller and scientific results remain pending |
 | UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 

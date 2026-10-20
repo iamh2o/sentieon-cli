@@ -1,0 +1,48 @@
+{
+  "schema": "ashg-etc.focused_cli_validation.v1",
+  "status": "completed",
+  "cluster": "ashg-etc",
+  "headnode": "i-004609f020b02705a",
+  "fsx": "fs-0d55fedaeb3ca246b",
+  "user": "ubuntu",
+  "tmux": "pg_runtime_ashg_etc_20261020",
+  "cli_tag": "2.0.3",
+  "commit": "1358db44816e01d20f32856eebbc496d45638060",
+  "annotated_tag_object": "8a718ece11dc39017fc1fe8275573e4c7bbab90c",
+  "wheel_sha256": "09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/unit/test_ultima_duplicate_marking.py",
+    "tests/unit/test_ultima_pangenome.py",
+    "tests/unit/test_hybrid_pangenome.py",
+    "tests/unit/test_hybrid_vcf.py",
+    "tests/unit/test_dnascope_hybrid_components.py",
+    "tests/unit/test_fork_hybrid_stage1.py",
+    "tests/unit/test_cli_args.py",
+    "tests/unit/test_pipeline_lifecycle.py",
+    "tests/unit/test_kmc_patch.py",
+    "-q",
+    "--tb=short"
+  ],
+  "candidate": {
+    "passed": 232,
+    "seconds": 17.91,
+    "return_code": 0,
+    "log": "/fsx/work/pangenome_runtime/20261020/evidence/focused_cli_tests_duplicate_receipt_final_candidate.log"
+  },
+  "exact_tag": {
+    "passed": 232,
+    "seconds": 50.19,
+    "return_code": 0,
+    "log": "/fsx/work/pangenome_runtime/20261020/evidence/focused_cli_tests_2.0.3_tagged.log"
+  },
+  "runtime_qualification": {
+    "return_code": 0,
+    "kmc_stdin_capability": true,
+    "receipt": "/fsx/work/pangenome_runtime/20261020/evidence/env_ready.json"
+  },
+  "scope": "Synthetic focused CLI checks and native tool/asset qualification; no biological workflow or accuracy acceptance",
+  "source_clean_after_checks": true
+}

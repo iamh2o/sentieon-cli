@@ -113,3 +113,13 @@ nine-module final candidate result **232 passed in 17.91s**, native
 Intermediate candidate transfer errors were confined to the scratch candidate,
 preserved in the prior failed logs, and corrected by verifying all transferred
 source hashes before that successful repeat. No biological job consumed them.
+
+The exact annotated `2.0.3` clone then built and installed its wheel and passed
+the same 232 cases in 50.19s. Runtime qualification, actual binary version/hash
+checks and patched-KMC stdin probe all returned rc0. See `env_ready-2.0.3.json`
+and `test_receipt-2.0.3.json`. Native source `cli-2.0.3` remained clean.
+
+Release commit: `1358db44816e01d20f32856eebbc496d45638060`.
+Annotated tag object: `8a718ece11dc39017fc1fe8275573e4c7bbab90c`.
+Wheel SHA256: `09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`.
+Biological execution and scientific results remain campaign-root work.
