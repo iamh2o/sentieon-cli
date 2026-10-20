@@ -2,6 +2,30 @@
 
 ## Current continuation state
 
+Execution resumed 2026-10-20 under the user's two explicit execution requests:
+"run both pipelines ... test to completion 30x Ultima 10x ONT" and
+"use multi agents Confirm execution on ashg-etc only ... in parallel ...
+with Ganon and VEP excluded". This supersedes the historical validation and
+publication holds below for the exact HG002 campaign. Root owns the campaign
+ledger; this CLI workstream owns focused CLI checks, an immutable numeric fork
+release, shared missing vendor assets, and one explicit runtime. Target:
+account `108782052779`, profile `lsmc`, region `us-west-2`, cluster `ashg-etc`,
+CloudFormation generation `d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, headnode
+`i-004609f020b02705a`, FSx `fs-0d55fedaeb3ca246b`. Fresh public DYEC
+cluster/headnode inspection confirmed UPDATE_COMPLETE and the named headnode;
+the retained interactive shell is `ubuntu` on `ip-10-0-0-14` with FSx
+`10.0.1.237@tcp:/uiznvb4v`, approximately 14 TiB free. No other cluster is
+authorized. No Ganon, Ganon2, VEP, container builds, budget increases,
+PRs/merges, resource deletion or cleanup. Evidence will remain under
+`docs/plans/20261020T123800Z_ashg_etc_cli_runtime/`.
+
+Current action: publish fork release `2.0.1`, install its exact wheel in the
+isolated runtime, complete the missing graph/HAPL downloads and exact shared
+S3 publication. Focused CLI checks now passed 216 cases on ashg-etc after an
+explicit repository-local test package fixed three collection errors caused by
+ambiguous `tests.utils` imports. Runtime tools are available to the input
+preparation agent; scientific suitability remains unproven.
+
 Updated: 2026-10-14. Objective: refresh `iamh2o/sentieon-cli` from upstream
 `v2.0.0` and implement experimental aligned Ultima+ONT hybrid-pangenome calling
 using released models. Stop condition: committed source and documentation,
@@ -94,7 +118,7 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 | UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | `ultima_pangenome.py` model/header/reference validation; G2 source evidence | Source complete; fixture/runtime proof remains gated |
 | UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
 | UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
-| UOP-006 | Focused CLI and fork regression checks | BLOCKED | contract_test | G3 | Implementer | Prepare cases and commands; execution pending | User policy requires two explicit test approvals; not granted |
+| UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: eight focused modules, 216 passed in 6.24s; native evidence below | Later two-message approval supersedes original hold; tests package import repaired |
 | UOP-007 | Bounded matched-input scientific evaluation | BLOCKED | contract_test | G4 | Operator | Paired inputs, truth, reference set, compute scope, metrics | Named assets and approved execution scope absent |
 | UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 

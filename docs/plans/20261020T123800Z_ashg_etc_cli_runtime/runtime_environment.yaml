@@ -1,0 +1,21 @@
+name: ashg-etc-pangenome-20261020
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+  - samtools=1.22.1
+  - bcftools=1.22
+  - bedtools=2.31.1
+  - mosdepth=0.3.14
+  - packaging
+  - pyyaml
+  - pytest
+  - pytest-asyncio
+  - pip:
+      - mappy==2.30
+      - vcflib==1.0.1
+      - levenshtein==0.27.3

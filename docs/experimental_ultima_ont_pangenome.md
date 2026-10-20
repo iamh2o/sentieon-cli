@@ -10,7 +10,10 @@ The implementation is based on [Sentieon CLI v2.0.0](https://github.com/Sentieon
 integrated into fork `1.7.7i`. The development package version is
 `2.0.0+i.ultima.dev0`; it is not a published release. The fork retains
 component-only hybrid calls, the model-apply checkpoint, contig finalization
-and gather, optimized hybrid VCF processing, and lifecycle fixes.
+and gather, optimized hybrid VCF processing, and lifecycle fixes. Fork release
+`2.0.1` supersedes that development package for the approved HG002 campaign.
+Focused checks on the verified `ashg-etc` headnode passed 216 cases on
+2026-10-20; scientific and production acceptance remain separate.
 
 ## Driver and model assets
 
