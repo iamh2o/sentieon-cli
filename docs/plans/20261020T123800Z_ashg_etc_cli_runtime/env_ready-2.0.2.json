@@ -1,0 +1,73 @@
+{
+  "schema": "ashg-etc.pangenome_runtime.v1",
+  "status": "env_ready",
+  "cluster": "ashg-etc",
+  "headnode": "i-004609f020b02705a",
+  "fsx": "fs-0d55fedaeb3ca246b",
+  "prefix": "/fsx/work/pangenome_runtime/20261020/env",
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "cli_tag": "2.0.2",
+  "cli_commit": "680a1ebdecc7cf3ae8f05325fcb1e1f59cc9b384",
+  "wheel_sha256": "1ea290c2d8bd278334ca29ed6f5ba6e177eda407e44a74ba7edba04f5e26da5d",
+  "kmc_patched_release": "v3.2.4-pipe2",
+  "kmc_stdin_capability": true,
+  "tools": {
+    "sentieon-cli": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+      "sha256": "1920c6fcc3ef1f4addd2cfca1a64b30a6c91e9974432db3af5c0f533de3a4f42",
+      "version_banner": "2.0.2\n",
+      "probe_rc": 0
+    },
+    "sentieon": {
+      "executable": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+      "sha256": "c6818e38d4ee7d6dcdcb5ae1da087361e6504e3ce79be9e97f538b45bab99517",
+      "version_banner": "sentieon-genomics-202503.04\n",
+      "probe_rc": 0
+    },
+    "samtools": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/samtools",
+      "sha256": "10c3dfb2d5b6b8307a38531aa83492e4c77232731eff47656cfb0152b7cbfe55",
+      "version_banner": "samtools 1.22.1\nUsing htslib 1.24\nCopyright (C) 2025 Genome Research Ltd.\n\nSamtools compilation details:\n    Features:       build=configure curses=yes \n    CC:             /opt/conda/conda-bld/samtools_1752528053426/_build_env/bin/x86_64-conda-linux-gnu-cc\n    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /fsx/work/pangenome_runtime/20261020/env/include\n    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /fsx/work/pangenome_runtime/20261020/env/include -fdebug-prefix-map=/opt/conda/conda-bld/samtools_1752528053426/work=/usr/local/src/conda/samtools-1.22.1 -fdebug-prefix-map=/fsx/work/pangenome_runtime/20261020/env=/usr/local/src/conda-prefix\n    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/fsx/work/pangenome_runtime/20261020/env/lib -Wl,-rpath-link,/fsx/work/pangenome_runtime/20261020/env/lib -L/fsx/work/pangenome_runtime/20261020/env/lib\n    HTSDIR:         \n    LIBS:           \n    CURSES_LIB:     -ltinfow -lncursesw\n\nHTSlib compilation details:\n    Features:       build=configure libcurl=yes S3=yes GCS=yes libdeflate=yes lzma=yes bzip2=yes plugins=yes plugin-path=/fsx/work/pangenome_runtime/20261020/env/libexec/htslib htscodecs=1.6.7\n    CC:             /opt/conda/conda-bld/htslib_1783611562234/_build_env/bin/x86_64-conda-linux-gnu-cc -std=gnu23\n    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /fsx/work/pangenome_runtime/20261020/env/include\n    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /fsx/work/pangenome_runtime/20261020/env/include -fdebug-prefix-map=/opt/conda/conda-bld/htslib_1783611562234/work=/usr/local/src/conda/htslib-1.24 -fdebug-prefix-map=/fsx/work/pangenome_runtime/20261020/env=/usr/local/src/conda-prefix -fvisibility=hidden\n    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/fsx/work/pangenome_runtime/20261020/env/lib -Wl,-rpath-link,/fsx/work/pangenome_runtime/20261020/env/lib -L/fsx/work/pangenome_runtime/20261020/env/lib -fvisibility=hidden -rdynamic\n\nHTSlib URL scheme handlers present:\n    built-in:\t file, preload, data\n    Google Cloud Storage:\t gs+http, gs+https, gs\n    libcurl:\t gophers, smtp, wss, rtsp, tftp, mqtts, pop3, imaps, pop3s, ws, ftps, ftp, gopher, imap, http, https, sftp, smtps, scp, dict, mqtt, telnet\n    Amazon S3:\t s3+https, s3, s3+http\n    crypt4gh-needed:\t crypt4gh\n    mem:\t mem\n",
+      "probe_rc": 0
+    },
+    "bcftools": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/bcftools",
+      "sha256": "67ffd8ddbd077c4ace2970f18d9745d8223127512ea23fcceb32db66177b3c64",
+      "version_banner": "bcftools 1.22\nUsing htslib 1.24\nCopyright (C) 2025 Genome Research Ltd.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "probe_rc": 0
+    },
+    "bedtools": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/bedtools",
+      "sha256": "86787d5e7f37125f36bb913fe18adf263274c4a1e3e4a36da8425aaf343e7e06",
+      "version_banner": "bedtools v2.31.1\n",
+      "probe_rc": 0
+    },
+    "mosdepth": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/mosdepth",
+      "sha256": "f98c55733b7116155a7e9dff589afa778682831d77596f4ba749651812e27491",
+      "version_banner": "mosdepth 0.3.14\n",
+      "probe_rc": 0
+    },
+    "vg": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/vg",
+      "sha256": "d5752977237e801d971f0d044f43fde4f3005da35f0451b4f452d1c1c9b8414b",
+      "version_banner": "vg version v1.73.0 \"Ducky\"\nCompiled with g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 on Linux\nLinked against libstd++ 20230528\nUsing HTSlib headers 101990, library 1.19.1-29-g3cfe8769\nBuilt by anovak@courtyard.gi.ucsc.edu\n",
+      "probe_rc": 0
+    },
+    "kmc": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+      "sha256": "646b3b4bcbe575346f613f11df0c92b164cdf4783dc9e437a78b0662f3077668",
+      "version_banner": "K-Mer Counter (KMC) ver. 3.2.4 (2024-02-09)\nUsage:\n kmc [options] <input_file_name> <output_file_name> <working_directory>\n kmc [options] <@input_file_names> <output_file_name> <working_directory>\nParameters:\n  input_file_name - single file in specified (-f switch) format (gziped or not)\n  @input_file_names - file name with list of input files in specified (-f switch) format (gziped or not)\nOptions:\n  -v - verbose mode (shows all parameter settings); default: false\n  -k<len> - k-mer length (k from 1 to 256; default: 25)\n  -m<size> - max amount of RAM in GB (from 1 to 1024); default: 12\n  -sm - use strict memory mode (memory limit from -m<n> switch will not be exceeded)\n  -hc - count homopolymer compressed k-mers (approximate and experimental)\n  -p<par> - signature length (5, 6, 7, 8, 9, 10, 11); default: 9\n  -f<a/q/m/bam/kmc> - input in FASTA format (-fa), FASTQ format (-fq), multi FASTA (-fm) or BAM (-fbam) or KMC(-fkmc); default: FASTQ\n  -ci<value> - exclude k-mers occurring less than <value> times (default: 2)\n  -cs<value> - maximal value of a counter (default: 255)\n  -cx<value> - exclude k-mers occurring more of than <value> times (default: 1e9)\n  -b - turn off transformation of k-mers into canonical form\n  -r - turn on RAM-only mode \n  -n<value> - number of bins \n  -t<value> - total number of threads (default: no. of CPU cores)\n  -sf<value> - number of FASTQ reading threads\n  -sp<value> - number of splitting threads\n  -sr<value> - number of threads for 2nd stage\n  -j<file_name> - file name with execution summary in JSON format\n  -w - without output\n  -o<kmc/kff> - output in KMC of KFF format; default: KMC\n  -hp - hide percentage progress (default: false)\n  -e - only estimate histogram of k-mers occurrences instead of exact k-mer counting\n  --opt-out-size - optimize output database size (may increase running time)\nExample:\nkmc -k27 -m24 NA19238.fastq NA.res /data/kmc_tmp_dir/\nkmc -k27 -m24 @files.lst NA.res /data/kmc_tmp_dir/\n",
+      "probe_rc": 0
+    }
+  },
+  "packages": {
+    "mappy": "2.30",
+    "vcflib": "1.0.1",
+    "Levenshtein": "0.27.3",
+    "packaging": "26.3"
+  },
+  "graph_asset_ready": true,
+  "scientific_validation": "pending",
+  "production_accepted": false
+}

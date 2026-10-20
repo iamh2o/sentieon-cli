@@ -19,18 +19,26 @@ authorized. No Ganon, Ganon2, VEP, container builds, budget increases,
 PRs/merges, resource deletion or cleanup. Evidence will remain under
 `docs/plans/20261020T123800Z_ashg_etc_cli_runtime/`.
 
-Current action: publish fork release `2.0.2` after fixing an attributable real
-vendor-asset preflight error in `2.0.1`. Actual HPRC v2.1 has 184 top-level
-snarl chains and 195 GRCh38 reference paths; equality is not a graph invariant.
-The corrected fixed profile validates populated HAPL structure/k=29 and exact
-observed GBZ/HAPL content hashes. The focused scope passed 218 cases in 6.58s
-on ashg-etc; initial import repair and 216-case `2.0.1` results remain evidence.
-All missing assets are downloaded and independently hashed; operator-signed
-multipart publication is in progress with no IAM changes. Native environment
-and asset receipts exist. Actual graph-backbone M5 comparison is now running
-because existing iGenomes/UCSC FASTA disagrees with accepted CRAMs at 14
-chromosomes. No mismatch is bypassed or relabeled; scientific suitability
-remains unproven.
+Current action: publish and qualify fork release `2.0.3`, adding the explicit
+typed vendor Ultima duplicate-marking preparation receipt. The final candidate
+passed 232 focused cases in 17.91s on ashg-etc. Release `2.0.2` is already
+published and installed; it fixed the incorrect assumption that 184 HAPL snarl
+chains must equal 195 reference paths and now pins the actual GBZ/HAPL hashes.
+All three missing assets are downloaded, independently hashed, published to
+their declared shared S3 keys by the explicitly approved operator-signed
+multipart route, and readback verified. No IAM changes or signed URL disclosure.
+Native env/asset receipts exist; this isolated CLI environment is separate from
+DayOA's immutable native rule-environment admission, owned by the campaign root.
+
+Actual GBZ extraction proves all 195 graph reference sequences match the vendor
+FASTA. The accepted source references differ only at 94 IUPAC ambiguity letters
+replaced by N, across 14 chromosomes; independent full per-contig source
+IUPAC-to-N comparison matches 195/195 target sequences. The inputs workstream
+owns explicit source decode, preserved read/quality/flag evidence and target
+MD/NM refresh, rather than a blind dictionary substitution. Existing canonical
+BED has 24 rows (chr1-22/X/Y), 3,088,269,832 bases; 171 contigs including chrM
+are excluded. No mismatch is bypassed. No biological run was launched by this
+workstream; functional completion and scientific suitability remain unproven.
 
 ### Historical continuation freeze: 2026-10-14
 
@@ -126,8 +134,8 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 | UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | `ultima_pangenome.py` model/header/reference validation; G2 source evidence | Source complete; fixture/runtime proof remains gated |
 | UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
 | UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
-| UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: eight focused modules, 216 passed in 6.24s; native evidence below | Later two-message approval supersedes original hold; tests package import repaired |
-| UOP-007 | Bounded matched-input scientific evaluation | BLOCKED | contract_test | G4 | Operator | Paired inputs, truth, reference set, compute scope, metrics | Named assets and approved execution scope absent |
+| UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: nine focused modules, final 2.0.3 candidate 232 passed in 17.91s; native evidence below | Later two-message approval supersedes original hold; prior 2.0.1/2.0.2 evidence preserved |
+| UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | Approved ashg-etc HG002 inputs/preparation/runtime freeze in progress; no accuracy claim | Historical named-asset/approval hold superseded; caller and scientific results remain pending |
 | UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 
 ## Model research evidence
@@ -275,7 +283,7 @@ This is a proposed bounded regression command, not an execution receipt or
 approval. No pytest, lint, compilation/build, CLI dry run, model inference, or
 scientific evaluation has been run for this implementation.
 
-## Source review closeout
+## Historical source review closeout — 2026-10-14
 
 Reviewed `git diff` against the imported upstream revision and retained fork
 features, inspected model/driver signatures, shared lifecycle and DAG edges,

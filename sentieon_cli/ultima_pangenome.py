@@ -30,6 +30,7 @@ from .pangenome_meta import detect_pangenome_reference, read_hapl_header
 from .shell_pipeline import Command, Pipeline
 from .shard import detect_reference_build
 from .util import __version__, executable_version, parse_rg_line
+from .ultima_duplicate_marking import load_receipt, validate_alignment
 
 if TYPE_CHECKING:
     from .hybrid_pangenome import HybridPangenome
@@ -187,7 +188,7 @@ class UltimaProfile:
                 name: self._paths(getattr(pipeline, name))
                 for name in (
                     "reference", "gbz", "hapl", "pop_vcf", "bed", "dbsnp",
-                    "model_bundle", "sr_model_bundle", "sr_aln", "lr_aln",
+                    "model_bundle", "sr_model_bundle", "sr_duplicate_marking_receipt", "sr_aln", "lr_aln",
                 )
             },
         }
@@ -338,6 +339,11 @@ class UltimaProfile:
         reference_dictionary = [(name, data["length"]) for name, data in p.fai_data.items()]
         inputs = []
         checksums: dict[str, str] = {}
+        duplicate_entries = None
+        if p.sr_duplicate_marking_receipt is not None:
+            duplicate_entries, receipt_identity = load_receipt(p.sr_duplicate_marking_receipt, p.sr_aln)
+            self.data["duplicate_marking_receipt"] = receipt_identity
+            self.frozen.append(file_identity(p.sr_duplicate_marking_receipt))
         p.sr_readgroups, p.lr_readgroups = [], []
         for platform, paths, destination in (
             ("ULTIMA", p.sr_aln, p.sr_readgroups),
@@ -365,14 +371,21 @@ class UltimaProfile:
                                 raise ValueError(f"Conflicting @SQ M5 for {name} in {path}")
                             checksums[name] = checksum
                 if platform == "ULTIMA":
-                    pg = "\n".join(line for line in result.stdout.splitlines() if line.startswith("@PG\t"))
-                    if not re.search(r"\b(?:Dedup|MarkDuplicates\w*|markdup)\b", pg, re.IGNORECASE):
-                        raise ValueError(f"No duplicate-marking @PG evidence in Ultima input: {path}")
+                    if duplicate_entries is not None:
+                        marking_evidence = validate_alignment(duplicate_entries[str(path.resolve())], path, result.stdout, groups)
+                        self.frozen.append(file_identity(Path(marking_evidence["accepted_provenance"]["path"])))
+                        if marking_evidence["zero_duplicate_producer_receipt"] is not None:
+                            self.frozen.append(file_identity(Path(marking_evidence["zero_duplicate_producer_receipt"]["path"])))
+                    else:
+                        pg = "\n".join(line for line in result.stdout.splitlines() if line.startswith("@PG\t"))
+                        if not re.search(r"\b(?:Dedup|MarkDuplicates\w*|markdup)\b", pg, re.IGNORECASE):
+                            raise ValueError(f"No duplicate-marking @PG evidence in Ultima input; provide an explicit --sr_duplicate_marking_receipt for native vendor inputs: {path}")
+                        marking_evidence = "header @PG"
                 destination.append(groups)
                 identity.update({
                     "platform": platform, "indexes": indexes, "readgroups": groups,
                     "header_sha256": hashlib.sha256(result.stdout.encode()).hexdigest(),
-                    "duplicate_marking_evidence": "header @PG" if platform == "ULTIMA" else "not required",
+                    "duplicate_marking_evidence": marking_evidence if platform == "ULTIMA" else "not required",
                 })
                 inputs.append(identity)
                 self.frozen.extend([file_identity(path), *indexes])

@@ -10,6 +10,11 @@ No laptop container build, other-cluster execution, Ganon, Ganon2 or VEP.
 - Environment: `env`, created from the adjacent runtime_environment.yaml;
   actual exact conda packages and pip versions are frozen in native
   `evidence/conda-explicit-linux-64.txt` and `evidence/pip-freeze.txt`.
+- This isolated CLI environment is not a solve or admission receipt for
+  DayOA `hybrid_pangenome_v0.2.yaml`. Native rule-environment admission remains
+  separate. Official vg/KMC binaries have explicit `env/bin` links; the existing
+  Sentieon driver must use its original absolute path/bin directory because its
+  shell wrapper cannot be relocated through an environment symlink.
 - Observed: samtools 1.22.1 / HTSlib 1.24, bcftools 1.22 / HTSlib 1.24,
   mosdepth 0.3.14, vg 1.73.0, Sentieon 202503.04, KMC 3.2.4-pipe2.
 - vg and KMC source URL/SHA256 match the existing repository Dockerfile;
@@ -77,3 +82,34 @@ on ashg-etc and no IAM changes. Signed URLs must never enter repository logs,
 evidence, or tool output. Transfer receipts retain observed source metadata,
 bytes/SHA256, exact destination, S3 version/ETag and verification results.
 Native `evidence/stage_assets.log` retains the first failure; do not overwrite.
+
+All three uploads completed and exact object bytes, SHA metadata, ETags and
+version IDs were independently read back; see `asset_publication_receipts.json`.
+Local staged asset qualification is retained in `asset_ready.json`.
+
+## Reference and duplicate-state qualification
+
+`compare_graph_reference.py` records the actual extraction command, precise
+`GRCh38#0#` comparison-name mapping, 195 reference sequence lengths/M5 values,
+and comparisons to both candidate FASTAs and accepted source headers. All 195
+graph backbone sequences match vendor `hg38_ucsc.fa`; the standard Bjuice/source
+reference matches 181 before ambiguity normalization. The inputs workstream
+proved the remaining differences are 94 IUPAC-to-N substitutions with no ACGT
+changes, lengths or indels, and full per-contig normalized sequence identity.
+That workstream owns explicit source-reference decode and target MD/NM refresh.
+No reference file, graph or vendor bundle was modified.
+
+The existing `panhg38/hg38_canonical.bed` has 24 rows for chr1-22/X/Y with exact
+FAI bounds, covering 3,088,269,832 bases. It excludes 171 contigs total, including
+chrM. SHA256: `783b97a5ea77e54531ffdb98b8fda6234c5e22b11b3101f0021d71b77d160dba`.
+
+Release 2.0.3 adds the explicitly approved typed vendor duplicate receipt;
+see `duplicate_marking_receipt_contract.md`. It preserves existing known-PG
+acceptance while rejecting inferred native defaults, fabricated PG records,
+source/provenance/header/byte mismatches and changed flag/count evidence.
+The focused command above adds `tests/unit/test_ultima_duplicate_marking.py`:
+nine-module final candidate result **232 passed in 17.91s**, native
+`evidence/focused_cli_tests_duplicate_receipt_final_candidate.log`, rc0.
+Intermediate candidate transfer errors were confined to the scratch candidate,
+preserved in the prior failed logs, and corrected by verifying all transferred
+source hashes before that successful repeat. No biological job consumed them.

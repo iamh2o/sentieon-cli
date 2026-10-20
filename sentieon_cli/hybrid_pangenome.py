@@ -108,6 +108,14 @@ class HybridPangenome(BasePangenome):
                 ),
                 "type": path_arg(exists=True, is_file=True),
             },
+            "sr_duplicate_marking_receipt": {
+                "help": (
+                    "Completed typed vendor Ultima duplicate-marking receipt "
+                    "bound to prepared alignment bytes and preserved flags. "
+                    "Only used with --experimental_ultima."
+                ),
+                "type": path_arg(exists=True, is_file=True),
+            },
             # Required arguments
             "lr_aln": {
                 "nargs": "*",
@@ -214,6 +222,7 @@ class HybridPangenome(BasePangenome):
         super().__init__()
         self.experimental_ultima = False
         self.sr_model_bundle: Optional[pathlib.Path] = None
+        self.sr_duplicate_marking_receipt: Optional[pathlib.Path] = None
         self.ultima_profile: Optional[UltimaProfile] = None
         self.lr_aln: List[pathlib.Path] = []
         self.pop_vcf: Optional[pathlib.Path] = None
@@ -260,6 +269,8 @@ class HybridPangenome(BasePangenome):
             self.ultima_profile.validate_options()
         elif self.sr_model_bundle is not None:
             raise ValueError("--sr_model_bundle requires --experimental_ultima")
+        elif self.sr_duplicate_marking_receipt is not None:
+            raise ValueError("--sr_duplicate_marking_receipt requires --experimental_ultima")
         self.validate_ref()
         self.fai_data = parse_fai(pathlib.Path(str(self.reference) + ".fai"))
         self.shards = determine_shards_from_fai(

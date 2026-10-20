@@ -7,12 +7,12 @@ has not been established. Source implementation, functional execution,
 scientific evaluation, and production acceptance are separate states.
 
 The implementation is based on [Sentieon CLI v2.0.0](https://github.com/Sentieon/sentieon-cli/tree/a0016609f411f1656bd29617a2344a0a97fe5ea9),
-integrated into fork `1.7.7i`. The development package version is
-`2.0.0+i.ultima.dev0`; it is not a published release. The fork retains
+integrated into fork `1.7.7i`. The original development package version was
+`2.0.0+i.ultima.dev0`. The fork retains
 component-only hybrid calls, the model-apply checkpoint, contig finalization
 and gather, optimized hybrid VCF processing, and lifecycle fixes. Fork release
-`2.0.2` supersedes that development package for the approved HG002 campaign.
-Focused checks on the verified `ashg-etc` headnode passed 218 cases on
+`2.0.3` adds explicit vendor duplicate-marking receipts for the approved HG002 campaign.
+Focused checks on the verified `ashg-etc` headnode cover 232 cases on
 2026-10-20; scientific and production acceptance remain separate.
 
 ## Driver and model assets
@@ -52,10 +52,16 @@ launch is performed by this documentation.
 
 - Supply one donor's aligned, coordinate-sorted, indexed Ultima BAM/CRAM files
   through `--sr_aln`, and aligned, indexed ONT files through `--lr_aln`.
-- Ultima data must already be duplicate-marked or deduplicated. The CLI
-  requires an `@PG` record identifying Sentieon Dedup, MarkDuplicates, or
-  markdup. This is header evidence; it does not inspect every record to prove
-  duplicate marking or verify biological donor identity.
+- Ultima data must already be duplicate-marked or deduplicated. Supply either
+  an existing `@PG` record identifying Sentieon Dedup, MarkDuplicates, or
+  markdup, or an explicit `--sr_duplicate_marking_receipt PATH` for native
+  Ultima demux/sorter inputs. The latter verifies a typed completed preparation
+  receipt, exact newly prepared alignment bytes/header, accepted source
+  provenance, preserved flag-stream hashes and per-RG primary/duplicate counts.
+  Positive duplicate observations or bound native producer evidence of explicit
+  `--mark-duplicates=true` are required. Missing/default producer options are
+  never inferred. The [receipt contract](plans/20261020T123800Z_ashg_etc_cli_runtime/duplicate_marking_receipt_contract.md)
+  describes producer and consumer evidence. Neither path establishes donor identity.
 - Each input needs valid `@RG ID`, `SM`, and `PL` tags. `PL` must be `ULTIMA`
   for short reads and `ONT` for long reads (case-insensitive). All `SM` values
   must agree. IDs must be unique across every input; the first Ultima ID plus
@@ -95,6 +101,7 @@ sentieon-cli hybrid-pangenome /analysis/ug_ont_pg.vcf.gz \
   --hapl /references/hprc-v2.1-mc-grch38.hapl \
   --pop_vcf /references/population-hprc-v2.0-20260528.vcf.gz \
   --sr_aln /inputs/donor.ultima.markdup.cram \
+  --sr_duplicate_marking_receipt /inputs/donor.ultima.duplicate-evidence.json \
   --lr_aln /inputs/donor.ont.cram \
   -b /references/evaluation_regions.bed \
   -t 32
@@ -161,16 +168,19 @@ Receipts retain absolute/resolved paths, byte sizes and modification times,
 alignment-header/FAI hashes, model/bundle hashes, unchanged vendor metadata,
 tool banners/executable hashes, CLI source hashes, read-group channels, and
 log locations. Large alignment/reference files are identified by path/stat
-and their inspected metadata, not full-file content hashes. This provenance
+and their inspected metadata. The explicit duplicate receipt additionally
+verifies the full newly prepared Ultima alignment SHA256; it never recalculates
+the parent source alignment checksum. This provenance
 does not independently certify their biological identity or vendor origin.
 `experimental=true`, `scientific_validation=pending`, and
 `production_accepted=false` remain set even after functional completion.
 
 ## Validation state
 
-Eight focused regression modules, including `tests/unit/test_ultima_pangenome.py`,
-passed **218 cases** on the verified `ashg-etc` headnode on 2026-10-20. The exact
-annotated fork tag `2.0.2` passed the same scope after wheel installation.
+Nine focused regression modules, including `tests/unit/test_ultima_pangenome.py`
+and `tests/unit/test_ultima_duplicate_marking.py`, cover **232 cases** on the
+verified `ashg-etc` headnode on 2026-10-20. Release evidence distinguishes
+candidate and exact annotated tag checks after wheel installation.
 The controlling
 [implementation ledger](plans/20261014_ultima_ont_hybrid_pangenome_ledger.md)
 records the original approval holds, later explicit execution approvals,
