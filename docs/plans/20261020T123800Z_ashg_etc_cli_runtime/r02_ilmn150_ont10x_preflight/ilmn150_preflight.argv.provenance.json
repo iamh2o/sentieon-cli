@@ -1,0 +1,40 @@
+{
+  "schema": "dayoa.reviewed_native_cli_preflight_argv_data.v1",
+  "status": "LOCAL_DATA_ONLY_NOT_EXECUTED",
+  "argv_path": "/Users/jmajor/.codex/worktrees/pangenome-catalog-phase-a/daylily-ephemeral-cluster/docs/plans/20261020T124250Z_pangenome_catalog_ilmn_execution/ilmn150_preflight.argv.json",
+  "argv_sha256": "2b7a71df76b59b4d212b4a05defd57ef24bff96f575ddd53afa2a450a6115ad8",
+  "frozen_native_spec": {
+    "path": "/fsx/work/pangenome_ilmn_execution/20261020/evidence/ilmn150-released-adapter-spec.json",
+    "sha256": "2f94ffff3e72c2e685170da7dff8017e1dcbb98c1b114c6598283b63cc01ebce"
+  },
+  "mapping_source": {
+    "tag": "19.0.48",
+    "commit": "2b5923668d0263de6fbd3d5e33e363754d621b80",
+    "path": "daylily_omics_analysis/hybrid_pangenome_profiles.py",
+    "function": "native_command"
+  },
+  "materialization": "Pure local JSON data from the previously reviewed frozen spec fields and literal released mapping; no module import, parser, CLI, reference/model/input read or runtime execution.",
+  "executor_required_check": "A compares this literal vector against the actual frozen native spec before its single authorized public CLI dry_run.",
+  "permitted_differences": [
+    "argv0 replaced by exact assets.sentieon_cli_bin",
+    "output VCF and log directory bound to the authorized preflight scratch root",
+    "--dry_run appended"
+  ],
+  "preserved": {
+    "analysis_unit_uid": "HG002-b6d09m8kzx5zyb",
+    "sample_id": "HG002",
+    "literal_readgroup": "@RG\\tID:HG002-b6d09m8kzx5zyb-ILMN\\tSM:HG002\\tPL:ILLUMINA",
+    "pcr_free": false,
+    "cores": 96,
+    "kmer_memory_gb": 30,
+    "model_reference_and_input_options": "unchanged"
+  },
+  "accepted_ont": {
+    "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "sha256": "088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad",
+    "preparation_receipt_sha256": "f80d4c80cf1dd92908a5a3d0eba947788e5969ae3688f81ede061a2692a9c3b7",
+    "byte_binding_sha256": "aff39d56f70655c8fe35be619013f4e6aeadf79c75740b5879b98e9d463d1ca0"
+  },
+  "execution_owner": "/root/pangenome_cli_assets_runtime",
+  "caller_release_configure_status": "HELD_PENDING_WHOLE_SHARED_LIVE_AND_ULTIMA_ACCEPTANCE"
+}

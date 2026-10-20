@@ -1,0 +1,26 @@
+{
+  "schema": "ashg-etc.ilmn150_ont_preflight_inspection.v1",
+  "status": "passed",
+  "cluster": "ashg-etc",
+  "headnode": "i-004609f020b02705a",
+  "fsx": "fs-0d55fedaeb3ca246b",
+  "scope": "Actual accepted ONT header/index/reference and invocation metadata; no full ONT hash or biological caller",
+  "native_dry_run": "pending",
+  "native_argv_sha256": "2b7a71df76b59b4d212b4a05defd57ef24bff96f575ddd53afa2a450a6115ad8",
+  "model_reference_assets": {
+    "reference": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "reference_fai": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai",
+    "canonical_bed": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "graph": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "haplotypes": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "model_bundle": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "population_vcf": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "population_index": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi",
+    "sentieon_bin": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+    "sentieon_cli_bin": "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+    "patched_kmc_bin": "/fsx/work/pangenome_runtime/20261020/bin/kmc"
+  },
+  "population_id": "population-hprc-v2.0-20260528",
+  "actual_ont_header_gate": "passed",
+  "ordinary_cli_dry_run_header_limit": "Synthetic alignment RGs; real accepted ONT evidence is independently recorded"
+}

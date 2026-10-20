@@ -123,3 +123,26 @@ Release commit: `1358db44816e01d20f32856eebbc496d45638060`.
 Annotated tag object: `8a718ece11dc39017fc1fe8275573e4c7bbab90c`.
 Wheel SHA256: `09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`.
 Biological execution and scientific results remain campaign-root work.
+
+## Accepted ONT and ILMN 2x150 native preflight
+
+The [closed preflight evidence](r02_ilmn150_ont10x_preflight/README.md) records
+public CLI 2.0.3 dry-run rc0, the exact reviewed invocation and separate real
+195-contig ONT header/index/reference/sample/RG evidence. No calling products
+were created. Twenty-five closed files were copied from ashg-etc and verified
+byte-for-byte against native hashes; the native transfer inventory is also
+retained. The sole owner's final prepared-ONT hash was reused.
+
+The preparation rule environment's creation is recorded in the campaign root's
+[frozen engine log](https://github.com/lsmc-bio/daylily-omics-analysis/blob/3247c125766cb4ddb93d5ff5b36d695ab530f24f/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/inputs_execution/r02.repair01.old_engine.log#L5-L7):
+`hybrid_pangenome_v0.2.yaml` was created at
+`/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_`.
+Frozen log: 49,452 bytes, SHA256
+`891a9dd3d355aaa67266cf4f84c7935f51c6396d1a5a75381c2ddc15c7161d54`.
+This is preparation-only evidence; no standalone admission JSON or caller
+model-core environment acceptance is claimed. The accepted ONT producer ran
+the unchanged environment. This dry-run used the separate qualified CLI runtime.
+
+UG acceptance/experimental preflight, whole-live continuation, full callers and
+scientific evaluation remain pending. Source/catalog/caller holds remain with
+the campaign root; this evidence-only update changes no release/code/runtime.

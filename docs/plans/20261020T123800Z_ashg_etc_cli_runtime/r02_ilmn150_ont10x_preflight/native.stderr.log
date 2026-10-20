@@ -1,0 +1,7 @@
+2026-10-20 18:35:34,015 INFO sentieon_cli.pipeline: Using pangenome reference 'GRCh38' (contig prefix 'GRCh38#0#')
+2026-10-20 18:35:34,027 WARNING sentieon_cli.pipeline: The `--hapl` file '/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl' has 184 top-level chains, but the pangenome reference 'GRCh38' has 195 paths. The `--gbz` and `--hapl` files may not be a matching pair.
+2026-10-20 18:35:35,292 INFO sentieon_cli.pipeline: The `--pop_vcf` and the reference FASTA agree on the length of all 195 contig(s) of the pangenome reference 'GRCh38'
+2026-10-20 18:35:35,293 INFO sentieon_cli.pipeline: Starting sentieon-cli version: 2.0.3
+2026-10-20 18:35:35,293 INFO sentieon_cli.pipeline: Building the hybrid-pangenome DAG
+2026-10-20 18:35:35,329 INFO sentieon_cli.pipeline: Starting execution
+2026-10-20 18:35:35,363 INFO sentieon_cli.pipeline: Finished sentieon-cli (status: succeeded, elapsed: 1.5s)

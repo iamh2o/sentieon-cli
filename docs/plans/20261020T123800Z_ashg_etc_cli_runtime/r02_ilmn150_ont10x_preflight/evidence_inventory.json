@@ -1,0 +1,60 @@
+{
+  "schema": "ashg-etc.preflight_evidence_inventory.v1",
+  "calling_products_created": false,
+  "expected_calling_products_absent": [
+    "HG002.vcf.gz",
+    "HG002.vcf.gz.tbi",
+    "HG002_sv.vcf.gz",
+    "HG002_sv.vcf.gz.tbi",
+    "HG002_ploidy.json",
+    "HG002_bwa_deduped.cram",
+    "HG002_lift_deduped.cram"
+  ],
+  "files": {
+    "preflight_receipt.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/preflight_receipt.json",
+      "bytes": 3489,
+      "sha256": "4a7da868ba87cee01f69a04b8d5a20a564735c711bd88c91a5c3d5c397dfdd5c"
+    },
+    "accepted_inspection_receipt.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/accepted_inspection_receipt.json",
+      "bytes": 1764,
+      "sha256": "dd1aecd7ef94a893e5b9ee33127bc0d4ed2433368ea5997b4e5af5a5594b42a9"
+    },
+    "accepted_inputs.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/accepted_inputs.json",
+      "bytes": 4497,
+      "sha256": "2d020d88278e4a3a3f1905d219e54fe888996280822a5d8754b110f6616a4ddc"
+    },
+    "reference_dictionary_checks.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/reference_dictionary_checks.json",
+      "bytes": 1937,
+      "sha256": "0a93a32d9e14e16ca34cf19fd33c6773cc6cf2763f079a116ccd941834222200"
+    },
+    "native_argv.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/native_argv.json",
+      "bytes": 1535,
+      "sha256": "2b7a71df76b59b4d212b4a05defd57ef24bff96f575ddd53afa2a450a6115ad8"
+    },
+    "native.stdout.log": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/native.stdout.log",
+      "bytes": 446956,
+      "sha256": "d7aa0e79157684c84f455b2450faabb54b0e875a8591358317da9702ffd986d3"
+    },
+    "native.stderr.log": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/native.stderr.log",
+      "bytes": 920,
+      "sha256": "2a502564f8dedb818e7d6a54968cd482b8c0b3f3090b58dafe0996d9b0f987f3"
+    },
+    "native_return_code.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/native_return_code.json",
+      "bytes": 70,
+      "sha256": "1b5c7866b083c024512ab5bf8044848de3be19b8d847350649d3af435885a5f9"
+    },
+    "analysis_read_visit.json": {
+      "path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/analysis_read_visit.json",
+      "bytes": 1118,
+      "sha256": "9ab589b35a1835b3880e5cc8c16832616003213e69a8951449de13ce03f89af7"
+    }
+  }
+}
