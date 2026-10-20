@@ -39,6 +39,8 @@ PROFILE = "experimental-ultima-ont-hprc-v2.1-v1"
 GRAPH = "hprc-v2.1-mc-grch38.gbz"
 HAPLOTYPES = "hprc-v2.1-mc-grch38.hapl"
 POPULATION_ID = "population-hprc-v2.0-20260528"
+GRAPH_SHA256 = "11d6047f79575ffb83757462484bad134ed20928bd2c8171ec52e35a54976e2b"
+HAPLOTYPES_SHA256 = "dfc29be8818a5630f327b8882a11824b7974fa67e957cafbb53df0159e395d37"
 ULTIMA_MAPPER_SHA256 = (
     "20417e789fea9ff03063ad54cfe171cef5a75f0c1396c8875e3685abdc70ea99"
 )
@@ -57,6 +59,20 @@ def sha256_file(path: Path) -> str:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def validate_hapl_structure(hapl: Any) -> None:
+    """Check the fixed profile's k and a populated snarl-chain index.
+
+    Top-level chains belong to the snarl decomposition, not reference paths.
+    The selected vendor v2.1 pair has 184 chains and 195 reference paths.
+    Exact GBZ/HAPL content hashes below establish the selected pair.
+    """
+    if (hapl.k != 29 or hapl.top_level_chains <= 0
+            or hapl.construction_jobs <= 0
+            or hapl.total_subchains < hapl.top_level_chains
+            or hapl.total_kmers <= 0):
+        raise ValueError("HAPL structure is incompatible with the fixed profile")
 
 
 def file_identity(path: Path) -> dict[str, Any]:
@@ -377,8 +393,11 @@ class UltimaProfile:
             raise ValueError("Experimental profile requires the GRCh38 pangenome backbone")
         if detect_reference_build(p.fai_data) != "hg38":
             raise ValueError("Experimental profile requires a GRCh38 reference dictionary")
-        if hapl.k != 29 or hapl.top_level_chains != graph.n_paths:
-            raise ValueError("HAPL k-mer size/path count is incompatible with this GBZ profile")
+        validate_hapl_structure(hapl)
+        reference_hashes = {"gbz": sha256_file(p.gbz), "hapl": sha256_file(p.hapl)}
+        if (reference_hashes["gbz"] != GRAPH_SHA256
+                or reference_hashes["hapl"] != HAPLOTYPES_SHA256):
+            raise ValueError("GBZ/HAPL content differs from the selected vendor v2.1 pair")
         if not p.pop_vcf_header or not p.pop_vcf_contigs:
             raise ValueError("A readable population VCF header with contig lengths is required")
         p.check_pop_vcf_id(POPULATION_ID)
@@ -402,9 +421,11 @@ class UltimaProfile:
         }
         self.data["graph_metadata"] = dataclasses.asdict(graph)
         self.data["haplotype_metadata"] = dataclasses.asdict(hapl)
+        self.data["reference_pair_sha256"] = reference_hashes
         self.data["reference_pair_verification"] = (
-            "Vendor filenames, GRCh38 backbone, HAPL k/path count, and population "
-            "contig consistency; no vendor content checksum manifest was supplied"
+            "Pinned GBZ/HAPL content hashes observed from the selected vendor v2.1 "
+            "download pair; GRCh38 backbone, HAPL k/structure and population "
+            "contig consistency. No vendor-signed checksum manifest was supplied"
         )
         tools = {}
         for command in ("sentieon driver", "samtools", "bcftools", "vg", "kmc", "bedtools"):

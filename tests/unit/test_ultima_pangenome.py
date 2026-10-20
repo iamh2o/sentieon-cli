@@ -270,16 +270,39 @@ def test_graph_and_population_mismatch_fail(candidate, monkeypatch):
     monkeypatch.setattr(up, "detect_pangenome_reference", lambda path: graph)
     monkeypatch.setattr(up, "read_hapl_header", lambda path: hapl)
     monkeypatch.setattr(up, "detect_reference_build", lambda data: "hg38")
-    hapl.top_level_chains = 2
+    original_hash = up.sha256_file
+    monkeypatch.setattr(up, "sha256_file", lambda path: {
+        p.gbz: up.GRAPH_SHA256, p.hapl: up.HAPLOTYPES_SHA256,
+    }.get(path, original_hash(path)))
+    hapl.k = 31
     with pytest.raises(ValueError, match="HAPL"):
         profile.validate_assets()
-    hapl.top_level_chains = 1
+    hapl.k = 29
     p.pop_vcf_header[1] = "##SentieonVcfID=wrong"
     with pytest.raises(SystemExit):
         profile.validate_assets()
     p.pop_vcf_header[1] = f"##SentieonVcfID={up.POPULATION_ID}"
     p.pop_vcf_contigs["chr1"] = 999
     with pytest.raises(SystemExit):
+        profile.validate_assets()
+
+
+def test_vendor_hapl_chains_do_not_equal_reference_path_count():
+    # Exact native v2.1 metadata observed on ashg-etc. Paths are not chains.
+    hapl = HaplHeader(5, 184, 25, 256958, 303638734, 29)
+    up.validate_hapl_structure(hapl)
+    hapl.top_level_chains = 0
+    with pytest.raises(ValueError, match="HAPL structure"):
+        up.validate_hapl_structure(hapl)
+
+
+def test_fixed_reference_pair_hash_mismatch_fails(candidate, monkeypatch):
+    p, profile = candidate
+    graph = PangenomeReference("GRCh38", "GRCh38#0#", ["chr1"], ["GRCh38"], 1)
+    monkeypatch.setattr(up, "detect_pangenome_reference", lambda path: graph)
+    monkeypatch.setattr(up, "read_hapl_header", lambda path: HaplHeader(5, 184, 25, 256958, 303638734, 29))
+    monkeypatch.setattr(up, "detect_reference_build", lambda data: "hg38")
+    with pytest.raises(ValueError, match="GBZ/HAPL content"):
         profile.validate_assets()
 
 

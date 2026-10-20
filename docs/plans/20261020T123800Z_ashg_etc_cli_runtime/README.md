@@ -44,6 +44,24 @@ These cases exercise routing, invalid options/assets/headers, preserved fork
 components and checkpoint behavior, receipts, interruption and lifecycle.
 They are synthetic functional checks; they establish no HG002 calling accuracy.
 
+## Native asset preflight correction
+
+Release 2.0.1's strict Ultima guard rejected the actual vendor v2.1 pair:
+GRCh38 backbone paths = 195, HAPL top-level snarl chains = 184, HAPL k = 29.
+Top-level chains describe the graph's snarl decomposition; they are not
+reference paths. The existing shared base had already treated count mismatch
+as a warning; the experimental adapter incorrectly elevated it to failure.
+See [vg's chain model](https://github.com/vgteam/vg/wiki/Snarls-and-chains).
+
+Release 2.0.2 keeps k=29 and populated HAPL structural checks, rejects a changed
+GBZ/HAPL pair using exact observed content hashes, and records both hashes.
+New regression cases accept the observed 184-chain index and reject a changed
+pair. Eight-module candidate result: **218 passed in 6.58s**. Initial failed
+native qualification remains `evidence/qualify_assets.log`; corrected metadata
+and bundle-member checks pass in `evidence/qualify_assets_v2.log`, producing
+native `evidence/asset_ready.json`. Hash authority remains the observed vendor
+download pair; this does not claim a vendor-signed checksum manifest.
+
 ## Asset publication
 
 The three exact assets and their immutable destination keys are encoded in

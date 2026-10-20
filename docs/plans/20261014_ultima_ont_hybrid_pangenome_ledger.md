@@ -19,14 +19,22 @@ authorized. No Ganon, Ganon2, VEP, container builds, budget increases,
 PRs/merges, resource deletion or cleanup. Evidence will remain under
 `docs/plans/20261020T123800Z_ashg_etc_cli_runtime/`.
 
-Current action: publish fork release `2.0.1`, install its exact wheel in the
-isolated runtime, complete the missing graph/HAPL downloads and exact shared
-S3 publication. Focused CLI checks now passed 216 cases on ashg-etc after an
-explicit repository-local test package fixed three collection errors caused by
-ambiguous `tests.utils` imports. Runtime tools are available to the input
-preparation agent; scientific suitability remains unproven.
+Current action: publish fork release `2.0.2` after fixing an attributable real
+vendor-asset preflight error in `2.0.1`. Actual HPRC v2.1 has 184 top-level
+snarl chains and 195 GRCh38 reference paths; equality is not a graph invariant.
+The corrected fixed profile validates populated HAPL structure/k=29 and exact
+observed GBZ/HAPL content hashes. The focused scope passed 218 cases in 6.58s
+on ashg-etc; initial import repair and 216-case `2.0.1` results remain evidence.
+All missing assets are downloaded and independently hashed; operator-signed
+multipart publication is in progress with no IAM changes. Native environment
+and asset receipts exist. Actual graph-backbone M5 comparison is now running
+because existing iGenomes/UCSC FASTA disagrees with accepted CRAMs at 14
+chromosomes. No mismatch is bypassed or relabeled; scientific suitability
+remains unproven.
 
-Updated: 2026-10-14. Objective: refresh `iamh2o/sentieon-cli` from upstream
+### Historical continuation freeze: 2026-10-14
+
+Objective: refresh `iamh2o/sentieon-cli` from upstream
 `v2.0.0` and implement experimental aligned Ultima+ONT hybrid-pangenome calling
 using released models. Stop condition: committed source and documentation,
 explicit provenance and validation evidence or blockers, every row terminal.

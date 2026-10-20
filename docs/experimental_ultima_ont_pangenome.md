@@ -11,8 +11,8 @@ integrated into fork `1.7.7i`. The development package version is
 `2.0.0+i.ultima.dev0`; it is not a published release. The fork retains
 component-only hybrid calls, the model-apply checkpoint, contig finalization
 and gather, optimized hybrid VCF processing, and lifecycle fixes. Fork release
-`2.0.1` supersedes that development package for the approved HG002 campaign.
-Focused checks on the verified `ashg-etc` headnode passed 216 cases on
+`2.0.2` supersedes that development package for the approved HG002 campaign.
+Focused checks on the verified `ashg-etc` headnode passed 218 cases on
 2026-10-20; scientific and production acceptance remain separate.
 
 ## Driver and model assets
@@ -65,10 +65,10 @@ launch is performed by this documentation.
   FASTA `.fai`. Conflicting `M5` sequence checksums are rejected when present
   in the alignment headers. The FASTA must identify as GRCh38.
 - Supply the named GBZ/HAPL pair above. The CLI checks actual GRCh38 graph
-  metadata, HAPL k=29/path counts, backbone presence, population ID and
+  metadata, HAPL k=29/chain structure, fixed observed GBZ/HAPL content hashes, backbone presence, population ID and
   contig lengths. Naming and structural consistency do not certify vendor
-  content: no authoritative GBZ/HAPL checksum manifest was supplied for this
-  implementation. Preserve the source/download provenance of the pair for
+  content: no vendor-signed GBZ/HAPL checksum manifest was supplied; the pinned
+  content hashes were observed from the selected vendor download pair. Preserve the source/download provenance of the pair for
   the scientific evaluation.
 - Alignment indexes may use native adjacent `.bai`, `.csi`, or `.crai`
   naming. Population annotations require an adjacent `.tbi` or `.csi`.
@@ -168,12 +168,14 @@ does not independently certify their biological identity or vendor origin.
 
 ## Validation state
 
-Focused regression cases are prepared in
-`tests/unit/test_ultima_pangenome.py` alongside the upstream and retained fork
-tests. **No tests, CLI dry run, or scientific runtime evaluation were executed
-for this implementation.** The controlling
+Eight focused regression modules, including `tests/unit/test_ultima_pangenome.py`,
+passed **218 cases** on the verified `ashg-etc` headnode on 2026-10-20. The exact
+annotated fork tag `2.0.2` passed the same scope after wheel installation.
+The controlling
 [implementation ledger](plans/20261014_ultima_ont_hybrid_pangenome_ledger.md)
-records the approval/asset blockers and exact proposed test scope.
+records the original approval holds, later explicit execution approvals,
+exact commands and native evidence. Scientific runtime evaluation and
+production acceptance remain pending.
 
 Before scientific acceptance, freeze a same-donor Ultima/ONT pair, coverage,
 truth set, regions, reference provenance, and compute budget. Compare with
