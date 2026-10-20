@@ -1,0 +1,26 @@
+{
+  "schema": "ashg-etc.ultima_ont_preflight_inspection.v1",
+  "status": "passed",
+  "cluster": "ashg-etc",
+  "headnode": "i-004609f020b02705a",
+  "fsx": "fs-0d55fedaeb3ca246b",
+  "native_dry_run": "pending",
+  "model_reference_assets": {
+    "reference": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "reference_fai": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai",
+    "canonical_bed": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "graph": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "haplotypes": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "model_bundle": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "population_vcf": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "population_index": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi",
+    "sentieon_bin": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+    "sentieon_cli_bin": "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+    "patched_kmc_bin": "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+    "sr_model_bundle": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle"
+  },
+  "native_argv_sha256": "d83b7525f842e2471742bbf4e03807f598838d2c22562bda80ac4c575f762a71",
+  "observed_duplicate_primary_records": 11658934,
+  "native_duplicate_guard": "pending; full UG byte verification is performed only by public CLI",
+  "actual_header_gate": "passed195 ordered SN/LN/M5 for both inputs"
+}

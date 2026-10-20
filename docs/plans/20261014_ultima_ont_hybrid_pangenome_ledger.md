@@ -2,66 +2,100 @@
 
 ## Current continuation state
 
-Execution resumed 2026-10-20 under the user's two explicit execution requests:
-"run both pipelines ... test to completion 30x Ultima 10x ONT" and
-"use multi agents Confirm execution on ashg-etc only ... in parallel ...
-with Ganon and VEP excluded". This supersedes the historical validation and
-publication holds below for the exact HG002 campaign. Root owns the campaign
-ledger; this CLI workstream owns focused CLI checks, an immutable numeric fork
-release, shared missing vendor assets, and one explicit runtime. Target:
-account `108782052779`, profile `lsmc`, region `us-west-2`, cluster `ashg-etc`,
-CloudFormation generation `d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, headnode
-`i-004609f020b02705a`, FSx `fs-0d55fedaeb3ca246b`. Fresh public DYEC
-cluster/headnode inspection confirmed UPDATE_COMPLETE and the named headnode;
-the retained interactive shell is `ubuntu` on `ip-10-0-0-14` with FSx
-`10.0.1.237@tcp:/uiznvb4v`. No other cluster is
-authorized. No Ganon, Ganon2, VEP, container builds, budget increases,
-PRs/merges, resource deletion or cleanup. Evidence will remain under
-`docs/plans/20261020T123800Z_ashg_etc_cli_runtime/`.
+Objective: the refreshed `iamh2o/sentieon-cli` experimental Ultima+ONT
+pangenome implementation, immutable runtime/assets and reviewable validation
+evidence. Functional completion does not establish scientific suitability.
+Branch: `codex/ultima-ont-hybrid-pangenome-20261014`; the campaign root owns
+broader DayOA/DYEC execution and scientific closeout.
 
-Completed source/runtime: immutable annotated fork `2.0.3` is published,
-installed and qualified on ashg-etc, adding the explicit typed vendor Ultima
-duplicate-marking preparation receipt. Final candidate: 232 passed in 17.91s;
-exact tagged source after wheel installation: 232 passed in 50.19s. Release
-commit `1358db44816e01d20f32856eebbc496d45638060`, annotated tag object
-`8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel SHA256
+Authority remains the user's two execution requests: "run both pipelines ...
+test to completion 30x Ultima 10x ONT" and "use multi agents Confirm execution
+on ashg-etc only ... in parallel ... with Ganon and VEP excluded". Target:
+account `108782052779`, profile `lsmc`, region `us-west-2`, cluster
+`ashg-etc`, generation `d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, head
+`i-004609f020b02705a`, FSx `fs-0d55fedaeb3ca246b`. The retained interactive
+Ubuntu shell verified `ip-10-0-0-14` and `10.0.1.237@tcp:/uiznvb4v`.
+No Ganon/Ganon2/VEP, container builds, budget increases, PRs/merges, resource
+deletion or cleanup. This workstream launches no biological caller.
+
+Published, installed and qualified CLI `2.0.3` adds the typed vendor Ultima
+duplicate-marking receipt. Candidate: 232 passed/17.91s; exact installed tag:
+232 passed/50.19s. Release commit `1358db44816e01d20f32856eebbc496d45638060`,
+annotated object `8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel SHA256
 `09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`.
-Native `evidence/env_ready.json` records final CLI/tool identities; copied as
-`env_ready-2.0.3.json`. Release `2.0.2` fixed the incorrect assumption that 184 HAPL snarl
-chains must equal 195 reference paths and now pins the actual GBZ/HAPL hashes.
-All three missing assets are downloaded, independently hashed, published to
-their declared shared S3 keys by the explicitly approved operator-signed
-multipart route, and readback verified. No IAM changes or signed URL disclosure.
-Native env/asset receipts exist. The preparation environment was created from
-unchanged `hybrid_pangenome_v0.2.yaml`, and the accepted ONT producer used it;
-the root's frozen creation log is linked below. This is preparation evidence;
-caller model-core environment acceptance still needs its own native proof.
+Tag, code and wheel remain unchanged. All three missing vendor assets were
+hashed, published to declared shared S3 keys through the approved signed
+multipart route and readback verified; no IAM changes or credential disclosure.
 
-Actual GBZ extraction proves all 195 graph reference sequences match the vendor
-FASTA. The accepted source references differ only at 94 IUPAC ambiguity letters
-replaced by N, across 14 chromosomes; independent full per-contig source
-IUPAC-to-N comparison matches 195/195 target sequences. The inputs workstream
-owns explicit source decode, preserved read/quality/flag evidence and target
-MD/NM refresh, rather than a blind dictionary substitution. Existing canonical
-BED has 24 rows (chr1-22/X/Y), 3,088,269,832 bases; 171 contigs including chrM
-are excluded. No mismatch is bypassed.
+GBZ extraction matches vendor FASTA at all 195 sequences. Source references
+differ only at 94 IUPAC-to-N positions across 14 chromosomes; normalized-source
+proof matches 195/195. Preparation explicitly decoded source reads, preserved
+sequence/quality/flags and refreshed target MD/NM. The canonical calling BED
+has 24 rows/3,088,269,832 bases; 171 contigs including chrM are excluded.
 
-Accepted shared ONT: completed r02 preparation, 26,826,310,679 bytes, owner SHA256
-`088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad`,
-primary-only depth `9.999053238278962532309287144` across all 195 target
-intervals. The sole owner byte digest was reused. ILMN 2x150 + accepted ONT
-public CLI `2.0.3 --dry_run` passed rc0 in 1.794s on 2026-10-20 18:35 UTC.
-Separate actual ONT header/index/sample/RG checks matched all 195 ordered
-vendor SN/LN/M5 entries. Ordinary CLI dry-run RGs remain synthetic; no calling
-products were created. Closed native evidence was copied and byte-verified in
-`20261020T123800Z_ashg_etc_cli_runtime/r02_ilmn150_ont10x_preflight/`.
-The observed 184-chain/195-path heuristic warning is preserved in native stderr.
+Both r02 producers are independently accepted, with deterministic repeats:
+UG `29.99891901105408943184300036`×, 51,928,203,894 bytes, SHA256
+`9c9ae740fa621836608edad6e7850bb1242e7e919052b65263cedd414afc66d2`;
+ONT `9.999053238278962532309287144`×, 26,826,310,679 bytes, SHA256
+`088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad`.
+Full-195-interval depth evidence is retained by the input owner.
 
-Next: accepted UG producer handoff, experimental native preflight, whole-live
-and caller gates under the campaign root. UG, full calling and scientific
-evaluation remain pending; no biological caller was launched by this workstream.
-Existing `2.0.3` tag/code/wheel are unchanged. No install/model-download blocker
-remains here; this preflight's isolated runtime does not certify caller admission.
+Public CLI dry runs passed: ILMN2x150+ONT rc0/1.793724s and experimental
+UG30x+ONT10x rc0/76.23636722s. Separate real header/index checks matched ordered
+195 SN/LN/M5, HG002/platform/RGs for both accepted alignments. Ordinary ILMN
+dry-run RGs remain synthetic; experimental native real-header and typed
+duplicate validation passed, including 11,658,934 duplicate-primary
+observations. Owner byte bindings were reused; only the CLI's mandatory UG
+verification read the prepared UG bytes again. No calling products were
+created. Closed receipts, argv, logs and header/reference checks are copied
+with verified native-to-local hashes under
+`20261020T123800Z_ashg_etc_cli_runtime/{r02_ilmn150_ont10x_preflight,r02_ultima30x_ont10x_preflight}/`.
+Both observed 184-chain/195-path and experimental-composition warnings remain.
+
+Root verified the original whole preparation SUCCESS: controller=null,
+DayOA/Snakemake=0/0; foreground/dy-r/tee=0/0/0, source5/input9 unchanged,
+no remaining jobs; proof SHA256
+`5c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758`.
+The preparation environment was created from unchanged
+`hybrid_pangenome_v0.2.yaml`; this does not certify future caller admission.
+Combined preparation benchmark collection rc2 is a separate reporting-layout
+BLOCKER; no partial-cost acceptance substitutes for it. Next: root promotes the
+proven DayOA source, then C's catalog/configure/caller gates and scientific
+evaluation. Rows: 7 SUCCESS, 1 IN_PROGRESS; full objective and science incomplete.
+
+## 2026-10-20 accepted prepared-input preflight closeout
+
+Both public CLI dry preflights passed with no calling products:
+[ILMN2x150+ONT](20261020T123800Z_ashg_etc_cli_runtime/r02_ilmn150_ont10x_preflight/README.md)
+and
+[experimental UG30x+ONT10x](20261020T123800Z_ashg_etc_cli_runtime/r02_ultima30x_ont10x_preflight/README.md).
+The latter's native receipt is `dry_run`, explicitly experimental and
+production-unaccepted; it validates real accepted headers and the typed
+duplicate receipt. The former's real ONT header/index gate is separate from
+ordinary CLI synthetic dry-run RGs.
+
+UG closeout native-to-local verification covers 28 closed files plus their
+inventory; no alignment/model bytes or helper scripts were copied.
+Operator receipt SHA256:
+`43bef7caea9140c8f205616a751d51030e81d36613b5407d24a37fd14a54a8fb`.
+Native provenance SHA256:
+`ace44ee88c8dd6e4ac2e75dad85f935b391095b87a9fa4be7d442c21c5ed80fe`.
+Both observed warnings remain. The immutable CLI2.0.3 release, code and wheel
+are unchanged; this closeout adds only evidence/docs and no new execution.
+
+Preparation-only environment evidence remains the root's
+[frozen creation log](https://github.com/lsmc-bio/daylily-omics-analysis/blob/3247c125766cb4ddb93d5ff5b36d695ab530f24f/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/inputs_execution/r02.repair01.old_engine.log),
+49,452 bytes, SHA256
+`891a9dd3d355aaa67266cf4f84c7935f51c6396d1a5a75381c2ddc15c7161d54`,
+lines5–7. It created unchanged `hybrid_pangenome_v0.2.yaml` at cache
+`/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_`.
+No standalone admission JSON or full caller-environment acceptance is claimed.
+
+Root's later accepted whole-preparation proof and the independent benchmark
+reporting blocker are recorded above. Full calling and scientific suitability
+are pending. Current rows: 7 SUCCESS, 1 IN_PROGRESS; all terminal: **no**;
+full objective complete: **no**. The historical freezes below describe their
+original dates and are superseded by this current continuation.
 
 ### Historical continuation freeze: 2026-10-14
 
@@ -158,7 +192,7 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 | UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
 | UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
 | UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: nine focused modules; 2.0.3 candidate 232 passed in 17.91s, exact tag 232 passed in 50.19s; test_receipt-2.0.3.json | Later two-message approval supersedes original hold; prior 2.0.1/2.0.2 evidence preserved |
-| UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | Shared ONT accepted; ILMN150 public CLI dry0 plus separate actual195-contig header/index gate; closed preflight evidence below | UG/whole-live/full caller/scientific results remain pending; dry-run is not calling completion |
+| UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | UG/ONT preparation and deterministic repeats accepted; whole preparation root-verified SUCCESS; ILMN150 and experimental UG public CLI dry0, actual195-contig header/index gates; closed evidence below | Native callers and scientific results pending; combined preparation benchmark collection rc2 is a separate reporting blocker; dry-run is not calling completion |
 | UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 
 ## Model research evidence

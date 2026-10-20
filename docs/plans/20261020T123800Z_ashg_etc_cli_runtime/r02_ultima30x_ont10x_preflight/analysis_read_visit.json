@@ -1,0 +1,25 @@
+{
+  "agent_id": "pangenome-cli-assets-runtime",
+  "agent_kind": "codex",
+  "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02",
+  "codex_session_id": null,
+  "command_summary": null,
+  "cwd": "/fsx/work/pangenome_runtime/20261020/cli-2.0.3",
+  "event": "visit",
+  "host": "ip-10-0-0-14",
+  "human_requestor": "jmajor",
+  "intent": "Bounded accepted UG+ONT public CLI2.0.3 experimental dry-run preflight; no manual full-input checksum or caller",
+  "lock_state_seen": {
+    "locked": false,
+    "owner": null
+  },
+  "mode": "read",
+  "note": null,
+  "operation": "read",
+  "pid": 189706,
+  "schema_version": "dayoa.analysis_agent_visit.v1",
+  "timestamp": "2026-10-20T20:44:06.440534Z",
+  "tmux_pane": "%3",
+  "tmux_session": "pg_runtime_ashg_etc_20261020",
+  "user": "unknown"
+}

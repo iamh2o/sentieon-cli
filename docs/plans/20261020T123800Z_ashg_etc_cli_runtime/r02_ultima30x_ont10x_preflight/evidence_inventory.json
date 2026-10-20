@@ -1,0 +1,194 @@
+{
+  "schema": "ashg-etc.closed_cli_preflight_evidence.v1",
+  "closed_at_utc": "2026-10-20T20:50:58.165255+00:00",
+  "native_root": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x",
+  "cluster": "ashg-etc",
+  "headnode": "i-004609f020b02705a",
+  "fsx": "fs-0d55fedaeb3ca246b",
+  "file_count": 28,
+  "files": [
+    {
+      "name": "HG002_provenance.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_provenance.json",
+      "bytes": 60114,
+      "sha256": "ace44ee88c8dd6e4ac2e75dad85f935b391095b87a9fa4be7d442c21c5ed80fe"
+    },
+    {
+      "name": "accepted_inputs.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/accepted_inputs.json",
+      "bytes": 7829,
+      "sha256": "baebaa052a22821b1a005d552e469803bf188e3a2f9457b901a7abc372324fdb"
+    },
+    {
+      "name": "accepted_inspection.stderr.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/accepted_inspection.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "accepted_inspection.stdout.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/accepted_inspection.stdout.log",
+      "bytes": 174,
+      "sha256": "77851679ad8efe4be9ab067c09571c6a5c4304e1aeb5ed17c07b9896e9480d73"
+    },
+    {
+      "name": "accepted_inspection_receipt.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/accepted_inspection_receipt.json",
+      "bytes": 1800,
+      "sha256": "c62e785b08a09de6bb00662557da6984fc8e86e3b3e20020c94bf2eefe6fae78"
+    },
+    {
+      "name": "analysis_read_visit.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/analysis_read_visit.json",
+      "bytes": 813,
+      "sha256": "cb31ae1125e2192ce289c682afc0bebe35b8436d64eeff2ed34d3d4b31d69710"
+    },
+    {
+      "name": "cli.version.stderr",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/cli.version.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cli.version.stdout",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/cli.version.stdout",
+      "bytes": 6,
+      "sha256": "be695fc8092ad3706d7d7d3b5104e1eaf8fe69666e5958e375c9952a06fa9514"
+    },
+    {
+      "name": "native.stderr.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native.stderr.log",
+      "bytes": 1227,
+      "sha256": "7f1d5ccd5e99c1ed4235a58c4875c617d63673de3ec8435ed370df17b707d9ef"
+    },
+    {
+      "name": "native.stdout.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native.stdout.log",
+      "bytes": 449289,
+      "sha256": "e0929016898a09ed4a9f4ec48ee386bd5b4604ce0e384a1d0307c97babd62cc6"
+    },
+    {
+      "name": "native_argv.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native_argv.json",
+      "bytes": 1675,
+      "sha256": "d83b7525f842e2471742bbf4e03807f598838d2c22562bda80ac4c575f762a71"
+    },
+    {
+      "name": "native_invocation.stderr.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native_invocation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "native_invocation.stdout.log",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native_invocation.stdout.log",
+      "bytes": 247,
+      "sha256": "daee1bfa49ab2600b9260daf56278a70186bdb4edecc1489f50e8e9e56178901"
+    },
+    {
+      "name": "native_return_code.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/native_return_code.json",
+      "bytes": 70,
+      "sha256": "1b5c7866b083c024512ab5bf8044848de3be19b8d847350649d3af435885a5f9"
+    },
+    {
+      "name": "ont.header.sam",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ont.header.sam",
+      "bytes": 30863,
+      "sha256": "b6098c3b9443d69f6c337bcd727645735ce72b07df8630c945574b6b7f16e750"
+    },
+    {
+      "name": "ont.header.stderr",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ont.header.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ont.header.stdout",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ont.header.stdout",
+      "bytes": 30863,
+      "sha256": "b6098c3b9443d69f6c337bcd727645735ce72b07df8630c945574b6b7f16e750"
+    },
+    {
+      "name": "ont.index_probe.stderr",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ont.index_probe.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ont.index_probe.stdout",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ont.index_probe.stdout",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "name": "preflight_receipt.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/preflight_receipt.json",
+      "bytes": 4041,
+      "sha256": "43bef7caea9140c8f205616a751d51030e81d36613b5407d24a37fd14a54a8fb"
+    },
+    {
+      "name": "reference_dictionary_checks.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/reference_dictionary_checks.json",
+      "bytes": 142223,
+      "sha256": "f158f86934721317a6c0c84c036e56c814e26631125c0ec29a79f51cae1ea24f"
+    },
+    {
+      "name": "ultima.header.sam",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima.header.sam",
+      "bytes": 191824,
+      "sha256": "effb9e00340b7d4c3805e2a553149e843845b0d3a48e7bf7cc7db3acf57168bb"
+    },
+    {
+      "name": "ultima.header.stderr",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima.header.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ultima.header.stdout",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima.header.stdout",
+      "bytes": 191824,
+      "sha256": "effb9e00340b7d4c3805e2a553149e843845b0d3a48e7bf7cc7db3acf57168bb"
+    },
+    {
+      "name": "ultima.index_probe.stderr",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima.index_probe.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ultima.index_probe.stdout",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima.index_probe.stdout",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "name": "ultima30x_ont10x_preflight.argv.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima30x_ont10x_preflight.argv.json",
+      "bytes": 1675,
+      "sha256": "d83b7525f842e2471742bbf4e03807f598838d2c22562bda80ac4c575f762a71"
+    },
+    {
+      "name": "ultima30x_ont10x_preflight.argv.provenance.json",
+      "native_path": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/ultima30x_ont10x_preflight.argv.provenance.json",
+      "bytes": 1370,
+      "sha256": "dec765f43f827f4ab8a4ca729958a7b28f17436b2e0007a495d8171836d91c56"
+    }
+  ],
+  "native_expected_outputs": {
+    "lifted_alignment": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_lift_deduped.cram",
+    "lifted_alignment_index": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_lift_deduped.cram.crai",
+    "ploidy": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_ploidy.json",
+    "small_variants": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002.vcf.gz",
+    "small_variants_index": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002.vcf.gz.tbi",
+    "structural_variants": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_sv.vcf.gz",
+    "structural_variants_index": "/fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/HG002_sv.vcf.gz.tbi"
+  },
+  "calling_completed": false,
+  "excluded": "Operator helper scripts, native tmp directory, source reads, alignment bytes, references, models, credentials; no full input hash campaign",
+  "warnings_preserved": [
+    "184 HAPL top-level chains versus195 GRCh38 paths heuristic",
+    "Experimental Ultima+ONT joint-model composition; scientific validation pending"
+  ]
+}

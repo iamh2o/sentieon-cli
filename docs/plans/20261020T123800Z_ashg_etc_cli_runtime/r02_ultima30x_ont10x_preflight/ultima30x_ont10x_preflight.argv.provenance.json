@@ -1,0 +1,24 @@
+{
+  "schema": "dayoa.preflight_argv_projection.v1",
+  "created_at": "2026-10-20T20:44:30.150069+00:00",
+  "profile": "huomr2p",
+  "source_release": "19.0.48",
+  "source_commit": "2b5923668d0263de6fbd3d5e33e363754d621b80",
+  "source_path": "daylily_omics_analysis/hybrid_pangenome_profiles.py",
+  "source_sha256": "e661baee44e8bb0f101d6dc004e5931ac25478f90789e88cdae687982c3ce1d6",
+  "source_function": "native_command, lines317-346",
+  "construction": "Pure-data projection of the inspected released function, using its identical frozen common prefix and explicit Ultima branch; no application code import, tests, or native command executed.",
+  "standalone_differences": [
+    "Direct immutable public CLI executable instead of DayOA launcher wrapper",
+    "Dedicated preflight output/log paths",
+    "Append --dry_run"
+  ],
+  "threads": 96,
+  "kmer_memory_gb": 30,
+  "pcr_free": false,
+  "argv_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/ultima30x_ont10x_preflight.argv.json",
+  "argv_sha256": "d83b7525f842e2471742bbf4e03807f598838d2c22562bda80ac4c575f762a71",
+  "argc": 32,
+  "input_acceptance": "A must verify current owner handoff; no partial/old Ultima binding is valid",
+  "scientific_validation": "NOT_ASSESSED"
+}

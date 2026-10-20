@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "inputs": {
+    "ultima": {
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+      "bytes": 51928203894,
+      "mtime_ns": 1792528567000000000,
+      "inode": 144115206279135302,
+      "sha256": "9c9ae740fa621836608edad6e7850bb1242e7e919052b65263cedd414afc66d2",
+      "owner_binding": {
+        "path": "/fsx/work/pangenome_inputs/20261020/repair/r02-repair01-native/ultima.byte_binding.json",
+        "bytes": 10039,
+        "sha256": "1b85680b84ba85d628ee20a3d19f117642d43ea5261cd420f013e8c5ccba7caf"
+      },
+      "preparation": {
+        "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.preparation.json",
+        "bytes": 263148,
+        "sha256": "8051d43833dae5d24170a7ca5c853c79c69aa85b9d633d7cb5f2b6988101b20a"
+      },
+      "index": {
+        "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai",
+        "bytes": 1247316,
+        "sha256": "7003795e9cf0a69085433e3830843bcf3f8dc4f400f230d256956434587f00ac"
+      },
+      "observed_depth": {
+        "covered_bases": 92994325248,
+        "empty_query_contigs": [],
+        "evidence": {
+          "aggregate_total": "matches reported primary and full-BED auxiliary sums",
+          "covered_bases_source": "exact integer sum of reported primary summary bases",
+          "full_length_region_intervals": 195,
+          "omitted_contig_evidence": "native full-length region depth equals zero",
+          "reference_contigs": 195,
+          "regions": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.depth.regions.bed.gz",
+          "reported_contigs": 195,
+          "summary": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.depth.mosdepth.summary.txt"
+        },
+        "exclude_flags": 1796,
+        "mapq": 0,
+        "mean_depth": "29.99891901105408943184300036",
+        "profile": "ultima_nonsecondary_segments",
+        "reference_bases": 3099922541,
+        "reference_bed": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.depth.reference.bed",
+        "reference_bed_sha256": "8bb31f29b3127b3aea3f20ead931d5a42d545b745919a43c696696510e390ac6",
+        "regions": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.depth.regions.bed.gz",
+        "reported_reference_bases": 3099922541
+      },
+      "hash_authority": "owner native COMPLETE binding; no manual alignment hash"
+    },
+    "ont": {
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+      "bytes": 26826310679,
+      "mtime_ns": 1792520476000000000,
+      "inode": 144115206279135301,
+      "sha256": "088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad",
+      "owner_binding": {
+        "path": "/fsx/work/pangenome_inputs/20261020/repair/r02-repair01-native/ont.byte_binding.json",
+        "bytes": 5100,
+        "sha256": "aff39d56f70655c8fe35be619013f4e6aeadf79c75740b5879b98e9d463d1ca0"
+      },
+      "preparation": {
+        "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.preparation.json",
+        "bytes": 74643,
+        "sha256": "f80d4c80cf1dd92908a5a3d0eba947788e5969ae3688f81ede061a2692a9c3b7"
+      },
+      "index": {
+        "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+        "bytes": 202435,
+        "sha256": "62c7b9f56862e6d8664d515248bbe41e34d537c5bc196b2dbccfc92821455c03"
+      },
+      "observed_depth": {
+        "covered_bases": 30996290522,
+        "empty_query_contigs": [
+          "chrUn_KI270304v1",
+          "chrUn_KI270303v1",
+          "chrUn_KI270305v1",
+          "chrUn_KI270310v1",
+          "chrUn_KI270316v1",
+          "chrUn_KI270312v1",
+          "chrUn_KI270317v1",
+          "chrUn_KI270411v1",
+          "chrUn_KI270425v1",
+          "chrUn_KI270539v1",
+          "chrUn_KI270329v1",
+          "chrUn_KI270334v1",
+          "chrUn_KI270338v1",
+          "chrUn_KI270378v1",
+          "chrUn_KI270379v1",
+          "chrUn_KI270389v1",
+          "chrUn_KI270390v1",
+          "chrUn_KI270387v1",
+          "chrUn_KI270395v1",
+          "chrUn_KI270396v1",
+          "chrUn_KI270388v1",
+          "chrUn_KI270394v1",
+          "chrUn_KI270391v1",
+          "chrUn_KI270383v1",
+          "chrUn_KI270393v1",
+          "chrUn_KI270384v1",
+          "chrUn_KI270385v1",
+          "chrUn_KI270376v1",
+          "chrUn_KI270372v1",
+          "chrUn_KI270373v1",
+          "chrUn_KI270375v1",
+          "chrUn_KI270752v1"
+        ],
+        "evidence": {
+          "aggregate_total": "matches reported primary and full-BED auxiliary sums",
+          "covered_bases_source": "exact integer sum of reported primary summary bases",
+          "full_length_region_intervals": 195,
+          "omitted_contig_evidence": "native full-length region depth equals zero",
+          "reference_contigs": 195,
+          "regions": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.depth.regions.bed.gz",
+          "reported_contigs": 163,
+          "summary": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.depth.mosdepth.summary.txt"
+        },
+        "exclude_flags": 3844,
+        "mapq": 0,
+        "mean_depth": "9.999053238278962532309287144",
+        "profile": "ont_primary_only",
+        "reference_bases": 3099922541,
+        "reference_bed": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.depth.reference.bed",
+        "reference_bed_sha256": "8bb31f29b3127b3aea3f20ead931d5a42d545b745919a43c696696510e390ac6",
+        "regions": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.depth.regions.bed.gz",
+        "reported_reference_bases": 3099812196
+      },
+      "hash_authority": "owner native COMPLETE binding; no manual alignment hash"
+    }
+  },
+  "typed_duplicate_receipt": {
+    "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+    "bytes": 2983,
+    "sha256": "c54bdb32f0aba9d9062aa91075da0551afb6b1e8d3fc043820061c1dc0c6aeda"
+  },
+  "accepted_source_provenance": {
+    "path": "/fsx/work/pangenome_inputs/20261020/inspection/ultima.source_identity.json",
+    "bytes": 2932,
+    "sha256": "ad96c05f00df3cbaff3294d57fabddf6589cc3733f7ab22ad51c5bf9dd6bcc63"
+  },
+  "observed_duplicate_primary_records": 11658934,
+  "flag_stream_sha256": "23441eb5cffd33946751a900e24d7a9387c80c4c9de3bd78a0c6fdaaebae11aa",
+  "whole_workflow_acceptance": "separate root gate; standalone native producer acceptance supplied"
+}
