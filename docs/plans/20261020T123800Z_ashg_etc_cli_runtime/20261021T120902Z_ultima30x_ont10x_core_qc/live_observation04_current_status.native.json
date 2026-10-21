@@ -1,0 +1,318 @@
+{
+  "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01",
+  "completed_at": "2026-10-21T12:01:42.019373+00:00",
+  "controller_pane": {
+    "argv": [
+      "tmux",
+      "capture-pane",
+      "-p",
+      "-t",
+      "%18",
+      "-S",
+      "-60"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "source /home/ubuntu/daylily-runs/pg-ug-live-20261020-r01/dyec-controller-entrypo\nint.sh\nDAY-EC activated.\n(DAY-EC) ubuntu@ip-10-0-0-14:~$ source /home/ubuntu/daylily-runs/pg-ug-live-2026\n1020-r01/dyec-controller-entrypoint.sh\nDAY-EC activated.\nDAY-EC activated.\n[DYEC] randomized 9-second controller startup delay before shared-runtime bootst\nrap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  "controller_tail": {
+    "argv": [
+      "tail",
+      "-n",
+      "50",
+      "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.dyec/controller.log"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "            dayoa_spool_finish\n            if [[ \"$signal_code\" -ne 0 ]]; then exit \"$signal_code\"; fi\n            exit \"$runner_rc\"\n            \nDYEC sbatch enforcement: cluster 'ashg-etc' budget in region 'us-west-2': total=750.0 USD, used=75.401 USD, percent=10.05%.\nDYEC sbatch enforcement: cluster budget monitor: https://us-west-2.console.aws.amazon.com/billing/home#/budgets/details?name=ashg-etc\nDYEC sbatch enforcement: cost center 'ashg-etc-ccenter' admission ok: active_until=<none>.\nDYEC sbatch enforcement: cost-center report: https://us-west-2.console.aws.amazon.com/dynamodbv2/home?region=us-west-2#item-explorer?table=dayec-cost-centers&cost_center=ashg-etc-ccenter\nSubmitted job 3 with external jobid '8'.\n\u001b[1m\u001b[48;5;17m\u001b[38;5;76m...CONCURRENT-SAFEGUARD: Slurm accepted job 8; releasing admission for the next controller.\u001b[0m\n[Wed Oct 21 11:42:48 2026]\nFinished job 3.\n1 of 6 steps (17%) done\nSelect jobs to execute...\n\n[Wed Oct 21 11:42:48 2026]\nrule hybrid_pangenome_alignment_qc:\n    input: results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/core.component.json, daylily_omics_analysis/hybrid_pangenome_package.py, daylily_omics_analysis/reference_depth.py, workflow/scripts/ont_qname_union_metrics.py, /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa, /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai\n    output: results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/qc.terminal.json\n    log: results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/alignment_qc.log\n    jobid: 4\n    benchmark: results/day/hg38/HG002-wdth3tk3gpbvjt/benchmarks/HG002-wdth3tk3gpbvjt.huomr2p.alignment_qc.bench.tsv\n    reason: Missing output files: results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/qc.terminal.json; Input files updated by another job: results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/core.component.json\n    wildcards: sample=HG002-wdth3tk3gpbvjt\n    threads: 16\n    resources: mem_mb=64000, mem_mib=61036, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1, dayoa_attempt=1, partition_availability_weight=1.0, time=420, partition=i128nvme, vcpu=16, distribution=block, exclusive=, constraint=, exclude=, include=\n\n\n            set -euo pipefail\n            mkdir -p \"$(dirname results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/alignment_qc.log)\"\n            : > results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/alignment_qc.log\n            exec >> results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/alignment_qc.log 2>&1\n            source workflow/scripts/dayoa_spool_publish.bash\n            dayoa_spool_init \"HG002-wdth3tk3gpbvjt.huomr2p.alignment-qc\"\n            python -m daylily_omics_analysis.hybrid_pangenome_package qc \\\n              --profile huomr2p --unit HG002-wdth3tk3gpbvjt \\\n              --sample HG002 --core-receipt results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/core.component.json \\\n              --reference /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa --reference-fai /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai \\\n              --scratch-root \"$DAYOA_SPOOL_DIR\" \\\n              --thresholds '{\"combined_depth\": 33, \"ont_mean_aligned_length\": 1000, \"ont_primary_depth\": 8, \"original_sr_depth\": 25}' --sample-metadata '{\"is_negative_control\": \"false\", \"is_positive_control\": \"false\", \"sample_type\": \"UNKNOWN\"}' \\\n              --qname-script workflow/scripts/ont_qname_union_metrics.py --threads 16 \\\n              --output-root results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/qc --receipt results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/qc.terminal.json \\\n              --benchmark-file /fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/benchmarks/HG002-wdth3tk3gpbvjt.huomr2p.alignment_qc.bench.tsv --rule-log results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/alignment_qc.log\n            dayoa_spool_finish\n            \nDYEC sbatch enforcement: cluster 'ashg-etc' budget in region 'us-west-2': total=750.0 USD, used=98.722 USD, percent=13.16%.\nDYEC sbatch enforcement: cluster budget monitor: https://us-west-2.console.aws.amazon.com/billing/home#/budgets/details?name=ashg-etc\nDYEC sbatch enforcement: cost center 'ashg-etc-ccenter' admission ok: active_until=<none>.\nDYEC sbatch enforcement: cost-center report: https://us-west-2.console.aws.amazon.com/dynamodbv2/home?region=us-west-2#item-explorer?table=dayec-cost-centers&cost_center=ashg-etc-ccenter\nSubmitted job 4 with external jobid '11'.\n"
+  },
+  "core_tail": {
+    "argv": [
+      "tail",
+      "-n",
+      "30",
+      "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/core.log"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\t1cb2e082-591f-4425-8c57-08eb06f8d80a\tpublish_commit\t11948.34\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\tf0832daa-87f5-4f0c-980e-145c5f62dc02\tpublish_commit\t11948.35\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\tf0832daa-87f5-4f0c-980e-145c5f62dc02\tpublish_commit\t11948.35\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\t2762ac53-310a-4aff-9c97-ee54452eb1f1\tpublish_commit\t11948.36\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\t2762ac53-310a-4aff-9c97-ee54452eb1f1\tpublish_commit\t11948.36\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\t65c553cd-a641-4170-be96-0379b424c929\tpublish_commit\t11948.37\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\t65c553cd-a641-4170-be96-0379b424c929\tpublish_commit\t11948.37\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\tc154f49a-3b5f-4ae7-8fc1-4c49139707d9\tpublish_commit\t11948.38\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\tc154f49a-3b5f-4ae7-8fc1-4c49139707d9\tpublish_commit\t11948.38\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\tee9cb6c1-ceef-4d77-92a7-9ef29289a184\tpublish_commit\t11948.39\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\tee9cb6c1-ceef-4d77-92a7-9ef29289a184\tpublish_commit\t11948.40\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\td1ef6dc1-2d03-41cd-8c75-767e41814a9e\tpublish_commit\t11948.41\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\td1ef6dc1-2d03-41cd-8c75-767e41814a9e\tpublish_commit\t11948.41\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tbegin\t5a581fb1-7016-461f-a64b-0955165ed03c\taf7d1433-8443-4768-92aa-889268832a0c\tpublish_commit\t11948.42\tNA\tNA\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n\nDAYOA_IO_V1\tend\t5a581fb1-7016-461f-a64b-0955165ed03c\taf7d1433-8443-4768-92aa-889268832a0c\tpublish_commit\t11948.42\tNA\t0\t3c90e8ac-2942-40ed-b3e5-b43d97bc8c56\t16546\n"
+  },
+  "expected_native_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+  "observed_at": "2026-10-21T12:01:40.961629+00:00",
+  "panes": {
+    "argv": [
+      "tmux",
+      "list-panes",
+      "-t",
+      "=pg-ug-live-20261020-r01",
+      "-F",
+      "#{pane_id} #{pane_pid} #{pane_current_command}"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "%18 319083 bash\n"
+  },
+  "public_status": {
+    "argv": [
+      "dyec",
+      "--json",
+      "analysis",
+      "status",
+      "slim",
+      "--analysis-root",
+      "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "{\n  \"accounting\": {\n    \"attempt_count\": 1,\n    \"available\": true,\n    \"error\": null,\n    \"jobs\": [\n      {\n        \"AllocCPUS\": \"16\",\n        \"Comment\": \"\",\n        \"Elapsed\": \"00:18:51\",\n        \"End\": \"Unknown\",\n        \"ExitCode\": \"0:0\",\n        \"JobIDRaw\": \"11\",\n        \"JobName\": \"hybrid_pangenome_alignment_qc-HG002-wdth3tk3gpbvjt\",\n        \"NodeList\": \"i128nvme-dy-price128nvme-5\",\n        \"Partition\": \"i128nvme\",\n        \"Reason\": \"None\",\n        \"Start\": \"2026-10-21T11:42:50\",\n        \"State\": \"RUNNING\",\n        \"Submit\": \"2026-10-21T11:42:50\",\n        \"WorkDir\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis\"\n      }\n    ],\n    \"jobs_bounded\": false,\n    \"normalized_state_counts\": {\n      \"RUNNING\": 1\n    },\n    \"state_counts\": {\n      \"RUNNING\": 1\n    },\n    \"unique_job_count\": 1\n  },\n  \"analysis_root\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01\",\n  \"canonical_artifacts\": {\n    \"all_present\": false,\n    \"contract\": \"dayoa_canonical\",\n    \"files\": {\n      \"DAY_final_multiqc.html\": [],\n      \"dayoa_evidence_manifest.json\": [],\n      \"multiqc_data.json\": []\n    },\n    \"run_qc_bundles\": []\n  },\n  \"controller\": {\n    \"active\": true,\n    \"available\": true,\n    \"error\": null,\n    \"processes\": [\n      {\n        \"command\": \"tail -n +1 -f --pid=320597 -- /fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/.dyec/workflow-attempts/11471349-d4f5-4027-9d70-31cc5a07afe6/dy-r.transcript.partial\",\n        \"cwd\": null,\n        \"elapsed_seconds\": 13176,\n        \"pid\": 322146,\n        \"ppid\": 320597\n      },\n      {\n        \"command\": \"/home/ubuntu/miniconda3/envs/DAYOA/bin/python /home/ubuntu/miniconda3/envs/DAYOA/bin/snakemake --profile=/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/config/day_profiles/slurm assert_huomr2p_inflection_packaging_success huomr2p_manifest --configfile config/dyec_runtime_config.yaml --rerun-triggers mtime -j 1 -T 1 -p -k --notemp\",\n        \"cwd\": null,\n        \"elapsed_seconds\": 13164,\n        \"pid\": 324235,\n        \"ppid\": 322147\n      }\n    ],\n    \"run_receipt\": {\n      \"attempt_id\": \"11471349-d4f5-4027-9d70-31cc5a07afe6\",\n      \"available\": true,\n      \"completed_at\": null,\n      \"controller_exit_code\": null,\n      \"controller_id\": \"pg-ug-live-20261020-r01\",\n      \"day_run_exit_code\": null,\n      \"error\": null,\n      \"origin\": \"dyec_controller\",\n      \"requested_command\": \"DAY_CONTAINERIZED=false dy-r assert_huomr2p_inflection_packaging_success huomr2p_manifest --configfile config/dyec_runtime_config.yaml --rerun-triggers mtime -j 1 -T 1 -p -k --produce-rulegraph false --produce-filegraph false --produce-dag true\",\n      \"snakemake_exit_code\": null,\n      \"started_at\": \"2026-10-21T08:21:52Z\",\n      \"status_path\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/status.json\"\n    },\n    \"tmux_observed_controller_exit_code\": null,\n    \"tmux_observed_controller_exit_code_source\": null,\n    \"tmux_panes\": [\n      {\n        \"controller_return_code\": null,\n        \"current_path\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis\",\n        \"dead\": false,\n        \"dead_status\": null,\n        \"observed_commands\": [],\n        \"pane\": 0,\n        \"pane_pid\": 306596,\n        \"session\": \"pg-ug-dry-20261020-r01\",\n        \"window\": 0\n      },\n      {\n        \"controller_return_code\": null,\n        \"current_path\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis\",\n        \"dead\": false,\n        \"dead_status\": null,\n        \"observed_commands\": [],\n        \"pane\": 0,\n        \"pane_pid\": 319083,\n        \"session\": \"pg-ug-live-20261020-r01\",\n        \"window\": 0\n      },\n      {\n        \"controller_return_code\": null,\n        \"current_path\": \"/fsx/work/pangenome_source_validation/20261020/ashg-etc/pg-focused-source-20261020/daylily-omics-analysis\",\n        \"dead\": false,\n        \"dead_status\": null,\n        \"observed_commands\": [],\n        \"pane\": 0,\n        \"pane_pid\": 39114,\n        \"session\": \"pg-ultima-control-20261020\",\n        \"window\": 0\n      }\n    ]\n  },\n  \"dayoa_root\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis\",\n  \"filesystem\": {\n    \"available\": true,\n    \"available_kib\": 13644713728,\n    \"error\": null,\n    \"filesystem\": \"10.0.1.237@tcp:/uiznvb4v\",\n    \"mountpoint\": \"/fsx\",\n    \"path\": \"/fsx\",\n    \"size_kib\": 14419699968,\n    \"use_percent\": 6,\n    \"used_kib\": 774961664\n  },\n  \"generated_at\": \"2026-10-21T12:01:41.936143+00:00\",\n  \"job_counts\": {\n    \"completed\": {\n      \"available\": true,\n      \"note\": \"latest Snakemake progress denominator\",\n      \"source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.snakemake/log/2026-10-21T082217.897737.snakemake.log\",\n      \"value\": 1\n    },\n    \"dependency_blocked\": {\n      \"available\": true,\n      \"note\": \"pending exact-root jobs whose scheduler reason begins with Dependency\",\n      \"source\": \"exact-workdir squeue/scontrol\",\n      \"value\": 0\n    },\n    \"failed\": {\n      \"available\": true,\n      \"note\": \"terminal failed Slurm allocations; not inferred from an empty queue\",\n      \"source\": \"exact-workdir sacct -X\",\n      \"value\": 0\n    },\n    \"pending\": {\n      \"available\": true,\n      \"source\": \"exact-workdir squeue/scontrol\",\n      \"value\": 0\n    },\n    \"running\": {\n      \"available\": true,\n      \"source\": \"exact-workdir squeue/scontrol\",\n      \"value\": 1\n    },\n    \"still_to_run\": {\n      \"available\": true,\n      \"note\": \"DAG total minus completed; includes currently running or pending work\",\n      \"source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.snakemake/log/2026-10-21T082217.897737.snakemake.log\",\n      \"value\": 5\n    },\n    \"submitted\": {\n      \"available\": true,\n      \"note\": \"unique Snakemake job IDs observed in the current master log\",\n      \"source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.snakemake/log/2026-10-21T082217.897737.snakemake.log\",\n      \"value\": 2\n    }\n  },\n  \"manifests\": {\n    \"analysis_units\": [\n      {\n        \"analysis_unit_uid\": \"hg002-huomr2p-30x10x-20261020-r01\",\n        \"library_euids\": [],\n        \"library_ids\": [],\n        \"sequencing_inputs\": [\n          {\n            \"input_ordinal\": 1,\n            \"library\": null,\n            \"library_euid\": null,\n            \"library_id\": null,\n            \"native_pool_id\": \"\",\n            \"physical_library_status\": \"unknown\",\n            \"role\": \"sr\",\n            \"run_id\": \"\",\n            \"sample_id\": \"HG002\",\n            \"sequencing_input_uid\": \"HG002-prepared-ultima-pg-20261020\",\n            \"source_dataset_id\": \"hg002-ultima60x-alignstats-p02-20261019t180148z\",\n            \"source_dataset_sha256\": \"5cc4c964cfc1250ce5cda94b117ed130e30be3b163f90c30e50953be0bff11cc\",\n            \"source_dataset_uri\": \"s3://lsmc-ssf-sequencing-data/derived/hg002-source-datasets/20261015/pclu-2100/hg002-ultima60x-alignstats-p02-20261019t180148z/daylily-omics-analysis/config/samples.tsv\",\n            \"source_provenance_kind\": \"derived_sample_dataset\"\n          },\n          {\n            \"input_ordinal\": 2,\n            \"library\": null,\n            \"library_euid\": null,\n            \"library_id\": null,\n            \"native_pool_id\": \"\",\n            \"physical_library_status\": \"unknown\",\n            \"role\": \"lr\",\n            \"run_id\": \"\",\n            \"sample_id\": \"HG002\",\n            \"sequencing_input_uid\": \"HG002-prepared-ont-pg-20261020\",\n            \"source_dataset_id\": \"hg002-ont60x-alignstats-p02-20261015t064638z\",\n            \"source_dataset_sha256\": \"164fdb48d4076d8727a602784a46874dfd502168b134159026b5624fe97cee1e\",\n            \"source_dataset_uri\": \"s3://lsmc-ssf-sequencing-data/derived/hg002-source-datasets/20261015/pclu-2100/hg002-ont60x-alignstats-p02-20261015t064638z/daylily-omics-analysis/config/samples.tsv\",\n            \"source_provenance_kind\": \"derived_sample_dataset\"\n          }\n        ]\n      }\n    ],\n    \"available\": true,\n    \"files\": [\n      \"specimens.tsv\",\n      \"samples.tsv\",\n      \"libraries.tsv\",\n      \"sequencing_inputs.tsv\",\n      \"analysis_units.tsv\",\n      \"analysis_unit_inputs.tsv\"\n    ],\n    \"hashes\": {\n      \"analysis_unit_inputs.tsv\": \"81e4726d3298a07d77cc021037366992fa1b20a0d832a4cf099dfda27c8897b5\",\n      \"analysis_units.tsv\": \"d31e50084ffba4c9c95295ef85897aa422d51629719571a0b79d2cc91fd118da\",\n      \"libraries.tsv\": \"bc9cc2c35794d37af4bcf3bcde9c3c9c72ad9fe6652d72849b14c5fbe1c0ab5b\",\n      \"samples.tsv\": \"1afdc948a6050b11b1e3612ae1e34a7e1b7c241bd9cbd8a17dda6fd857170ca1\",\n      \"sequencing_inputs.tsv\": \"babd0833484db8db3914badf6e94811af01ae66bd0639cfccc7d088f60f0f7b2\",\n      \"specimens.tsv\": \"3757a6ec97aaffdbd64516dd4c9318dafd2346f2b34a8cd6eff277daf80a404c\"\n    },\n    \"input_contract\": \"six_manifest\",\n    \"lineage_validated\": true,\n    \"row_counts\": {\n      \"analysis_unit_inputs\": 2,\n      \"analysis_units\": 1,\n      \"libraries\": 0,\n      \"samples\": 1,\n      \"sequencing_inputs\": 2,\n      \"specimens\": 1\n    }\n  },\n  \"mode\": \"slim\",\n  \"schema_version\": \"dyec.analysis_status.v2\",\n  \"slurm\": {\n    \"available\": true,\n    \"error\": null,\n    \"jobs\": [\n      {\n        \"comment\": \"ashg-etc-ccenter\",\n        \"cpus\": \"16\",\n        \"elapsed\": \"18:51\",\n        \"job_id\": \"11\",\n        \"min_cpus\": \"16\",\n        \"min_memory\": \"0\",\n        \"name\": \"hybrid_pangenome_alignment_qc-HG002-wdth3tk3gpbvjt\",\n        \"node_count\": \"1\",\n        \"nodes\": \"i128nvme-dy-price128nvme-5\",\n        \"partition\": \"i128nvme\",\n        \"reason\": \"None\",\n        \"restart_count\": 0,\n        \"short_state\": \"R\",\n        \"start_time\": \"2026-10-21T11:42:50\",\n        \"state\": \"RUNNING\",\n        \"stderr\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/logs/slurm/hybrid_pangenome_alignment_qc/hybrid_pangenome_alignment_qc.HG002-wdth3tk3gpbvjt.4.err\",\n        \"stdout\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/logs/slurm/hybrid_pangenome_alignment_qc/hybrid_pangenome_alignment_qc.HG002-wdth3tk3gpbvjt.4.out\",\n        \"submit_time\": \"2026-10-21T11:42:50\",\n        \"workdir\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis\"\n      }\n    ],\n    \"state_counts\": {\n      \"RUNNING\": 1\n    }\n  },\n  \"state\": \"RUNNING\",\n  \"terminal_evidence\": {\n    \"artifact_files\": {\n      \"DAY_final_multiqc.html\": [],\n      \"dayoa_evidence_manifest.json\": [],\n      \"multiqc_data.json\": []\n    },\n    \"controller_exit_code\": null,\n    \"controller_exit_code_source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/status.json#attempts/11471349-d4f5-4027-9d70-31cc5a07afe6/controller/exit_code\",\n    \"day_run_exit_code\": null,\n    \"day_run_exit_code_source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/status.json#attempts/11471349-d4f5-4027-9d70-31cc5a07afe6/day_run/exit_code\",\n    \"requirements\": {\n      \"controller_exit_zero\": false,\n      \"controller_inactive\": false,\n      \"day_run_exit_zero\": false,\n      \"exact_run_receipt_success\": false,\n      \"scheduler_idle\": false,\n      \"snakemake_exit_zero\": false,\n      \"strict_artifacts_present\": false,\n      \"workflow_progress_complete\": false,\n      \"workflow_terminal_success\": false\n    },\n    \"snakemake_exit_code\": null,\n    \"snakemake_exit_code_source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/status.json#attempts/11471349-d4f5-4027-9d70-31cc5a07afe6/snakemake/exit_code\",\n    \"success_verified\": false,\n    \"terminal_failure\": false\n  },\n  \"visit\": {\n    \"agent_id\": \"codex-pg-huomr2p-20261021\",\n    \"agent_kind\": \"codex\",\n    \"analysis_root\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01\",\n    \"codex_session_id\": null,\n    \"command_summary\": null,\n    \"cwd\": \"/home/ubuntu\",\n    \"event\": \"visit\",\n    \"host\": \"ip-10-0-0-14\",\n    \"human_requestor\": \"jmajor\",\n    \"intent\": \"dyec analysis status slim\",\n    \"lock_state_seen\": {\n      \"locked\": true,\n      \"owner\": {\n        \"agent_id\": \"dyec-workflow-pg-ug-live-20261020-r01-11471349-d4f5-4027-9d70-31cc5a07afe6\",\n        \"agent_kind\": \"dyec-cli\",\n        \"codex_session_id\": null,\n        \"command_summary\": \"DAY_CONTAINERIZED=false dy-r assert_huomr2p_inflection_packaging_success huomr2p_manifest --configfile config/dyec_runtime_config.yaml --rerun-triggers mtime -j 1 -T 1 -p -k --produce-rulegraph false --produce-filegraph false --produce-dag true\",\n        \"created_at\": \"2026-10-21T08:21:51.971758Z\",\n        \"heartbeat_at\": \"2026-10-21T08:22:07.441586Z\",\n        \"human_requestor\": \"ubuntu\",\n        \"operation_scope\": \"workflow-launch:pg-ug-live-20261020-r01\"\n      }\n    },\n    \"mode\": \"monitor\",\n    \"note\": \"read-only exact-root status collection\",\n    \"operation\": \"monitor\",\n    \"pid\": 436396,\n    \"schema_version\": \"dayoa.analysis_agent_visit.v1\",\n    \"timestamp\": \"2026-10-21T12:01:41.796340Z\",\n    \"tmux_pane\": null,\n    \"tmux_session\": null,\n    \"user\": \"unknown\"\n  },\n  \"warnings\": [],\n  \"workflow\": {\n    \"failure_count\": 0,\n    \"failure_lines\": [],\n    \"failure_lines_bounded\": false,\n    \"first_failure_line\": null,\n    \"job_events\": {\n      \"completed_count\": 1,\n      \"source\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.snakemake/log/2026-10-21T082217.897737.snakemake.log\",\n      \"submitted_count\": 2\n    },\n    \"master_log\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.snakemake/log/2026-10-21T082217.897737.snakemake.log\",\n    \"progress\": {\n      \"completed\": 1,\n      \"percent\": 17,\n      \"total\": 6\n    },\n    \"scheduled_rules\": [\n      \"hybrid_pangenome_alignment_qc\",\n      \"hybrid_pangenome_core\"\n    ],\n    \"terminal\": {\n      \"return_code\": null,\n      \"return_code_source\": null,\n      \"success_marker\": false,\n      \"success_marker_source\": null\n    }\n  }\n}\n"
+  },
+  "receipts": {
+    "artifact_manifest": {
+      "exists": false,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/manifests/huomr2p/analysis_artifacts.json"
+    },
+    "core": {
+      "bytes": 8856,
+      "content": {
+        "analysis_unit_uid": "HG002-wdth3tk3gpbvjt",
+        "artifacts": [
+          {
+            "bytes": 1142116814,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz",
+            "role": "small_variants",
+            "sha256": ""
+          },
+          {
+            "bytes": 1992848,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz.tbi",
+            "role": "small_variants_index",
+            "sha256": ""
+          },
+          {
+            "bytes": 11141507,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz",
+            "role": "pangenome_sv",
+            "sha256": ""
+          },
+          {
+            "bytes": 247656,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz.tbi",
+            "role": "pangenome_sv_index",
+            "sha256": ""
+          },
+          {
+            "bytes": 2255,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_ploidy.json",
+            "role": "ploidy",
+            "sha256": ""
+          },
+          {
+            "bytes": 6877160485,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram",
+            "role": "lifted_sr_alignment",
+            "sha256": ""
+          },
+          {
+            "bytes": 89825,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram.crai",
+            "role": "lifted_sr_index",
+            "sha256": ""
+          },
+          {
+            "bytes": 67106,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_provenance.json",
+            "role": "native_provenance",
+            "sha256": ""
+          },
+          {
+            "bytes": 26826310679,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+            "role": "ont_alignment",
+            "sha256": ""
+          },
+          {
+            "bytes": 202435,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+            "role": "ont_index",
+            "sha256": ""
+          },
+          {
+            "bytes": 51928203894,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+            "role": "original_sr_alignment",
+            "sha256": ""
+          },
+          {
+            "bytes": 1247316,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai",
+            "role": "original_sr_index",
+            "sha256": ""
+          },
+          {
+            "bytes": 2983,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+            "role": "duplicate_marking_evidence",
+            "sha256": ""
+          },
+          {
+            "bytes": 12415,
+            "media_type": "application/octet-stream",
+            "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/command_manifest.json",
+            "role": "command_manifest",
+            "sha256": ""
+          }
+        ],
+        "command": [
+          "bin/dayoa_sentieon_cli",
+          "hybrid-pangenome",
+          "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+          "-r",
+          "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+          "-m",
+          "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+          "--gbz",
+          "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+          "--hapl",
+          "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+          "--pop_vcf",
+          "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+          "-b",
+          "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+          "--lr_aln",
+          "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+          "--cores",
+          "96",
+          "--kmer_memory",
+          "30",
+          "--skip_multiqc",
+          "--log_dir",
+          "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+          "--experimental_ultima",
+          "--sr_model_bundle",
+          "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+          "--sr_aln",
+          "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+          "--sr_duplicate_marking_receipt",
+          "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json"
+        ],
+        "completion_provenance": {
+          "evidence": [
+            "native_return_zero",
+            "required_products_published"
+          ],
+          "kind": "native_caller"
+        },
+        "component_id": "hybrid_pangenome_core",
+        "execution_attempted": true,
+        "generated_at_utc": "2026-10-21T11:42:37Z",
+        "metadata": {
+          "analysis_id": "hg002-huomr2p-30x10x-20261020-r01",
+          "benchmark_file": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/benchmarks/huomr2p.core.bench.tsv",
+          "command_manifest": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/command_manifest.json",
+          "experimental": true,
+          "input_ownership": "immutable_external_references",
+          "native_log_dir": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+          "native_metrics_dir": null,
+          "native_metrics_state": "not_emitted_for_aligned_short_reads",
+          "production_accepted": false,
+          "profile": "huomr2p",
+          "rule_log": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/core.log",
+          "scientific_validation": "pending"
+        },
+        "outcome": "called",
+        "reason": {
+          "code": "NATIVE_CALL_COMPLETED",
+          "message": "Native joint-pangenome products are available"
+        },
+        "sample_id": "HG002",
+        "schema": "dayoa.hiomr2_component_result/1.0",
+        "source_return_code": 0,
+        "status": "PASS",
+        "tool": {
+          "name": "sentieon-cli hybrid-pangenome",
+          "version": "2.0.3"
+        },
+        "upstream_component_ids": []
+      },
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/core.component.json",
+      "sha256": "bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08"
+    },
+    "package": {
+      "exists": false,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/package.terminal.json"
+    },
+    "packaging_acceptance": {
+      "exists": false,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/manifests/huomr2p/packaging_acceptance.json"
+    },
+    "qc": {
+      "exists": false,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/qc.terminal.json"
+    }
+  },
+  "schema": "pangenome.huomr2p.native_observation.v1",
+  "target": {
+    "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01",
+    "controller_id": "pg-ug-live-20261020-r01",
+    "cwd": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis",
+    "dag_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.dyec/controller-dag.png",
+    "log_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/.dyec/controller.log",
+    "pid": 320597,
+    "schema_version": "dyec.controller_target.v2",
+    "status_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6"
+  },
+  "task_tail": {
+    "argv": [
+      "tail",
+      "-n",
+      "20",
+      "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/task_logs/variant-calling/dnascope-1.0.log"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "annotate: 12514430 calls 1513.822 user 5.504 sys 1523.254 real\nassemble_region: 12831792 calls 167233.512 user 283.051 sys 167887.277 real\nbuild_variants: 12767312 calls 113.546 user 3.507 sys 126.221 real\ncalc: 3091383 calls 1329.480 user 1.838 sys 1339.753 real\ncalc_region: 12767312 calls 568596.321 user 460.382 sys 589828.379 real\ncall_region: 12767299 calls 2774.543 user 16.759 sys 2801.160 real\nclip_region: 25599104 calls 3322.899 user 11.623 sys 3478.959 real\ndone: 1 calls 0.090 user 0.013 sys 0.106 real\nexecute: 1 calls 0.001 user 0.001 sys 6754.195 real\nfetch: 3091383 calls 430.336 user 4.228 sys 435.984 real\nfetch_ref: 15923175 calls 67.540 user 11.770 sys 80.436 real\nfetch_region: 12831792 calls 269.467 user 3.691 sys 277.031 real\nidle: 189293 calls 73.402 user 0.780 sys 19087.419 real\ninit: 1 calls 0.000 user 0.004 sys 0.009 real\npairhmm: 14965592 calls 377216.522 user 81.215 sys 377832.389 real\nrealign: 13017172 calls 40454.541 user 13.775 sys 40571.789 real\nregion: 3091383 calls 583818.567 user 537.535 sys 604029.046 real\ntracker: 3091383 calls 1280.170 user 7.631 sys 1300.220 real\ntrim_region: 12831792 calls 345.297 user 4.267 sys 352.152 real\noverall: 53693353984 mem 607519.918 user 1137.242 sys 6760.442 real\n"
+  },
+  "visit": {
+    "argv": [
+      "dyec",
+      "--json",
+      "analysis",
+      "visit",
+      "--analysis-root",
+      "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01",
+      "--mode",
+      "read",
+      "--intent",
+      "Observe original HUOMR2P live controller phase and native terminal receipts after explicit observer transport break"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "{\n  \"agent_id\": \"codex-pg-huomr2p-20261021\",\n  \"agent_kind\": \"codex\",\n  \"analysis_root\": \"/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01\",\n  \"codex_session_id\": null,\n  \"command_summary\": null,\n  \"cwd\": \"/home/ubuntu\",\n  \"event\": \"visit\",\n  \"host\": \"ip-10-0-0-14\",\n  \"human_requestor\": \"jmajor\",\n  \"intent\": \"Observe original HUOMR2P live controller phase and native terminal receipts after explicit observer transport break\",\n  \"lock_state_seen\": {\n    \"locked\": true,\n    \"owner\": {\n      \"agent_id\": \"dyec-workflow-pg-ug-live-20261020-r01-11471349-d4f5-4027-9d70-31cc5a07afe6\",\n      \"agent_kind\": \"dyec-cli\",\n      \"codex_session_id\": null,\n      \"command_summary\": \"DAY_CONTAINERIZED=false dy-r assert_huomr2p_inflection_packaging_success huomr2p_manifest --configfile config/dyec_runtime_config.yaml --rerun-triggers mtime -j 1 -T 1 -p -k --produce-rulegraph false --produce-filegraph false --produce-dag true\",\n      \"created_at\": \"2026-10-21T08:21:51.971758Z\",\n      \"heartbeat_at\": \"2026-10-21T08:22:07.441586Z\",\n      \"human_requestor\": \"ubuntu\",\n      \"operation_scope\": \"workflow-launch:pg-ug-live-20261020-r01\"\n    }\n  },\n  \"mode\": \"read\",\n  \"note\": null,\n  \"operation\": \"read\",\n  \"pid\": 436393,\n  \"schema_version\": \"dayoa.analysis_agent_visit.v1\",\n  \"timestamp\": \"2026-10-21T12:01:41.347712Z\",\n  \"tmux_pane\": null,\n  \"tmux_session\": null,\n  \"user\": \"unknown\"\n}\n"
+  },
+  "windows": {
+    "argv": [
+      "tmux",
+      "list-windows",
+      "-t",
+      "=pg-ug-live-20261020-r01",
+      "-F",
+      "#{window_id} #{window_panes}"
+    ],
+    "rc": 0,
+    "stderr": "",
+    "stdout": "@18 1\n"
+  }
+}

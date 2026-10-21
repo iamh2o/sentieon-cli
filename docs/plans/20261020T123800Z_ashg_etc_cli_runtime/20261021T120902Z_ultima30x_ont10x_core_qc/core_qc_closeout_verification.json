@@ -1,0 +1,246 @@
+{
+  "schema": "sentieon.closed_core_qc_receipt_closeout.v1",
+  "status": "verified",
+  "verified_at_utc": "2026-10-21T12:14:12.241802+00:00",
+  "source_evidence_root": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021",
+  "local_root": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc",
+  "source_evidence_commit_root_handoff": "Root reports07b15bb6 pushed; original core bundlea8d0652c; closed core/QC bytes independently verified here",
+  "closed_inventories": {
+    "closed_inventory_core_pass.json": {
+      "attempt": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+      "bytes": 1081,
+      "files": [
+        {
+          "bytes": 40358,
+          "path": "live_observation04_current_status.native.json",
+          "sha256": "e400f078fb66b243899c62295f33aa39e5ace1f4f34a2e755f05cc98e0744692"
+        },
+        {
+          "bytes": 8856,
+          "path": "core.component.native.json",
+          "sha256": "bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08"
+        },
+        {
+          "bytes": 14992,
+          "path": "core_completed_proof01.native.json",
+          "sha256": "147fd9fce41ce26a44617e75032b6bf7396535e9c8aaa5b91309dbeab303fd00"
+        },
+        {
+          "bytes": 12415,
+          "path": "command_manifest.native.json",
+          "sha256": "c8f675238c6a4bb80b30c267258100f740de7775e3b570b3b3c57e2ffeaaf5c9"
+        },
+        {
+          "bytes": 67106,
+          "path": "native_provenance.native.json",
+          "sha256": "f6c18d2017663775f6ede9ba950a64b49299b5842bd3cc584525cf60b6093bb5"
+        }
+      ],
+      "sha256": "be453046122404787e23da61d15aa78d7cb46241b419b2fd5e79e4c0ae593b92",
+      "status": "CLOSED_CORE_PASS_WORKFLOW_PENDING"
+    },
+    "closed_inventory_qc_pass.json": {
+      "attempt": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+      "bytes": 728,
+      "files": [
+        {
+          "bytes": 39534,
+          "path": "live_observation05_qc_complete.native.json",
+          "sha256": "e3eca9e741e0b0aef1c1953f1ab74d0951e1fca9dd79a2907acfa4e8c592e73e"
+        },
+        {
+          "bytes": 6464,
+          "path": "qc.terminal.native.json",
+          "sha256": "87ab955aa73aa305b2e60bbba46f2696b6459b5780b46435eb0ccfd0f212e03c"
+        },
+        {
+          "bytes": 5766,
+          "path": "quality.native.json",
+          "sha256": "9946cf46b5ab30837799b4c9becbeed6d717d12b9f17ebb79053507036a002a6"
+        }
+      ],
+      "sha256": "ea21d037d64625d1eb7ab9088d0c1d5e3fdbb82867039fec3e459349bd33ebd6",
+      "status": "CLOSED_QC_PASS_WORKFLOW_PENDING"
+    }
+  },
+  "files": [
+    {
+      "name": "closed_inventory_core_pass.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/closed_inventory_core_pass.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/closed_inventory_core_pass.json",
+      "bytes": 1081,
+      "sha256": "be453046122404787e23da61d15aa78d7cb46241b419b2fd5e79e4c0ae593b92",
+      "bytes_equal": true
+    },
+    {
+      "name": "closed_inventory_qc_pass.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/closed_inventory_qc_pass.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/closed_inventory_qc_pass.json",
+      "bytes": 728,
+      "sha256": "ea21d037d64625d1eb7ab9088d0c1d5e3fdbb82867039fec3e459349bd33ebd6",
+      "bytes_equal": true
+    },
+    {
+      "name": "command_manifest.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/command_manifest.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/command_manifest.native.json",
+      "bytes": 12415,
+      "sha256": "c8f675238c6a4bb80b30c267258100f740de7775e3b570b3b3c57e2ffeaaf5c9",
+      "bytes_equal": true
+    },
+    {
+      "name": "core.component.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/core.component.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/core.component.native.json",
+      "bytes": 8856,
+      "sha256": "bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08",
+      "bytes_equal": true
+    },
+    {
+      "name": "core_completed_proof01.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/core_completed_proof01.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/core_completed_proof01.native.json",
+      "bytes": 14992,
+      "sha256": "147fd9fce41ce26a44617e75032b6bf7396535e9c8aaa5b91309dbeab303fd00",
+      "bytes_equal": true
+    },
+    {
+      "name": "live_observation04_current_status.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/live_observation04_current_status.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/live_observation04_current_status.native.json",
+      "bytes": 40358,
+      "sha256": "e400f078fb66b243899c62295f33aa39e5ace1f4f34a2e755f05cc98e0744692",
+      "bytes_equal": true
+    },
+    {
+      "name": "live_observation05_qc_complete.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/live_observation05_qc_complete.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/live_observation05_qc_complete.native.json",
+      "bytes": 39534,
+      "sha256": "e3eca9e741e0b0aef1c1953f1ab74d0951e1fca9dd79a2907acfa4e8c592e73e",
+      "bytes_equal": true
+    },
+    {
+      "name": "native_provenance.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/native_provenance.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/native_provenance.native.json",
+      "bytes": 67106,
+      "sha256": "f6c18d2017663775f6ede9ba950a64b49299b5842bd3cc584525cf60b6093bb5",
+      "bytes_equal": true
+    },
+    {
+      "name": "qc.terminal.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/qc.terminal.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/qc.terminal.native.json",
+      "bytes": 6464,
+      "sha256": "87ab955aa73aa305b2e60bbba46f2696b6459b5780b46435eb0ccfd0f212e03c",
+      "bytes_equal": true
+    },
+    {
+      "name": "quality.native.json",
+      "source_path": "/Users/jmajor/projects/lsmc/daylily-omics-analysis/.codex-worktrees/hg002-ilmn-ont-hybrid-pangenome-20261020/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent/execution/huomr2p_execution_20261021/quality.native.json",
+      "local_path": "/Users/jmajor/projects/cli_refactor/sentieon-cli-hybrid-checkpoint-1.7.2i/docs/plans/20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/quality.native.json",
+      "bytes": 5766,
+      "sha256": "9946cf46b5ab30837799b4c9becbeed6d717d12b9f17ebb79053507036a002a6",
+      "bytes_equal": true
+    }
+  ],
+  "native_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+  "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01",
+  "analysis_unit_uid": "HG002-wdth3tk3gpbvjt",
+  "sample_id": "HG002",
+  "core": {
+    "status": "PASS",
+    "outcome": "called",
+    "source_return_code": 0,
+    "native_status": "completed",
+    "native_finished_at": "2026-10-21T11:42:37.806801+00:00",
+    "experimental": true,
+    "production_accepted": false,
+    "scientific_validation": "pending",
+    "model_composition": "Illumina+ONT joint model with Ultima pangenome mapper; cross-platform accuracy is unvalidated",
+    "model_application": "DNAModelApply finished11:42:15.647UTC in47.65s; completed DAG node retained in source proof",
+    "declared_nonempty_artifact_roles": 14,
+    "generated_roles_with_independent_metadata_match": 9,
+    "native_metrics_state": "not_emitted_for_aligned_short_reads"
+  },
+  "qc": {
+    "terminal_status": "PASS",
+    "return_code": 0,
+    "reason": "MEASUREMENTS_COMPLETE",
+    "generated_at_utc": "2026-10-21T12:06:38Z",
+    "quality_status": "PASS",
+    "execution_status": "PASS",
+    "scientific_validation": "NOT_ASSESSED",
+    "customer_release_eligible": false,
+    "mean_depth_strings": {
+      "lifted_sr": "4.325412616172850365424663042",
+      "ont": "9.999053238278962532309287144",
+      "original_sr": "29.99891901105408943184300036"
+    },
+    "metrics_original_bytes": "quality.native.json preserved byte-for-byte; no metric or float recomputation",
+    "combined_depth_roles": [
+      "original_sr",
+      "ont"
+    ],
+    "lifted_sr_is_additional_sequence": false
+  },
+  "whole_workflow": {
+    "observed_at": "2026-10-21T12:08:07.985118+00:00",
+    "state": "RUNNING",
+    "controller_exit_code": null,
+    "day_run_exit_code": null,
+    "snakemake_exit_code": null,
+    "package_job": "12",
+    "package_started_at": "2026-10-21T12:06:44",
+    "package_status": "RUNNING",
+    "package_terminal_verified": false,
+    "workflow_terminal_success_verified": false,
+    "scope": "Historical closed12:08 observation; not a current state query"
+  },
+  "provenance_limitations": {
+    "vg_version_capture": "Existing native/command capture used unsupported vg --version and records rc1; version1.73.0 is declared and previously qualified; no fresh probe or fabricated success",
+    "output_verification_scope": "Native receipts/owner metadata only; no biological output or input bytes read or rehashed here"
+  },
+  "new_runtime_operations": [],
+  "new_tests_builds_installs_or_source_model_tag_changes": false,
+  "scientific_acceptance": false,
+  "linear_ultima_ont": "Separate owner ledger remains unlaunched; no completion claimed",
+  "later_root_handoff": {
+    "source": "Root coordination message after the bounded core/QC bundle was copied; no additional receipt or native read by this workstream",
+    "foreground_finished_at_utc": "2026-10-21T12:16:54Z",
+    "steps": "6/6",
+    "workflow_marker": "WORKFLOW SUCCESS",
+    "foreground_return_code": 0,
+    "source_commit_after_return": "1319db5785b8ba371592ba082716cfc3ae63d112",
+    "package_and_artifact_acceptance": "Owner-reported PASS; closed inventory prefix37483d41, five files567678bytes; not independently copied/verified here",
+    "pending": "Canonical0/0/0, sealed transcript, idle/lock proof and planned post-success collector; whole promotion remains pending",
+    "scientific_acceptance": false
+  },
+  "canonical_whole_owner_handoff": {
+    "source": "Latest root coordination message; observation bytes/sealed transcript/invariant proof not received or independently read here",
+    "observed_at_utc": "2026-10-21T12:19:58Z",
+    "observation_sha256_supplied_by_owner": "dd54171d30f6dcbdc7e47a37de119ba185c6effbe31525637bdbdcf159a6f4c5",
+    "native_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+    "status": "SUCCESS",
+    "completed_at_utc": "2026-10-21T12:17:13Z",
+    "controller_exit_code": 0,
+    "day_run_exit_code": 0,
+    "snakemake_exit_code": 0,
+    "controller_inactive": true,
+    "current_jobs_for_exact_root": 0,
+    "write_lock": "unlocked/owner null",
+    "whole_milestone_owner_verified": true,
+    "independent_closed_transfer_verified_here": false,
+    "pending": "Root independent closed bytes/sealed transcript+ten-invariant proof; post-success collector held untilproof",
+    "earlier_read_only_helper_rejection": {
+      "status": "PRECONDITION_REJECTED",
+      "reason": "State/controller invariant before snapshot",
+      "exit_code": "Not supplied; no zero invented",
+      "proof_analysis_benchmark_writes": false,
+      "exact_rejection_retained_by_owner": true
+    },
+    "optional_canonical_artifact_warning": "Retained; exact clone-v2 receipt establishes0/0/0",
+    "scientific_acceptance": false
+  }
+}

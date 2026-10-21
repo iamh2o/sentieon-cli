@@ -1,0 +1,174 @@
+{
+  "analysis_unit_uid": "HG002-wdth3tk3gpbvjt",
+  "artifacts": [
+    {
+      "bytes": 1142116814,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz",
+      "role": "small_variants",
+      "sha256": ""
+    },
+    {
+      "bytes": 1992848,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz.tbi",
+      "role": "small_variants_index",
+      "sha256": ""
+    },
+    {
+      "bytes": 11141507,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz",
+      "role": "pangenome_sv",
+      "sha256": ""
+    },
+    {
+      "bytes": 247656,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz.tbi",
+      "role": "pangenome_sv_index",
+      "sha256": ""
+    },
+    {
+      "bytes": 2255,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_ploidy.json",
+      "role": "ploidy",
+      "sha256": ""
+    },
+    {
+      "bytes": 6877160485,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram",
+      "role": "lifted_sr_alignment",
+      "sha256": ""
+    },
+    {
+      "bytes": 89825,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram.crai",
+      "role": "lifted_sr_index",
+      "sha256": ""
+    },
+    {
+      "bytes": 67106,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_provenance.json",
+      "role": "native_provenance",
+      "sha256": ""
+    },
+    {
+      "bytes": 26826310679,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+      "role": "ont_alignment",
+      "sha256": ""
+    },
+    {
+      "bytes": 202435,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+      "role": "ont_index",
+      "sha256": ""
+    },
+    {
+      "bytes": 51928203894,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+      "role": "original_sr_alignment",
+      "sha256": ""
+    },
+    {
+      "bytes": 1247316,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai",
+      "role": "original_sr_index",
+      "sha256": ""
+    },
+    {
+      "bytes": 2983,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+      "role": "duplicate_marking_evidence",
+      "sha256": ""
+    },
+    {
+      "bytes": 12415,
+      "media_type": "application/octet-stream",
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/command_manifest.json",
+      "role": "command_manifest",
+      "sha256": ""
+    }
+  ],
+  "command": [
+    "bin/dayoa_sentieon_cli",
+    "hybrid-pangenome",
+    "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+    "-r",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "-m",
+    "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "--gbz",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "--hapl",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "--pop_vcf",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "-b",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "--lr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "--cores",
+    "96",
+    "--kmer_memory",
+    "30",
+    "--skip_multiqc",
+    "--log_dir",
+    "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+    "--experimental_ultima",
+    "--sr_model_bundle",
+    "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+    "--sr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+    "--sr_duplicate_marking_receipt",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json"
+  ],
+  "completion_provenance": {
+    "evidence": [
+      "native_return_zero",
+      "required_products_published"
+    ],
+    "kind": "native_caller"
+  },
+  "component_id": "hybrid_pangenome_core",
+  "execution_attempted": true,
+  "generated_at_utc": "2026-10-21T11:42:37Z",
+  "metadata": {
+    "analysis_id": "hg002-huomr2p-30x10x-20261020-r01",
+    "benchmark_file": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/benchmarks/huomr2p.core.bench.tsv",
+    "command_manifest": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/command_manifest.json",
+    "experimental": true,
+    "input_ownership": "immutable_external_references",
+    "native_log_dir": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+    "native_metrics_dir": null,
+    "native_metrics_state": "not_emitted_for_aligned_short_reads",
+    "production_accepted": false,
+    "profile": "huomr2p",
+    "rule_log": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/core.log",
+    "scientific_validation": "pending"
+  },
+  "outcome": "called",
+  "reason": {
+    "code": "NATIVE_CALL_COMPLETED",
+    "message": "Native joint-pangenome products are available"
+  },
+  "sample_id": "HG002",
+  "schema": "dayoa.hiomr2_component_result/1.0",
+  "source_return_code": 0,
+  "status": "PASS",
+  "tool": {
+    "name": "sentieon-cli hybrid-pangenome",
+    "version": "2.0.3"
+  },
+  "upstream_component_ids": []
+}

@@ -1,0 +1,33 @@
+{
+  "files": [
+    {
+      "bytes": 40358,
+      "path": "live_observation04_current_status.native.json",
+      "sha256": "e400f078fb66b243899c62295f33aa39e5ace1f4f34a2e755f05cc98e0744692"
+    },
+    {
+      "bytes": 8856,
+      "path": "core.component.native.json",
+      "sha256": "bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08"
+    },
+    {
+      "bytes": 14992,
+      "path": "core_completed_proof01.native.json",
+      "sha256": "147fd9fce41ce26a44617e75032b6bf7396535e9c8aaa5b91309dbeab303fd00"
+    },
+    {
+      "bytes": 12415,
+      "path": "command_manifest.native.json",
+      "sha256": "c8f675238c6a4bb80b30c267258100f740de7775e3b570b3b3c57e2ffeaaf5c9"
+    },
+    {
+      "bytes": 67106,
+      "path": "native_provenance.native.json",
+      "sha256": "f6c18d2017663775f6ede9ba950a64b49299b5842bd3cc584525cf60b6093bb5"
+    }
+  ],
+  "generated_at": "2026-10-21T12:06:06.684160+00:00",
+  "native_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+  "schema": "pangenome.closed_evidence_inventory.v1",
+  "status": "CLOSED_CORE_PASS_WORKFLOW_PENDING"
+}

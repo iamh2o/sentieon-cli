@@ -1,0 +1,23 @@
+{
+  "files": [
+    {
+      "bytes": 39534,
+      "path": "live_observation05_qc_complete.native.json",
+      "sha256": "e3eca9e741e0b0aef1c1953f1ab74d0951e1fca9dd79a2907acfa4e8c592e73e"
+    },
+    {
+      "bytes": 6464,
+      "path": "qc.terminal.native.json",
+      "sha256": "87ab955aa73aa305b2e60bbba46f2696b6459b5780b46435eb0ccfd0f212e03c"
+    },
+    {
+      "bytes": 5766,
+      "path": "quality.native.json",
+      "sha256": "9946cf46b5ab30837799b4c9becbeed6d717d12b9f17ebb79053507036a002a6"
+    }
+  ],
+  "generated_at": "2026-10-21T12:09:02.935001+00:00",
+  "native_attempt_id": "11471349-d4f5-4027-9d70-31cc5a07afe6",
+  "schema": "pangenome.closed_evidence_inventory.v1",
+  "status": "CLOSED_QC_PASS_WORKFLOW_PENDING"
+}

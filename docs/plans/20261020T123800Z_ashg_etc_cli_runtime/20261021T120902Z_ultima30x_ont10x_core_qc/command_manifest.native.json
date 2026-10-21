@@ -1,0 +1,146 @@
+{
+  "analysis_id": "hg002-huomr2p-30x10x-20261020-r01",
+  "analysis_unit_uid": "HG002-wdth3tk3gpbvjt",
+  "argv": [
+    "bin/dayoa_sentieon_cli",
+    "hybrid-pangenome",
+    "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+    "-r",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "-m",
+    "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "--gbz",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "--hapl",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "--pop_vcf",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "-b",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "--lr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "--cores",
+    "96",
+    "--kmer_memory",
+    "30",
+    "--skip_multiqc",
+    "--log_dir",
+    "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+    "--experimental_ultima",
+    "--sr_model_bundle",
+    "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+    "--sr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+    "--sr_duplicate_marking_receipt",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json"
+  ],
+  "benchmark_file": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/benchmarks/huomr2p.core.bench.tsv",
+  "experimental": true,
+  "inputs": {
+    "duplicate_marking_evidence": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+    "lr_aln": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "lr_index": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+    "sr_aln": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+    "sr_index": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai"
+  },
+  "model_composition": "Illumina+ONT joint model with Ultima pangenome mapper",
+  "models": {
+    "graph_read_extraction": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/extract.model",
+    "joint_small_variants": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/dnascope.model",
+    "ont_graph_update_sv": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/longreadsv.model",
+    "ultima_realignment": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle/minimap2.model"
+  },
+  "native_log_dir": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+  "native_metrics_dir": null,
+  "outputs": {
+    "command_manifest": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/command_manifest.json",
+    "duplicate_marking_evidence": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+    "lifted_sr_alignment": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram",
+    "lifted_sr_index": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_lift_deduped.cram.crai",
+    "native_provenance": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_provenance.json",
+    "ont_alignment": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "ont_index": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+    "original_sr_alignment": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+    "original_sr_index": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai",
+    "pangenome_sv": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz",
+    "pangenome_sv_index": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_sv.vcf.gz.tbi",
+    "ploidy": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002_ploidy.json",
+    "small_variants": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz",
+    "small_variants_index": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/HG002.vcf.gz.tbi"
+  },
+  "population_id": "population-hprc-v2.0-20260528",
+  "production_accepted": false,
+  "profile": "huomr2p",
+  "reference_assets": {
+    "canonical_bed": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "graph": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "haplotypes": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "population_index": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi",
+    "population_vcf": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "reference": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "reference_fai": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai"
+  },
+  "rule_log": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/logs/core.log",
+  "runtime_executables": {
+    "patched_kmc_bin": "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+    "sentieon_bin": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+    "sentieon_cli_bin": "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli"
+  },
+  "runtime_versions": {
+    "patched_kmc": {
+      "argv": [
+        "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+        "--version"
+      ],
+      "banner": "K-Mer Counter (KMC) ver. 3.2.4 (2024-02-09)\nUsage:\n kmc [options] <input_file_name> <output_file_name> <working_directory>\n kmc [options] <@input_file_names> <output_file_name> <working_directory>\nParameters:\n  input_file_name - single file in specified (-f switch) format (gziped or not)\n  @input_file_names - file name with list of input files in specified (-f switch) format (gziped or not)\nOptions:\n  -v - verbose mode (shows all parameter settings); default: false\n  -k<len> - k-mer length (k from 1 to 256; default: 25)\n  -m<size> - max amount of RAM in GB (from 1 to 1024); default: 12\n  -sm - use strict memory mode (memory limit from -m<n> switch will not be exceeded)\n  -hc - count homopolymer compressed k-mers (approximate and experimental)\n  -p<par> - signature length (5, 6, 7, 8, 9, 10, 11); default: 9\n  -f<a/q/m/bam/kmc> - input in FASTA format (-fa), FASTQ format (-fq), multi FASTA (-fm) or BAM (-fbam) or KMC(-fkmc); default: FASTQ\n  -ci<value> - exclude k-mers occurring less than <value> times (default: 2)\n  -cs<value> - maximal value of a counter (default: 255)\n  -cx<value> - exclude k-mers occurring more of than <value> times (default: 1e9)\n  -b - turn off transformation of k-mers into canonical form\n  -r - turn on RAM-only mode \n  -n<value> - number of bins \n  -t<value> - total number of threads (default: no. of CPU cores)\n  -sf<value> - number of FASTQ reading threads\n  -sp<value> - number of splitting threads\n  -sr<value> - number of threads for 2nd stage\n  -j<file_name> - file name with execution summary in JSON format\n  -w - without output\n  -o<kmc/kff> - output in KMC of KFF format; default: KMC\n  -hp - hide percentage progress (default: false)\n  -e - only estimate histogram of k-mers occurrences instead of exact k-mer counting\n  --opt-out-size - optimize output database size (may increase running time)\nExample:\nkmc -k27 -m24 NA19238.fastq NA.res /data/kmc_tmp_dir/\nkmc -k27 -m24 @files.lst NA.res /data/kmc_tmp_dir/\n",
+      "error": null,
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+      "return_code": 0,
+      "truncated": false
+    },
+    "sentieon_cli": {
+      "argv": [
+        "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+        "--version"
+      ],
+      "banner": "2.0.3\n",
+      "error": null,
+      "executable": "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+      "return_code": 0,
+      "truncated": false
+    },
+    "sentieon_driver": {
+      "argv": [
+        "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+        "driver",
+        "--version"
+      ],
+      "banner": "sentieon-genomics-202503.04\n",
+      "error": null,
+      "executable": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+      "return_code": 0,
+      "truncated": false
+    },
+    "vg": {
+      "argv": [
+        "/fsx/work/pangenome_runtime/20261020/bin/vg",
+        "--version"
+      ],
+      "banner": "error[vg] command --version not found\n",
+      "error": "Command '['/fsx/work/pangenome_runtime/20261020/bin/vg', '--version']' returned non-zero exit status 1.",
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/vg",
+      "return_code": 1,
+      "truncated": false
+    }
+  },
+  "sample_id": "HG002",
+  "schema": "dayoa.hybrid_pangenome_command/1.0",
+  "scientific_validation": "pending",
+  "version_basis": "declared_runtime_configuration",
+  "versions": {
+    "patched_kmc": "3.2.4-pipe2",
+    "sentieon_cli": "2.0.3",
+    "sentieon_driver": "202503.04",
+    "vg": "1.73.0"
+  }
+}

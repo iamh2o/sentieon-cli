@@ -1,0 +1,68 @@
+{
+  "schema": "sentieon.closed_core_qc_local_evidence_inventory.v1",
+  "status": "CLOSED_CORE_QC_PASS_WORKFLOW_PENDING",
+  "file_count": 12,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 6702,
+      "sha256": "ca2bb9520e756e44b3ad78ce00cfb8864e166eb4cae8cbde1b850d4fc213c432"
+    },
+    {
+      "name": "closed_inventory_core_pass.json",
+      "bytes": 1081,
+      "sha256": "be453046122404787e23da61d15aa78d7cb46241b419b2fd5e79e4c0ae593b92"
+    },
+    {
+      "name": "closed_inventory_qc_pass.json",
+      "bytes": 728,
+      "sha256": "ea21d037d64625d1eb7ab9088d0c1d5e3fdbb82867039fec3e459349bd33ebd6"
+    },
+    {
+      "name": "command_manifest.native.json",
+      "bytes": 12415,
+      "sha256": "c8f675238c6a4bb80b30c267258100f740de7775e3b570b3b3c57e2ffeaaf5c9"
+    },
+    {
+      "name": "core.component.native.json",
+      "bytes": 8856,
+      "sha256": "bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08"
+    },
+    {
+      "name": "core_completed_proof01.native.json",
+      "bytes": 14992,
+      "sha256": "147fd9fce41ce26a44617e75032b6bf7396535e9c8aaa5b91309dbeab303fd00"
+    },
+    {
+      "name": "core_qc_closeout_verification.json",
+      "bytes": 14383,
+      "sha256": "e5546f2304d9254ea0cfa251159d74b58b07083419903cef2164614f896efde9"
+    },
+    {
+      "name": "live_observation04_current_status.native.json",
+      "bytes": 40358,
+      "sha256": "e400f078fb66b243899c62295f33aa39e5ace1f4f34a2e755f05cc98e0744692"
+    },
+    {
+      "name": "live_observation05_qc_complete.native.json",
+      "bytes": 39534,
+      "sha256": "e3eca9e741e0b0aef1c1953f1ab74d0951e1fca9dd79a2907acfa4e8c592e73e"
+    },
+    {
+      "name": "native_provenance.native.json",
+      "bytes": 67106,
+      "sha256": "f6c18d2017663775f6ede9ba950a64b49299b5842bd3cc584525cf60b6093bb5"
+    },
+    {
+      "name": "qc.terminal.native.json",
+      "bytes": 6464,
+      "sha256": "87ab955aa73aa305b2e60bbba46f2696b6459b5780b46435eb0ccfd0f212e03c"
+    },
+    {
+      "name": "quality.native.json",
+      "bytes": 5766,
+      "sha256": "9946cf46b5ab30837799b4c9becbeed6d717d12b9f17ebb79053507036a002a6"
+    }
+  ],
+  "scope": "Only copied closed small receipts and local documentation/verification; no biological data reads or output hashes"
+}

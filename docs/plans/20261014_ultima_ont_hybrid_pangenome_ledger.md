@@ -2,73 +2,130 @@
 
 ## Current continuation state
 
-Objective: the refreshed `iamh2o/sentieon-cli` experimental Ultima+ONT
-pangenome implementation, immutable runtime/assets and reviewable validation
-evidence. Functional completion does not establish scientific suitability.
-Branch: `codex/ultima-ont-hybrid-pangenome-20261014`; the campaign root owns
-broader DayOA/DYEC execution and scientific closeout.
+Objective: refreshed `iamh2o/sentieon-cli` experimental Ultima+ONT pangenome,
+immutable runtime/assets and reviewable functional/scientific evidence.
+Branch: `codex/ultima-ont-hybrid-pangenome-20261014`. Full workflow, scientific
+suitability and production acceptance are separate gates; the campaign root
+owns DayOA/DYEC, the shared Google Doc and the three ILMN arms.
 
-Authority remains the user's two execution requests: "run both pipelines ...
+The user's two execution requests remain controlling: "run both pipelines ...
 test to completion 30x Ultima 10x ONT" and "use multi agents Confirm execution
-on ashg-etc only ... in parallel ... with Ganon and VEP excluded". Target:
-account `108782052779`, profile `lsmc`, region `us-west-2`, cluster
-`ashg-etc`, generation `d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, head
-`i-004609f020b02705a`, FSx `fs-0d55fedaeb3ca246b`. The retained interactive
-Ubuntu shell verified `ip-10-0-0-14` and `10.0.1.237@tcp:/uiznvb4v`.
-No Ganon/Ganon2/VEP, container builds, budget increases, PRs/merges, resource
-deletion or cleanup. This workstream launches no biological caller.
+on ashg-etc only ... in parallel ... with Ganon and VEP excluded". Approved:
+account `108782052779`, profile `lsmc`, `us-west-2`, cluster `ashg-etc`,
+generation `d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, head
+`i-004609f020b02705a`, FSx `fs-0d55fedaeb3ca246b`.
+No Ganon/Ganon2/VEP, container builds, budget increases, PRs/merges, deletion
+or cleanup. This closeout reads only closed local small receipts and edits
+CLI docs/evidence; no remote runtime action, test, build or install.
 
-Published, installed and qualified CLI `2.0.3` adds the typed vendor Ultima
-duplicate-marking receipt. Candidate: 232 passed/17.91s; exact installed tag:
-232 passed/50.19s. Release commit `1358db44816e01d20f32856eebbc496d45638060`,
-annotated object `8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel SHA256
+CLI `2.0.3` remains published/installed: commit
+`1358db44816e01d20f32856eebbc496d45638060`, annotated object
+`8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel SHA256
 `09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`.
-Tag, code and wheel remain unchanged. All three missing vendor assets were
-hashed, published to declared shared S3 keys through the approved signed
-multipart route and readback verified; no IAM changes or credential disclosure.
+Historical focused evidence: candidate 232/17.91s, exact tag 232/50.19s.
+Tag/code/wheel and vendor composition remain unchanged. Missing shared assets
+were published/readback verified. Actual GBZ 195-sequence extraction matches
+vendor FASTA; source differences are 94 IUPAC-to-N positions across 14 chromosomes,
+with normalized-source 195/195 proof. Calling BED 24 contigs; QC denominator 195.
 
-GBZ extraction matches vendor FASTA at all 195 sequences. Source references
-differ only at 94 IUPAC-to-N positions across 14 chromosomes; normalized-source
-proof matches 195/195. Preparation explicitly decoded source reads, preserved
-sequence/quality/flags and refreshed target MD/NM. The canonical calling BED
-has 24 rows/3,088,269,832 bases; 171 contigs including chrM are excluded.
-
-Both r02 producers are independently accepted, with deterministic repeats:
-UG `29.99891901105408943184300036`×, 51,928,203,894 bytes, SHA256
+Both r02 preparations and deterministic repeats are accepted: UG
+`29.99891901105408943184300036`×, SHA256
 `9c9ae740fa621836608edad6e7850bb1242e7e919052b65263cedd414afc66d2`;
-ONT `9.999053238278962532309287144`×, 26,826,310,679 bytes, SHA256
+ONT `9.999053238278962532309287144`×, SHA256
 `088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad`.
-Full-195-interval depth evidence is retained by the input owner.
-
-Public CLI dry runs passed: ILMN2x150+ONT rc0/1.793724s and experimental
-UG30x+ONT10x rc0/76.23636722s. Separate real header/index checks matched ordered
-195 SN/LN/M5, HG002/platform/RGs for both accepted alignments. Ordinary ILMN
-dry-run RGs remain synthetic; experimental native real-header and typed
-duplicate validation passed, including 11,658,934 duplicate-primary
-observations. Owner byte bindings were reused; only the CLI's mandatory UG
-verification read the prepared UG bytes again. No calling products were
-created. Closed receipts, argv, logs and header/reference checks are copied
-with verified native-to-local hashes under
-`20261020T123800Z_ashg_etc_cli_runtime/{r02_ilmn150_ont10x_preflight,r02_ultima30x_ont10x_preflight}/`.
-Both observed 184-chain/195-path and experimental-composition warnings remain.
-
-Root verified the original whole preparation SUCCESS: controller=null,
-DayOA/Snakemake=0/0; foreground/dy-r/tee=0/0/0, source5/input9 unchanged,
-no remaining jobs; proof SHA256
+Root's whole-preparation SUCCESS proof:
 `5c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758`.
-The preparation environment was created from unchanged
-`hybrid_pangenome_v0.2.yaml`; this does not certify future caller admission.
-Combined preparation benchmark collection rc2 remains a reporting-layout BLOCKER;
-no partial-cost acceptance substitutes for it. Root published DayOA 19.0.49
-(`1319db5785b8ba371592ba082716cfc3ae63d112`) and DYEC 21.0.45
-(`e0cea438646efe2d18db0a7f7102a68735deeb90`). Exact configure SSM
-`d7db9d5a-96a8-4c7b-8734-858e95d38646` reconciled provider Success/0 and
-actual child0; original local client rc1 remains a retrieval transport failure.
-Native DYEC 21.0.45 is verified; repository default DayOA 19.0.44 is preserved,
-with both new caller catalog pins 19.0.49. Final readiness/source/maintenance
-postchecks and individual caller gates remain pending; 0/4 callers. Bounded
-F9/F2 Google Doc update/readback is preserved below. Rows: 7 SUCCESS,
-1 IN_PROGRESS; full objective and science incomplete.
+Both CLI dry preflights passed 20 October; ordinary ILMN synthetic dry-run
+headers remain separate from actual 195-contig/index/sample/RG evidence.
+
+New 21 October: the actual UG30x+ONT10x `huomr2p` core is PASS/called/source0
+for AU `HG002-wdth3tk3gpbvjt`, analysis
+`hg002-huomr2p-30x10x-20261020-r01`, native attempt
+`11471349-d4f5-4027-9d70-31cc5a07afe6`. DNAModelApply completed 11:42:15.647 UTC
+in 47.65s. CLI native provenance completed 11:42:37.806801 UTC;
+the core rule finished 11:42:48. Fourteen nonempty core roles/index entries
+are recorded, with nine generated-role metadata matches in the closed proof.
+The native rule environment and explicit CLI ran the real core; this supersedes
+the earlier preflight-only limitation for this exact execution.
+
+QC terminal PASS/source0 at 12:06:38 UTC; quality execution/QC PASS,
+scientific validation NOT_ASSESSED and customer eligibility false.
+All 195 full-reference intervals were validated for original SR, lifted SR
+and ONT. Combined depth uses original SR+ONT only; lifted SR is repeated data.
+Both 184/195 and experimental-model warnings remain. Existing `vg --version`
+capture rc1 is retained, alongside declared/previously qualified 1.73.0;
+no fresh successful version probe is invented.
+
+Closed core/QC bundles were independently byte/SHA verified and copied under
+`20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/`.
+At the 12:08 closed observation, package Slurm 12 was RUNNING since 12:06:44;
+that historical observation records null controller/DayOA/Snakemake codes
+and does not establish whole-workflow/package success. DayOA 19.0.49/DYEC 21.0.45 remain the campaign source pins.
+Later root handoff: foreground 6/6 SUCCESS/return0 at 12:16:54 UTC, source 1319db
+unchanged, package/artifact acceptance owner-reported PASS (inventory 37483d41).
+Latest owner public observation 12:19:58 reports original attempt SUCCESS at
+12:17:13Z, canonical 0/0/0, inactive controller, no exact-root jobs and unlocked
+write lock. Root independent sealed bytes/transcript+ten-invariant closeout is
+still pending; collector held. Earlier read-only helper rejection and optional
+canonical-artifact warning remain retained. These later facts are attributed;
+only closed core/QC files were read here. Next: independent closeout, other-arm
+and scientific gates. PG-032 combined
+preparation benchmarks remain BLOCKED/rc2; no alternate cost
+acceptance. Linear Ultima+ONT remains separate/unlaunched. Rows 7 SUCCESS,
+1 IN_PROGRESS; full objective/science incomplete.
+
+## 2026-10-21 actual Ultima+ONT caller and QC functional closeout
+
+[Closed core/QC evidence](20261020T123800Z_ashg_etc_cli_runtime/20261021T120902Z_ultima30x_ont10x_core_qc/README.md)
+is independently byte/SHA verified from the root's closed local bundle.
+Core inventory `be453046122404787e23da61d15aa78d7cb46241b419b2fd5e79e4c0ae593b92`
+binds five files/143,727 bytes; QC inventory
+`ea21d037d64625d1eb7ab9088d0c1d5e3fdbb82867039fec3e459349bd33ebd6`
+binds three files/51,764 bytes. Both inventories were copied too.
+
+Core receipt `bc5a4956a663d4d0f4bc4fe8ff04a69f6ed7d625b9f8745f540afd119a829c08`
+is PASS/called/source0. Actual DNAModelApply finished 11:42:15.647 UTC in 47.65s.
+Native provenance `f6c18d2017663775f6ede9ba950a64b49299b5842bd3cc584525cf60b6093bb5`
+completed 11:42:37.806801 UTC, dry_run=false, experimental=true,
+production_accepted=false, science pending. Fourteen nonempty roles/index
+entries are declared; nine generated-role metadata matches and model-apply
+log lines are retained in the closed proof. No biological output was reread
+or rehashed here.
+
+QC terminal `87ab955aa73aa305b2e60bbba46f2696b6459b5780b46435eb0ccfd0f212e03c`
+is PASS/return0, quality
+`9946cf46b5ab30837799b4c9becbeed6d717d12b9f17ebb79053507036a002a6`
+is execution/QC PASS, scientific NOT_ASSESSED and customer-ineligible.
+All 195 full-reference intervals are measured for all three alignment roles;
+only original SR+ONT contribute to combined depth. Exact values remain in
+unchanged quality bytes; no float or threshold recomputation.
+
+The 12:08 closed observation still has package Slurm 12 RUNNING and
+controller/DayOA/Snakemake codes null. That observation remains historical.
+Root later reports foreground 6/6 SUCCESS/return0 at 12:16:54 UTC with source
+1319db unchanged, plus package/artifact acceptance PASS (closed inventory
+37483d41); those extra files were not copied/verified here. The later owner
+public observation 12:19:58 records original attempt SUCCESS/completed 12:17:13Z,
+canonical 0/0/0, inactive controller, no exact-root jobs and unlocked/owner-null
+write lock, SHA256
+`dd54171d30f6dcbdc7e47a37de119ba185c6effbe31525637bdbdcf159a6f4c5`.
+Root independent closed bytes/sealed transcript+ten-invariant proof remain
+pending; collector held. The earlier read-only precondition rejection made
+no proof/analysis/benchmark writes and remains preserved, alongside the public
+optional canonical-artifact warning. The rejected helper is not converted to
+exit0; the retained optional warning does not override the exact clone-v2
+0/0/0 receipt. This workstream independently verifies CLI/model-application
+and QC functionality; the later package/whole milestone is owner-attributed.
+Scientific suitability, other-arm completion and customer acceptance are not
+established here.
+Known warning/version-capture limitations are preserved in the evidence README.
+No new runtime action/test/build/install, source/model/tag change, large-file
+hash, Google Doc edit or DayOA/DYEC edit was performed.
+
+This update supersedes earlier preflight-only and zero-call snapshots for the
+exact experimental `huomr2p` arm. The older linear Ultima+ONT grid remains
+separate/unlaunched. UOP-007 remains IN_PROGRESS; PG-032 reporting remains
+BLOCKED. Root owns package/whole-workflow and scientific gates.
 
 ## 2026-10-21 bounded Google Doc release/configure update
 
@@ -220,11 +277,11 @@ G2 implementation, G3 focused tests, G4 scientific evaluation, G5 closeout.
 |---|---|---|---|---|---|---|---|
 | UOP-001 | Freeze fork, upstream, and model baseline | SUCCESS | config_or_startup_contract | G0 | Implementer | Gate 0 above; model evidence below | Research and fresh Git identities recorded; runtime assets not locally verified |
 | UOP-002 | Refresh fork to upstream 2.0.0 preserving fork features | SUCCESS | feature_implementation | G1 | Implementer | Refresh review below; retained public-command inventory | Source integration complete; executable regression evidence gated in UOP-006 |
-| UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | `ultima_pangenome.py` model/header/reference validation; G2 source evidence | Source complete; fixture/runtime proof remains gated |
-| UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | `hybrid_pangenome.py` shared DAG, mapper routing, LR 0/1/2 and RG filters | Source complete; experimental model suitability unproven |
-| UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | `UltimaProfile` receipts/indexes; signal observation; prepared failure cases | Source complete; receipt/output runtime proof remains gated |
+| UOP-003 | Model-role selection and asset validation | SUCCESS | config_or_startup_contract | G2 | Implementer | Fixed profile, immutable vendor assets and actual CLI 2.0.3 completed provenance in closed 21 October core evidence | Actual model/reference/input validation passed for this experimental run; scientific suitability remains unestablished |
+| UOP-004 | Aligned Ultima+ONT hybrid-pangenome stages | SUCCESS | feature_implementation | G2 | Implementer | Shared DAG with LR0/1/2 and Ultima-scoped filters; actual UG30x+ONT10x core PASS/called/source0, native completed 11:42:37.806801 UTC | Functional native caller and DNAModelApply succeeded; cross-platform accuracy remains unvalidated |
+| UOP-005 | Outputs, errors, logs, experimental provenance | SUCCESS | feature_implementation | G2 | Implementer | Completed native provenance f6c18d20...; 14 nonempty core roles/index entries, nine generated-role metadata matches; closed model-apply/finalization log evidence | Native CLI output/provenance completion demonstrated; package/artifact PASS is owner-reported; native whole milestone is owner-verified; independent sealed closeout remains pending |
 | UOP-006 | Focused CLI and fork regression checks | SUCCESS | contract_test | G3 | CLI/runtime agent | 2026-10-20 ashg-etc: nine focused modules; 2.0.3 candidate 232 passed in 17.91s, exact tag 232 passed in 50.19s; test_receipt-2.0.3.json | Later two-message approval supersedes original hold; prior 2.0.1/2.0.2 evidence preserved |
-| UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | UG/ONT preparation and deterministic repeats accepted; whole preparation root-verified SUCCESS; ILMN150 and experimental UG public CLI dry0, actual195-contig header/index gates; closed evidence below | Native callers and scientific results pending; combined preparation benchmark collection rc2 is a separate reporting blocker; dry-run is not calling completion |
+| UOP-007 | Bounded matched-input scientific evaluation | IN_PROGRESS | contract_test | G4 | Campaign root/operator | UG/ONT preparations/repeats accepted; actual UG core/model-apply PASS and alignment QC PASS; closed 21 October receipts copied with byte/SHA equality | Scientific NOT_ASSESSED, customer=false; package/artifact PASS is owner-reported; owner-verified native whole milestone awaits independent sealed closeout; other-arm/scientific gates remain; PG-032 combined preparation benchmark collection remains BLOCKED/rc2 |
 | UOP-008 | Document, commit, close out implementation | SUCCESS | feature_implementation | G5 | Implementer | README, usage/profile document, this ledger and local commits | Documentation and local source delivery complete; publication separate |
 
 ## Model research evidence

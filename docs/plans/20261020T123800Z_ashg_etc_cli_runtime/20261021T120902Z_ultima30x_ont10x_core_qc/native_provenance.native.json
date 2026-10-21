@@ -1,0 +1,1780 @@
+{
+  "alignment_m5_checksums": {
+    "chr1": "2648ae1bacce4ec4b6cf337dcae37816",
+    "chr10": "907112d17fcb73bcab1ed1c72b97ce68",
+    "chr11": "1511375dc2dd1b633af8cf439ae90cec",
+    "chr11_KI270721v1_random": "9654b5d3f36845bb9d19a6dbd15d2f22",
+    "chr12": "e81e16d3f44337034695a29b97708fce",
+    "chr13": "17dab79b963ccd8e7377cef59a54fe1c",
+    "chr14": "e0f0eecc3bcab6178c62b6211565c807",
+    "chr14_GL000009v2_random": "862f555045546733591ff7ab15bcecbe",
+    "chr14_GL000194v1_random": "6ac8f815bf8e845bb3031b73f812c012",
+    "chr14_GL000225v1_random": "63945c3e6962f28ffd469719a747e73c",
+    "chr14_KI270722v1_random": "51f46c9093929e6edc3b4dfd50d803fc",
+    "chr14_KI270723v1_random": "74a4b480675592095fb0c577c515b5df",
+    "chr14_KI270724v1_random": "c3fcb15dddf45f91ef7d94e2623ce13b",
+    "chr14_KI270725v1_random": "edc6402e58396b90b8738a5e37bf773d",
+    "chr14_KI270726v1_random": "fbe54a3197e2b469ccb2f4b161cfbe86",
+    "chr15": "f036bd11158407596ca6bf3581454706",
+    "chr15_KI270727v1_random": "84fe18a7bf03f3b7fc76cbac8eb583f1",
+    "chr16": "24e7cabfba3548a2bb4dff582b9ee870",
+    "chr16_KI270728v1_random": "369ff74cf36683b3066a2ca929d9c40d",
+    "chr17": "a8499ca51d6fb77332c2d242923994eb",
+    "chr17_GL000205v2_random": "458e71cd53dd1df4083dc7983a6c82c4",
+    "chr17_KI270729v1_random": "2756f6ee4f5780acce31e995443508b6",
+    "chr17_KI270730v1_random": "48f98ede8e28a06d241ab2e946c15e07",
+    "chr18": "11eeaa801f6b0e2e36a1138616b8ee9a",
+    "chr19": "85f9f4fc152c58cb7913c06d6b98573a",
+    "chr1_KI270706v1_random": "62def1a794b3e18192863d187af956e6",
+    "chr1_KI270707v1_random": "78135804eb15220565483b7cdd02f3be",
+    "chr1_KI270708v1_random": "1e95e047b98ed92148dd84d6c037158c",
+    "chr1_KI270709v1_random": "4e2db2933ea96aee8dab54af60ecb37d",
+    "chr1_KI270710v1_random": "9949f776680c6214512ee738ac5da289",
+    "chr1_KI270711v1_random": "af383f98cf4492c1f1c4e750c26cbb40",
+    "chr1_KI270712v1_random": "c38a0fecae6a1838a405406f724d6838",
+    "chr1_KI270713v1_random": "cb78d48cc0adbc58822a1c6fe89e3569",
+    "chr1_KI270714v1_random": "42f7a452b8b769d051ad738ee9f00631",
+    "chr2": "4bb4f82880a14111eb7327169ffb729b",
+    "chr20": "b18e6c531b0bd70e949a7fc20859cb01",
+    "chr21": "3a6a8640b6fe950e20e92e799814e6ee",
+    "chr22": "bd85195c4feed92050f02aabe5664435",
+    "chr22_KI270731v1_random": "8176d9a20401e8d9f01b7ca8b51d9c08",
+    "chr22_KI270732v1_random": "d837bab5e416450df6e1038ae6cd0817",
+    "chr22_KI270733v1_random": "f1fa05d48bb0c1f87237a28b66f0be0b",
+    "chr22_KI270734v1_random": "1d17410ae2569c758e6dd51616412d32",
+    "chr22_KI270735v1_random": "eb6b07b73dd9a47252098ed3d9fb78b8",
+    "chr22_KI270736v1_random": "2ff189f33cfa52f321accddf648c5616",
+    "chr22_KI270737v1_random": "2ea8bc113a8193d1d700b584b2c5f42a",
+    "chr22_KI270738v1_random": "854ec525c7b6a79e7268f515b6a9877c",
+    "chr22_KI270739v1_random": "760fbd73515fedcc9f37737c4a722d6a",
+    "chr2_KI270715v1_random": "b65a8af1d7bbb7f3c77eea85423452bb",
+    "chr2_KI270716v1_random": "2828e63b8edc5e845bf48e75fbad2926",
+    "chr3": "a48af509898d3736ba95dc0912c0b461",
+    "chr3_GL000221v1_random": "3238fb74ea87ae857f9c7508d315babb",
+    "chr4": "3210fecf1eb92d5489da4346b3fddc6e",
+    "chr4_GL000008v2_random": "a999388c587908f80406444cebe80ba3",
+    "chr5": "a811b3dc9fe66af729dc0dddf7fa4f13",
+    "chr5_GL000208v1_random": "aa81be49bf3fe63a79bdc6a6f279abf6",
+    "chr6": "6a48dfa97e854e3c6f186c8ff973f7dd",
+    "chr7": "94eef2b96fd5a7c8db162c8c74378039",
+    "chr8": "c67955b5f7815a9a1edfaa15893d3616",
+    "chr9": "addd2795560986b7491c40b1faa3978a",
+    "chr9_KI270717v1_random": "796773a1ee67c988b4de887addbed9e7",
+    "chr9_KI270718v1_random": "b0c463c8efa8d64442b48e936368dad5",
+    "chr9_KI270719v1_random": "cd5e932cfc4c74d05bb64e2126873a3a",
+    "chr9_KI270720v1_random": "8c2683400a4aeeb40abff96652b9b127",
+    "chrEBV": "6743bd63b3ff2b5b8985d8933c53290a",
+    "chrM": "c68f52674c9fb33aef52dcf399755519",
+    "chrUn_GL000195v1": "5d9ec007868d517e73543b005ba48535",
+    "chrUn_GL000213v1": "9d424fdcc98866650b58f004080a992a",
+    "chrUn_GL000214v1": "46c2032c37f2ed899eb41c0473319a69",
+    "chrUn_GL000216v2": "725009a7e3f5b78752b68afa922c090c",
+    "chrUn_GL000218v1": "1d708b54644c26c7e01c2dad5426d38c",
+    "chrUn_GL000219v1": "f977edd13bac459cb2ed4a5457dba1b3",
+    "chrUn_GL000220v1": "fc35de963c57bf7648429e6454f1c9db",
+    "chrUn_GL000224v1": "d5b2fc04f6b41b212a4198a07f450e20",
+    "chrUn_GL000226v1": "1c1b2cd1fccbc0a99b6a447fa24d1504",
+    "chrUn_KI270302v1": "ee6dff38036f7d03478c70717643196e",
+    "chrUn_KI270303v1": "2cb746c78e0faa11e628603a4bc9bd58",
+    "chrUn_KI270304v1": "9423c1b46a48aa6331a77ab5c702ac9d",
+    "chrUn_KI270305v1": "f9acea3395b6992cf3418b6689b98cf9",
+    "chrUn_KI270310v1": "af6cb123af7007793bac06485a2a20e9",
+    "chrUn_KI270311v1": "59594f9012d8ce21ed5d1119c051a2ba",
+    "chrUn_KI270312v1": "26499f2fe4c65621fd8f4ecafbad31d7",
+    "chrUn_KI270315v1": "ecc43e822dc011fae1fcfd9981c46e9c",
+    "chrUn_KI270316v1": "6adde7a9fe7bd6918f12d0f0924aa8ba",
+    "chrUn_KI270317v1": "cd4b1fda800f6ec9ea8001994dbf6499",
+    "chrUn_KI270320v1": "d898b9c5a0118e76481bf5695272959e",
+    "chrUn_KI270322v1": "7d459255d1c54369e3b64e719061a5a5",
+    "chrUn_KI270329v1": "f023f927ae84c5cc48dc4dce11ba90f2",
+    "chrUn_KI270330v1": "c2c590706a339007b00c59e0b8937e78",
+    "chrUn_KI270333v1": "57baf650c47bba9b3a8b7c6d0fb55ad6",
+    "chrUn_KI270334v1": "53afe12d1371f250a3d1de655345d374",
+    "chrUn_KI270335v1": "eb27188639503b524d2659a23b8262ea",
+    "chrUn_KI270336v1": "69ad2d85d870c8b0269434581e86e30e",
+    "chrUn_KI270337v1": "16fc8d71a2662a6cfec7bdeec3d810c6",
+    "chrUn_KI270338v1": "301ef75a6b2996d745eb3464bd352b57",
+    "chrUn_KI270340v1": "56b462bac20d385cdfcde0155fe4c3a1",
+    "chrUn_KI270362v1": "bc82401ffd9a5ae711fa0ea34da8d2f0",
+    "chrUn_KI270363v1": "6edd17a912f391022edbc192d49f2489",
+    "chrUn_KI270364v1": "6ff66a8e589ca27d93b5bac0e5b13a87",
+    "chrUn_KI270366v1": "44a0b65b7ba6bcff37eca202e7d966ea",
+    "chrUn_KI270371v1": "a0af3d778dfeb7963e8e6d84c0c54fba",
+    "chrUn_KI270372v1": "53a9d5e8fd28bce5da5efcfd9114dbf2",
+    "chrUn_KI270373v1": "b174fe53be245a840cd6324e39b88ced",
+    "chrUn_KI270374v1": "dbc92c9a92e558946e58b4909ec95dd5",
+    "chrUn_KI270375v1": "d678250c97e9b94aa390fa46e70a6d83",
+    "chrUn_KI270376v1": "59e8fc80b78d62325082334b43dffdba",
+    "chrUn_KI270378v1": "fc13bda7dbd914c92fb7e49489d1350f",
+    "chrUn_KI270379v1": "3218bef25946cd95de585dfc7750f63b",
+    "chrUn_KI270381v1": "2a9297cfd3b3807195ab9ad07e775d99",
+    "chrUn_KI270382v1": "e7085cdcee6ad62f359744e13d3209fc",
+    "chrUn_KI270383v1": "694d75683e4a9554bcc1291edbcaee43",
+    "chrUn_KI270384v1": "b06e44ea15d0a57618d6ca7d2e6ac5d2",
+    "chrUn_KI270385v1": "112a8b1df94ef0498a0bfe2d2ea5cc23",
+    "chrUn_KI270386v1": "b9b1baaa7abf206f6b70cf31654172db",
+    "chrUn_KI270387v1": "22a12462264340c25e912b8485cdfa91",
+    "chrUn_KI270388v1": "76f9f3315fa4b831e93c36cd88196480",
+    "chrUn_KI270389v1": "2c9b08c57c27e714d4d5259fd91b6983",
+    "chrUn_KI270390v1": "7a64d89ea14990c16d20f4d6e7283e10",
+    "chrUn_KI270391v1": "1fa5cf03b3eac0f1b4a64948fd09de53",
+    "chrUn_KI270392v1": "59b3ca8de65fb171683f8a06d3b4bf0d",
+    "chrUn_KI270393v1": "3724e1d70677d6b5c4bcf17fd40da111",
+    "chrUn_KI270394v1": "d5171e863a3d8f832f0559235987b1e5",
+    "chrUn_KI270395v1": "7c03ca4756c1620f318fb189214388d8",
+    "chrUn_KI270396v1": "9069bed3c2efe7cc87227d619ad5816f",
+    "chrUn_KI270411v1": "fc240322d91d43c04f349cc58fda3eca",
+    "chrUn_KI270412v1": "7bb9612f733fb7f098be79499d46350c",
+    "chrUn_KI270414v1": "753e02ef3b1c590e0e3376ad2ebb5836",
+    "chrUn_KI270417v1": "cd26758fda713f9c96e51d541f50c2d0",
+    "chrUn_KI270418v1": "1537ec12b9c58d137a2d4cb9db896bbc",
+    "chrUn_KI270419v1": "58455e7a788f0dc82034d1fb109f6f5c",
+    "chrUn_KI270420v1": "bac954a897539c91982a7e3985a49910",
+    "chrUn_KI270422v1": "3fce80eb4c0554376b591699031feb56",
+    "chrUn_KI270423v1": "bdf5a85c001731dccfb150db2bfe58ac",
+    "chrUn_KI270424v1": "747c8f94f34d5de4ad289bc604708210",
+    "chrUn_KI270425v1": "665a46879bbb48294b0cfa87b61e71f6",
+    "chrUn_KI270429v1": "ee8962dbef9396884f649e566b78bf06",
+    "chrUn_KI270435v1": "1655c75415b9c29e143a815f44286d05",
+    "chrUn_KI270438v1": "e765271939b854dd6826aa764e930c87",
+    "chrUn_KI270442v1": "796289c4cda40e358991f9e672490015",
+    "chrUn_KI270448v1": "0f40827c265cb813b6e723da6c9b926b",
+    "chrUn_KI270465v1": "bb1b2323414425c46531b3c3d22ae00d",
+    "chrUn_KI270466v1": "530b7033716a5d72dd544213c513fd12",
+    "chrUn_KI270467v1": "db34e0dc109a4afd499b5ec6aaae9754",
+    "chrUn_KI270468v1": "0a603090f06108ed7aff75df0767b822",
+    "chrUn_KI270507v1": "311894d0a815eb07c5cac49da851cb4a",
+    "chrUn_KI270508v1": "7d42a358d472b9cbdfdf30c8742473d0",
+    "chrUn_KI270509v1": "1cdeb8c823d839e1d1735b5bc9a14856",
+    "chrUn_KI270510v1": "cd7348b3b5d9d0dfef6aed2af75ce920",
+    "chrUn_KI270511v1": "907ca34a4a2a6673632ebaf513a4c1a4",
+    "chrUn_KI270512v1": "ba1021c82d1230af856f59079e2f71b4",
+    "chrUn_KI270515v1": "dd7527ee8e0bdb0a43ca0b2a5456c8c3",
+    "chrUn_KI270516v1": "1cbaaafbbf016906a5bf5886f5a0ecb7",
+    "chrUn_KI270517v1": "913440c38d95c618617ca69bb9296170",
+    "chrUn_KI270518v1": "3fd898b62ca859f50fb8b83e7706352b",
+    "chrUn_KI270519v1": "8d754e9c9afd904fba0a2cd577fcc9a1",
+    "chrUn_KI270521v1": "af5bef7cefec7bd7efa729ac6c5be088",
+    "chrUn_KI270522v1": "070b4678e22501029c2e3297115216bc",
+    "chrUn_KI270528v1": "d75c9235f0b8c449fc4352997c56b086",
+    "chrUn_KI270529v1": "4caf890f2586daab8e4b2e2db904f05f",
+    "chrUn_KI270530v1": "04549369e1197c626669a10164613635",
+    "chrUn_KI270538v1": "d60b72221cc7af871f2c757577e4c92a",
+    "chrUn_KI270539v1": "19e3a982e67eafef39c5a3e4163f1e17",
+    "chrUn_KI270544v1": "e62a14b14467cdf48b5a236c66918f0f",
+    "chrUn_KI270548v1": "866b0db8e9cf66208c2c064bd09ce0a2",
+    "chrUn_KI270579v1": "fe62fb1964002717cc1b034630e89b1f",
+    "chrUn_KI270580v1": "1df30dae0f605811d927dcea58e729fc",
+    "chrUn_KI270581v1": "9f26945f9f9b3f865c9ebe953cbbc1a9",
+    "chrUn_KI270582v1": "6fd9804a7478d2e28160fe9f017689cb",
+    "chrUn_KI270583v1": "b127e2e6dbe358ff192b271b8c6ee690",
+    "chrUn_KI270584v1": "d93636c9d54abd013cfc0d4c01334032",
+    "chrUn_KI270587v1": "36be47659719f47b95caa51744aa8f70",
+    "chrUn_KI270588v1": "37ffa850e69b342a8f8979bd3ffc77d4",
+    "chrUn_KI270589v1": "211c215414693fe0a2399cf82e707e03",
+    "chrUn_KI270590v1": "e8a57f147561b361091791b9010cd28b",
+    "chrUn_KI270591v1": "d6af509d69835c9ac25a30086e5a4051",
+    "chrUn_KI270593v1": "f4a5bfa203e9e81acb640b18fb11e78e",
+    "chrUn_KI270741v1": "86eaea8a15a3950e37442eaaa5c9dc92",
+    "chrUn_KI270742v1": "2f31c013a4a8301deb8ab7ed1ca1cd99",
+    "chrUn_KI270743v1": "3b62d9d3100f530d509e4efebd98502c",
+    "chrUn_KI270744v1": "e90aee46b947ff8c32291a6843fde3f9",
+    "chrUn_KI270745v1": "1386fe3de6f82956f2124e19353ff9c1",
+    "chrUn_KI270746v1": "c470486a0a858e14aa21d7866f83cc17",
+    "chrUn_KI270747v1": "62375d812ece679c9fd2f3d08d4e22a4",
+    "chrUn_KI270748v1": "4f6c6ab005c852a4352aa33e7cc88ded",
+    "chrUn_KI270749v1": "c899a7b4e911d371283f3f4058ca08b7",
+    "chrUn_KI270750v1": "c022ba92f244b7dc54ea90c4eef4d554",
+    "chrUn_KI270751v1": "1b758bbdee0e9ca882058d916cba9d29",
+    "chrUn_KI270752v1": "e0880631848337bd58559d9b1519da63",
+    "chrUn_KI270753v1": "25075fb2a1ecada67c0eb2f1fe0c7ec9",
+    "chrUn_KI270754v1": "fe9e16233cecbc244f06f3acff3d03b8",
+    "chrUn_KI270755v1": "4a7da6a658955bd787af8add3ccb5751",
+    "chrUn_KI270756v1": "2996b120a5a5e15dab6555f0bf92e374",
+    "chrUn_KI270757v1": "174c73b60b41d8a1ef0fbaa4b3bdf0d3",
+    "chrX": "49527016a48497d9d1cbd8e4a9049bd3",
+    "chrY": "ce3e31103314a704255f3cd90369ecce",
+    "chrY_KI270740v1_random": "69e42252aead509bf56f1ea6fda91405"
+  },
+  "alignments": [
+    {
+      "bytes": 51928203894,
+      "duplicate_marking_evidence": {
+        "accepted_provenance": {
+          "path": "/fsx/work/pangenome_inputs/20261020/inspection/ultima.source_identity.json",
+          "sha256": "ad96c05f00df3cbaff3294d57fabddf6589cc3733f7ab22ad51c5bf9dd6bcc63"
+        },
+        "audit_authority": "Completed preparation's independently decoded record audit; parent source not rehashed",
+        "flag_stream_sha256": "23441eb5cffd33946751a900e24d7a9387c80c4c9de3bd78a0c6fdaaebae11aa",
+        "header_sha256": "effb9e00340b7d4c3805e2a553149e843845b0d3a48e7bf7cc7db3acf57168bb",
+        "kind": "bound vendor duplicate-marking preparation receipt",
+        "observed_duplicate_primary_records": 11658934,
+        "prepared_alignment_sha256": "9c9ae740fa621836608edad6e7850bb1242e7e919052b65263cedd414afc66d2",
+        "read_group_counts": {
+          "Z0096": {
+            "duplicate_primary_records": 2006868,
+            "primary_records": 58803911
+          },
+          "Z0159": {
+            "duplicate_primary_records": 646474,
+            "primary_records": 24054946
+          },
+          "Z0159-74228B74": {
+            "duplicate_primary_records": 3279498,
+            "primary_records": 87497900
+          },
+          "Z0312": {
+            "duplicate_primary_records": 3151848,
+            "primary_records": 78279210
+          },
+          "Z0312-2880D0C2": {
+            "duplicate_primary_records": 2574246,
+            "primary_records": 73515367
+          }
+        },
+        "source": {
+          "accepted_provenance_path": "/fsx/work/pangenome_inputs/20261020/inspection/ultima.source_identity.json",
+          "accepted_provenance_sha256": "ad96c05f00df3cbaff3294d57fabddf6589cc3733f7ab22ad51c5bf9dd6bcc63",
+          "bytes": 112126627149,
+          "header_sha256": "15b702c61c97f3dc8aef1357ea235316ccb920ae6333e3f778d43871be68f840",
+          "s3_uri": "s3://lsmc-ssf-sequencing-data/derived/hg002-source-datasets/20261015/pclu-2100/hg002-ultima60x-alignstats-p02-20261019t180148z/daylily-omics-analysis/results/day/hg38_broad/HG002-w6fhkpyjwjz46p/align/ug/HG002-w6fhkpyjwjz46p.cram"
+        },
+        "vendor_documentation": "https://github.com/Ultimagen/healthomics-workflows/blob/main/workflows/trim_align_sort/howto-ua-align-sort.md",
+        "vendor_program_ids": [
+          "demux_0",
+          "sorter_0",
+          "demux_0-3B8795B5",
+          "sorter_0-1DC78829",
+          "demux_0-74D4657F",
+          "sorter_0-05269F3C",
+          "demux_0-6696BB11",
+          "sorter_0-1F3AF688",
+          "demux_0-7782374A",
+          "sorter_0-652B7CF8"
+        ],
+        "zero_duplicate_producer_receipt": null
+      },
+      "header_sha256": "effb9e00340b7d4c3805e2a553149e843845b0d3a48e7bf7cc7db3acf57168bb",
+      "indexes": [
+        {
+          "bytes": 1247316,
+          "mtime_ns": 1792528567000000000,
+          "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai",
+          "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram.crai"
+        }
+      ],
+      "mtime_ns": 1792528567000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+      "platform": "ULTIMA",
+      "readgroups": [
+        {
+          "BC": "CGCATGCATCCTGAGAT",
+          "DT": "2026-09-20T08:22:26-0700",
+          "FO": "TGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCA",
+          "ID": "Z0159",
+          "LB": "HG002",
+          "PL": "ULTIMA",
+          "PM": "V121",
+          "PU": "602222_1.20260920.CGCATGCATCCTGAGAT",
+          "SF": "100",
+          "SM": "HG002",
+          "ef": "0",
+          "mc": "20",
+          "pf": "0",
+          "ri": "0",
+          "tf": "1",
+          "tp": "reference",
+          "tq": "1",
+          "vn": "5.4.1.17"
+        },
+        {
+          "BC": "CGCATGCATCCTGAGAT",
+          "DT": "2026-09-20T05:38:49-0700",
+          "FO": "TGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCA",
+          "ID": "Z0159-74228B74",
+          "LB": "HG002",
+          "PL": "ULTIMA",
+          "PM": "V121",
+          "PU": "602210_1.20260920.CGCATGCATCCTGAGAT",
+          "SF": "100",
+          "SM": "HG002",
+          "ef": "0",
+          "mc": "20",
+          "pf": "0",
+          "ri": "0",
+          "tf": "1",
+          "tp": "reference",
+          "tq": "1",
+          "vn": "5.4.1.17"
+        },
+        {
+          "BC": "CAGCCGATATCAGAT",
+          "DT": "2026-09-16T07:37:50-0700",
+          "FO": "TGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCA",
+          "ID": "Z0096",
+          "LB": "HG002",
+          "PL": "ULTIMA",
+          "PM": "V121",
+          "PU": "602229_1.20260916.CAGCCGATATCAGAT",
+          "SF": "100",
+          "SM": "HG002",
+          "ef": "0",
+          "mc": "20",
+          "pf": "0",
+          "ri": "0",
+          "tf": "1",
+          "tp": "reference",
+          "tq": "1",
+          "vn": "5.4.1.17"
+        },
+        {
+          "BC": "CAGTTGATACATGAT",
+          "DT": "2026-09-10T09:06:45-0700",
+          "FO": "TGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCA",
+          "ID": "Z0312",
+          "LB": "HG002",
+          "PL": "ULTIMA",
+          "PM": "V121",
+          "PU": "602218_1.20260910.CAGTTGATACATGAT",
+          "SF": "100",
+          "SM": "HG002",
+          "ef": "0",
+          "mc": "20",
+          "pf": "0",
+          "ri": "0",
+          "tf": "1",
+          "tp": "reference",
+          "tq": "1",
+          "vn": "5.4.1.17"
+        },
+        {
+          "BC": "CAGTTGATACATGAT",
+          "DT": "2026-09-09T13:22:27-0700",
+          "FO": "TGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCA",
+          "ID": "Z0312-2880D0C2",
+          "LB": "HG002",
+          "PL": "ULTIMA",
+          "PM": "V121",
+          "PU": "602217_1.20260909.CAGTTGATACATGAT",
+          "SF": "100",
+          "SM": "HG002",
+          "ef": "0",
+          "mc": "20",
+          "pf": "0",
+          "ri": "0",
+          "tf": "1",
+          "tp": "reference",
+          "tq": "1",
+          "vn": "5.4.1.17"
+        }
+      ],
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram"
+    },
+    {
+      "bytes": 26826310679,
+      "duplicate_marking_evidence": "not required",
+      "header_sha256": "b6098c3b9443d69f6c337bcd727645735ce72b07df8630c945574b6b7f16e750",
+      "indexes": [
+        {
+          "bytes": 202435,
+          "mtime_ns": 1792520476000000000,
+          "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai",
+          "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram.crai"
+        }
+      ],
+      "mtime_ns": 1792520476000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+      "platform": "ONT",
+      "readgroups": [
+        {
+          "CN": "CenterName",
+          "ID": "HG002-egtdhfe3xrjfr9_LR",
+          "LB": "HG002-egtdhfe3xrjfr9-LB-1",
+          "LR": "1",
+          "PG": "minimap2",
+          "PL": "ONT",
+          "PU": "presumedCombinedLanes",
+          "SM": "HG002"
+        }
+      ],
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram"
+    }
+  ],
+  "argv": [
+    "/fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli",
+    "hybrid-pangenome",
+    "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+    "-r",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "-m",
+    "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "--gbz",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "--hapl",
+    "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "--pop_vcf",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "-b",
+    "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "--lr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram",
+    "--cores",
+    "96",
+    "--kmer_memory",
+    "30",
+    "--skip_multiqc",
+    "--log_dir",
+    "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+    "--experimental_ultima",
+    "--sr_model_bundle",
+    "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+    "--sr_aln",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram",
+    "--sr_duplicate_marking_receipt",
+    "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json"
+  ],
+  "bundles": [
+    {
+      "bytes": 511706146,
+      "mtime_ns": 1792500026000000000,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+      "resolved_path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+      "sha256": "de2114917bef8f78164b73bee35113f3f8a399f781709376d9bed05301936f79",
+      "vendor_metadata": {
+        "SentieonVcfID": "population-hprc-v2.0-20260528",
+        "bundleVersion": "1.0",
+        "longReadPlatform": "ONT",
+        "minScriptVersion": "2.0.0",
+        "pangenome": "hprc-v2.1-mc-grch38.gbz",
+        "pipeline": "Hybrid pangenome",
+        "shortReadPlatform": "Illumina"
+      }
+    },
+    {
+      "bytes": 919927022,
+      "mtime_ns": 1788932980000000000,
+      "path": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+      "resolved_path": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+      "sha256": "8511915ef9ef610bb2b7f14e2bc3b9232eacbb6201571d12ec9c15b363deec85",
+      "vendor_metadata": {
+        "SentieonVcfID": "population-hprc-v2.0+gnomad-v4.1.0-20251216",
+        "bundleVersion": "1.3",
+        "minScriptVersion": "1.5.0",
+        "pangenome": "hprc-v2.0-mc-grch38.gbz",
+        "pipeline": "Sentieon pangenome",
+        "platform": "Ultima"
+      }
+    }
+  ],
+  "cli_source_sha256": {
+    "__init__.py": "ae9f1291643620e395a02c78c04ccbdf393c8f2820c5ed167f1ce39fe8f16800",
+    "_indel2cnv_utils.py": "7676bd259d7cd7961ae80e62c0f44e2a4da0da0c883bdff7f98b3bb1f7643a89",
+    "archive.py": "3b88d6beee0bc52d148dcc3ed9b427c1f93f4076ce67fa4aa612598298c3ba5a",
+    "argh_parser.py": "5ffa6aaadb10ad9871af3013dd5b054e085c5850a8f4f74e91332dfe055f0a5d",
+    "base_pangenome.py": "89eb522ac8b6bc47f227b08ebffc871525ec112d294ccae32965fbdc4f7b9b20",
+    "command_strings.py": "2162e173051d391d06fd72a4a15c80e41ed57b806a0d4a1e62f40799438d6298",
+    "dag.py": "cd394df919a1dc386ab8264eb89d9c11ac9ebf68b82c71ca7acfa8e9056251d0",
+    "dnascope.py": "78df7877d11ae2d783c1d2d1c2a6a1256ecd79d7c6ae03de67317636f832e716",
+    "dnascope_hybrid.py": "e4977c42d452bed7923c3649848e44f226ae66ea3c21845b11d3b8e179039cbb",
+    "dnascope_longread.py": "7caf0681e1753ec87c2a45e2a34447c3103bb6a0f2b5428a4c4bf89b39cb4c8c",
+    "driver.py": "7ad188b5d61ca01297f65ab6a1935ed9078134a1db21270db861a8787f0d423e",
+    "exceptions.py": "add919a5384ab4f55ba053143c5207b6a99e639d9341eb77bbb993d6205e7c97",
+    "executor.py": "d343efec4ec88badc3e0e1cf6473831b2267c25ac2a9400429b6befb1f5f8c52",
+    "hybrid_pangenome.py": "a825d8bb9e5928d496c003071be6157faf63665b831ae2edbd32d485f54477bb",
+    "hybrid_vcf.py": "b2beda002ca31c1e999788acab170ca0553a55d7dc6034413e090d3f149918ea",
+    "job.py": "1a63c38bc3127f07b702d4b1484d7d9c0c827ee9ff12f82f0bde52945df24285",
+    "logging.py": "d1bb6ebfa83294beddc3b8aa7cb5e2bc5fe31a576e50ebff443e8ec87088ad71",
+    "pangenome_meta.py": "2a2eff38b074d555bc811041017425c7f5e831cda2a6b80a6cef24332696c6c6",
+    "pipeline.py": "fa8f135c044960fb789d1887758d7c3187ab82f4075085d678c1270428f8a3ba",
+    "run_logs.py": "9d155a657d351317baffe99db9c629824ec3c37a0001060c88d6a043680f0811",
+    "scheduler.py": "7725b8d9188600d51454a0f10cbf95fa06086c6cf0dd5d64ed2e4b25fe77455f",
+    "scripts/combine_cnv.py": "33d377cc3289839be8b3447c74e130ccc431719d82dc80505b0025c7da3203f3",
+    "scripts/estimate_ploidy.py": "b715abeba6a6e5983d14324711f9fb2a76f0bae110a00497e5ca5b5bc7d47fc4",
+    "scripts/gvcf_combine.py": "af86980e0310aad8f915fa4cac1e6672d0a3768ab9acef0b1e7abba5457b8867",
+    "scripts/hybrid_anno.py": "887d281dcf9aba7513d268790fdd601cf7b4a904103226624fdd5403e2574f7e",
+    "scripts/hybrid_select.py": "da85012d40c6cf3a98f0af6297276e0cc814fcd9ea300d09b6e4be22a7894a95",
+    "scripts/hybrid_transfer.py": "f2780f46252e1a2372b0ef7769447db75695cfeee8c8d33a7d8e9e26fef6da7b",
+    "scripts/indel2cnv.py": "ae79f7ff1b114fff941a4b6c0cf32543c2fba9e16dc3f1fb1af42e693d8999fa",
+    "scripts/rehead_wgs_metrics.py": "de243a146e0abfeeb0b15645cd1216e9a87b0ef683ed32c591aad4b774b4a144",
+    "scripts/sad_lad_update.py": "6770b98516af5b6a23d3475ccafae27748a932b4e4e79004908002831edd81f3",
+    "scripts/trimalt.py": "1159cf2b4dc0686bc1a7bed7a9a165401f53c606f498086064d5a60f905ebd26",
+    "scripts/vcf_mod.py": "d2f07f63dabf73b18ad1b039dfb796c9ac0d4b47224a183a3668556d00b8ce62",
+    "sentieon_pangenome.py": "953519b13d1479a4cce546934116d28938fab5a00d1ada3d95be4c47ca05eb7d",
+    "shard.py": "0e23589e6fcfadce905878d6f3ee463922994305742129870a578a2848135a1f",
+    "shell_pipeline.py": "5f408b84ad56fa93491cf40bd2cf8e8a1b4cfef312be9925b8a4040fb58a0223",
+    "stages/__init__.py": "540011eeb73caef8093899745448a49bf2c89c129f46c89323eb6fd291403116",
+    "stages/alignment.py": "4f9bc9132d57047607ffdb9f790be982a7add3c7cd7cd6493f9ecdcebfba7a43",
+    "stages/base.py": "cd7c09b6e96e21e688a8a261ac01a6b01da2c5ce800a638aa9737fb5f021eb42",
+    "stages/cnv.py": "28766261b0f2d5da6b43c7decacc076457d69c1c9b0cd472f02a055f7b73b8b8",
+    "stages/dedup.py": "76de151f9d30fcb721d25574f9b573d55c7696b53313adc9def4786cb9f8c462",
+    "stages/expansion.py": "f8910c33f8ea9c946a8cf871887dcbae362e93a2e102a6aecb624ceb2ac83bb3",
+    "stages/metrics.py": "94860e4daf08b55772a91392e29490c7d12a27d1a3b54447353d9e1b3f46678e",
+    "stages/ploidy.py": "a7103ae109c8fc787c7118107982e551e25e8b741a514994b0164196e5b9b641",
+    "stages/preprocessing.py": "d3f34b3940e9e776e941cb8e96051d33a1156eaaadf18dcddb79389faa582ff9",
+    "stages/segdup.py": "fcd5a523ec977ba0b3240fa5fd69962379a2e47b4a5286b768801bef7ee8b616",
+    "stages/small_variants.py": "698897f9093635f17e52087ac56f3b4106f35b286a0ec1353fb09cf89ac2d710",
+    "stages/sv.py": "9b030fa59434cd805de44ae3a32fb3689f29eae1831eef0c854b675fef5aba41",
+    "stages/t1k.py": "de3f3a41151d6617918d740f7fad8561b26793840ea3365f2ccaefbf05d3660b",
+    "stages/transfer.py": "8607e604c86b3a04784a96d25e017984d60cb1cad2fed471965c23b71e6ea44f",
+    "ultima_duplicate_marking.py": "ce0bbf3d94644abc4958c0f3949306bfe0183cefd77767545edf1bc1eaaead46",
+    "ultima_pangenome.py": "980235a0ea1a6660f8a6528a65a2eddd3731f9ce78e7ce1be7c010c4cfefc63b",
+    "util.py": "ee57931fda7d2df4919c4922deb31d65b58a982a31eca9564fcc1292e33697a6"
+  },
+  "cli_version": "2.0.3",
+  "dry_run": false,
+  "duplicate_marking_receipt": {
+    "bytes": 2983,
+    "path": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+    "schema": "sentieon.ultima_duplicate_marking.v1",
+    "sha256": "c54bdb32f0aba9d9062aa91075da0551afb6b1e8d3fc043820061c1dc0c6aeda"
+  },
+  "expected_outputs": {
+    "lifted_alignment": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram",
+    "lifted_alignment_index": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram.crai",
+    "ploidy": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_ploidy.json",
+    "small_variants": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+    "small_variants_index": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz.tbi",
+    "structural_variants": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz",
+    "structural_variants_index": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz.tbi"
+  },
+  "experimental": true,
+  "finished_at": "2026-10-21T11:42:37.806801+00:00",
+  "graph_metadata": {
+    "contig_prefix": "GRCh38#0#",
+    "contigs": [
+      "chr1",
+      "chr10",
+      "chr11",
+      "chr11_KI270721v1_random",
+      "chr12",
+      "chr13",
+      "chr14",
+      "chr14_GL000009v2_random",
+      "chr14_GL000194v1_random",
+      "chr14_GL000225v1_random",
+      "chr14_KI270722v1_random",
+      "chr14_KI270723v1_random",
+      "chr14_KI270724v1_random",
+      "chr14_KI270725v1_random",
+      "chr14_KI270726v1_random",
+      "chr15",
+      "chr15_KI270727v1_random",
+      "chr16",
+      "chr16_KI270728v1_random",
+      "chr17",
+      "chr17_GL000205v2_random",
+      "chr17_KI270729v1_random",
+      "chr17_KI270730v1_random",
+      "chr18",
+      "chr19",
+      "chr1_KI270706v1_random",
+      "chr1_KI270707v1_random",
+      "chr1_KI270708v1_random",
+      "chr1_KI270709v1_random",
+      "chr1_KI270710v1_random",
+      "chr1_KI270711v1_random",
+      "chr1_KI270712v1_random",
+      "chr1_KI270713v1_random",
+      "chr1_KI270714v1_random",
+      "chr2",
+      "chr20",
+      "chr21",
+      "chr22",
+      "chr22_KI270731v1_random",
+      "chr22_KI270732v1_random",
+      "chr22_KI270733v1_random",
+      "chr22_KI270734v1_random",
+      "chr22_KI270735v1_random",
+      "chr22_KI270736v1_random",
+      "chr22_KI270737v1_random",
+      "chr22_KI270738v1_random",
+      "chr22_KI270739v1_random",
+      "chr2_KI270715v1_random",
+      "chr2_KI270716v1_random",
+      "chr3",
+      "chr3_GL000221v1_random",
+      "chr4",
+      "chr4_GL000008v2_random",
+      "chr5",
+      "chr5_GL000208v1_random",
+      "chr6",
+      "chr7",
+      "chr8",
+      "chr9",
+      "chr9_KI270717v1_random",
+      "chr9_KI270718v1_random",
+      "chr9_KI270719v1_random",
+      "chr9_KI270720v1_random",
+      "chrEBV",
+      "chrM",
+      "chrUn_GL000195v1",
+      "chrUn_GL000213v1",
+      "chrUn_GL000214v1",
+      "chrUn_GL000216v2",
+      "chrUn_GL000218v1",
+      "chrUn_GL000219v1",
+      "chrUn_GL000220v1",
+      "chrUn_GL000224v1",
+      "chrUn_GL000226v1",
+      "chrUn_KI270302v1",
+      "chrUn_KI270303v1",
+      "chrUn_KI270304v1",
+      "chrUn_KI270305v1",
+      "chrUn_KI270310v1",
+      "chrUn_KI270311v1",
+      "chrUn_KI270312v1",
+      "chrUn_KI270315v1",
+      "chrUn_KI270316v1",
+      "chrUn_KI270317v1",
+      "chrUn_KI270320v1",
+      "chrUn_KI270322v1",
+      "chrUn_KI270329v1",
+      "chrUn_KI270330v1",
+      "chrUn_KI270333v1",
+      "chrUn_KI270334v1",
+      "chrUn_KI270335v1",
+      "chrUn_KI270336v1",
+      "chrUn_KI270337v1",
+      "chrUn_KI270338v1",
+      "chrUn_KI270340v1",
+      "chrUn_KI270362v1",
+      "chrUn_KI270363v1",
+      "chrUn_KI270364v1",
+      "chrUn_KI270366v1",
+      "chrUn_KI270371v1",
+      "chrUn_KI270372v1",
+      "chrUn_KI270373v1",
+      "chrUn_KI270374v1",
+      "chrUn_KI270375v1",
+      "chrUn_KI270376v1",
+      "chrUn_KI270378v1",
+      "chrUn_KI270379v1",
+      "chrUn_KI270381v1",
+      "chrUn_KI270382v1",
+      "chrUn_KI270383v1",
+      "chrUn_KI270384v1",
+      "chrUn_KI270385v1",
+      "chrUn_KI270386v1",
+      "chrUn_KI270387v1",
+      "chrUn_KI270388v1",
+      "chrUn_KI270389v1",
+      "chrUn_KI270390v1",
+      "chrUn_KI270391v1",
+      "chrUn_KI270392v1",
+      "chrUn_KI270393v1",
+      "chrUn_KI270394v1",
+      "chrUn_KI270395v1",
+      "chrUn_KI270396v1",
+      "chrUn_KI270411v1",
+      "chrUn_KI270412v1",
+      "chrUn_KI270414v1",
+      "chrUn_KI270417v1",
+      "chrUn_KI270418v1",
+      "chrUn_KI270419v1",
+      "chrUn_KI270420v1",
+      "chrUn_KI270422v1",
+      "chrUn_KI270423v1",
+      "chrUn_KI270424v1",
+      "chrUn_KI270425v1",
+      "chrUn_KI270429v1",
+      "chrUn_KI270435v1",
+      "chrUn_KI270438v1",
+      "chrUn_KI270442v1",
+      "chrUn_KI270448v1",
+      "chrUn_KI270465v1",
+      "chrUn_KI270466v1",
+      "chrUn_KI270467v1",
+      "chrUn_KI270468v1",
+      "chrUn_KI270507v1",
+      "chrUn_KI270508v1",
+      "chrUn_KI270509v1",
+      "chrUn_KI270510v1",
+      "chrUn_KI270511v1",
+      "chrUn_KI270512v1",
+      "chrUn_KI270515v1",
+      "chrUn_KI270516v1",
+      "chrUn_KI270517v1",
+      "chrUn_KI270518v1",
+      "chrUn_KI270519v1",
+      "chrUn_KI270521v1",
+      "chrUn_KI270522v1",
+      "chrUn_KI270528v1",
+      "chrUn_KI270529v1",
+      "chrUn_KI270530v1",
+      "chrUn_KI270538v1",
+      "chrUn_KI270539v1",
+      "chrUn_KI270544v1",
+      "chrUn_KI270548v1",
+      "chrUn_KI270579v1",
+      "chrUn_KI270580v1",
+      "chrUn_KI270581v1",
+      "chrUn_KI270582v1",
+      "chrUn_KI270583v1",
+      "chrUn_KI270584v1",
+      "chrUn_KI270587v1",
+      "chrUn_KI270588v1",
+      "chrUn_KI270589v1",
+      "chrUn_KI270590v1",
+      "chrUn_KI270591v1",
+      "chrUn_KI270593v1",
+      "chrUn_KI270741v1",
+      "chrUn_KI270742v1",
+      "chrUn_KI270743v1",
+      "chrUn_KI270744v1",
+      "chrUn_KI270745v1",
+      "chrUn_KI270746v1",
+      "chrUn_KI270747v1",
+      "chrUn_KI270748v1",
+      "chrUn_KI270749v1",
+      "chrUn_KI270750v1",
+      "chrUn_KI270751v1",
+      "chrUn_KI270752v1",
+      "chrUn_KI270753v1",
+      "chrUn_KI270754v1",
+      "chrUn_KI270755v1",
+      "chrUn_KI270756v1",
+      "chrUn_KI270757v1",
+      "chrX",
+      "chrY",
+      "chrY_KI270740v1_random"
+    ],
+    "n_paths": 195,
+    "ref_name": "GRCh38",
+    "reference_samples": [
+      "GRCh38",
+      "CHM13"
+    ]
+  },
+  "haplotype_metadata": {
+    "construction_jobs": 25,
+    "k": 29,
+    "tags": {},
+    "top_level_chains": 184,
+    "total_kmers": 303638734,
+    "total_subchains": 256958,
+    "version": 5
+  },
+  "log_files": [
+    {
+      "bytes": 4206897,
+      "mtime_ns": 1792582945000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/run.log",
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/run.log"
+    },
+    {
+      "bytes": 1809,
+      "mtime_ns": 1792571392000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/command.txt",
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/command.txt"
+    },
+    {
+      "bytes": 577369,
+      "mtime_ns": 1792582945000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/process_metrics.txt",
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/process_metrics.txt"
+    },
+    {
+      "bytes": 33345,
+      "mtime_ns": 1792582945000000000,
+      "path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/job_metrics.txt",
+      "resolved_path": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/job_metrics.txt"
+    }
+  ],
+  "logs": "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native",
+  "messages": [
+    "The `--hapl` file '/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl' has 184 top-level chains, but the pangenome reference 'GRCh38' has 195 paths. The `--gbz` and `--hapl` files may not be a matching pair.",
+    "Experimental Ultima+ONT joint model composition; scientific validation is pending"
+  ],
+  "model_composition": "Illumina+ONT joint model with Ultima pangenome mapper; cross-platform accuracy is unvalidated",
+  "models": {
+    "graph_read_extraction": {
+      "bundle_sha256": "de2114917bef8f78164b73bee35113f3f8a399f781709376d9bed05301936f79",
+      "bytes": 6705124,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/extract.model",
+      "sha256": "04f1c349056157660a7d04120dd83085dd424d082925236aa2c6ab43832cb5a0"
+    },
+    "joint_calling_and_model_apply": {
+      "bundle_sha256": "de2114917bef8f78164b73bee35113f3f8a399f781709376d9bed05301936f79",
+      "bytes": 84768654,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/dnascope.model",
+      "sha256": "ada9d81466d433e76af583c8c0e57e6f8b85a315604317cb9ec17f39c9b55c60"
+    },
+    "ont_structural_variants": {
+      "bundle_sha256": "de2114917bef8f78164b73bee35113f3f8a399f781709376d9bed05301936f79",
+      "bytes": 436,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/longreadsv.model",
+      "sha256": "2467ce218f6b9e9bd65f454fb08ba8b90f1eb6cdd7cff051ba964db598471556"
+    },
+    "ultima_graph_alignment_and_liftover": {
+      "bundle_sha256": "8511915ef9ef610bb2b7f14e2bc3b9232eacbb6201571d12ec9c15b363deec85",
+      "bytes": 590,
+      "path": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle/minimap2.model",
+      "sha256": "20417e789fea9ff03063ad54cfe171cef5a75f0c1396c8875e3685abdc70ea99"
+    }
+  },
+  "outputs": {
+    "lifted_alignment": {
+      "bytes": 6877160485,
+      "mtime_ns": 1792575625158655199,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram"
+    },
+    "lifted_alignment_index": {
+      "bytes": 89825,
+      "mtime_ns": 1792575630467621964,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram.crai",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_lift_deduped.cram.crai"
+    },
+    "ploidy": {
+      "bytes": 2255,
+      "mtime_ns": 1792571507554371000,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_ploidy.json",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_ploidy.json"
+    },
+    "small_variants": {
+      "bytes": 1142116814,
+      "mtime_ns": 1792582934244072779,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz"
+    },
+    "small_variants_index": {
+      "bytes": 1992848,
+      "mtime_ns": 1792582945484002760,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz.tbi",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002.vcf.gz.tbi"
+    },
+    "structural_variants": {
+      "bytes": 11141507,
+      "mtime_ns": 1792576043758031755,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz"
+    },
+    "structural_variants_index": {
+      "bytes": 247656,
+      "mtime_ns": 1792582820101790463,
+      "path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz.tbi",
+      "resolved_path": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/HG002_sv.vcf.gz.tbi"
+    }
+  },
+  "parameters": {
+    "cores": 96,
+    "kmer_memory_gb": 30,
+    "pcr_free": false
+  },
+  "production_accepted": false,
+  "profile": "experimental-ultima-ont-hprc-v2.1-v1",
+  "python_executable": "/fsx/work/pangenome_runtime/20261020/env/bin/python",
+  "python_version": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "read_group_channels": {
+    "lifted_ultima": 2,
+    "ont": 1,
+    "original_ultima": 0
+  },
+  "reference_assets": [
+    {
+      "bytes": 3161924569,
+      "mtime_ns": 1779781636000000000,
+      "path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+      "resolved_path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa"
+    },
+    {
+      "bytes": 7802,
+      "mtime_ns": 1779781697000000000,
+      "path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai",
+      "resolved_path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai"
+    },
+    {
+      "bytes": 5492627216,
+      "mtime_ns": 1792500105000000000,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+      "resolved_path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz"
+    },
+    {
+      "bytes": 21376720088,
+      "mtime_ns": 1792500373000000000,
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+      "resolved_path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl"
+    },
+    {
+      "bytes": 428964070,
+      "mtime_ns": 1781004091000000000,
+      "path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+      "resolved_path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz"
+    },
+    {
+      "bytes": 1904517,
+      "mtime_ns": 1781004380000000000,
+      "path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi",
+      "resolved_path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi"
+    },
+    {
+      "bytes": 413,
+      "mtime_ns": 1779781636000000000,
+      "path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+      "resolved_path": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed"
+    }
+  ],
+  "reference_dictionary": [
+    [
+      "chr1",
+      248956422
+    ],
+    [
+      "chr2",
+      242193529
+    ],
+    [
+      "chr3",
+      198295559
+    ],
+    [
+      "chr4",
+      190214555
+    ],
+    [
+      "chr5",
+      181538259
+    ],
+    [
+      "chr6",
+      170805979
+    ],
+    [
+      "chr7",
+      159345973
+    ],
+    [
+      "chr8",
+      145138636
+    ],
+    [
+      "chr9",
+      138394717
+    ],
+    [
+      "chr10",
+      133797422
+    ],
+    [
+      "chr11",
+      135086622
+    ],
+    [
+      "chr12",
+      133275309
+    ],
+    [
+      "chr13",
+      114364328
+    ],
+    [
+      "chr14",
+      107043718
+    ],
+    [
+      "chr15",
+      101991189
+    ],
+    [
+      "chr16",
+      90338345
+    ],
+    [
+      "chr17",
+      83257441
+    ],
+    [
+      "chr18",
+      80373285
+    ],
+    [
+      "chr19",
+      58617616
+    ],
+    [
+      "chr20",
+      64444167
+    ],
+    [
+      "chr21",
+      46709983
+    ],
+    [
+      "chr22",
+      50818468
+    ],
+    [
+      "chrX",
+      156040895
+    ],
+    [
+      "chrY",
+      57227415
+    ],
+    [
+      "chrM",
+      16569
+    ],
+    [
+      "chr1_KI270706v1_random",
+      175055
+    ],
+    [
+      "chr1_KI270707v1_random",
+      32032
+    ],
+    [
+      "chr1_KI270708v1_random",
+      127682
+    ],
+    [
+      "chr1_KI270709v1_random",
+      66860
+    ],
+    [
+      "chr1_KI270710v1_random",
+      40176
+    ],
+    [
+      "chr1_KI270711v1_random",
+      42210
+    ],
+    [
+      "chr1_KI270712v1_random",
+      176043
+    ],
+    [
+      "chr1_KI270713v1_random",
+      40745
+    ],
+    [
+      "chr1_KI270714v1_random",
+      41717
+    ],
+    [
+      "chr2_KI270715v1_random",
+      161471
+    ],
+    [
+      "chr2_KI270716v1_random",
+      153799
+    ],
+    [
+      "chr3_GL000221v1_random",
+      155397
+    ],
+    [
+      "chr4_GL000008v2_random",
+      209709
+    ],
+    [
+      "chr5_GL000208v1_random",
+      92689
+    ],
+    [
+      "chr9_KI270717v1_random",
+      40062
+    ],
+    [
+      "chr9_KI270718v1_random",
+      38054
+    ],
+    [
+      "chr9_KI270719v1_random",
+      176845
+    ],
+    [
+      "chr9_KI270720v1_random",
+      39050
+    ],
+    [
+      "chr11_KI270721v1_random",
+      100316
+    ],
+    [
+      "chr14_GL000009v2_random",
+      201709
+    ],
+    [
+      "chr14_GL000225v1_random",
+      211173
+    ],
+    [
+      "chr14_KI270722v1_random",
+      194050
+    ],
+    [
+      "chr14_GL000194v1_random",
+      191469
+    ],
+    [
+      "chr14_KI270723v1_random",
+      38115
+    ],
+    [
+      "chr14_KI270724v1_random",
+      39555
+    ],
+    [
+      "chr14_KI270725v1_random",
+      172810
+    ],
+    [
+      "chr14_KI270726v1_random",
+      43739
+    ],
+    [
+      "chr15_KI270727v1_random",
+      448248
+    ],
+    [
+      "chr16_KI270728v1_random",
+      1872759
+    ],
+    [
+      "chr17_GL000205v2_random",
+      185591
+    ],
+    [
+      "chr17_KI270729v1_random",
+      280839
+    ],
+    [
+      "chr17_KI270730v1_random",
+      112551
+    ],
+    [
+      "chr22_KI270731v1_random",
+      150754
+    ],
+    [
+      "chr22_KI270732v1_random",
+      41543
+    ],
+    [
+      "chr22_KI270733v1_random",
+      179772
+    ],
+    [
+      "chr22_KI270734v1_random",
+      165050
+    ],
+    [
+      "chr22_KI270735v1_random",
+      42811
+    ],
+    [
+      "chr22_KI270736v1_random",
+      181920
+    ],
+    [
+      "chr22_KI270737v1_random",
+      103838
+    ],
+    [
+      "chr22_KI270738v1_random",
+      99375
+    ],
+    [
+      "chr22_KI270739v1_random",
+      73985
+    ],
+    [
+      "chrY_KI270740v1_random",
+      37240
+    ],
+    [
+      "chrUn_KI270302v1",
+      2274
+    ],
+    [
+      "chrUn_KI270304v1",
+      2165
+    ],
+    [
+      "chrUn_KI270303v1",
+      1942
+    ],
+    [
+      "chrUn_KI270305v1",
+      1472
+    ],
+    [
+      "chrUn_KI270322v1",
+      21476
+    ],
+    [
+      "chrUn_KI270320v1",
+      4416
+    ],
+    [
+      "chrUn_KI270310v1",
+      1201
+    ],
+    [
+      "chrUn_KI270316v1",
+      1444
+    ],
+    [
+      "chrUn_KI270315v1",
+      2276
+    ],
+    [
+      "chrUn_KI270312v1",
+      998
+    ],
+    [
+      "chrUn_KI270311v1",
+      12399
+    ],
+    [
+      "chrUn_KI270317v1",
+      37690
+    ],
+    [
+      "chrUn_KI270412v1",
+      1179
+    ],
+    [
+      "chrUn_KI270411v1",
+      2646
+    ],
+    [
+      "chrUn_KI270414v1",
+      2489
+    ],
+    [
+      "chrUn_KI270419v1",
+      1029
+    ],
+    [
+      "chrUn_KI270418v1",
+      2145
+    ],
+    [
+      "chrUn_KI270420v1",
+      2321
+    ],
+    [
+      "chrUn_KI270424v1",
+      2140
+    ],
+    [
+      "chrUn_KI270417v1",
+      2043
+    ],
+    [
+      "chrUn_KI270422v1",
+      1445
+    ],
+    [
+      "chrUn_KI270423v1",
+      981
+    ],
+    [
+      "chrUn_KI270425v1",
+      1884
+    ],
+    [
+      "chrUn_KI270429v1",
+      1361
+    ],
+    [
+      "chrUn_KI270442v1",
+      392061
+    ],
+    [
+      "chrUn_KI270466v1",
+      1233
+    ],
+    [
+      "chrUn_KI270465v1",
+      1774
+    ],
+    [
+      "chrUn_KI270467v1",
+      3920
+    ],
+    [
+      "chrUn_KI270435v1",
+      92983
+    ],
+    [
+      "chrUn_KI270438v1",
+      112505
+    ],
+    [
+      "chrUn_KI270468v1",
+      4055
+    ],
+    [
+      "chrUn_KI270510v1",
+      2415
+    ],
+    [
+      "chrUn_KI270509v1",
+      2318
+    ],
+    [
+      "chrUn_KI270518v1",
+      2186
+    ],
+    [
+      "chrUn_KI270508v1",
+      1951
+    ],
+    [
+      "chrUn_KI270516v1",
+      1300
+    ],
+    [
+      "chrUn_KI270512v1",
+      22689
+    ],
+    [
+      "chrUn_KI270519v1",
+      138126
+    ],
+    [
+      "chrUn_KI270522v1",
+      5674
+    ],
+    [
+      "chrUn_KI270511v1",
+      8127
+    ],
+    [
+      "chrUn_KI270515v1",
+      6361
+    ],
+    [
+      "chrUn_KI270507v1",
+      5353
+    ],
+    [
+      "chrUn_KI270517v1",
+      3253
+    ],
+    [
+      "chrUn_KI270529v1",
+      1899
+    ],
+    [
+      "chrUn_KI270528v1",
+      2983
+    ],
+    [
+      "chrUn_KI270530v1",
+      2168
+    ],
+    [
+      "chrUn_KI270539v1",
+      993
+    ],
+    [
+      "chrUn_KI270538v1",
+      91309
+    ],
+    [
+      "chrUn_KI270544v1",
+      1202
+    ],
+    [
+      "chrUn_KI270548v1",
+      1599
+    ],
+    [
+      "chrUn_KI270583v1",
+      1400
+    ],
+    [
+      "chrUn_KI270587v1",
+      2969
+    ],
+    [
+      "chrUn_KI270580v1",
+      1553
+    ],
+    [
+      "chrUn_KI270581v1",
+      7046
+    ],
+    [
+      "chrUn_KI270579v1",
+      31033
+    ],
+    [
+      "chrUn_KI270589v1",
+      44474
+    ],
+    [
+      "chrUn_KI270590v1",
+      4685
+    ],
+    [
+      "chrUn_KI270584v1",
+      4513
+    ],
+    [
+      "chrUn_KI270582v1",
+      6504
+    ],
+    [
+      "chrUn_KI270588v1",
+      6158
+    ],
+    [
+      "chrUn_KI270593v1",
+      3041
+    ],
+    [
+      "chrUn_KI270591v1",
+      5796
+    ],
+    [
+      "chrUn_KI270330v1",
+      1652
+    ],
+    [
+      "chrUn_KI270329v1",
+      1040
+    ],
+    [
+      "chrUn_KI270334v1",
+      1368
+    ],
+    [
+      "chrUn_KI270333v1",
+      2699
+    ],
+    [
+      "chrUn_KI270335v1",
+      1048
+    ],
+    [
+      "chrUn_KI270338v1",
+      1428
+    ],
+    [
+      "chrUn_KI270340v1",
+      1428
+    ],
+    [
+      "chrUn_KI270336v1",
+      1026
+    ],
+    [
+      "chrUn_KI270337v1",
+      1121
+    ],
+    [
+      "chrUn_KI270363v1",
+      1803
+    ],
+    [
+      "chrUn_KI270364v1",
+      2855
+    ],
+    [
+      "chrUn_KI270362v1",
+      3530
+    ],
+    [
+      "chrUn_KI270366v1",
+      8320
+    ],
+    [
+      "chrUn_KI270378v1",
+      1048
+    ],
+    [
+      "chrUn_KI270379v1",
+      1045
+    ],
+    [
+      "chrUn_KI270389v1",
+      1298
+    ],
+    [
+      "chrUn_KI270390v1",
+      2387
+    ],
+    [
+      "chrUn_KI270387v1",
+      1537
+    ],
+    [
+      "chrUn_KI270395v1",
+      1143
+    ],
+    [
+      "chrUn_KI270396v1",
+      1880
+    ],
+    [
+      "chrUn_KI270388v1",
+      1216
+    ],
+    [
+      "chrUn_KI270394v1",
+      970
+    ],
+    [
+      "chrUn_KI270386v1",
+      1788
+    ],
+    [
+      "chrUn_KI270391v1",
+      1484
+    ],
+    [
+      "chrUn_KI270383v1",
+      1750
+    ],
+    [
+      "chrUn_KI270393v1",
+      1308
+    ],
+    [
+      "chrUn_KI270384v1",
+      1658
+    ],
+    [
+      "chrUn_KI270392v1",
+      971
+    ],
+    [
+      "chrUn_KI270381v1",
+      1930
+    ],
+    [
+      "chrUn_KI270385v1",
+      990
+    ],
+    [
+      "chrUn_KI270382v1",
+      4215
+    ],
+    [
+      "chrUn_KI270376v1",
+      1136
+    ],
+    [
+      "chrUn_KI270374v1",
+      2656
+    ],
+    [
+      "chrUn_KI270372v1",
+      1650
+    ],
+    [
+      "chrUn_KI270373v1",
+      1451
+    ],
+    [
+      "chrUn_KI270375v1",
+      2378
+    ],
+    [
+      "chrUn_KI270371v1",
+      2805
+    ],
+    [
+      "chrUn_KI270448v1",
+      7992
+    ],
+    [
+      "chrUn_KI270521v1",
+      7642
+    ],
+    [
+      "chrUn_GL000195v1",
+      182896
+    ],
+    [
+      "chrUn_GL000219v1",
+      179198
+    ],
+    [
+      "chrUn_GL000220v1",
+      161802
+    ],
+    [
+      "chrUn_GL000224v1",
+      179693
+    ],
+    [
+      "chrUn_KI270741v1",
+      157432
+    ],
+    [
+      "chrUn_GL000226v1",
+      15008
+    ],
+    [
+      "chrUn_GL000213v1",
+      164239
+    ],
+    [
+      "chrUn_KI270743v1",
+      210658
+    ],
+    [
+      "chrUn_KI270744v1",
+      168472
+    ],
+    [
+      "chrUn_KI270745v1",
+      41891
+    ],
+    [
+      "chrUn_KI270746v1",
+      66486
+    ],
+    [
+      "chrUn_KI270747v1",
+      198735
+    ],
+    [
+      "chrUn_KI270748v1",
+      93321
+    ],
+    [
+      "chrUn_KI270749v1",
+      158759
+    ],
+    [
+      "chrUn_KI270750v1",
+      148850
+    ],
+    [
+      "chrUn_KI270751v1",
+      150742
+    ],
+    [
+      "chrUn_KI270752v1",
+      27745
+    ],
+    [
+      "chrUn_KI270753v1",
+      62944
+    ],
+    [
+      "chrUn_KI270754v1",
+      40191
+    ],
+    [
+      "chrUn_KI270755v1",
+      36723
+    ],
+    [
+      "chrUn_KI270756v1",
+      79590
+    ],
+    [
+      "chrUn_KI270757v1",
+      71251
+    ],
+    [
+      "chrUn_GL000214v1",
+      137718
+    ],
+    [
+      "chrUn_KI270742v1",
+      186739
+    ],
+    [
+      "chrUn_GL000216v2",
+      176608
+    ],
+    [
+      "chrUn_GL000218v1",
+      161147
+    ],
+    [
+      "chrEBV",
+      171823
+    ]
+  ],
+  "reference_fai_sha256": "eb7e1fea3ac1c264d6f21a1358727ef533ad560634b0ef360818d970c5f09687",
+  "reference_pair_sha256": {
+    "gbz": "11d6047f79575ffb83757462484bad134ed20928bd2c8171ec52e35a54976e2b",
+    "hapl": "dfc29be8818a5630f327b8882a11824b7974fa67e957cafbb53df0159e395d37"
+  },
+  "reference_pair_verification": "Pinned GBZ/HAPL content hashes observed from the selected vendor v2.1 download pair; GRCh38 backbone, HAPL k/structure and population contig consistency. No vendor-signed checksum manifest was supplied",
+  "requested_inputs": {
+    "bed": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "dbsnp": null,
+    "gbz": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+    "hapl": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+    "lr_aln": [
+      "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram"
+    ],
+    "model_bundle": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+    "pop_vcf": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz",
+    "reference": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "sr_aln": [
+      "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.cram"
+    ],
+    "sr_duplicate_marking_receipt": "/fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ultima/HG002.duplicate_marking.json",
+    "sr_model_bundle": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle"
+  },
+  "resource_metrics": [
+    "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/process_metrics.txt",
+    "/fsx/analysis_results/ashg-etc/hg002-huomr2p-30x10x-20261020-r01/daylily-omics-analysis/results/day/hg38/HG002-wdth3tk3gpbvjt/hybrid_pangenome/huomr2p/attempts/20261021T082817Z-a1d1192d822342c2b31915387751bd84/native/job_metrics.txt"
+  ],
+  "sample": "HG002",
+  "schema_version": 1,
+  "scientific_validation": "pending",
+  "started_at": "2026-10-21T08:28:28.955631+00:00",
+  "status": "completed",
+  "temporary_directory": "/scratch/dayoa.HG002-wdth3tk3gpbvjt.hybrid-pangenome-core.8.16564.bkra0ge5/work/tmpie21agz8",
+  "temporary_directory_retained": false,
+  "tools": {
+    "bcftools": {
+      "executable": "/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/bin/bcftools",
+      "executable_sha256": "6cdba6f53eefb8e943f1024720694ea5f3608ffe0c44a45bcc8f1c5d32caa7db",
+      "version_exit_code": 0,
+      "version_output": "bcftools 1.24\nUsing htslib 1.24\nCopyright (C) 2026 Genome Research Ltd.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n"
+    },
+    "bedtools": {
+      "executable": "/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/bin/bedtools",
+      "executable_sha256": "cbbaa4b2f71c38fad125dc85222b6920b7a0f2251492b5ea76b330b86c096bd8",
+      "version_exit_code": 0,
+      "version_output": "bedtools v2.31.1\n"
+    },
+    "kmc": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/kmc",
+      "executable_sha256": "646b3b4bcbe575346f613f11df0c92b164cdf4783dc9e437a78b0662f3077668",
+      "version_exit_code": 0,
+      "version_output": "K-Mer Counter (KMC) ver. 3.2.4 (2024-02-09)\nUsage:\n kmc [options] <input_file_name> <output_file_name> <working_directory>\n kmc [options] <@input_file_names> <output_file_name> <working_directory>\nParameters:\n  input_file_name - single file in specified (-f switch) format (gziped or not)\n  @input_file_names - file name with list of input files in specified (-f switch) format (gziped or not)\nOptions:\n  -v - verbose mode (shows all parameter settings); default: false\n  -k<len> - k-mer length (k from 1 to 256; default: 25)\n  -m<size> - max amount of RAM in GB (from 1 to 1024); default: 12\n  -sm - use strict memory mode (memory limit from -m<n> switch will not be exceeded)\n  -hc - count homopolymer compressed k-mers (approximate and experimental)\n  -p<par> - signature length (5, 6, 7, 8, 9, 10, 11); default: 9\n  -f<a/q/m/bam/kmc> - input in FASTA format (-fa), FASTQ format (-fq), multi FASTA (-fm) or BAM (-fbam) or KMC(-fkmc); default: FASTQ\n  -ci<value> - exclude k-mers occurring less than <value> times (default: 2)\n  -cs<value> - maximal value of a counter (default: 255)\n  -cx<value> - exclude k-mers occurring more of than <value> times (default: 1e9)\n  -b - turn off transformation of k-mers into canonical form\n  -r - turn on RAM-only mode \n  -n<value> - number of bins \n  -t<value> - total number of threads (default: no. of CPU cores)\n  -sf<value> - number of FASTQ reading threads\n  -sp<value> - number of splitting threads\n  -sr<value> - number of threads for 2nd stage\n  -j<file_name> - file name with execution summary in JSON format\n  -w - without output\n  -o<kmc/kff> - output in KMC of KFF format; default: KMC\n  -hp - hide percentage progress (default: false)\n  -e - only estimate histogram of k-mers occurrences instead of exact k-mer counting\n  --opt-out-size - optimize output database size (may increase running time)\nExample:\nkmc -k27 -m24 NA19238.fastq NA.res /data/kmc_tmp_dir/\nkmc -k27 -m24 @files.lst NA.res /data/kmc_tmp_dir/\n"
+    },
+    "samtools": {
+      "executable": "/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/bin/samtools",
+      "executable_sha256": "a84cb8ca01656b77cfa38ec13b51d48159341fdf5368a836e377f696863014c7",
+      "version_exit_code": 0,
+      "version_output": "samtools 1.24\nUsing htslib 1.24\nCopyright (C) 2026 Genome Research Ltd.\n\nSamtools compilation details:\n    Features:       build=configure curses=yes \n    CC:             /opt/conda/conda-bld/samtools_1784062141293/_build_env/bin/x86_64-conda-linux-gnu-cc -std=gnu23\n    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/include\n    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/include -fdebug-prefix-map=/opt/conda/conda-bld/samtools_1784062141293/work=/usr/local/src/conda/samtools-1.24 -fdebug-prefix-map=/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_=/usr/local/src/conda-prefix\n    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib -Wl,-rpath-link,/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib -L/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib\n    HTSDIR:         \n    LIBS:           \n    CURSES_LIB:     -ltinfow -lncursesw\n\nHTSlib compilation details:\n    Features:       build=configure libcurl=yes S3=yes GCS=yes libdeflate=yes lzma=yes bzip2=yes plugins=yes plugin-path=/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/libexec/htslib htscodecs=1.6.7\n    CC:             /opt/conda/conda-bld/htslib_1783611562234/_build_env/bin/x86_64-conda-linux-gnu-cc -std=gnu23\n    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/include\n    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/include -fdebug-prefix-map=/opt/conda/conda-bld/htslib_1783611562234/work=/usr/local/src/conda/htslib-1.24 -fdebug-prefix-map=/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_=/usr/local/src/conda-prefix -fvisibility=hidden\n    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib -Wl,-rpath-link,/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib -L/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/0f279b0dd1b0442b091e63d36634e474_/lib -fvisibility=hidden -rdynamic\n\nHTSlib URL scheme handlers present:\n    built-in:\t file, preload, data\n    Amazon S3:\t s3+https, s3, s3+http\n    Google Cloud Storage:\t gs+http, gs+https, gs\n    libcurl:\t gophers, smtp, wss, rtsp, tftp, mqtts, pop3, imaps, pop3s, ws, ftps, https, http, ftp, gopher, imap, sftp, smtps, scp, dict, mqtt, telnet\n    crypt4gh-needed:\t crypt4gh\n    mem:\t mem\n"
+    },
+    "sentieon driver": {
+      "executable": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon",
+      "executable_sha256": "c6818e38d4ee7d6dcdcb5ae1da087361e6504e3ce79be9e97f538b45bab99517",
+      "version": "202503.4",
+      "version_exit_code": 0,
+      "version_output": "sentieon-genomics-202503.04\n"
+    },
+    "vg": {
+      "executable": "/fsx/work/pangenome_runtime/20261020/bin/vg",
+      "executable_sha256": "d5752977237e801d971f0d044f43fde4f3005da35f0451b4f452d1c1c9b8414b",
+      "version_exit_code": 1,
+      "version_output": "error[vg] command --version not found\n"
+    }
+  },
+  "ultima_read_filters": [
+    "UltimaReadFilter,rgid=Z0159",
+    "UltimaReadFilter,rgid=Z0159-74228B74",
+    "UltimaReadFilter,rgid=Z0096",
+    "UltimaReadFilter,rgid=Z0312",
+    "UltimaReadFilter,rgid=Z0312-2880D0C2",
+    "UltimaReadFilter,rgid=Z0159-pg"
+  ]
+}
