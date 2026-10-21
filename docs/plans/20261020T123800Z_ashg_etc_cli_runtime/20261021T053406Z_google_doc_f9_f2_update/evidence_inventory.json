@@ -1,0 +1,62 @@
+{
+  "schema": "sentieon.google_doc_update_evidence_inventory.v1",
+  "scope": "F9/F2-source only",
+  "file_count": 11,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 3286,
+      "sha256": "83c38bebcb8ad33752d0432cedfa9e8a0dd35fcdd372975e06795a98eb2ef0e6"
+    },
+    {
+      "name": "after_scoped_paragraphs.json",
+      "bytes": 28939,
+      "sha256": "19437c4e9f70c4f75beec86e94036c603289b8019f2aeebd1f62813576199369"
+    },
+    {
+      "name": "before_scoped_paragraphs.json",
+      "bytes": 23350,
+      "sha256": "2c98d148f9ad4494245d18101d5fcc4d0b54bddecf4ea4446cd5c05d435ba53e"
+    },
+    {
+      "name": "correction_batch_request.json",
+      "bytes": 20176,
+      "sha256": "06cf0b94e544e2dcda2e2066fb841ca65899e07b0e41f93d7bf1684c36d2575c"
+    },
+    {
+      "name": "correction_batch_response.json",
+      "bytes": 601,
+      "sha256": "9a3848f761b4002eba40e5651cdb96c020fbc4bf561ebde0bd070e42c16716bd"
+    },
+    {
+      "name": "document_update_receipt.json",
+      "bytes": 8197,
+      "sha256": "47922be05efcf1bfc269efb50b3b9e4e1765cf334e30dcc202d174d73fa6e00b"
+    },
+    {
+      "name": "initial_batch_request.json",
+      "bytes": 21697,
+      "sha256": "130041fa8b1d9f7b9e1894dd87c862f129119a3fcbde7bd5b6821f53d4c8279f"
+    },
+    {
+      "name": "initial_batch_response.json",
+      "bytes": 657,
+      "sha256": "a27f9074315bf309e1755002c0809b4e991dc855d5be70a16b465850b05f27b9"
+    },
+    {
+      "name": "initial_readback_verification.json",
+      "bytes": 2921,
+      "sha256": "c132c89a0121a69a7f10b697e4e76e058852beaa3cced88fd3c26cc493c3f728"
+    },
+    {
+      "name": "preservation_comparison.json",
+      "bytes": 96876,
+      "sha256": "770bd7548af12d31c987d7073a497737ff68fab7e5dd7208b28181be449a47e2"
+    },
+    {
+      "name": "readback_verification.json",
+      "bytes": 3370,
+      "sha256": "6f1c24e3c7f0d1249499007dc3b3d9d36660b7fff84b3ba6fbb06f03b627fd1e"
+    }
+  ]
+}

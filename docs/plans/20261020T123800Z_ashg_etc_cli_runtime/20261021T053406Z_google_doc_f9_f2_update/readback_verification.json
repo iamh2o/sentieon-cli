@@ -1,0 +1,103 @@
+{
+  "schema": "sentieon.google_doc_scoped_readback.v1",
+  "status": "verified",
+  "documentId": "1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "url": "https://docs.google.com/document/d/1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "tabId": "t.0",
+  "beforeRevision": "AHj4eMTD0KU78M2Ndsl35XC7pyNxDo_VUWp0q5aJWy1i0SvFmdnx9Tv1mPo2QQn8tJrwrBCSPU-FWruYFeYWzXQZDgjCBME60Q8tOOVtZ0E",
+  "firstWriteRevision": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk",
+  "correctionWriteRevision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+  "readbackRevision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+  "editedParagraphs": [
+    {
+      "prefix": "F2-source:",
+      "beforeStart": 259207,
+      "afterStart": 259207,
+      "afterEnd": 263393,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "F.9 Hybrid-pangenome execution status",
+      "beforeStart": 275893,
+      "afterStart": 277293,
+      "afterEnd": 277360,
+      "paragraphStyle": "HEADING_2",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Current state:",
+      "beforeStart": 276355,
+      "afterStart": 277755,
+      "afterEnd": 286582,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Cluster:",
+      "beforeStart": 283868,
+      "afterStart": 286582,
+      "afterEnd": 288457,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Released runtime:",
+      "beforeStart": 284881,
+      "afterStart": 288457,
+      "afterEnd": 290274,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Reference:",
+      "beforeStart": 286265,
+      "afterStart": 290766,
+      "afterEnd": 291624,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Downsampling:",
+      "beforeStart": 286964,
+      "afterStart": 291624,
+      "afterEnd": 292508,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "F9-source:",
+      "beforeStart": 288025,
+      "afterStart": 292844,
+      "afterEnd": 294081,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "https://github.com/lsmc-bio/daylily-omics-analysis/blob/19.0.48/",
+      "beforeStart": 288503,
+      "afterStart": 294081,
+      "afterEnd": 294219,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    }
+  ],
+  "unchangedTopLevelBodyElements": 510,
+  "unchangedNativeTables": 37,
+  "allOutOfScopeBodyElementsExactIgnoringIndexShifts": true,
+  "otherTabsUnchanged": true,
+  "productMetricsAndFloatStringsPreservedViaUntouchedNativeTables": true,
+  "configure": "SSM Success/ResponseCode0; actual child exit_code0; original local rc1 retained separately",
+  "callersStarted": 0,
+  "callersPlanned": 4,
+  "pending": "readiness/source/maintenance postchecks and individual caller/scientific gates"
+}

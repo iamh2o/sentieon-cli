@@ -1,0 +1,197 @@
+{
+  "schema": "sentieon.google_doc_scoped_update_receipt.v1",
+  "status": "verified",
+  "evidence_captured_at_utc": "2026-10-21T05:34:06Z",
+  "document_id": "1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "document_url": "https://docs.google.com/document/d/1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "tab_id": "t.0",
+  "scope": "F9 heading/body and F2-source only; nine native paragraphs including the F9 DayOA source hyperlink",
+  "authorization": "Human authorized Google Doc updates, delegated by root with exclusive temporary ownership of these paragraphs; ownership returned after final readback",
+  "initial_guard": {
+    "requiredRevisionId": "AHj4eMTD0KU78M2Ndsl35XC7pyNxDo_VUWp0q5aJWy1i0SvFmdnx9Tv1mPo2QQn8tJrwrBCSPU-FWruYFeYWzXQZDgjCBME60Q8tOOVtZ0E"
+  },
+  "initial_result_revision": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk",
+  "correction_guard": {
+    "requiredRevisionId": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk"
+  },
+  "correction_result_revision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+  "final_readback_revision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+  "reason_for_second_batch": "Exact configure reconciliation arrived after the first guarded write/readback; a second guarded correction superseded UNKNOWN while preserving the original client transport failure",
+  "source_facts": {
+    "source": "Root agent's authorized task and subsequent exact-operation reconciliation handoff; no independent runtime query was performed by this document workstream",
+    "dayoa": {
+      "tag": "19.0.49",
+      "commit": "1319db5785b8ba371592ba082716cfc3ae63d112",
+      "proven_source_files": 5,
+      "fixture_status": "Three stronger fixtures recorded NOT_RUN; no new tests"
+    },
+    "dyec": {
+      "tag": "21.0.45",
+      "commit": "e0cea438646efe2d18db0a7f7102a68735deeb90",
+      "new_catalog_pins": "19.0.49",
+      "unchanged_legacy_entries": 11,
+      "schema_unchanged": true,
+      "canonical_local_operator_verified": true
+    },
+    "configure": {
+      "ssm_invocation": "d7db9d5a-96a8-4c7b-8734-858e95d38646",
+      "provider_status": "Success",
+      "response_code": 0,
+      "actual_child_exit_code": 0,
+      "execution_started_at_utc": "2026-10-21T03:11:56.469Z",
+      "execution_finished_at_utc": "2026-10-21T03:13:30.469Z",
+      "reconciliation_observed_at_utc": "2026-10-21T05:09:48Z",
+      "original_local_client": {
+        "return_code": 1,
+        "at_utc": "2026-10-21T03:13:43Z",
+        "classification": "Result-retrieval transport failure; retained separately"
+      },
+      "redispatched": false,
+      "repository_default_dayoa": "19.0.44",
+      "pending": "Final readiness/source/maintenance postchecks; broken SSM stream restored only through the same public headnode-connect route and existing tmux"
+    },
+    "preconfigure": {
+      "at_utc": "2026-10-21T03:10:42Z",
+      "queue_workflow_conda_lease": "empty",
+      "r02": "unlocked",
+      "target": "Exact ashg-etc generation/head/FSx",
+      "cluster_budget_usd": 750,
+      "cost_center_budget_usd": 750,
+      "license": "Presence only; no value disclosed",
+      "fsx_free_bytes": 13989120311296
+    },
+    "preparation": {
+      "completion_date": "2026-10-20",
+      "status": "PASS",
+      "whole_native_proof_sha256": "5c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758",
+      "ultima_depth": "29.99891901105408943184300036",
+      "ont_depth": "9.999053238278962532309287144",
+      "repeats": "Both PASS",
+      "preflights": "Both PASS; no variant outputs",
+      "combined_benchmark": {
+        "return_code": 2,
+        "status": "BLOCKED",
+        "reason": "Reporting layout",
+        "partial_cost_acceptance": false
+      }
+    },
+    "callers": {
+      "started": 0,
+      "planned": 4,
+      "scientific_acceptance": false,
+      "customer_acceptance": false
+    },
+    "linear_scope": "Ultima+ONT grid remains separate/unlaunched; completed linear60/30/15 were Ultima-only",
+    "clock": "All preparation/preflight completions20Oct; observed local/head clocks agreed21Oct03:xx; no demonstrated skew"
+  },
+  "verification": {
+    "schema": "sentieon.google_doc_scoped_readback.v1",
+    "status": "verified",
+    "documentId": "1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+    "url": "https://docs.google.com/document/d/1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+    "tabId": "t.0",
+    "beforeRevision": "AHj4eMTD0KU78M2Ndsl35XC7pyNxDo_VUWp0q5aJWy1i0SvFmdnx9Tv1mPo2QQn8tJrwrBCSPU-FWruYFeYWzXQZDgjCBME60Q8tOOVtZ0E",
+    "firstWriteRevision": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk",
+    "correctionWriteRevision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+    "readbackRevision": "AHj4eMS8H_VDM141De-EnQZVGiclFoL5E7iGPDXVAZS730tgLM18vc57ZYtV8ShM-NHC_cDljaxlUhElWNJntxpWF2PmI20aom-hYbsxtzY",
+    "editedParagraphs": [
+      {
+        "prefix": "F2-source:",
+        "beforeStart": 259207,
+        "afterStart": 259207,
+        "afterEnd": 263393,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "F.9 Hybrid-pangenome execution status",
+        "beforeStart": 275893,
+        "afterStart": 277293,
+        "afterEnd": 277360,
+        "paragraphStyle": "HEADING_2",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "Current state:",
+        "beforeStart": 276355,
+        "afterStart": 277755,
+        "afterEnd": 286582,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "Cluster:",
+        "beforeStart": 283868,
+        "afterStart": 286582,
+        "afterEnd": 288457,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "Released runtime:",
+        "beforeStart": 284881,
+        "afterStart": 288457,
+        "afterEnd": 290274,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "Reference:",
+        "beforeStart": 286265,
+        "afterStart": 290766,
+        "afterEnd": 291624,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "Downsampling:",
+        "beforeStart": 286964,
+        "afterStart": 291624,
+        "afterEnd": 292508,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "F9-source:",
+        "beforeStart": 288025,
+        "afterStart": 292844,
+        "afterEnd": 294081,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      },
+      {
+        "prefix": "https://github.com/lsmc-bio/daylily-omics-analysis/blob/19.0.48/",
+        "beforeStart": 288503,
+        "afterStart": 294081,
+        "afterEnd": 294219,
+        "paragraphStyle": "NORMAL_TEXT",
+        "textExact": true,
+        "stylePreserved": true
+      }
+    ],
+    "unchangedTopLevelBodyElements": 510,
+    "unchangedNativeTables": 37,
+    "allOutOfScopeBodyElementsExactIgnoringIndexShifts": true,
+    "otherTabsUnchanged": true,
+    "productMetricsAndFloatStringsPreservedViaUntouchedNativeTables": true,
+    "configure": "SSM Success/ResponseCode0; actual child exit_code0; original local rc1 retained separately",
+    "callersStarted": 0,
+    "callersPlanned": 4,
+    "pending": "readiness/source/maintenance postchecks and individual caller/scientific gates"
+  },
+  "runtime_operations_performed": [],
+  "new_tests_builds_installs_or_callers": false,
+  "skills_used": [
+    "google-drive",
+    "google-docs"
+  ],
+  "document_ownership": "Returned to root after final readback; no subsequent document edit in this workstream"
+}

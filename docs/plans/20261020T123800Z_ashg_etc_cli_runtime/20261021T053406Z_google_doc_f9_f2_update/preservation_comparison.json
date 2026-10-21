@@ -1,0 +1,3580 @@
+{
+  "schema": "sentieon.google_doc_untouched_body_comparison.v1",
+  "tabId": "t.0",
+  "comparison": "Recursive JSON equality after excluding startIndex/endIndex only; native table styles, rows, cells, all text/floats, native controls and paragraph properties otherwise compared unchanged",
+  "tableCount": 37,
+  "unchangedBodyElementCount": 510,
+  "allExact": true,
+  "elements": [
+    {
+      "bodyElement": 0,
+      "kind": "sectionBreak",
+      "beforeCanonicalUtf16Units": 127,
+      "afterCanonicalUtf16Units": 127,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 1,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 347,
+      "afterCanonicalUtf16Units": 347,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 2,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 782,
+      "afterCanonicalUtf16Units": 782,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 3,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1310,
+      "afterCanonicalUtf16Units": 1310,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 4,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 945,
+      "afterCanonicalUtf16Units": 945,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 5,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 331,
+      "afterCanonicalUtf16Units": 331,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 6,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 727,
+      "afterCanonicalUtf16Units": 727,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 7,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 662,
+      "afterCanonicalUtf16Units": 662,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 8,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 269,
+      "afterCanonicalUtf16Units": 269,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 9,
+      "kind": "other",
+      "beforeCanonicalUtf16Units": 93861,
+      "afterCanonicalUtf16Units": 93861,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 10,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 286,
+      "afterCanonicalUtf16Units": 286,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 11,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 619,
+      "afterCanonicalUtf16Units": 619,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 12,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1162,
+      "afterCanonicalUtf16Units": 1162,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 13,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1292,
+      "afterCanonicalUtf16Units": 1292,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 14,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 941,
+      "afterCanonicalUtf16Units": 941,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 15,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 16,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1248,
+      "afterCanonicalUtf16Units": 1248,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 17,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 941153,
+      "afterCanonicalUtf16Units": 941153,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 18,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 275,
+      "afterCanonicalUtf16Units": 275,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 19,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 290,
+      "afterCanonicalUtf16Units": 290,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 20,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 654,
+      "afterCanonicalUtf16Units": 654,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 21,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 275,
+      "afterCanonicalUtf16Units": 275,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 22,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 103908,
+      "afterCanonicalUtf16Units": 103908,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 23,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 275,
+      "afterCanonicalUtf16Units": 275,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 24,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2176,
+      "afterCanonicalUtf16Units": 2176,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 25,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 275,
+      "afterCanonicalUtf16Units": 275,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 26,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 883,
+      "afterCanonicalUtf16Units": 883,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 27,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 863,
+      "afterCanonicalUtf16Units": 863,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 28,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 436,
+      "afterCanonicalUtf16Units": 436,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 29,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1014,
+      "afterCanonicalUtf16Units": 1014,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 30,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 735,
+      "afterCanonicalUtf16Units": 735,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 31,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 329,
+      "afterCanonicalUtf16Units": 329,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 32,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 756,
+      "afterCanonicalUtf16Units": 756,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 33,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 711,
+      "afterCanonicalUtf16Units": 711,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 34,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1233,
+      "afterCanonicalUtf16Units": 1233,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 35,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 36,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 140352,
+      "afterCanonicalUtf16Units": 140352,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 37,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 38,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 276,
+      "afterCanonicalUtf16Units": 276,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 39,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 593,
+      "afterCanonicalUtf16Units": 593,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 40,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 212,
+      "afterCanonicalUtf16Units": 212,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 41,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 101853,
+      "afterCanonicalUtf16Units": 101853,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 42,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 212,
+      "afterCanonicalUtf16Units": 212,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 43,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 818,
+      "afterCanonicalUtf16Units": 818,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 44,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 949,
+      "afterCanonicalUtf16Units": 949,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 45,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 266,
+      "afterCanonicalUtf16Units": 266,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 46,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 743,
+      "afterCanonicalUtf16Units": 743,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 47,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 48,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 40448,
+      "afterCanonicalUtf16Units": 40448,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 49,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 50,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 260,
+      "afterCanonicalUtf16Units": 260,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 51,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 666,
+      "afterCanonicalUtf16Units": 666,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 52,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 657,
+      "afterCanonicalUtf16Units": 657,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 53,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 672,
+      "afterCanonicalUtf16Units": 672,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 54,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 698,
+      "afterCanonicalUtf16Units": 698,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 55,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 677,
+      "afterCanonicalUtf16Units": 677,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 56,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 668,
+      "afterCanonicalUtf16Units": 668,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 57,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 604,
+      "afterCanonicalUtf16Units": 604,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 58,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 647,
+      "afterCanonicalUtf16Units": 647,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 59,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 709,
+      "afterCanonicalUtf16Units": 709,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 60,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 665,
+      "afterCanonicalUtf16Units": 665,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 61,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 599,
+      "afterCanonicalUtf16Units": 599,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 62,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 668,
+      "afterCanonicalUtf16Units": 668,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 63,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 654,
+      "afterCanonicalUtf16Units": 654,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 64,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 699,
+      "afterCanonicalUtf16Units": 699,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 65,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 643,
+      "afterCanonicalUtf16Units": 643,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 66,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 669,
+      "afterCanonicalUtf16Units": 669,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 67,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 658,
+      "afterCanonicalUtf16Units": 658,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 68,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 590,
+      "afterCanonicalUtf16Units": 590,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 69,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 591,
+      "afterCanonicalUtf16Units": 591,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 70,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 595,
+      "afterCanonicalUtf16Units": 595,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 71,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 645,
+      "afterCanonicalUtf16Units": 645,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 72,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 590,
+      "afterCanonicalUtf16Units": 590,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 73,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 74,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 335,
+      "afterCanonicalUtf16Units": 335,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 75,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 907,
+      "afterCanonicalUtf16Units": 907,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 76,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 56899,
+      "afterCanonicalUtf16Units": 56899,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 77,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1227,
+      "afterCanonicalUtf16Units": 1227,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 78,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1022,
+      "afterCanonicalUtf16Units": 1022,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 79,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1145,
+      "afterCanonicalUtf16Units": 1145,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 80,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 768,
+      "afterCanonicalUtf16Units": 768,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 81,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 950,
+      "afterCanonicalUtf16Units": 950,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 82,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 978,
+      "afterCanonicalUtf16Units": 978,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 83,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1224,
+      "afterCanonicalUtf16Units": 1224,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 84,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 950,
+      "afterCanonicalUtf16Units": 950,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 85,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 296,
+      "afterCanonicalUtf16Units": 296,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 86,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1239,
+      "afterCanonicalUtf16Units": 1239,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 87,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1140,
+      "afterCanonicalUtf16Units": 1140,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 88,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 828,
+      "afterCanonicalUtf16Units": 828,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 89,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 794,
+      "afterCanonicalUtf16Units": 794,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 90,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 420,
+      "afterCanonicalUtf16Units": 420,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 91,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1212,
+      "afterCanonicalUtf16Units": 1212,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 92,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 94872,
+      "afterCanonicalUtf16Units": 94872,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 93,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1160,
+      "afterCanonicalUtf16Units": 1160,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 94,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1821,
+      "afterCanonicalUtf16Units": 1821,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 95,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 336,
+      "afterCanonicalUtf16Units": 336,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 96,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 679,
+      "afterCanonicalUtf16Units": 679,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 97,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 774,
+      "afterCanonicalUtf16Units": 774,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 98,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1781,
+      "afterCanonicalUtf16Units": 1781,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 99,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 343,
+      "afterCanonicalUtf16Units": 343,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 100,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1165,
+      "afterCanonicalUtf16Units": 1165,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 101,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 138866,
+      "afterCanonicalUtf16Units": 138866,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 102,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1030,
+      "afterCanonicalUtf16Units": 1030,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 103,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1145,
+      "afterCanonicalUtf16Units": 1145,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 104,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1216,
+      "afterCanonicalUtf16Units": 1216,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 105,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 328,
+      "afterCanonicalUtf16Units": 328,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 106,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 843,
+      "afterCanonicalUtf16Units": 843,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 107,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1096,
+      "afterCanonicalUtf16Units": 1096,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 108,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 988,
+      "afterCanonicalUtf16Units": 988,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 109,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 994,
+      "afterCanonicalUtf16Units": 994,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 110,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1206,
+      "afterCanonicalUtf16Units": 1206,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 111,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1250,
+      "afterCanonicalUtf16Units": 1250,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 112,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 269,
+      "afterCanonicalUtf16Units": 269,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 113,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2037,
+      "afterCanonicalUtf16Units": 2037,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 114,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1681,
+      "afterCanonicalUtf16Units": 1681,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 115,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1323,
+      "afterCanonicalUtf16Units": 1323,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 116,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1433,
+      "afterCanonicalUtf16Units": 1433,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 117,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1404,
+      "afterCanonicalUtf16Units": 1404,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 118,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2744,
+      "afterCanonicalUtf16Units": 2744,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 119,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1576,
+      "afterCanonicalUtf16Units": 1576,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 120,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1770,
+      "afterCanonicalUtf16Units": 1770,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 121,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1578,
+      "afterCanonicalUtf16Units": 1578,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 122,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1123,
+      "afterCanonicalUtf16Units": 1123,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 123,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 714,
+      "afterCanonicalUtf16Units": 714,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 124,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1039,
+      "afterCanonicalUtf16Units": 1039,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 125,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 316,
+      "afterCanonicalUtf16Units": 316,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 126,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 929,
+      "afterCanonicalUtf16Units": 929,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 127,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 763,
+      "afterCanonicalUtf16Units": 763,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 128,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 729,
+      "afterCanonicalUtf16Units": 729,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 129,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 726,
+      "afterCanonicalUtf16Units": 726,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 130,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 761,
+      "afterCanonicalUtf16Units": 761,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 131,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 845,
+      "afterCanonicalUtf16Units": 845,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 132,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 708,
+      "afterCanonicalUtf16Units": 708,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 133,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 901,
+      "afterCanonicalUtf16Units": 901,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 134,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1060,
+      "afterCanonicalUtf16Units": 1060,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 135,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 720,
+      "afterCanonicalUtf16Units": 720,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 136,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 19698,
+      "afterCanonicalUtf16Units": 19698,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 137,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 991,
+      "afterCanonicalUtf16Units": 991,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 138,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 717,
+      "afterCanonicalUtf16Units": 717,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 139,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 902,
+      "afterCanonicalUtf16Units": 902,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 140,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1030,
+      "afterCanonicalUtf16Units": 1030,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 141,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 975,
+      "afterCanonicalUtf16Units": 975,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 142,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1033,
+      "afterCanonicalUtf16Units": 1033,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 143,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 931,
+      "afterCanonicalUtf16Units": 931,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 144,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 720,
+      "afterCanonicalUtf16Units": 720,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 145,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 842,
+      "afterCanonicalUtf16Units": 842,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 146,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 136819,
+      "afterCanonicalUtf16Units": 136819,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 147,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 867,
+      "afterCanonicalUtf16Units": 867,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 148,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 706,
+      "afterCanonicalUtf16Units": 706,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 149,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 765,
+      "afterCanonicalUtf16Units": 765,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 150,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 43949,
+      "afterCanonicalUtf16Units": 43949,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 151,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1069,
+      "afterCanonicalUtf16Units": 1069,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 152,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 720,
+      "afterCanonicalUtf16Units": 720,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 153,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1259,
+      "afterCanonicalUtf16Units": 1259,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 154,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1197,
+      "afterCanonicalUtf16Units": 1197,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 155,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1091,
+      "afterCanonicalUtf16Units": 1091,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 156,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1060,
+      "afterCanonicalUtf16Units": 1060,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 157,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1168,
+      "afterCanonicalUtf16Units": 1168,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 158,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 730,
+      "afterCanonicalUtf16Units": 730,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 159,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 707,
+      "afterCanonicalUtf16Units": 707,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 160,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 997,
+      "afterCanonicalUtf16Units": 997,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 161,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1002,
+      "afterCanonicalUtf16Units": 1002,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 162,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 882,
+      "afterCanonicalUtf16Units": 882,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 163,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 724,
+      "afterCanonicalUtf16Units": 724,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 164,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 984,
+      "afterCanonicalUtf16Units": 984,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 165,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 990,
+      "afterCanonicalUtf16Units": 990,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 166,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 950,
+      "afterCanonicalUtf16Units": 950,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 167,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 746,
+      "afterCanonicalUtf16Units": 746,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 168,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 22806,
+      "afterCanonicalUtf16Units": 22806,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 169,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1114,
+      "afterCanonicalUtf16Units": 1114,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 170,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 840,
+      "afterCanonicalUtf16Units": 840,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 171,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1043,
+      "afterCanonicalUtf16Units": 1043,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 172,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 698,
+      "afterCanonicalUtf16Units": 698,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 173,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 942,
+      "afterCanonicalUtf16Units": 942,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 174,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 989,
+      "afterCanonicalUtf16Units": 989,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 175,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 936,
+      "afterCanonicalUtf16Units": 936,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 176,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 705,
+      "afterCanonicalUtf16Units": 705,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 177,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 983,
+      "afterCanonicalUtf16Units": 983,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 178,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1016,
+      "afterCanonicalUtf16Units": 1016,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 179,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 957,
+      "afterCanonicalUtf16Units": 957,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 180,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 743,
+      "afterCanonicalUtf16Units": 743,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 181,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 705,
+      "afterCanonicalUtf16Units": 705,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 182,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1204,
+      "afterCanonicalUtf16Units": 1204,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 183,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1126,
+      "afterCanonicalUtf16Units": 1126,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 184,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1064,
+      "afterCanonicalUtf16Units": 1064,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 185,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 684,
+      "afterCanonicalUtf16Units": 684,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 186,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 27255,
+      "afterCanonicalUtf16Units": 27255,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 187,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1273,
+      "afterCanonicalUtf16Units": 1273,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 188,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1109,
+      "afterCanonicalUtf16Units": 1109,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 189,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 702,
+      "afterCanonicalUtf16Units": 702,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 190,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1097,
+      "afterCanonicalUtf16Units": 1097,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 191,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1055,
+      "afterCanonicalUtf16Units": 1055,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 192,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 705,
+      "afterCanonicalUtf16Units": 705,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 193,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1269,
+      "afterCanonicalUtf16Units": 1269,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 194,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1042,
+      "afterCanonicalUtf16Units": 1042,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 195,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1091,
+      "afterCanonicalUtf16Units": 1091,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 196,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 706,
+      "afterCanonicalUtf16Units": 706,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 197,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1357,
+      "afterCanonicalUtf16Units": 1357,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 198,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 947,
+      "afterCanonicalUtf16Units": 947,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 199,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1151,
+      "afterCanonicalUtf16Units": 1151,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 200,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 929,
+      "afterCanonicalUtf16Units": 929,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 201,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 743,
+      "afterCanonicalUtf16Units": 743,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 202,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 725,
+      "afterCanonicalUtf16Units": 725,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 203,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 991,
+      "afterCanonicalUtf16Units": 991,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 204,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 962,
+      "afterCanonicalUtf16Units": 962,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 205,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 996,
+      "afterCanonicalUtf16Units": 996,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 206,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 727,
+      "afterCanonicalUtf16Units": 727,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 207,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 717,
+      "afterCanonicalUtf16Units": 717,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 208,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 823,
+      "afterCanonicalUtf16Units": 823,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 209,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 826,
+      "afterCanonicalUtf16Units": 826,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 210,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 821,
+      "afterCanonicalUtf16Units": 821,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 211,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 824,
+      "afterCanonicalUtf16Units": 824,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 212,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 821,
+      "afterCanonicalUtf16Units": 821,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 213,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 839,
+      "afterCanonicalUtf16Units": 839,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 214,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 837,
+      "afterCanonicalUtf16Units": 837,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 215,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 812,
+      "afterCanonicalUtf16Units": 812,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 216,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 730,
+      "afterCanonicalUtf16Units": 730,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 217,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 921,
+      "afterCanonicalUtf16Units": 921,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 218,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 727,
+      "afterCanonicalUtf16Units": 727,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 219,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 978,
+      "afterCanonicalUtf16Units": 978,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 220,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 884,
+      "afterCanonicalUtf16Units": 884,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 221,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 697,
+      "afterCanonicalUtf16Units": 697,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 222,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1015,
+      "afterCanonicalUtf16Units": 1015,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 223,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1023,
+      "afterCanonicalUtf16Units": 1023,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 224,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 955,
+      "afterCanonicalUtf16Units": 955,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 225,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 691,
+      "afterCanonicalUtf16Units": 691,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 226,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 927,
+      "afterCanonicalUtf16Units": 927,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 227,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 849,
+      "afterCanonicalUtf16Units": 849,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 228,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 749,
+      "afterCanonicalUtf16Units": 749,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 229,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 875,
+      "afterCanonicalUtf16Units": 875,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 230,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 732,
+      "afterCanonicalUtf16Units": 732,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 231,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 854,
+      "afterCanonicalUtf16Units": 854,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 232,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 811,
+      "afterCanonicalUtf16Units": 811,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 233,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1136,
+      "afterCanonicalUtf16Units": 1136,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 234,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 901,
+      "afterCanonicalUtf16Units": 901,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 235,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 794,
+      "afterCanonicalUtf16Units": 794,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 236,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 857,
+      "afterCanonicalUtf16Units": 857,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 237,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 741,
+      "afterCanonicalUtf16Units": 741,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 238,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 811,
+      "afterCanonicalUtf16Units": 811,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 239,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 732,
+      "afterCanonicalUtf16Units": 732,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 240,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1022,
+      "afterCanonicalUtf16Units": 1022,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 241,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 984,
+      "afterCanonicalUtf16Units": 984,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 242,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 263,
+      "afterCanonicalUtf16Units": 263,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 243,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1033,
+      "afterCanonicalUtf16Units": 1033,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 244,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 359,
+      "afterCanonicalUtf16Units": 359,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 245,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1560,
+      "afterCanonicalUtf16Units": 1560,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 246,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 870,
+      "afterCanonicalUtf16Units": 870,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 247,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 248,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 249,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 20590,
+      "afterCanonicalUtf16Units": 20590,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 250,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 251,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 782,
+      "afterCanonicalUtf16Units": 782,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 252,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 339,
+      "afterCanonicalUtf16Units": 339,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 253,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 254,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 87966,
+      "afterCanonicalUtf16Units": 87966,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 255,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 256,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 595,
+      "afterCanonicalUtf16Units": 595,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 257,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 353,
+      "afterCanonicalUtf16Units": 353,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 258,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 585,
+      "afterCanonicalUtf16Units": 585,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 259,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 316,
+      "afterCanonicalUtf16Units": 316,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 260,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 261,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 56229,
+      "afterCanonicalUtf16Units": 56229,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 262,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 263,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 315,
+      "afterCanonicalUtf16Units": 315,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 264,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 265,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 56229,
+      "afterCanonicalUtf16Units": 56229,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 266,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 267,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 314,
+      "afterCanonicalUtf16Units": 314,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 268,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 269,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 56229,
+      "afterCanonicalUtf16Units": 56229,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 270,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 271,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 585,
+      "afterCanonicalUtf16Units": 585,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 272,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 341,
+      "afterCanonicalUtf16Units": 341,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 273,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 671,
+      "afterCanonicalUtf16Units": 671,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 274,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 275,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 121476,
+      "afterCanonicalUtf16Units": 121476,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 276,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 277,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 800,
+      "afterCanonicalUtf16Units": 800,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 278,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 328,
+      "afterCanonicalUtf16Units": 328,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 279,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 677,
+      "afterCanonicalUtf16Units": 677,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 280,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 324,
+      "afterCanonicalUtf16Units": 324,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 281,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 282,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 57655,
+      "afterCanonicalUtf16Units": 57655,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 283,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 284,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 323,
+      "afterCanonicalUtf16Units": 323,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 285,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 286,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 57655,
+      "afterCanonicalUtf16Units": 57655,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 287,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 288,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 322,
+      "afterCanonicalUtf16Units": 322,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 289,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 290,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 57655,
+      "afterCanonicalUtf16Units": 57655,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 291,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 292,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 331,
+      "afterCanonicalUtf16Units": 331,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 293,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 723,
+      "afterCanonicalUtf16Units": 723,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 294,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 781,
+      "afterCanonicalUtf16Units": 781,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 295,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2620,
+      "afterCanonicalUtf16Units": 2620,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 296,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 402,
+      "afterCanonicalUtf16Units": 402,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 297,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 812,
+      "afterCanonicalUtf16Units": 812,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 298,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 413,
+      "afterCanonicalUtf16Units": 413,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 299,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 188,
+      "afterCanonicalUtf16Units": 188,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 300,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 39740,
+      "afterCanonicalUtf16Units": 39740,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 301,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 302,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 395,
+      "afterCanonicalUtf16Units": 395,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 303,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 188,
+      "afterCanonicalUtf16Units": 188,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 304,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 39740,
+      "afterCanonicalUtf16Units": 39740,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 305,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 306,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 379,
+      "afterCanonicalUtf16Units": 379,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 307,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 838,
+      "afterCanonicalUtf16Units": 838,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 308,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 309,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 32475,
+      "afterCanonicalUtf16Units": 32475,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 310,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 311,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 781,
+      "afterCanonicalUtf16Units": 781,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 312,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 344,
+      "afterCanonicalUtf16Units": 344,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 313,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 681,
+      "afterCanonicalUtf16Units": 681,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 314,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 315,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 20671,
+      "afterCanonicalUtf16Units": 20671,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 316,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 317,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 630,
+      "afterCanonicalUtf16Units": 630,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 318,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 319,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 20644,
+      "afterCanonicalUtf16Units": 20644,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 320,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 349,
+      "afterCanonicalUtf16Units": 349,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 321,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 698,
+      "afterCanonicalUtf16Units": 698,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 322,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 588,
+      "afterCanonicalUtf16Units": 588,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 323,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 392,
+      "afterCanonicalUtf16Units": 392,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 324,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 356,
+      "afterCanonicalUtf16Units": 356,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 325,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1015,
+      "afterCanonicalUtf16Units": 1015,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 326,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 790,
+      "afterCanonicalUtf16Units": 790,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 327,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 800,
+      "afterCanonicalUtf16Units": 800,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 328,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 360,
+      "afterCanonicalUtf16Units": 360,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 329,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 755,
+      "afterCanonicalUtf16Units": 755,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 330,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 1106858,
+      "afterCanonicalUtf16Units": 1106858,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 331,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 793,
+      "afterCanonicalUtf16Units": 793,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 332,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 376,
+      "afterCanonicalUtf16Units": 376,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 333,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1503,
+      "afterCanonicalUtf16Units": 1503,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 334,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 852,
+      "afterCanonicalUtf16Units": 852,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 335,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 798,
+      "afterCanonicalUtf16Units": 798,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 336,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 944,
+      "afterCanonicalUtf16Units": 944,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 337,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 992,
+      "afterCanonicalUtf16Units": 992,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 338,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 738,
+      "afterCanonicalUtf16Units": 738,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 339,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 359,
+      "afterCanonicalUtf16Units": 359,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 340,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 785,
+      "afterCanonicalUtf16Units": 785,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 341,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 343,
+      "afterCanonicalUtf16Units": 343,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 342,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 981,
+      "afterCanonicalUtf16Units": 981,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 343,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 263,
+      "afterCanonicalUtf16Units": 263,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 344,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 25265,
+      "afterCanonicalUtf16Units": 25265,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 345,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 263,
+      "afterCanonicalUtf16Units": 263,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 346,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 355,
+      "afterCanonicalUtf16Units": 355,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 347,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 726,
+      "afterCanonicalUtf16Units": 726,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 348,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 524,
+      "afterCanonicalUtf16Units": 524,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 349,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 263,
+      "afterCanonicalUtf16Units": 263,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 350,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 27119,
+      "afterCanonicalUtf16Units": 27119,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 351,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 263,
+      "afterCanonicalUtf16Units": 263,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 352,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 342,
+      "afterCanonicalUtf16Units": 342,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 353,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 709,
+      "afterCanonicalUtf16Units": 709,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 354,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 671,
+      "afterCanonicalUtf16Units": 671,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 355,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 982,
+      "afterCanonicalUtf16Units": 982,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 356,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 347,
+      "afterCanonicalUtf16Units": 347,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 357,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1460,
+      "afterCanonicalUtf16Units": 1460,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 358,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 889,
+      "afterCanonicalUtf16Units": 889,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 359,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 712,
+      "afterCanonicalUtf16Units": 712,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 360,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 150,
+      "afterCanonicalUtf16Units": 150,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 361,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 139720,
+      "afterCanonicalUtf16Units": 139720,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 362,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1428,
+      "afterCanonicalUtf16Units": 1428,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 363,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2551,
+      "afterCanonicalUtf16Units": 2551,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 364,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1765,
+      "afterCanonicalUtf16Units": 1765,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 365,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 3360,
+      "afterCanonicalUtf16Units": 3360,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 366,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 399,
+      "afterCanonicalUtf16Units": 399,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 367,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 619,
+      "afterCanonicalUtf16Units": 619,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 368,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1434,
+      "afterCanonicalUtf16Units": 1434,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 369,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 320,
+      "afterCanonicalUtf16Units": 320,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 370,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 85675,
+      "afterCanonicalUtf16Units": 85675,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 371,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 282,
+      "afterCanonicalUtf16Units": 282,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 372,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1806,
+      "afterCanonicalUtf16Units": 1806,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 373,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1238,
+      "afterCanonicalUtf16Units": 1238,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 374,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 374,
+      "afterCanonicalUtf16Units": 374,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 375,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 753,
+      "afterCanonicalUtf16Units": 753,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 376,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1281,
+      "afterCanonicalUtf16Units": 1281,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 377,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1164,
+      "afterCanonicalUtf16Units": 1164,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 378,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 779,
+      "afterCanonicalUtf16Units": 779,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 379,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 847,
+      "afterCanonicalUtf16Units": 847,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 380,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 835,
+      "afterCanonicalUtf16Units": 835,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 381,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 820,
+      "afterCanonicalUtf16Units": 820,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 382,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 642,
+      "afterCanonicalUtf16Units": 642,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 383,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 732,
+      "afterCanonicalUtf16Units": 732,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 384,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 770,
+      "afterCanonicalUtf16Units": 770,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 385,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 799,
+      "afterCanonicalUtf16Units": 799,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 386,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1018,
+      "afterCanonicalUtf16Units": 1018,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 387,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 863,
+      "afterCanonicalUtf16Units": 863,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 388,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2290,
+      "afterCanonicalUtf16Units": 2290,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 389,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 320,
+      "afterCanonicalUtf16Units": 320,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 390,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2266,
+      "afterCanonicalUtf16Units": 2266,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 391,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 392,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 411,
+      "afterCanonicalUtf16Units": 411,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 393,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 659,
+      "afterCanonicalUtf16Units": 659,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 394,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 395,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 378,
+      "afterCanonicalUtf16Units": 378,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 396,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 892,
+      "afterCanonicalUtf16Units": 892,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 397,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 398,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 124941,
+      "afterCanonicalUtf16Units": 124941,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 399,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 400,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 392,
+      "afterCanonicalUtf16Units": 392,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 401,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 742,
+      "afterCanonicalUtf16Units": 742,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 402,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 403,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 27046,
+      "afterCanonicalUtf16Units": 27046,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 404,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 405,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 377,
+      "afterCanonicalUtf16Units": 377,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 406,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 700,
+      "afterCanonicalUtf16Units": 700,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 407,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 408,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 25842,
+      "afterCanonicalUtf16Units": 25842,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 409,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 410,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 399,
+      "afterCanonicalUtf16Units": 399,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 411,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 613,
+      "afterCanonicalUtf16Units": 613,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 412,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 984,
+      "afterCanonicalUtf16Units": 984,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 413,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1479,
+      "afterCanonicalUtf16Units": 1479,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 414,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1016,
+      "afterCanonicalUtf16Units": 1016,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 415,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 416,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 384,
+      "afterCanonicalUtf16Units": 384,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 417,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 625,
+      "afterCanonicalUtf16Units": 625,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 418,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 419,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 27635,
+      "afterCanonicalUtf16Units": 27635,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 420,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 421,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 396,
+      "afterCanonicalUtf16Units": 396,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 422,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 632,
+      "afterCanonicalUtf16Units": 632,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 423,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 424,
+      "kind": "table",
+      "beforeCanonicalUtf16Units": 32285,
+      "afterCanonicalUtf16Units": 32285,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 425,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 426,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 375,
+      "afterCanonicalUtf16Units": 375,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 427,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 458,
+      "afterCanonicalUtf16Units": 458,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 429,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1035,
+      "afterCanonicalUtf16Units": 1035,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 430,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 2824,
+      "afterCanonicalUtf16Units": 2824,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 431,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 957,
+      "afterCanonicalUtf16Units": 957,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 432,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 625,
+      "afterCanonicalUtf16Units": 625,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 433,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 477,
+      "afterCanonicalUtf16Units": 477,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 434,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 302,
+      "afterCanonicalUtf16Units": 302,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 435,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 320,
+      "afterCanonicalUtf16Units": 320,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 436,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 390,
+      "afterCanonicalUtf16Units": 390,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 437,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 976,
+      "afterCanonicalUtf16Units": 976,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 438,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1179,
+      "afterCanonicalUtf16Units": 1179,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 439,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1211,
+      "afterCanonicalUtf16Units": 1211,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 440,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 486,
+      "afterCanonicalUtf16Units": 486,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 441,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 636,
+      "afterCanonicalUtf16Units": 636,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 442,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 705,
+      "afterCanonicalUtf16Units": 705,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 443,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1798,
+      "afterCanonicalUtf16Units": 1798,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 444,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 4434,
+      "afterCanonicalUtf16Units": 4434,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 445,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 611,
+      "afterCanonicalUtf16Units": 611,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 446,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 727,
+      "afterCanonicalUtf16Units": 727,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 448,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 672,
+      "afterCanonicalUtf16Units": 672,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 452,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 769,
+      "afterCanonicalUtf16Units": 769,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 455,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 613,
+      "afterCanonicalUtf16Units": 613,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 458,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 582,
+      "afterCanonicalUtf16Units": 582,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 459,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 403,
+      "afterCanonicalUtf16Units": 403,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 460,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 814,
+      "afterCanonicalUtf16Units": 814,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 461,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 995,
+      "afterCanonicalUtf16Units": 995,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 462,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 653,
+      "afterCanonicalUtf16Units": 653,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 463,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 404,
+      "afterCanonicalUtf16Units": 404,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 464,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 406,
+      "afterCanonicalUtf16Units": 406,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 465,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 706,
+      "afterCanonicalUtf16Units": 706,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 466,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 750,
+      "afterCanonicalUtf16Units": 750,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 467,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 972,
+      "afterCanonicalUtf16Units": 972,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 468,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 732,
+      "afterCanonicalUtf16Units": 732,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 469,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 822,
+      "afterCanonicalUtf16Units": 822,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 470,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 701,
+      "afterCanonicalUtf16Units": 701,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 471,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 395,
+      "afterCanonicalUtf16Units": 395,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 472,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 503,
+      "afterCanonicalUtf16Units": 503,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 473,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 757,
+      "afterCanonicalUtf16Units": 757,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 474,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 944,
+      "afterCanonicalUtf16Units": 944,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 475,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 770,
+      "afterCanonicalUtf16Units": 770,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 476,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 960,
+      "afterCanonicalUtf16Units": 960,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 477,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 560,
+      "afterCanonicalUtf16Units": 560,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 478,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 415,
+      "afterCanonicalUtf16Units": 415,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 479,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 496,
+      "afterCanonicalUtf16Units": 496,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 480,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 417,
+      "afterCanonicalUtf16Units": 417,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 481,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 726,
+      "afterCanonicalUtf16Units": 726,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 482,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 933,
+      "afterCanonicalUtf16Units": 933,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 483,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 906,
+      "afterCanonicalUtf16Units": 906,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 484,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 931,
+      "afterCanonicalUtf16Units": 931,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 485,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 540,
+      "afterCanonicalUtf16Units": 540,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 486,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 541,
+      "afterCanonicalUtf16Units": 541,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 487,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 540,
+      "afterCanonicalUtf16Units": 540,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 488,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 540,
+      "afterCanonicalUtf16Units": 540,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 489,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 539,
+      "afterCanonicalUtf16Units": 539,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 490,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 537,
+      "afterCanonicalUtf16Units": 537,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 491,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 478,
+      "afterCanonicalUtf16Units": 478,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 492,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 385,
+      "afterCanonicalUtf16Units": 385,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 493,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 742,
+      "afterCanonicalUtf16Units": 742,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 494,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 906,
+      "afterCanonicalUtf16Units": 906,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 495,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 913,
+      "afterCanonicalUtf16Units": 913,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 496,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 922,
+      "afterCanonicalUtf16Units": 922,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 497,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 824,
+      "afterCanonicalUtf16Units": 824,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 498,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 703,
+      "afterCanonicalUtf16Units": 703,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 499,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 702,
+      "afterCanonicalUtf16Units": 702,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 500,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 958,
+      "afterCanonicalUtf16Units": 958,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 501,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 740,
+      "afterCanonicalUtf16Units": 740,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 502,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 931,
+      "afterCanonicalUtf16Units": 931,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 503,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1100,
+      "afterCanonicalUtf16Units": 1100,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 504,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 363,
+      "afterCanonicalUtf16Units": 363,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 505,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 849,
+      "afterCanonicalUtf16Units": 849,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 506,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 783,
+      "afterCanonicalUtf16Units": 783,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 507,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 830,
+      "afterCanonicalUtf16Units": 830,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 508,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 780,
+      "afterCanonicalUtf16Units": 780,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 509,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 863,
+      "afterCanonicalUtf16Units": 863,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 510,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 235,
+      "afterCanonicalUtf16Units": 235,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 511,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 684,
+      "afterCanonicalUtf16Units": 684,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 512,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 150,
+      "afterCanonicalUtf16Units": 150,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 513,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 702,
+      "afterCanonicalUtf16Units": 702,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 514,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 150,
+      "afterCanonicalUtf16Units": 150,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 515,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 1020,
+      "afterCanonicalUtf16Units": 1020,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 516,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 150,
+      "afterCanonicalUtf16Units": 150,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 517,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 802,
+      "afterCanonicalUtf16Units": 802,
+      "exactEqualIgnoringIndexShifts": true
+    },
+    {
+      "bodyElement": 518,
+      "kind": "paragraph",
+      "beforeCanonicalUtf16Units": 320,
+      "afterCanonicalUtf16Units": 320,
+      "exactEqualIgnoringIndexShifts": true
+    }
+  ]
+}

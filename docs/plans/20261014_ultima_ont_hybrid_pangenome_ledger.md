@@ -58,10 +58,42 @@ no remaining jobs; proof SHA256
 `5c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758`.
 The preparation environment was created from unchanged
 `hybrid_pangenome_v0.2.yaml`; this does not certify future caller admission.
-Combined preparation benchmark collection rc2 is a separate reporting-layout
-BLOCKER; no partial-cost acceptance substitutes for it. Next: root promotes the
-proven DayOA source, then C's catalog/configure/caller gates and scientific
-evaluation. Rows: 7 SUCCESS, 1 IN_PROGRESS; full objective and science incomplete.
+Combined preparation benchmark collection rc2 remains a reporting-layout BLOCKER;
+no partial-cost acceptance substitutes for it. Root published DayOA 19.0.49
+(`1319db5785b8ba371592ba082716cfc3ae63d112`) and DYEC 21.0.45
+(`e0cea438646efe2d18db0a7f7102a68735deeb90`). Exact configure SSM
+`d7db9d5a-96a8-4c7b-8734-858e95d38646` reconciled provider Success/0 and
+actual child0; original local client rc1 remains a retrieval transport failure.
+Native DYEC 21.0.45 is verified; repository default DayOA 19.0.44 is preserved,
+with both new caller catalog pins 19.0.49. Final readiness/source/maintenance
+postchecks and individual caller gates remain pending; 0/4 callers. Bounded
+F9/F2 Google Doc update/readback is preserved below. Rows: 7 SUCCESS,
+1 IN_PROGRESS; full objective and science incomplete.
+
+## 2026-10-21 bounded Google Doc release/configure update
+
+The human-authorized existing Google Doc, tab `t.0`, was updated only in the
+assigned F9 heading/body and F2-source paragraphs. Native exact-text and
+required-revision guards protected both batches. The first guarded update
+was superseded by root's exact configure reconciliation; a second guarded
+correction preserves original local client rc1 while recording native
+SSM Success/ResponseCode0 and actual child0, with no redispatch.
+
+[Receipt and bounded evidence](20261020T123800Z_ashg_etc_cli_runtime/20261021T053406Z_google_doc_f9_f2_update/README.md)
+record nine edited paragraphs, exact native readback, all 37 native tables
+and all 510 out-of-scope top-level body elements unchanged apart from index
+shifts. Original paragraph styles and the updated 19.0.49 hyperlink are verified.
+Document ownership was returned to root after final readback. Preparation
+and CLI preflight completion dates remain 20 October; observed 21 October
+release/configure facts do not imply caller/science acceptance. Repository
+default 19.0.44 remains distinct from the 19.0.49 catalog pins.
+
+This update used Google Drive/Docs connector tools only for the remote Doc;
+no runtime probe, test, build, caller or source install was performed.
+Exact release commits and operation timestamps are attributed to root's
+handoff. CLI 2.0.3 tag/code/wheel remain unchanged. Final readiness/source/
+maintenance postchecks and all four callers remain pending at this snapshot;
+combined benchmark collection remains a separate reporting blocker.
 
 ## 2026-10-20 accepted prepared-input preflight closeout
 

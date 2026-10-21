@@ -1,0 +1,97 @@
+{
+  "status": "verified",
+  "documentId": "1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "url": "https://docs.google.com/document/d/1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "tabId": "t.0",
+  "beforeRevision": "AHj4eMTD0KU78M2Ndsl35XC7pyNxDo_VUWp0q5aJWy1i0SvFmdnx9Tv1mPo2QQn8tJrwrBCSPU-FWruYFeYWzXQZDgjCBME60Q8tOOVtZ0E",
+  "writeRevision": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk",
+  "readbackRevision": "AHj4eMTGF2dF-dT7kUZPeb-3iiuk88pv-HiMHjK-f3ktyvVtf20vKACUJgXPzvzy_9PsFFGDG2jyCwygDDn8XfAw3m1VI1ekNXGp5HKbzMk",
+  "editedParagraphs": [
+    {
+      "prefix": "F2-source:",
+      "beforeStart": 259207,
+      "afterStart": 259207,
+      "afterEnd": 262908,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "F.9 Hybrid-pangenome execution status",
+      "beforeStart": 275893,
+      "afterStart": 276808,
+      "afterEnd": 276875,
+      "paragraphStyle": "HEADING_2",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Current state:",
+      "beforeStart": 276355,
+      "afterStart": 277270,
+      "afterEnd": 285707,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Cluster:",
+      "beforeStart": 283868,
+      "afterStart": 285707,
+      "afterEnd": 287220,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Released runtime:",
+      "beforeStart": 284881,
+      "afterStart": 287220,
+      "afterEnd": 288857,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Reference:",
+      "beforeStart": 286265,
+      "afterStart": 289349,
+      "afterEnd": 290207,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "Downsampling:",
+      "beforeStart": 286964,
+      "afterStart": 290207,
+      "afterEnd": 291091,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "F9-source:",
+      "beforeStart": 288025,
+      "afterStart": 291427,
+      "afterEnd": 292366,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    },
+    {
+      "prefix": "https://github.com/lsmc-bio/daylily-omics-analysis/blob/19.0.48/",
+      "beforeStart": 288503,
+      "afterStart": 292366,
+      "afterEnd": 292504,
+      "paragraphStyle": "NORMAL_TEXT",
+      "textExact": true,
+      "stylePreserved": true
+    }
+  ],
+  "unchangedTopLevelBodyElements": 510,
+  "unchangedNativeTables": 37,
+  "allOutOfScopeBodyElementsExactIgnoringIndexShifts": true,
+  "otherTabsUnchanged": true,
+  "productMetricsAndFloatStringsPreservedViaUntouchedNativeTables": true
+}

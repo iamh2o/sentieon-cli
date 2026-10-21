@@ -1,0 +1,185 @@
+{
+  "document_id": "1D4ugVGk0zmvoXfZwyh7k9h-oZwEvM5xa--j0FAw-9t4",
+  "write_control": {
+    "requiredRevisionId": "AHj4eMTD0KU78M2Ndsl35XC7pyNxDo_VUWp0q5aJWy1i0SvFmdnx9Tv1mPo2QQn8tJrwrBCSPU-FWruYFeYWzXQZDgjCBME60Q8tOOVtZ0E"
+  },
+  "requests": [
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 288503,
+          "endIndex": 288640,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 288503,
+          "tabId": "t.0"
+        },
+        "text": "https://github.com/lsmc-bio/daylily-omics-analysis/blob/19.0.49/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent_ledger.md"
+      }
+    },
+    {
+      "updateTextStyle": {
+        "range": {
+          "startIndex": 288503,
+          "endIndex": 288640,
+          "tabId": "t.0"
+        },
+        "textStyle": {
+          "link": {
+            "url": "https://github.com/lsmc-bio/daylily-omics-analysis/blob/19.0.49/docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent_ledger.md"
+          }
+        },
+        "fields": "link"
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 288025,
+          "endIndex": 288502,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 288025,
+          "tabId": "t.0"
+        },
+        "text": "F9-source: controlling implementation ledger pinned to DayOA 19.0.49 below; native env_ready.json and asset_ready.json under /fsx/work/pangenome_runtime/20261020/evidence/; actual source/target reference proof and complete source identity metadata under /fsx/work/pangenome_inputs/20261020/inspection/. Native DayOA focused XML/log/rc are under /fsx/work/pangenome_source_validation/20261020/evidence/. Source commit qualification and native workflow completion remain separate. The accepted ILMN and Ultima CLI preflights are durably preserved in iamh2o/sentieon-cli commit 6df67dd2eb6c1af8f861a5a5905b0449b5d664e9 under docs/plans/20261020T123800Z_ashg_etc_cli_runtime/. DayOA 19.0.49/1319db5785b8ba371592ba082716cfc3ae63d112 and DYEC 21.0.45/e0cea438646efe2d18db0a7f7102a68735deeb90 are source release identities; SSM invocation d7db9d5a-96a8-4c7b-8734-858e95d38646 remains the sole remote configuration operation under reconciliation."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 286964,
+          "endIndex": 287688,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 286964,
+          "tabId": "t.0"
+        },
+        "text": "Downsampling: accepted ONT source depth60.0030074984388329× gives nominal10× fraction0.166658312923067755831243922840161914315141311624079434552990. Ultima's selected195-contig territory is62.1627578351803726569308494215049485005825505238003300160525×, giving nominal30× fraction0.482604071066837529111630187714710794317467932119134026439881. New seed20261020 differs from accepted source ONT7/Ultima33. Actual full 195-target post-preparation depths are Ultima 29.99891901105408943184300036× and ONT 9.999053238278962532309287144×; QNAME consistency, tag/flag integrity, indexes and unchanged-input fixed-seed repeats passed. No further ILMN sampling or trimming is selected. All six exact accepted FASTQs and both selected CRAMs are restored; native 21 October 03:10:42 UTC preconfigure recorded 13,989,120,311,296 free FSx bytes. This proves input readiness, not caller execution."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 286265,
+          "endIndex": 286963,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 286265,
+          "tabId": "t.0"
+        },
+        "text": "Reference: actual GRCh38 backbone extraction from the v2.1 graph matches vendor hg38_ucsc.fa195/195 ordered SN/LN/M5 identities. Both accepted CRAM source references differ at exactly94 source-IUPAC→target-N positions across14 chromosomes; no ACGT substitutions, indels or coordinate-length changes. Full source IUPAC-to-N hashes match all195 target contigs. The released explicit preparation verifies actual FASTA bytes, decodes with the source, recalculates target MD/NM and independently audits other record fields/flags. The earlier native fixture passed; both biological conversion/subsets are now COMPLETE and accepted with preserved read/quality/flag audits, target MD/NM refresh and indexes. The three stronger fixtures in the promoted repair remain NOT_RUN. Ultima vendor duplicate-state evidence is explicit, with no fabricated PG or second dedup."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 284881,
+          "endIndex": 285772,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 284881,
+          "tabId": "t.0"
+        },
+        "text": "Released runtime: iamh2o/sentieon-cli annotated2.0.3, commit1358db44816e01d20f32856eebbc496d45638060, installed and qualified on ashg-etc; wheel SHA25609c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517. Exact-tag232 CLI checks passed50.19s. Driver202503.04, KMC3.2.4-pipe2 and VG1.73.0 verified. DayOA annotated19.0.48 is published at2b5923668d0263de6fbd3d5e33e363754d621b80;76 focused prep/core/package checks passed34.07s, then the final header-binding native fixture passed0.60s. DYEC34 focused checks passed3.71s; two complete-catalog positive cases passed0.83s,rc0 on ashg-etc at8349ba871137f5c4b29c39670a0955bf63fe433f. Annotated21.0.44 is remotely verified at that exact tested commit, tag objecteecadc0da4896f19da7bd0078e083d35068c9f4e. Earlier21.0.43 failed catalog validation before remote dispatch and remains immutable. Native rule Conda admission remains separate. Current source publication: annotated DayOA 19.0.49 points to 1319db5785b8ba371592ba082716cfc3ae63d112, promoting exactly the five proven source hashes plus three NOT_RUN fixture/docs records. Annotated DYEC 21.0.45 points to e0cea438646efe2d18db0a7f7102a68735deeb90; both new pangenome catalog entries pin 19.0.49, with 11 legacy entries and schema unchanged. Canonical local 21.0.45 operator installation/readback passed. The original SSH clone hung for approximately 6 hours; a bounded shallow retry from the same origin into the same canonical operator recovered in 23.45 seconds, without substituting local Git objects. These published source/install facts do not resolve the exact remote configure outcome or validate unexecuted fixtures."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 283868,
+          "endIndex": 284880,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 283868,
+          "tabId": "t.0"
+        },
+        "text": "Cluster: native ashg-etc create returned rc0 under DYEC21.0.41. Exact stack generation d1e05a50-cc74-11f1-9b2e-0afff600b0d9; head i-004609f020b02705a; FSx fs-0d55fedaeb3ca246b; profile lsmc/account108782052779/us-west-2d. Native accounting is ENABLED and startup sequencing import SUCCEEDED. The separate derived-data DRA became AVAILABLE at13:01 UTC: read-only policy/no export, physical read-only enforcement false; no input writes are authorized. Existing $750/month cluster and cost-center caps are unchanged. Prior headnode configuration 21.0.44 and its native version probe passed; the new 21.0.45 local operator is verified, while the single new remote configuration outcome remains UNKNOWN after the 03:13:43 UTC SSM fetch failure; the exact account, stack generation, headnode and FSx still match the approved target. The original first dry used the public skipped-budget-check default. Corrected r02 records strict initial native admission to the unchanged750USD limit; subsequent native dy-a reinitialization skips the lookup and resets displayed telemetry toNA. Both stages are retained in the ledger; no warning-only mode or cap increase is selected. Native preconfigure at 21 October 03:10:42 UTC found no queue jobs, workflows, Conda activity or active lease; r02 was unlocked, the exact target still matched, both budget caps remained USD 750 each, license presence was confirmed, and FSx had 13,989,120,311,296 free bytes. This preconfigure observation does not establish post-configure success."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 276355,
+          "endIndex": 283867,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 276355,
+          "tabId": "t.0"
+        },
+        "text": "Current state, 21 October 2026: 0/4 pangenome callers have started. DayOA 19.0.49 and DYEC 21.0.45 are published, and the canonical local 21.0.45 operator is installed and verified. One exact headnode configure was dispatched; its local client returned 1 at 03:13:43 UTC because it could not fetch SSM invocation d7db9d5a-96a8-4c7b-8734-858e95d38646 after a local SSM endpoint connection failure. REMOTE CONFIGURE OUTCOME UNKNOWN: the catalog owner is reconciling that exact operation through the retained native pane and supported read path. No configure retry or caller launch is authorized by that uncertain result. All preparation, repeat and preflight completion times in the following history are 20 October 2026; current local/head clocks agree on 21 October at 03:xx, with no demonstrated clock skew. Both prepared inputs are COMPLETE and accepted in the original hg002-pangenome-inputs-20261020-r02 capsule: Ultima 29.99891901105408943184300036× and sharedONT 9.999053238278962532309287144×. Native direct livea361f1e0-a5db-402b-afc0-b87b8c1f5649 finished all3/3steps at20:36:07 UTC, publicSUCCESS with controller=null/DayOA0/Snakemake0. The original pipeline drained naturally and captured actual foreground/dy-r/tee0/0/0 at20:42:39 UTC; no EOF injection, kill, fabricated code or rerun. Final native proofSHA2565c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758 confirms exactly five approved source hashes and all nine input/configuration hashes unchanged, prior history preserved and no current jobs. Root independently verified that proof. Still0/4 pangenome callers have started. The native ONT preparation receipt completed18:21:11.510948 UTC; Slurm6 endedCOMPLETED/0:0 at18:21:13 UTC, with workflow completion reported18:21:16 UTC. Corrected full-reference depth is30,996,290,522covered bases /3,099,922,541reference bases =9.999053238278962532309287144×, primary-only. All195full-length target intervals are present:163summary contigs plus32explicit zero-query contigs. The fixed-seed repeat preserves the original6,714,248retained records/5,469,414primary records, flag/content-except-MD/NM digests, per-read-group audits, source, reference, identity and sampling parameters. No new sampling campaign or changed fraction was used. Native repeat-verification receiptSHA25656f946d5cf6c6eeed4e2574b7db67d078c89d15e4749fae0140e920c6e56c204. The completed ONT path is /fsx/analysis_results/ashg-etc/hg002-pangenome-inputs-20261020-r02/daylily-omics-analysis/results/day/hg38/hg002_pangenome_input_preparation/ont/HG002.cram,26,826,310,679bytes/SHA256088a754d3e9bf4ead14d8627c974999a49f2f7fe796f095f0acb761ea7cce6ad. Its .cram.crai is202,435bytes/SHA25662c7b9f56862e6d8664d515248bbe41e34d537c5bc196b2dbccfc92821455c03; native .preparation.json74,643bytes/SHA256f80d4c80cf1dd92908a5a3d0eba947788e5969ae3688f81ede061a2692a9c3b7. One final full-byte hash ran18:23:20–18:23:44 UTC with unchanged size/mtime/inode and return0. Binding receiptSHA256aff39d56f70655c8fe35be619013f4e6aeadf79c75740b5879b98e9d463d1ca0. All downstream consumers reuse that owner-produced hash. Actual header identifies SM HG002, RG HG002-egtdhfe3xrjfr9_LR, PL ONT and195contigs; headerSHA256b6098c3b9443d69f6c337bcd727645735ce72b07df8630c945574b6b7f16e750. ILMN150 plus accepted ONT bounded preflight PASSED: public CLI2.0.3 --dry_run returned0 in1.794seconds. Separate actual-ONT header/index checks passed all195ordered SN/LN/M5 records, sample/read group/platform and the bounded index probe; the population VCF agreed on all195contig lengths. Native preflight_receipt.json SHA2564a7da868ba87cee01f69a04b8d5a20a564735c711bd88c91a5c3d5c397dfdd5c and reference_dictionary_checks.json SHA2560a93a32d9e14e16ca34cf19fd33c6773cc6cf2763f079a116ccd941834222200 are under /fsx/work/pangenome_runtime/20261020/preflights/r02_ilmn150_ont10x/. The exact31-argument invocation matches the frozen released-adapter specification; no input/resource/asset/PCR option changed and the sole owner ONT hash was reused. The known184-HAPL-chain/195-graph-path heuristic warning remains preserved; actual dictionary compatibility checks passed. This creates no variant calls or completed DayOA caller proof. Ordinary ILMN CLI dry headers alone are synthetic, so real-header evidence is separate. No variant calling is implied. The accepted Ultima completed receipt records92,994,325,248covered bases /3,099,922,541reference bases =29.99891901105408943184300036× over all195targets. The unchanged-seed repeat preserves every original record/flag/content/read-group audit. Its51,928,203,894byteCRAM has native SHA2569c9ae740fa621836608edad6e7850bb1242e7e919052b65263cedd414afc66d2; CRAI SHA2567003795e9cf0a69085433e3830843bcf3f8dc4f400f230d256956434587f00ac. Completed preparation receiptSHA2568051d43833dae5d24170a7ca5c853c79c69aa85b9d633d7cb5f2b6988101b20a and typed duplicate evidenceSHA256c54bdb32f0aba9d9062aa91075da0551afb6b1e8d3fc043820061c1dc0c6aeda bind the final bytes; all consumers reuse native hashes. Accepted Ultima+ONT public CLI2.0.3 dry preflight PASSED0 in76.23636722seconds at20:47:43–20:48:59 UTC, exact32arguments. Separate actual195SN/LN/M5/header/index checks passed5ULTIMA+1ONT read groups; the native duplicate guard accepted11,658,934duplicate-primary observations. Operator receiptSHA25643bef7caea9140c8f205616a751d51030e81d36613b5407d24a37fd14a54a8fb and native dry provenanceSHA256ace44ee88c8dd6e4ac2e75dad85f935b391095b87a9fa4be7d442c21c5ed80fe are under /fsx/work/pangenome_runtime/20261020/preflights/r02_ultima30x_ont10x/. Native provenance says dry_run=true, experimental=true, production_accepted=false; no variant outputs were created. The184/195heuristic and experimental-science warnings remain preserved.  The original ONT and Ultima attempts both failed “native depth summary does not cover the entire reference”: --by canonical24-contig BED/-n restricted measurement to3,088,269,832bases while validation required195targets. Original managed ad4816f8-7806-49bf-b83b-c5d8ef898692 returned1/1/1 at17:45:33 UTC; released automatic retries3/4 stopped on existing failure markers. Native cleanup removed declared failed outputs. Original Ultima encoding/audits had passed;51,928,181,199byteCRAM,1,247,558byteCRAI and native typed duplicate evidence were preserved outside the clone as ENCODED_NOT_ACCEPTED, with no adoption. Original selected/prepared content/flag/RG audit evidence remains archived. The human-approved full-FAI correction is sourcepatchSHA256a854f1b4390982f3fbfd85de68b68509243ca39f5c2690ccca252cad3bafe166, committed/pushedb2c5b2d147a349119589181690bc17ccf268a253. At17:48:27 UTC the genuine owner’s guard applied exactly five reviewed source files, verified reverse patch and nine unchanged input/config hashes, archived32small artifacts and moved only the two blocking failed JSONs. Operation receiptSHA256ac221c7ce36c3d242b086c1cb1768d7f1d9b14346955f98070430e7ee79f216b. Models, reference, calling regions, fractions and seed are fixed; new fixtures remain unexecuted. Native same-capsule dry e501f9ad-c8ea-4cf8-9200-c62aaea93d8f passed17:53:08–17:53:20 UTC: direct_day_run/controller=null/DayOA0/Snakemake0; actual foreground/dy-r/tee0/0/0; publicSUCCESS; complete17,106byte transcript with zero submissions and exactly two producers plus aggregate completion. Same-shell live a361f1e0-a5db-402b-afc0-b87b8c1f5649 started17:56:15 with only-n removed. Jobs5/6 passed exact750USD cluster-budget/cost-center gates; each16threads/420minutes. The normal replacement compute node is i-0066cf051d2aa0eb1/i4i.metal; jobs began18:03:01. Whole-native preparation acceptance is verified; the exact proven source has now been promoted to DayOA 19.0.49 and both new catalog pins to DYEC 21.0.45. Exact headnode configuration reconciliation and individual caller dry/admission gates remain before launch. Combined preparation benchmark collection is BLOCKED: the exact released collector returned2 because its recognized benchmark layout excludes these preparation paths. Native raw rows remain unchanged; no alternate summary or comparative cost is accepted here. This campaign comprises one experimental Ultima+ONT pangenome arm and three ILMN+ONT pangenome arms. Completed linear 60×/30×/15× runs elsewhere were Ultima-only; the separate ledger still lists16Ultima+ONT linear hybrid combinations unlaunched. No completed hybrid, scientific accuracy or customer acceptance is claimed. Ganon and VEP are excluded."
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 275893,
+          "endIndex": 275959,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 275893,
+          "tabId": "t.0"
+        },
+        "text": "F.9 Hybrid-pangenome execution status — 21 October 2026, 03:13 UTC"
+      }
+    },
+    {
+      "deleteContentRange": {
+        "range": {
+          "startIndex": 259207,
+          "endIndex": 261992,
+          "tabId": "t.0"
+        }
+      }
+    },
+    {
+      "insertText": {
+        "location": {
+          "index": 259207,
+          "tabId": "t.0"
+        },
+        "text": "F2-source: setup commit499af057 remains the historical preparation baseline. Current execution uses docs/plans/20261020T094136Z_hiomr2p_huomr2p_bjuice20_multiagent_ledger.md in the same DayOA task worktree. Published DayOA19.0.48 baseline passed76 focused checks plus the final native header fixture; CLI2.0.3 passed232; DYEC21.0.44 passed34 focused and2 complete-catalog checks. Those baseline results do not validate the new repair. Native preparation r02 passed its original dry0/0/0, but both live producers failed because canonical-BED depth scope differed from the195-contig contract. Original managed live returned1/1/1 at17:45:33 UTC. The reviewed full-reference five-source correction is committed/pushed at b2c5b2d147a349119589181690bc17ccf268a253; stronger fixtures remain unexecuted. The human approved this named-r02 correction with “is there a fail to fix? try”. At17:48:27 UTC, guarded archival/source application completed successfully in the same failed clone: five after-hashes match, all nine input/configuration hashes unchanged. Original source HEAD remains2b592366 with the exact approved diff; release tags are unchanged. Documented direct same-capsule mtime dry passed17:53:08–17:53:20 UTC: controller=null/DayOA0/Snakemake0, actual foreground/dy-r/tee0/0/0, publicSUCCESS and zero submissions. Exactly two producer rules plus aggregate completion remain. Source/input hashes and old history are preserved. Identical live was dispatched once with only-n removed; native Ultima job5 and ONT job6 were submitted17:56:24/26 UTC with exact budget/cost-center admission. Shared ONT Slurm6 completed0:0 at18:21:13 UTC (workflow completion reported18:21:16 UTC), full 195-target depth9.999053238278962532309287144× and unchanged-seed logical audits passed; its one final byte binding is verified and reused. Both prepared inputs are now accepted: Ultima 29.99891901105408943184300036× and ONT 9.999053238278962532309287144×. Same direct live finished3/3steps20:36:07 UTC, with native controller=null/DayOA0/Snakemake0 and original actual pipeline capture0/0/0 after natural EOF20:42:39 UTC; source5/input9 unchanged. Final verificationSHA2565c1befe8536fce830697e6809ff85940384c2323792345d1015439296aac3758 was independently reread. Ultima+ONT native CLI dry preflight also passed0/76.23636722seconds, actual195header/index/RG checks passed, no variant outputs. Combined preparation benchmark collection returned2 for an unsupported source layout and remains a separate reporting blocker. ILMN150 actual-ONT195SN/LN/M5/header/index checks and the bounded public CLI2.0.3 --dry_run passed0 in1.794seconds; no variant call or DayOA caller has started. Both subset preparations are verified; all preparation/repeat/preflight completion times above are 20 October 2026. Clean proven-source promotion is now published as annotated DayOA 19.0.49 at 1319db5785b8ba371592ba082716cfc3ae63d112, with five exact proven source hashes and three NOT_RUN fixture/docs records. Annotated DYEC 21.0.45 at e0cea438646efe2d18db0a7f7102a68735deeb90 pins both new catalog entries to 19.0.49; 11 legacy entries/schema remain unchanged. The canonical local operator is installed/verified, but the single remote configure outcome is UNKNOWN after the 03:13:43 UTC 21 October local SSM fetch failure for invocation d7db9d5a-96a8-4c7b-8734-858e95d38646. Reconciliation of that exact operation precedes any retry or caller; still 0/4 callers, with hybrid calling/QC/package/scientific acceptance unverified. Combined preparation benchmark collection remains separately BLOCKED/rc2. The separate linear Ultima+ONT grid is unlaunched; completed linear 60×/30×/15× runs were Ultima-only. F9 carries current status."
+      }
+    }
+  ]
+}
