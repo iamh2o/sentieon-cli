@@ -1,0 +1,23 @@
+[
+  {
+    "name": "seqkit",
+    "version": "2.14.0",
+    "build": "hb192632_0",
+    "channel": "https://conda.anaconda.org/bioconda/linux-64",
+    "url": "https://conda.anaconda.org/bioconda/linux-64/seqkit-2.14.0-hb192632_0.conda"
+  },
+  {
+    "name": "pigz",
+    "version": "2.8",
+    "build": "h421ea60_2",
+    "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+    "url": "https://conda.anaconda.org/conda-forge/linux-64/pigz-2.8-h421ea60_2.conda"
+  },
+  {
+    "name": "isa-l",
+    "version": "2.31.0",
+    "build": "h4bc722e_2",
+    "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+    "url": "https://conda.anaconda.org/conda-forge/linux-64/isa-l-2.31.0-h4bc722e_2.conda"
+  }
+]

@@ -1,0 +1,30 @@
+# Immutable support environment for solo Sentieon 202503.04 Illumina
+# pangenome workflows. The proprietary executable is selected explicitly by
+# DAYOA_SENTIEON_BIN rather than installed into this environment.
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+  - curl
+  - mbuffer
+  - samtools
+  - bedtools
+  - mosdepth
+  - bcftools
+  - htslib
+  - hificnv
+  - pigz
+  - seqkit
+  - seqfu
+  - sambamba
+  - vg=1.67.0
+  - kmc
+  - jemalloc
+  - isa-l=2.31.0
+  - pip:
+      - sentieon-cli==1.6.3

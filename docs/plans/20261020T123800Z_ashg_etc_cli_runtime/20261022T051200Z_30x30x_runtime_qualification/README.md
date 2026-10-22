@@ -2,9 +2,11 @@
 
 At 2026-10-22 05:14:57 UTC, the existing CLI/driver and immutable asset
 **small metadata** qualification passed on the approved ashg-etc headnode.
-The actual admitted paired-sampler environment/version remains pending B's
-native admission handoff. This receipt does not qualify prepared reads or
-dispatch a workflow.
+Its as-of sampler-pending gate was subsequently closed by the
+[actual admitted sampler qualification](sampler/README.md) at 05:33:23 UTC:
+seqkit 2.14.0, pigz 2.8, igzip 2.31.0, exact native prefix/source binding and
+requested help capabilities PASS. The earlier receipt remains unchanged.
+Neither qualification accepts prepared reads or dispatches a workflow.
 
 Root's second direct execution approval is recorded as
 `3030_runtime_approval_20261022T044825Z`. Target: account `108782052779`,
@@ -67,8 +69,9 @@ capsule with byte-identical six tables; matching native six-table hashes and
 the actual preparation config/dry proof remain required. No private resolver
 was imported or invoked, and no native AU identifier was calculated here.
 
-Next: inspect the actual admitted `sent_pangenome_v0.2.yaml` prefix and seqkit
-version once B supplies native solve/jobscript provenance. ILMN seed remains
-the released explicit 7; ONT independently retains seed 20261020. Callers/prep
-remain DayOA 19.0.49, external collector 19.0.50, CLI 2.0.3. Scientific
-suitability and customer acceptance remain unassessed.
+The bounded runtime role is complete; the actual sampler handoff is closed
+in the linked receipt. B/C retain preparation completion, audits, achieved
+depths and all four callers. ILMN seed remains the released explicit 7; ONT
+independently retains seed 20261020. Callers/prep remain DayOA 19.0.49, external
+collector 19.0.50, CLI 2.0.3. Scientific suitability and customer acceptance
+remain unassessed.

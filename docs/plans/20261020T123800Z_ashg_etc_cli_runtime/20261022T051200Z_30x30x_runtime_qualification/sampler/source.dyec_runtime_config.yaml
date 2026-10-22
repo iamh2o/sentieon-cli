@@ -1,0 +1,47 @@
+{
+  "genome_build": "hg38",
+  "hg38_specimens_table": "config/specimens.tsv",
+  "hg38_samples_table": "config/samples.tsv",
+  "hg38_libraries_table": "config/libraries.tsv",
+  "hg38_sequencing_inputs_table": "config/sequencing_inputs.tsv",
+  "hg38_analysis_units_table": "config/analysis_units.tsv",
+  "hg38_analysis_unit_inputs_table": "config/analysis_unit_inputs.tsv",
+  "aligners": [],
+  "dedupers": [],
+  "snv_callers": [],
+  "sv_callers": [],
+  "htd_callers": [],
+  "sentieon_pangenome_sr": {
+    "env_yaml": "../envs/sent_pangenome_v0.2.yaml",
+    "partition": "i128nvme"
+  },
+  "hybrid_pangenome_input_preparation": {
+    "sample_id": "HG002",
+    "reference": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa",
+    "reference_fai": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai",
+    "reference_dict": "/fsx/work/pangenome_inputs/20261020/inspection/target_reference.dict",
+    "canonical_bed": "/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed",
+    "output_root": "results/day/hg38/hg002_pangenome_input_preparation",
+    "env_yaml": "../envs/hybrid_pangenome_v0.2.yaml",
+    "resources": {
+      "mem_mb": 64000,
+      "partition": "i128nvme",
+      "threads": 16
+    },
+    "inputs": {
+      "ont": {
+        "reference_transform": "iupac_to_n",
+        "sample_identity_evidence": "/fsx/work/pangenome_inputs/20261020/inspection/ont.source_identity.json",
+        "sampling_fraction": "0.4999903949875239382501158817016904566644565813545098876099795557666277",
+        "seed": 20261020,
+        "source_cram": "/fsx/run_dir_mounts/hg002-pangenome-20261020/hg002-ont60x-alignstats-p02-20261015t064638z/daylily-omics-analysis/results/day/hg38/HG002-egtdhfe3xrjfr9/align/sentmm2ont/HG002-egtdhfe3xrjfr9.sentmm2ont.cram",
+        "source_index": "/fsx/run_dir_mounts/hg002-pangenome-20261020/hg002-ont60x-alignstats-p02-20261015t064638z/daylily-omics-analysis/results/day/hg38/HG002-egtdhfe3xrjfr9/align/sentmm2ont/HG002-egtdhfe3xrjfr9.sentmm2ont.cram.crai",
+        "source_reference": "/fsx/references/genomic_data/organism_references/H_sapiens/hg38/fasta_fai_minalt/GRCh38_no_alt_analysis_set.fasta",
+        "source_reference_fai": "/fsx/references/genomic_data/organism_references/H_sapiens/hg38/fasta_fai_minalt/GRCh38_no_alt_analysis_set.fasta.fai",
+        "source_s3_uri": "s3://lsmc-ssf-sequencing-data/derived/hg002-source-datasets/20261015/pclu-2100/hg002-ont60x-alignstats-p02-20261015t064638z/daylily-omics-analysis/results/day/hg38/HG002-egtdhfe3xrjfr9/align/sentmm2ont/HG002-egtdhfe3xrjfr9.sentmm2ont.cram",
+        "source_sample_id": "HG002-egtdhfe3xrjfr9",
+        "source_sampling_seed": 7
+      }
+    }
+  }
+}

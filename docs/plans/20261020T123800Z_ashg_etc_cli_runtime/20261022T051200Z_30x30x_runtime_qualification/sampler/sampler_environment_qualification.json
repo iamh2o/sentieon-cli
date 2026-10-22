@@ -1,0 +1,119 @@
+{
+  "schema": "ashg-etc.pangenome_3030_sampler_environment_qualification.v1",
+  "status": "PASS",
+  "observed_at": "2026-10-22T05:33:23Z",
+  "scope": "Actual admitted paired-sampler environment, source binding and audit-tool version/help only",
+  "target": {
+    "cluster": "ashg-etc",
+    "head": "i-004609f020b02705a",
+    "generation": "d1e05a50-cc74-11f1-9b2e-0afff600b0d9",
+    "fsx": "fs-0d55fedaeb3ca246b",
+    "verified_posix_user": "ubuntu",
+    "tmux": "pg_runtime_ashg_etc_20261020",
+    "pane": "%3"
+  },
+  "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-pg-inputs-30x30x-20261021-r01",
+  "source": {
+    "tag": "19.0.49",
+    "commit": "1319db5785b8ba371592ba082716cfc3ae63d112",
+    "tracked_source_clean": true,
+    "yaml": "workflow/envs/sent_pangenome_v0.2.yaml",
+    "yaml_sha256": "cbe09afb335f957effdafe2672d2bd5e64a014e006cdb1fb9265813356583344",
+    "runtime": "config/dyec_runtime_config.yaml",
+    "runtime_sha256": "bd9b7679fbeea00824a8e9a8a2653e2096eaaa4cc0429a28d26528bed56b68a1",
+    "jobscript": ".snakemake/tmp.jg4j5xfj/snakejob.sentieon_pangenome_sr_sample_inputs.2.sh",
+    "jobscript_sha256": "1275a83875cae53dc5d00c361e4468c38b4e3f282328fd0e85eaea02e0e271ba"
+  },
+  "native_admission": {
+    "prefix": "/fsx/resources/environments/conda/ubuntu/ashg-etc-d1e05a50-cc74-11f1-9b2e-0afff600b0d9/4e0169e1453c1de1f7186c1bbd9f85c9_",
+    "controller_log": ".dyec/controller.log",
+    "creation_lines": [
+      698,
+      700
+    ],
+    "excerpt": "native.env_admission_excerpt.txt",
+    "jobscript_prefix_match": true,
+    "seqkit_unpinned_in_yaml": true,
+    "packages": [
+      {
+        "name": "seqkit",
+        "version": "2.14.0",
+        "build": "hb192632_0",
+        "channel": "https://conda.anaconda.org/bioconda/linux-64",
+        "url": "https://conda.anaconda.org/bioconda/linux-64/seqkit-2.14.0-hb192632_0.conda"
+      },
+      {
+        "name": "pigz",
+        "version": "2.8",
+        "build": "h421ea60_2",
+        "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/pigz-2.8-h421ea60_2.conda"
+      },
+      {
+        "name": "isa-l",
+        "version": "2.31.0",
+        "build": "h4bc722e_2",
+        "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/isa-l-2.31.0-h4bc722e_2.conda"
+      }
+    ]
+  },
+  "fresh_versions": {
+    "seqkit": "2.14.0",
+    "pigz": "2.8",
+    "igzip": "2.31.0",
+    "gzip": "1.10",
+    "cmp": "GNU diffutils3.8",
+    "sed": "GNU sed4.8",
+    "mkfifo": "GNU coreutils8.32"
+  },
+  "executable_bindings": {
+    "sampler_tools": "Exact native_admission.prefix/bin/{seqkit,pigz,igzip}",
+    "gzip": "/usr/bin/gzip",
+    "cmp": "/usr/bin/cmp",
+    "sed": "/usr/bin/sed",
+    "mkfifo": "/usr/bin/mkfifo"
+  },
+  "help_capabilities": {
+    "seqkit_seq": [
+      "--name",
+      "--only-id",
+      "--threads"
+    ],
+    "seqkit_id_regexp_default": "^(\\S+)\\s?",
+    "seqkit_stats": [
+      "--all",
+      "--tabular",
+      "--threads"
+    ],
+    "igzip": [
+      "--decompress",
+      "--stdout"
+    ],
+    "gzip": [
+      "--test"
+    ]
+  },
+  "read_visit": {
+    "receipt": "analysis_read_visit.json",
+    "observed_at": "2026-10-22T05:32:33.748839Z",
+    "mode": "read",
+    "reported_user": "unknown",
+    "independent_id_un": "ubuntu",
+    "foreign_write_lock_not_acquired_or_changed": true
+  },
+  "script_rc": 0,
+  "prior_asset_runtime_receipt": {
+    "path": "../asset_runtime_qualification.json",
+    "sha256": "9e21de90f2b4c90b5ff92f22596574bc045267f97ddc18dcabca1fe623deb52d"
+  },
+  "limitations": [
+    "Version/help and source metadata only; no input or prepared-data reads or audits",
+    "Sampler environment older CLI/vg declarations are preserved and are not the hybrid caller runtime",
+    "No installs, tests/import campaigns, source/config changes, full payload hashes, workflow dispatch or job administration",
+    "No scientific suitability or customer acceptance claim"
+  ],
+  "workflow_dispatched": false,
+  "input_audits_executed": false,
+  "prepared_inputs_accepted_by_this_check": false
+}

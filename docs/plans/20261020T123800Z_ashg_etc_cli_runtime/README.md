@@ -9,9 +9,11 @@ No laptop container build, other-cluster execution, Ganon, Ganon2 or VEP.
 The [22 October bounded qualification](20261022T051200Z_30x30x_runtime_qualification/README.md)
 records fresh CLI2.0.3/driver202503.04 and immutable asset small-metadata PASS,
 with native/local closed-byte verification. Large asset digests were reused.
-The sampler environment/seqkit version remains pending B's actual admission
-handoff. Root/C/B own the approved new workflows; this workstream launches
-none. Older run-state snapshots below are historical.
+The [actual admitted sampler](20261022T051200Z_30x30x_runtime_qualification/sampler/README.md)
+also passed at 05:33:23 UTC: seqkit 2.14.0/pigz 2.8/igzip 2.31.0, native
+source/jobscript/prefix binding and requested help capabilities. B/C own
+prepared-input acceptance and the approved new workflows; this workstream
+launches none. Older run-state snapshots below are historical.
 
 ## Runtime
 

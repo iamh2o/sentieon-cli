@@ -1,0 +1,34 @@
+{
+  "agent_id": "codex-pg-cli-runtime-3030-20261022",
+  "agent_kind": "codex",
+  "analysis_root": "/fsx/analysis_results/ashg-etc/hg002-pg-inputs-30x30x-20261021-r01",
+  "codex_session_id": null,
+  "command_summary": null,
+  "cwd": "/fsx/work/pangenome_runtime/20261020/qualifications/30x30x_20261022T051200Z",
+  "event": "visit",
+  "host": "ip-10-0-0-14",
+  "human_requestor": "JohnMajor",
+  "intent": "Independent read-only sampler environment qualification: exact handed jobscript, immutable YAML and solve/config metadata only; no input reads or workflow operation",
+  "lock_state_seen": {
+    "locked": true,
+    "owner": {
+      "agent_id": "codex-pg-inputs-3030-20261022",
+      "agent_kind": "dyec-cli",
+      "codex_session_id": null,
+      "command_summary": "dy-r results/day/hg38/HG002-7s2c16cqdj2crg/align/pangenome_sr/inputs/HG002-7s2c16cqdj2crg.R1.sampled.fastq.gz results/day/hg38/HG002-7s2c16cqdj2crg/align/pangenome_sr/inputs/HG002-7s2c16cqdj2crg.R2.sampled.fastq.gz results/day/hg38/HG002-npyreet15f90e3/align/pangenome_sr/inputs/HG002-npyreet15f90e3.R1.sampled.fastq.gz results/day/hg38/HG002-npyreet15f90e3/align/pangenome_sr/inputs/HG002-npyreet15f90e3.R2.sampled.fastq.gz results/day/hg38/HG002-j567h4y8k2ht1c/align/pangenome_sr/inputs/HG002-j567h4y8k2ht1c.R1.sampled.fastq.gz results/day/hg38/HG002-j567h4y8k2ht1c/align/pangenome_sr/inputs/HG002-j567h4y8k2ht1c.R2.sampled.fastq.gz prepare_hybrid_pangenome_inputs -p -k -j 4 --configfile config/dyec_runtime_config.yaml --produce-rulegraph false --produce-filegraph false --produce-dag true --rerun-triggers mtime",
+      "created_at": "2026-10-22T05:25:58.811377Z",
+      "heartbeat_at": "2026-10-22T05:26:12.720419Z",
+      "human_requestor": "ubuntu",
+      "operation_scope": "workflow-launch:pg-inputs3030-live-20261022"
+    }
+  },
+  "mode": "read",
+  "note": null,
+  "operation": "read",
+  "pid": 695591,
+  "schema_version": "dayoa.analysis_agent_visit.v1",
+  "timestamp": "2026-10-22T05:32:33.748839Z",
+  "tmux_pane": "%3",
+  "tmux_session": "pg_runtime_ashg_etc_20261020",
+  "user": "unknown"
+}

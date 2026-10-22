@@ -40,15 +40,27 @@ calling BED24/3088269832, GBZ header/size and HAPL5/k29/chains184. Existing
 small asset/env receipts match frozen digests; no large payload was rehashed.
 Five closed small files (19,484 bytes) transferred and verified byte-for-byte.
 Two operator inspection rc1 mistakes are retained; documented argv/path checks
-then passed, final metadata script rc0. No analysis root was read or changed.
+then passed, final metadata script rc0. At that observation, no analysis root
+had been read or changed in this qualification.
 
-Pending: B's actual admitted sampler prefix/solve/jobscript handoff, then one
-bounded seqkit/env qualification; actual 30/30 workflows, achieved depths and
-scientific suitability remain campaign gates. Preserve immutable CLI/assets,
-require read visits for any named analysis root, and perform no workflow
-dispatch in this workstream. Ledger rows remain 7 SUCCESS, 1 IN_PROGRESS;
-full scientific objective is incomplete. Historical closeouts below retain
-their observed/attributed limits and are superseded only where stated above.
+The [actual admitted sampler](20261020T123800Z_ashg_etc_cli_runtime/20261022T051200Z_30x30x_runtime_qualification/sampler/README.md)
+passed independent qualification 05:33:23Z: prefix `4e0169e1453c1de1f7186c1bbd9f85c9_`,
+seqkit 2.14.0 (unpinned YAML declaration), pigz 2.8, igzip 2.31.0 and requested
+audit-tool help capabilities. Native source HEAD `1319db` was clean; immutable
+YAML `cbe09afb`, config `bd9b`, jobscript `1275a838` and controller-log lines 698/700
+bind that exact prefix. A read visit preceded the small analysis metadata reads;
+no foreign write lock changed. Thirteen closed files/48,088 bytes and a small
+AWK supplement transferred with native/local hashes matching, script rc0.
+The earlier asset receipt's sampler-pending field remains historical and unchanged.
+
+This workstream's bounded runtime qualification is complete. B/C own actual
+preparation completion, input audits, achieved depths and all four 30/30
+callers; scientific suitability remains a campaign gate. No input audit,
+prepared-read access, workflow dispatch or new install/test occurred here.
+Preserve immutable CLI/assets and require read visits for named analysis roots.
+Ledger rows remain 7 SUCCESS, 1 IN_PROGRESS; full scientific objective is
+incomplete. Historical closeouts retain their observed/attributed limits and
+are superseded only where stated above.
 
 ## Historical continuation — 2026-10-21 caller/QC closeout
 

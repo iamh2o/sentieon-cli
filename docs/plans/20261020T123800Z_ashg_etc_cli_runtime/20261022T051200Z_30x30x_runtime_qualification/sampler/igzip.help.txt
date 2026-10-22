@@ -1,0 +1,23 @@
+Usage: igzip [options] [infiles]
+
+Options:
+ -h, --help           help, print this message
+ -#                   use compression level # with 0 <= # <= 3
+ -o  <file>           output file
+ -c, --stdout         write to stdout
+ -d, --decompress     decompress file
+ -z, --compress       compress file (default)
+ -f, --force          overwrite output without prompting
+     --rm             remove source files after successful (de)compression
+ -k, --keep           keep source files (default)
+ -S, --suffix <.suf>  suffix to use while (de)compressing
+ -V, --version        show version number
+ -v, --verbose        verbose mode
+ -N, --name           save/use file name and timestamp in compress/decompress
+ -n, --no-name        do not save/use file name and timestamp in compress/decompress
+ -t, --test           test compressed file integrity
+ -T, --threads <n>    use n threads to compress if enabled
+ -q, --quiet          suppress warnings
+
+with no infile, or when infile is - , read standard input
+
