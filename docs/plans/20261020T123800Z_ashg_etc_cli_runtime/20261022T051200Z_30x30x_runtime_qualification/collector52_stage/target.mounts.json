@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "mounts": [
+    {
+      "mount_id": "hg002-pangenome-20261020",
+      "fsx_file_system_id": "fs-0d55fedaeb3ca246b",
+      "headnode_path": "/fsx/run_dir_mounts/hg002-pangenome-20261020/",
+      "lifecycle": "AVAILABLE"
+    },
+    {
+      "mount_id": "sequencing-run-data",
+      "fsx_file_system_id": "fs-0d55fedaeb3ca246b",
+      "headnode_path": "/fsx/sequencing_run_data/",
+      "lifecycle": "AVAILABLE"
+    }
+  ]
+}

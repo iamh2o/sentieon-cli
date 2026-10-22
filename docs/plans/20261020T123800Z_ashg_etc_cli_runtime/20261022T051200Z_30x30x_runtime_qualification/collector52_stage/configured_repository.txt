@@ -1,0 +1,5 @@
+  daylily-omics-analysis:
+    auth_mode: aws_deploy_key
+    https_url: https://github.com/lsmc-bio/daylily-omics-analysis.git
+    ssh_url: git@github.com:lsmc-bio/daylily-omics-analysis.git
+    relative_path: daylily-omics-analysis

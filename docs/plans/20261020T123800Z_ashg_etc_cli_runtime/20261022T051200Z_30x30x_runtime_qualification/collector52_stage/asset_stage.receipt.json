@@ -1,0 +1,91 @@
+{
+  "schema": "dayoa.source_asset_staging_evidence/1.0",
+  "evidence_origin": "Local receipt compiled from the closed native transcript and byte-verified files; no collector execution.",
+  "status": "qualified",
+  "qualification_started_at": "2026-10-22T07:09:16Z",
+  "qualification_completed_at": "2026-10-22T07:10:52Z",
+  "scope": "DayOA19.0.52 for NEW30x30x preparation reporting only; caller19.0.49 and caller collector19.0.50 unchanged.",
+  "target": {
+    "account": "108782052779",
+    "profile": "lsmc",
+    "region": "us-west-2",
+    "cluster": "ashg-etc",
+    "generation": "d1e05a50-cc74-11f1-9b2e-0afff600b0d9",
+    "head": "i-004609f020b02705a",
+    "fsx": "fs-0d55fedaeb3ca246b",
+    "user": "ubuntu",
+    "hostname": "ip-10-0-0-14",
+    "tmux": {
+      "session": "pg_runtime_ashg_etc_20261020",
+      "window": "@3",
+      "pane": "%3",
+      "pane_pid": 39374
+    }
+  },
+  "destination": "/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52",
+  "preconditions": {
+    "parent_exists": true,
+    "destination_absent": true,
+    "symlink_absent": true,
+    "original_pane_verified": true
+  },
+  "configured_repository": {
+    "catalog": "/home/ubuntu/.config/daylily/daylily_pipeline_command_catalog.yaml",
+    "name": "daylily-omics-analysis",
+    "url": "git@github.com:lsmc-bio/daylily-omics-analysis.git",
+    "auth_mode": "aws_deploy_key",
+    "origin_remote_required": false
+  },
+  "public_tool": {
+    "path": "/home/ubuntu/.local/bin/day-clone",
+    "sha256": "da7af8662afd041e51fa7df402b198415983504c1faef29cfd2c297baff57b46",
+    "release": "DYEC21.0.45"
+  },
+  "construction_argv": [
+    "git",
+    "init",
+    "-q",
+    "/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52"
+  ],
+  "public_fetch_argv": [
+    "day-clone",
+    "--repository",
+    "daylily-omics-analysis",
+    "--git-tag",
+    "19.0.52",
+    "--fetch-existing",
+    "/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52"
+  ],
+  "fetch_return_code": 0,
+  "fetch_tee_return_code": 0,
+  "script_return_code": 0,
+  "source": {
+    "tag": "19.0.52",
+    "tag_type": "tag",
+    "tag_object": "7fe484db3aac8919afea09b44cf50be1563cf14b",
+    "peeled_commit": "026a976cd18c0711ea74e90ee45ced93168320e3",
+    "head": "026a976cd18c0711ea74e90ee45ced93168320e3",
+    "detached": true,
+    "clean": true,
+    "three_source_hashes_verified": true
+  },
+  "native_evidence": "/fsx/work/pangenome_runtime/20261020/qualifications/30x30x_20261022T051200Z/collector52_stage",
+  "transfer": {
+    "archive": "native_collector52_stage.tar.gz",
+    "bytes": 3637,
+    "sha256": "09151a8e6e512bffd7570feb6b4550c38a14bc673b7cdf36176b5aedd1f850bb",
+    "content_files": 12,
+    "files_including_inventory": 13,
+    "total_uncompressed_bytes_including_inventory": 24966,
+    "all_archive_and_content_hashes_match": true
+  },
+  "exclusions": [
+    "No collector or workflow execution",
+    "No analysis-root writes",
+    "No source overlays or object substitutions",
+    "No tests/import/build campaign",
+    "No payload/read/model hashes",
+    "No caller/configuration/pin changes"
+  ],
+  "post_transfer_transport": "After completed transfer, reattachment to the retained tmux returned SSM broken pipe to the local shell; no subsequent native operation or retry."
+}

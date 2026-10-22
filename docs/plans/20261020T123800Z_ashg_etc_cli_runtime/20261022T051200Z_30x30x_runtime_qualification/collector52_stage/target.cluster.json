@@ -1,0 +1,14 @@
+{
+  "clusterName": "ashg-etc",
+  "region": "us-west-2",
+  "clusterStatus": "UPDATE_COMPLETE",
+  "cloudformationStackArn": "arn:aws:cloudformation:us-west-2:108782052779:stack/ashg-etc/d1e05a50-cc74-11f1-9b2e-0afff600b0d9",
+  "headNode": {
+    "instanceId": "i-004609f020b02705a",
+    "instanceType": "r7i.2xlarge",
+    "launchTime": "2026-10-20T11:07:26.000Z",
+    "privateIpAddress": "10.0.0.14",
+    "publicIpAddress": "34.222.193.167",
+    "state": "running"
+  }
+}

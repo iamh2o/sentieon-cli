@@ -1,0 +1,7 @@
+{
+  "chunk_id": "73daf4",
+  "wall_time_seconds": 1.001292541,
+  "session_id": 82542,
+  "original_token_count": 135,
+  "output": "id -un\r\r\n\u001b[?2004l\rubuntu\r\r\n\u001b[?2004h(DAY-EC) \u001b]0;ubuntu@ip-10-0-0-14: ~\u0007\u001b[01;32mubuntu@ip-10-0-0-14\u001b[00m:\u001b[01;34m~\u001b[00m$ hostname\r\r\n\u001b[?2004l\rip-10-0-0-14\r\r\n\u001b[?2004h(DAY-EC) \u001b]0;ubuntu@ip-10-0-0-14: ~\u0007\u001b[01;32mubuntu@ip-10-0-0-14\u001b[00m:\u001b[01;34m~\u001b[00m$ test \"$(id -un)\" = ubuntu\r\r\n\u001b[?2004l\r\u001b[?2004h(DAY-EC) \u001b]0;ubuntu@ip-10-0-0-14: ~\u0007\u001b[01;32mubuntu@ip-10-0-0-14\u001b[00m:\u001b[01;34m~\u001b[00m$ printf 'UBUNTU_ASSERT_RC=%s\\n' \"$?\"\r\r\n\u001b[?2004l\rUBUNTU_ASSERT_RC=0\r\r\n\u001b[?2004h(DAY-EC) \u001b]0;ubuntu@ip-10-0-0-14: ~\u0007\u001b[01;32mubuntu@ip-10-0-0-14\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+}

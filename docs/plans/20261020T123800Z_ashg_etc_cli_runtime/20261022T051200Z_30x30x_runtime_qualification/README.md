@@ -73,5 +73,15 @@ The bounded runtime role is complete; the actual sampler handoff is closed
 in the linked receipt. B/C retain preparation completion, audits, achieved
 depths and all four callers. ILMN seed remains the released explicit 7; ONT
 independently retains seed 20261020. Callers/prep remain DayOA 19.0.49, external
-collector 19.0.50, CLI 2.0.3. Scientific suitability and customer acceptance
+caller collector 19.0.50, CLI 2.0.3. Scientific suitability and customer acceptance
 remain unassessed.
+
+At 07:10:52 UTC, the separately authorized [preparation collector 19.0.52
+source asset](collector52_stage/README.md) was staged at the exact declared
+path through public day-clone, with operator/tee/script rc0, clean detached
+release commit, annotated tag identity and all three source hashes verified.
+Root selected it only for the new preparation's two reporting snapshots
+(three normal AU sources plus one shared ONT source). No collector ran in this
+workstream. The caller collector 19.0.50 remains frozen. Closed small evidence
+transferred with archive/content hashes matching; post-transfer SSM closure is
+preserved separately from the successful source-stage gate.

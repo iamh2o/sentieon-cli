@@ -1,0 +1,3 @@
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/collect_day_benchmark_data.sh: OK
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/collect_day_benchmark_data.py: OK
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/annotate_group_allocations.py: OK

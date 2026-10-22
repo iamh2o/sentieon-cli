@@ -1,0 +1,12 @@
+configured_repository.txt: OK
+public_fetch.log: OK
+public_fetch.exit_codes: OK
+fetched_tag.txt: OK
+checkout.log: OK
+source_status.txt: OK
+expected_sources.sha256: OK
+source_hash_verification.txt: OK
+actual_sources.sha256: OK
+stage.typescript: OK
+stage.exit_code: OK
+retained_pane.txt: OK

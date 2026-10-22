@@ -20,9 +20,9 @@ FSx `fs-0d55fedaeb3ca246b`. No Ganon/Ganon2/VEP, container build, budget
 increase, PR/merge, deletion/cleanup or new test/import campaign. Old four
 workflows are SUCCESS/0/0/0 in C's closed 04:55:29Z readiness proof at
 DYEC evidence commit `32138e1edc90a1f3e02406e8827cc7dee2c3b93f`; this does
-not establish scientific/customer acceptance. The earlier PG-032 preparation
-benchmark-layout blocker remains separate. Collector 19.0.50 is the external
-reporting pin; callers/prep remain 19.0.49.
+not establish scientific/customer acceptance. Callers/prep remain 19.0.49;
+caller collector 19.0.50 stays frozen. Root separately selected the already
+released 19.0.52 for NEW preparation reporting only, as described below.
 
 Independent source review establishes root-independent native AU mapping for
 identical six manifest tables on pinned 19.0.49. C/B own actual native mapping,
@@ -34,29 +34,34 @@ ONT retains seed 20261020; accepted Ultima30 is reused. No new resolver or
 sampler/caller option was introduced.
 
 [Bounded qualification](20261020T123800Z_ashg_etc_cli_runtime/20261022T051200Z_30x30x_runtime_qualification/README.md)
-passed 05:14:57Z: fresh CLI2.0.3/driver202503.04, native CLI source clean;
-bundle role catalogs/vendor JSON, expected population ID, FAI195/3099922541,
-calling BED24/3088269832, GBZ header/size and HAPL5/k29/chains184. Existing
-small asset/env receipts match frozen digests; no large payload was rehashed.
-Five closed small files (19,484 bytes) transferred and verified byte-for-byte.
-Two operator inspection rc1 mistakes are retained; documented argv/path checks
-then passed, final metadata script rc0. At that observation, no analysis root
-had been read or changed in this qualification.
+passed 05:14:57Z: CLI2.0.3/driver202503.04/source clean, vendor role metadata,
+population identity, FAI195/3099922541, BED24/3088269832 and graph/HAPL metadata.
+Closed small receipts transferred with native/local hashes matching; no large
+payload rehash. Two inspection rc1 mistakes remain recorded; corrected metadata
+qualification closed rc0. No analysis root had been read at that observation.
 
 The [actual admitted sampler](20261020T123800Z_ashg_etc_cli_runtime/20261022T051200Z_30x30x_runtime_qualification/sampler/README.md)
-passed independent qualification 05:33:23Z: prefix `4e0169e1453c1de1f7186c1bbd9f85c9_`,
-seqkit 2.14.0 (unpinned YAML declaration), pigz 2.8, igzip 2.31.0 and requested
-audit-tool help capabilities. Native source HEAD `1319db` was clean; immutable
-YAML `cbe09afb`, config `bd9b`, jobscript `1275a838` and controller-log lines 698/700
-bind that exact prefix. A read visit preceded the small analysis metadata reads;
-no foreign write lock changed. Thirteen closed files/48,088 bytes and a small
-AWK supplement transferred with native/local hashes matching, script rc0.
-The earlier asset receipt's sampler-pending field remains historical and unchanged.
+passed 05:33:23Z: prefix `4e0169e1453c1de1f7186c1bbd9f85c9_`, seqkit 2.14.0,
+pigz 2.8, igzip 2.31.0 and requested audit-tool capabilities. Clean source49,
+YAML/config/jobscript and native solve-log lines bind that prefix. A read visit
+preceded small analysis metadata reads; no foreign lock changed. Closed files
+and AWK supplement match native hashes, script rc0. The earlier sampler-pending
+receipt remains historical and unchanged.
 
-This workstream's bounded runtime qualification is complete. B/C own actual
-preparation completion, input audits, achieved depths and all four 30/30
-callers; scientific suitability remains a campaign gate. No input audit,
-prepared-read access, workflow dispatch or new install/test occurred here.
+[Collector52 source staging](20261020T123800Z_ashg_etc_cli_runtime/20261022T051200Z_30x30x_runtime_qualification/collector52_stage/README.md)
+passed 07:10:52Z at `/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52`:
+public day-clone fetch/tee/script0, annotated object `7fe484db3aac8919afea09b44cf50be1563cf14b`,
+clean detached commit `026a976cd18c0711ea74e90ee45ced93168320e3` and three source
+hashes verified. This supports B's two future NEWPREP snapshots (3AU + shared
+ONT), without executing either. Native/local archive/content hashes match.
+Initial idle SSM/local read failures and post-transfer broken pipe are retained
+separately; successful staging used the original ubuntu tmux pane. No analysis
+writes, alternate auth/path, source overlay or collector execution occurred.
+
+This workstream's assigned qualification/staging is complete. B/C own preparation,
+input audits, achieved depths, reporting and all four 30/30 callers; scientific
+suitability remains a campaign gate. No input audit, prepared-read access,
+workflow dispatch or new environment install/test occurred here.
 Preserve immutable CLI/assets and require read visits for named analysis roots.
 Ledger rows remain 7 SUCCESS, 1 IN_PROGRESS; full scientific objective is
 incomplete. Historical closeouts retain their observed/attributed limits and

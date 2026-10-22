@@ -1,0 +1,45 @@
+{
+  "evidence_kind": "Transport observations, separate from the successful source-stage gate",
+  "events": [
+    {
+      "phase": "initial_idle_session_closure",
+      "evidence_type": "Continuation handoff of previously observed tool output; not a verbatim retained raw payload",
+      "previous_ssm_session": "root-ed3jlc3kvvn4lo8yxqgaz6hx58",
+      "local_user": "jmajor",
+      "failed_read_only_checks": [
+        "cat /sys/devices/virtual/dmi/id/board_asset_tag: No such file or directory",
+        "local /private/tmp/tmux-501/default socket unavailable"
+      ],
+      "mutation_occurred": false
+    },
+    {
+      "phase": "same_public_route_reconnection",
+      "argv": [
+        "dyec",
+        "headnode",
+        "connect",
+        "--profile",
+        "lsmc",
+        "--region",
+        "us-west-2",
+        "--cluster",
+        "ashg-etc"
+      ],
+      "ssm_session": "root-tao7jx89xx4abcuzqt2kgf3dle",
+      "isolated_native_assertion": "id -un ubuntu; hostname ip-10-0-0-14; explicit ubuntu test rc0",
+      "evidence": "ubuntu_assert.tool.json",
+      "original_pane_reused": "pg_runtime_ashg_etc_20261020 @3/%3"
+    },
+    {
+      "phase": "post_transfer_reattachment",
+      "observation": "Cannot perform start session: write tcp 172.20.10.6:65286->44.254.15.121:443: write: broken pipe",
+      "local_prompt_user": "jmajor",
+      "transfer_already_complete": true,
+      "tmux_explicitly_detached_not_terminated": true,
+      "last_native_pane_evidence": "retained_pane.txt",
+      "post_closure_native_state": "not reverified",
+      "subsequent_remote_mutation": false,
+      "extra_reconnect": false
+    }
+  ]
+}

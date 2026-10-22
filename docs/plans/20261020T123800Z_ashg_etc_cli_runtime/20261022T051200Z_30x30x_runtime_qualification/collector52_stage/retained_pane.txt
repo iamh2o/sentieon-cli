@@ -1,0 +1,143 @@
+    relative_path: daylily-omics-analysis
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ git init -q /fsx/work/pangenome_reporting/2026
+1022/shared3030_collector_19.0.52
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ printf 'EXACT_DEST_GIT_INIT_RC=%s\n' "$?"
+EXACT_DEST_GIT_INIT_RC=0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ set +e
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ day-clone --repository daylily-omics-analysis
+--git-tag 19.0.52 --fetch-existing /fsx/work/pangenome_reporting/20261022/shared
+3030_collector_19.0.52 2>&1 | tee /fsx/work/pangenome_runtime/20261020/qualifica
+tions/30x30x_20261022T051200Z/collector52_stage/public_fetch.log
+Fetched repository reference: daylily-omics-analysis @ 19.0.52
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ collector52_fetch_codes=("${PIPESTATUS[@]}")
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ set -e
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ printf 'DAY_CLONE_RC=%s TEE_RC=%s\n' "${collec
+tor52_fetch_codes[0]}" "${collector52_fetch_codes[1]}" | tee /fsx/work/pangenome
+_runtime/20261020/qualifications/30x30x_20261022T051200Z/collector52_stage/publi
+c_fetch.exit_codes
+DAY_CLONE_RC=0 TEE_RC=0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "${collector52_fetch_codes[0]}" -eq 0 &&
+test "${collector52_fetch_codes[1]}" -eq 0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ collector52_dest=/fsx/work/pangenome_reporting
+/20261022/shared3030_collector_19.0.52
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ collector52_evidence=/fsx/work/pangenome_runti
+me/20261020/qualifications/30x30x_20261022T051200Z/collector52_stage
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "$(git -C "$collector52_dest" cat-file -t
+ refs/tags/19.0.52)" = tag
+ee "$collector52_evidence/source_status.txt"
+test ! -s "$collector52_evidence/source_status.txt"
+printf '%s\n' '8cae80baa5021a4e5bf2be50074bfecae955cb9f2591302d16afabc4822411ae
+ /fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/be
+nchmarks/collect_day_benchmark_data.sh' 'c982dcda326c487511a391ca749775bf58ffcdd
+d2e6df365155d848b6776a783  /fsx/work/pangenome_reporting/20261022/shared3030_col
+lector_19.0.52/bin/util/benchmarks/collect_day_benchmark_data.py' 'df2d2ed3519e4
+d3184e344dfbd9be6277a825f2c4c42867fad6bf2d5b511936b  /fsx/work/pangenome_reporti
+ng/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/annotate_group_allo
+cations.py' > "$collector52_evidence/expected_sources.sha256"
+sha256sum -c "$collector52_evidence/expected_sources.sha256" | tee "$collector52
+_evidence/source_hash_verification.txt"
+sha256sum "$collector52_dest/bin/util/benchmarks/collect_day_benchmark_data.sh"
+"$collector52_dest/bin/util/benchmarks/collect_day_benchmark_data.py" "$collecto
+r52_dest/bin/util/benchmarks/annotate_group_allocations.py" | tee "$collector52_
+evidence/actual_sources.sha256"
+printf 'SOURCE_QUALIFICATION=PASS\n'
+date -u +%Y-%m-%dT%H:%M:%SZ
+exit 0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "$(git -C "$collector52_dest" rev-parse r
+efs/tags/19.0.52)" = 7fe484db3aac8919afea09b44cf50be1563cf14b
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "$(git -C "$collector52_dest" rev-parse '
+refs/tags/19.0.52^{}')" = 026a976cd18c0711ea74e90ee45ced93168320e3
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ { git -C "$collector52_dest" cat-file -t refs/
+tags/19.0.52; git -C "$collector52_dest" rev-parse refs/tags/19.0.52; git -C "$c
+ollector52_dest" rev-parse 'refs/tags/19.0.52^{}'; } | tee "$collector52_evidenc
+e/fetched_tag.txt"
+tag
+7fe484db3aac8919afea09b44cf50be1563cf14b
+026a976cd18c0711ea74e90ee45ced93168320e3
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ git -C "$collector52_dest" checkout --detach 0
+26a976cd18c0711ea74e90ee45ced93168320e3 2>&1 | tee "$collector52_evidence/checko
+ut.log"
+HEAD is now at 026a976c Support explicit native shared preparation benchmark rec
+eipts
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "$(git -C "$collector52_dest" rev-parse H
+EAD)" = 026a976cd18c0711ea74e90ee45ced93168320e3
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ git -C "$collector52_dest" status --porcelain=
+v1 --untracked-files=all | tee "$collector52_evidence/source_status.txt"
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test ! -s "$collector52_evidence/source_status
+.txt"
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ printf '%s\n' '8cae80baa5021a4e5bf2be50074bfec
+ae955cb9f2591302d16afabc4822411ae  /fsx/work/pangenome_reporting/20261022/shared
+3030_collector_19.0.52/bin/util/benchmarks/collect_day_benchmark_data.sh' 'c982d
+cda326c487511a391ca749775bf58ffcddd2e6df365155d848b6776a783  /fsx/work/pangenome
+_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/collect_day
+_benchmark_data.py' 'df2d2ed3519e4d3184e344dfbd9be6277a825f2c4c42867fad6bf2d5b51
+1936b  /fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/u
+til/benchmarks/annotate_group_allocations.py' > "$collector52_evidence/expected_
+sources.sha256"
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ sha256sum -c "$collector52_evidence/expected_s
+ources.sha256" | tee "$collector52_evidence/source_hash_verification.txt"
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/ben
+chmarks/collect_day_benchmark_data.sh: OK
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/ben
+chmarks/collect_day_benchmark_data.py: OK
+/fsx/work/pangenome_reporting/20261022/shared3030_collector_19.0.52/bin/util/ben
+chmarks/annotate_group_allocations.py: OK
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ sha256sum "$collector52_dest/bin/util/benchmar
+ks/collect_day_benchmark_data.sh" "$collector52_dest/bin/util/benchmarks/collect
+_day_benchmark_data.py" "$collector52_dest/bin/util/benchmarks/annotate_group_al
+locations.py" | tee "$collector52_evidence/actual_sources.sha256"
+8cae80baa5021a4e5bf2be50074bfecae955cb9f2591302d16afabc4822411ae  /fsx/work/pang
+enome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/collec
+t_day_benchmark_data.sh
+c982dcda326c487511a391ca749775bf58ffcddd2e6df365155d848b6776a783  /fsx/work/pang
+enome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/collec
+t_day_benchmark_data.py
+df2d2ed3519e4d3184e344dfbd9be6277a825f2c4c42867fad6bf2d5b511936b  /fsx/work/pang
+enome_reporting/20261022/shared3030_collector_19.0.52/bin/util/benchmarks/annota
+te_group_allocations.py
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ printf 'SOURCE_QUALIFICATION=PASS\n'
+SOURCE_QUALIFICATION=PASS
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ date -u +%Y-%m-%dT%H:%M:%SZ
+2026-10-22T07:10:52Z
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ exit 0
+logout
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ collector52_script_rc=$?
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ printf 'SCRIPT_CHILD_RC=%s\n' "$collector52_sc
+ript_rc" | tee /fsx/work/pangenome_runtime/20261020/qualifications/30x30x_202610
+22T051200Z/collector52_stage/stage.exit_code
+SCRIPT_CHILD_RC=0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ test "$collector52_script_rc" -eq 0
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/sampler$ cd /fsx/work/pangenome_runtime/20261020/qualif
+ications/30x30x_20261022T051200Z/collector52_stage
+(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/qualifications
+/30x30x_20261022T051200Z/collector52_stage$ tmux capture-pane -p -t %3 -S -120 >
+ retained_pane.txt
+
