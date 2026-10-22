@@ -4,6 +4,15 @@ Authority and exact infrastructure are recorded in the controlling CLI ledger.
 All executable checks and builds in this workstream run on ashg-etc, as ubuntu.
 No laptop container build, other-cluster execution, Ganon, Ganon2 or VEP.
 
+## Current 30× + 30× continuation
+
+The [22 October bounded qualification](20261022T051200Z_30x30x_runtime_qualification/README.md)
+records fresh CLI2.0.3/driver202503.04 and immutable asset small-metadata PASS,
+with native/local closed-byte verification. Large asset digests were reused.
+The sampler environment/seqkit version remains pending B's actual admission
+handoff. Root/C/B own the approved new workflows; this workstream launches
+none. Older run-state snapshots below are historical.
+
 ## Runtime
 
 - Root: `/fsx/work/pangenome_runtime/20261020`.

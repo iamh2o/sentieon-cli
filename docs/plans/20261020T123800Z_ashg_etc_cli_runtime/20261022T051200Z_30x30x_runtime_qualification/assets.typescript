@@ -1,0 +1,18 @@
+Script started on 2026-10-22 05:12:20+00:00 [TERM="screen" TTY="/dev/pts/6" COLUMNS="80" LINES="23"]
+DAY-EC activated.
+[?2004h(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/cli-2.0.3$ export PS1='Q3030$ '
+[?2004l[?2004hQ3030$ set -euo pipefail
+[?2004l[?2004hQ3030$ date -u +%Y-%m-%dT%H:%M:%SZ
+[?2004l2026-10-22T05:12:50Z
+[?2004hQ3030$ id -un
+[?2004lubuntu
+[?2004hQ3030$ cat /sys/devices/virtual/dmi/id/board_asset_tag
+[?2004li-004609f020b02705a
+[?2004hQ3030$ findmnt -no SOURCE,FSTYPE,TARGET /fsx
+[?2004l10.0.1.237@tcp:/uiznvb4v lustre /fsx
+[?2004hQ3030$ /fsx/work/pangenome_runtime/20261020/env/bin/sentieon-cli --version
+[?2004l2.0.3
+[?2004hQ3030$ /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bin/sentieon --version
+[?2004lCommand --version not found
+
+Script done on 2026-10-22 05:12:51+00:00 [COMMAND_EXIT_CODE="1"]

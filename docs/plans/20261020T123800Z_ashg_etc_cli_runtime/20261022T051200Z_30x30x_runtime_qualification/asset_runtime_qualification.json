@@ -1,0 +1,148 @@
+{
+  "schema": "ashg-etc.pangenome_3030_bounded_runtime_qualification.v1",
+  "observed_at": "2026-10-22T05:14:57Z",
+  "status": "PASS",
+  "scope": "Existing CLI/driver and immutable asset small metadata only; sampler qualification pending native admission",
+  "target": {
+    "account": "108782052779",
+    "region": "us-west-2",
+    "cluster": "ashg-etc",
+    "generation": "d1e05a50-cc74-11f1-9b2e-0afff600b0d9",
+    "head": "i-004609f020b02705a",
+    "fsx": "fs-0d55fedaeb3ca246b",
+    "user": "ubuntu",
+    "tmux": "pg_runtime_ashg_etc_20261020",
+    "pane": "%3"
+  },
+  "runtime": {
+    "cli_tag": "2.0.3",
+    "cli_commit": "1358db44816e01d20f32856eebbc496d45638060",
+    "wheel_sha256": "09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517",
+    "fresh_cli_version": "2.0.3",
+    "fresh_driver_version": "sentieon-genomics-202503.04",
+    "native_cli_source_clean": true,
+    "cli_tag_type": "tag"
+  },
+  "prior_receipts": {
+    "asset_ready_sha256": "96b7019f6b5b1895ffe11db2f3cf38ca60d7525a3154fa26c9a526e1f6afcd8d",
+    "env_ready_sha256": "5f82c400ecc33f90fc63889ae04cbb898bd8da50eead05896df645c332ce86db",
+    "native_env_receipt": "/fsx/work/pangenome_runtime/20261020/evidence/env_ready.json",
+    "large_asset_digests_reused": true,
+    "large_payload_hashes_recomputed": false
+  },
+  "roles": {
+    "bundles": [
+      {
+        "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle",
+        "sha256": "de2114917bef8f78164b73bee35113f3f8a399f781709376d9bed05301936f79",
+        "vendor_metadata": {
+          "minScriptVersion": "2.0.0",
+          "pipeline": "Hybrid pangenome",
+          "shortReadPlatform": "Illumina",
+          "longReadPlatform": "ONT",
+          "bundleVersion": "1.0",
+          "SentieonVcfID": "population-hprc-v2.0-20260528",
+          "pangenome": "hprc-v2.1-mc-grch38.gbz"
+        }
+      },
+      {
+        "path": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle",
+        "sha256": "8511915ef9ef610bb2b7f14e2bc3b9232eacbb6201571d12ec9c15b363deec85",
+        "vendor_metadata": {
+          "minScriptVersion": "1.5.0",
+          "pipeline": "Sentieon pangenome",
+          "platform": "Ultima",
+          "bundleVersion": "1.3",
+          "SentieonVcfID": "population-hprc-v2.0+gnomad-v4.1.0-20251216",
+          "pangenome": "hprc-v2.0-mc-grch38.gbz"
+        }
+      }
+    ],
+    "models": {
+      "dnascope.model": {
+        "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/dnascope.model",
+        "bytes": 84768654,
+        "sha256": "ada9d81466d433e76af583c8c0e57e6f8b85a315604317cb9ec17f39c9b55c60"
+      },
+      "extract.model": {
+        "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/extract.model",
+        "bytes": 6705124,
+        "sha256": "04f1c349056157660a7d04120dd83085dd424d082925236aa2c6ab43832cb5a0"
+      },
+      "longreadsv.model": {
+        "path": "/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle/longreadsv.model",
+        "bytes": 436,
+        "sha256": "2467ce218f6b9e9bd65f454fb08ba8b90f1eb6cdd7cff051ba964db598471556"
+      },
+      "minimap2.model": {
+        "path": "/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle/minimap2.model",
+        "bytes": 590,
+        "sha256": "20417e789fea9ff03063ad54cfe171cef5a75f0c1396c8875e3685abdc70ea99"
+      }
+    },
+    "graph": {
+      "name": "hprc-v2.1-mc-grch38.gbz",
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz",
+      "observed_bytes": 5492627216,
+      "sha256": "11d6047f79575ffb83757462484bad134ed20928bd2c8171ec52e35a54976e2b",
+      "source": "https://s3-us-west-2.amazonaws.com/human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/v2.1/hprc-v2.1-mc-grch38/hprc-v2.1-mc-grch38.gbz",
+      "source_etag": "\"e63ecd53a3ac4680abf3327cd074ccf3-655\"",
+      "source_last_modified": "Wed, 29 Jul 2026 04:43:36 GMT",
+      "destination": "s3://lsmc-dayoa-references-usw2/genomic_data/organism_references/H_sapiens/panhg38/hprc-v2.1-mc-grch38.gbz"
+    },
+    "haplotypes": {
+      "name": "hprc-v2.1-mc-grch38.hapl",
+      "path": "/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl",
+      "observed_bytes": 21376720088,
+      "sha256": "dfc29be8818a5630f327b8882a11824b7974fa67e957cafbb53df0159e395d37",
+      "source": "https://s3-us-west-2.amazonaws.com/human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/v2.1/hprc-v2.1-mc-grch38/hprc-v2.1-mc-grch38.hapl",
+      "source_etag": "\"86e18e7f2359e4fba20abd1f72c50fa9-2549\"",
+      "source_last_modified": "Wed, 29 Jul 2026 04:49:10 GMT",
+      "destination": "s3://lsmc-dayoa-references-usw2/genomic_data/organism_references/H_sapiens/panhg38/hprc-v2.1-mc-grch38.hapl"
+    }
+  },
+  "fresh_metadata": {
+    "archive_member_catalogs": "assets.final.typescript",
+    "vendor_bundle_metadata": "assets.final.typescript",
+    "file_sizes_and_inodes": "assets.final.typescript",
+    "fai_contigs": 195,
+    "fai_bases": 3099922541,
+    "fai_sha256": "eb7e1fea3ac1c264d6f21a1358727ef533ad560634b0ef360818d970c5f09687",
+    "calling_bed_contigs": 24,
+    "calling_bed_bases": 3088269832,
+    "calling_bed_excluded_contigs": 171,
+    "calling_bed_sha256": "783b97a5ea77e54531ffdb98b8fda6234c5e22b11b3101f0021d71b77d160dba",
+    "population_id": "population-hprc-v2.0-20260528",
+    "gbz_magic": "205a4247",
+    "hapl_magic": "4c504148",
+    "hapl_version": 5,
+    "hapl_top_level_chains": 184,
+    "hapl_k": 29,
+    "longreadsv_tiny_member_sha256": "2467ce218f6b9e9bd65f454fb08ba8b90f1eb6cdd7cff051ba964db598471556",
+    "ultima_mapper_tiny_member_sha256": "20417e789fea9ff03063ad54cfe171cef5a75f0c1396c8875e3685abdc70ea99"
+  },
+  "inspection_failures": [
+    {
+      "evidence": "assets.typescript",
+      "rc": 1,
+      "cause": "Operator used unsupported sentieon --version; supported sentieon driver --version subsequently passed"
+    },
+    {
+      "evidence": "assets.corrected.typescript",
+      "rc": 1,
+      "cause": "Operator used local archival receipt filename env_ready-2.0.3.json on native; exact source writes env_ready.json, whose fresh digest subsequently matched"
+    }
+  ],
+  "final_metadata_script_rc": 0,
+  "sampler": {
+    "status": "PENDING_NATIVE_ADMISSION_HANDOFF",
+    "expected_rule_env": "sent_pangenome_v0.2.yaml",
+    "expected_seed": 7
+  },
+  "analysis_roots_read": [],
+  "workflow_dispatched": false,
+  "tests_or_import_campaign": false,
+  "source_or_config_changed": false,
+  "scientific_validation": "NOT_ASSESSED",
+  "production_accepted": false
+}

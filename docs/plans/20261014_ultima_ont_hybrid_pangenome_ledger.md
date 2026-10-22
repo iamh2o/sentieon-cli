@@ -2,6 +2,56 @@
 
 ## Current continuation state
 
+Objective/stop: preserve the released experimental Ultima+ONT CLI and exact
+asset composition, with reproducible functional evidence and separately
+recorded scientific suitability. Branch remains
+`codex/ultima-ont-hybrid-pangenome-20261014`; CLI 2.0.3, commit
+`1358db44816e01d20f32856eebbc496d45638060`, tag object
+`8a718ece11dc39017fc1fe8275573e4c7bbab90c`, wheel
+`09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517`
+are unchanged. Root owns DayOA/DYEC, workflow dispatch, shared ledger/Doc;
+C owns metadata/three ILMN callers, B preparation/Ultima caller.
+
+The 22 October second direct 30× short-read + 30× ONT execution approval is
+recorded by root as `3030_runtime_approval_20261022T044825Z`. Exact target stays
+account 108782052779/profile lsmc/us-west-2/ashg-etc generation
+`d1e05a50-cc74-11f1-9b2e-0afff600b0d9`, head `i-004609f020b02705a`,
+FSx `fs-0d55fedaeb3ca246b`. No Ganon/Ganon2/VEP, container build, budget
+increase, PR/merge, deletion/cleanup or new test/import campaign. Old four
+workflows are SUCCESS/0/0/0 in C's closed 04:55:29Z readiness proof at
+DYEC evidence commit `32138e1edc90a1f3e02406e8827cc7dee2c3b93f`; this does
+not establish scientific/customer acceptance. The earlier PG-032 preparation
+benchmark-layout blocker remains separate. Collector 19.0.50 is the external
+reporting pin; callers/prep remain 19.0.49.
+
+Independent source review establishes root-independent native AU mapping for
+identical six manifest tables on pinned 19.0.49. C/B own actual native mapping,
+six snapshot hashes and same-config dry/live proof. The corrected metadata
+r02 dry passed 0/0/0, per root; B's actual preparation and admitted sampler
+environment are separate. ILMN uses the existing paired materializer as-is,
+seed 7, accepted FASTQs and prior full-195 original-SR integer depth fractions.
+ONT retains seed 20261020; accepted Ultima30 is reused. No new resolver or
+sampler/caller option was introduced.
+
+[Bounded qualification](20261020T123800Z_ashg_etc_cli_runtime/20261022T051200Z_30x30x_runtime_qualification/README.md)
+passed 05:14:57Z: fresh CLI2.0.3/driver202503.04, native CLI source clean;
+bundle role catalogs/vendor JSON, expected population ID, FAI195/3099922541,
+calling BED24/3088269832, GBZ header/size and HAPL5/k29/chains184. Existing
+small asset/env receipts match frozen digests; no large payload was rehashed.
+Five closed small files (19,484 bytes) transferred and verified byte-for-byte.
+Two operator inspection rc1 mistakes are retained; documented argv/path checks
+then passed, final metadata script rc0. No analysis root was read or changed.
+
+Pending: B's actual admitted sampler prefix/solve/jobscript handoff, then one
+bounded seqkit/env qualification; actual 30/30 workflows, achieved depths and
+scientific suitability remain campaign gates. Preserve immutable CLI/assets,
+require read visits for any named analysis root, and perform no workflow
+dispatch in this workstream. Ledger rows remain 7 SUCCESS, 1 IN_PROGRESS;
+full scientific objective is incomplete. Historical closeouts below retain
+their observed/attributed limits and are superseded only where stated above.
+
+## Historical continuation — 2026-10-21 caller/QC closeout
+
 Objective: refreshed `iamh2o/sentieon-cli` experimental Ultima+ONT pangenome,
 immutable runtime/assets and reviewable functional/scientific evidence.
 Branch: `codex/ultima-ont-hybrid-pangenome-20261014`. Full workflow, scientific

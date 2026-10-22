@@ -1,0 +1,107 @@
+Script started on 2026-10-22 05:14:06+00:00 [TERM="screen" TTY="/dev/pts/6" COLUMNS="80" LINES="23"]
+DAY-EC activated.
+[?2004h(DAY-EC) ubuntu@ip-10-0-0-14:/fsx/work/pangenome_runtime/20261020/cli-2.0.3$ export PS1='Q3030$ '
+[?2004l[?2004hQ3030$ set -euo pipefail
+[?2004l[?2004hQ3030$ date -u +%Y-%m-%dT%H:%M:%SZ
+[?2004l2026-10-22T05:14:19Z
+[?2004hQ3030$ command -v ar jq stat od sha256sum
+[?2004l/usr/bin/ar
+/home/ubuntu/miniconda3/envs/DAY-EC/bin/jq
+/usr/bin/stat
+/usr/bin/od
+/usr/bin/sha256sum
+[?2004hQ3030$ sha256sum /fsx/work/pangenome_runtime/20261020/evidence/env_ready.json
+[?2004l5f82c400ecc33f90fc63889ae04cbb898bd8da50eead05896df645c332ce86db  /fsx/work/pangenome_runtime/20261020/evidence/env_ready.json
+[?2004hQ3030$ stat -c '%n|%s|%Y|%i' /fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi
+[?2004l/fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle|511706146|1792500026|144115205306056833
+/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz|5492627216|1792500105|144115205306056831
+/fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl|21376720088|1792500373|144115205306056832
+/fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle|919927022|1788932980|144115205641679908
+/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa|3161924569|1779781636|144115205322838708
+/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai|7802|1779781697|144115205322838751
+/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed|413|1779781636|144115205322838736
+/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz|428964070|1781004091|144115205322838972
+/fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz.tbi|1904517|1781004380|144115205322838962
+[?2004hQ3030$ ar tv /fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle
+[?2004lrw-r--r-- 1014/1001    252 Sep 28 23:41 2026 bundle_info.json
+rw-r--r-- 1014/1001    372 Sep 28 23:18 2026 bwa.model
+rw-r--r-- 1014/1001 267503028 Sep 28 23:19 2026 cnv.model
+rw-r--r-- 1014/1001 84768654 Sep 28 23:19 2026 dnascope.model
+rwxr-xr-x 1014/1001 67700472 Sep 28 23:19 2026 dnascope.model-aarch64.so
+rwxr-xr-x 1014/1001 71690152 Sep 28 23:19 2026 dnascope.model-x86_64.so
+rw-r--r-- 1014/1001 6904584 Sep 28 23:19 2026 extract.CHM13.model
+rw-r--r-- 1014/1001 6431105 Sep 28 23:19 2026 extract.GRCh37.model
+rw-r--r-- 1014/1001 6705124 Sep 28 23:19 2026 extract.model
+rw-r--r-- 1014/1001    436 Sep 28 23:19 2026 longreadsv.model
+rw-r--r-- 1014/1001    372 Sep 28 23:19 2026 minimap2_lr.model
+rw-r--r-- 1014/1001    589 Sep 28 23:19 2026 minimap2.model
+[?2004hQ3030$ ar p /fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle bundle_info.json
+[?2004l{
+  "minScriptVersion": "2.0.0",
+  "pipeline": "Hybrid pangenome",
+  "shortReadPlatform": "Illumina",
+  "longReadPlatform": "ONT",
+  "bundleVersion": "1.0",
+  "SentieonVcfID": "population-hprc-v2.0-20260528",
+  "pangenome": "hprc-v2.1-mc-grch38.gbz"
+}
+[?2004hQ3030$ ar tv /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle
+[?2004lrw-r--r-- 1009/1000    590 Jan 15 05:40 2026 minimap2.model
+rw-r--r-- 1009/1000 6705124 Feb  2 19:35 2026 extract.model
+rw-r--r-- 1009/1000 286053636 May 19 06:46 2026 dnascope.model
+rw-r--r-- 1009/1000    228 May 18 22:32 2026 bundle_info.json
+rwxr-xr-x 1009/1000 303236856 May 19 06:45 2026 dnascope.model-aarch64.so
+rwxr-xr-x 1009/1000 323930024 May 19 06:45 2026 dnascope.model-x86_64.so
+[?2004hQ3030$ ar p /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle bundle_info.json
+[?2004l{
+  "minScriptVersion": "1.5.0",
+  "pipeline": "Sentieon pangenome",
+  "platform": "Ultima",
+  "bundleVersion": "1.3",
+  "SentieonVcfID": "population-hprc-v2.0+gnomad-v4.1.0-20251216",
+  "pangenome": "hprc-v2.0-mc-grch38.gbz"
+}
+[?2004hQ3030$ sha256sum /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed
+[?2004ls/panhg38/pop-v20-20260528.vcf.gz | awk '/^##SentieonVcfID=/ {n++; print; if ($0!="##SentieonVcfID=population-hprc-v2.0-20260528") exit 1} END {if (n!=1) exit 1}'
+od -An -N16 -t x4 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz
+od -An -N8 -t x4 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl
+od -An -j8 -N40 -t u8 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl
+ar p /fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle longreadsv.model | sha256sum
+ar p /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle minimap2.model | sha256sum
+jq -e '.cli_tag=="2.0.3" and .cli_commit=="1358db44816e01d20f32856eebbc496d45638060" and .wheel_sha256=="09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517"' /fsx/work/pangenome_runtime/20261020/evidence/env_ready.json
+jq -e '.graph_metadata.ref_name=="GRCh38" and .graph_metadata.contig_prefix=="GRCh38#0#" and .graph_metadata.n_paths==195 and .haplotype_metadata.k==29 and .haplotype_metadata.top_level_chains==184 and .population_id=="population-hprc-v2.0-20260528"' /fsx/work/pangenome_runtime/20261020/evidence/asset_ready.json
+printf 'BOUNDED_ASSET_METADATA_QUALIFICATION=PASS\n'
+date -u +%Y-%m-%dT%H:%M:%SZ
+exit 0
+eb7e1fea3ac1c264d6f21a1358727ef533ad560634b0ef360818d970c5f09687  /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai
+783b97a5ea77e54531ffdb98b8fda6234c5e22b11b3101f0021d71b77d160dba  /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed
+[?2004hQ3030$ awk 'BEGIN {n=0; total=0} {if (NF<5 || $2 !~ /^[0-9]+$/ || $2<=0 || seen[$1]++) exit 1; n++; total+=$2} END {printf "FAI_CONTIGS=%d FAI_BASES=%.0f\n", n,total; if (n!=195 || total!=3099922541) exit 1}' /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai
+[?2004lFAI_CONTIGS=195 FAI_BASES=3099922541
+[?2004hQ3030$ awk 'NR==FNR {lens[$1]=$2;next} {if (NF!=3 || !($1 in lens) || $2!=0 || $3!=lens[$1] || seen[$1]++) exit 1; n++; total+=$3} END {printf "BED_CONTIGS=%d BED_BASES=%.0f EXCLUDED=%d\n",n,total,195-n; if (n!=24 || total!=3088269832 || seen["chrM"]) exit 1}' /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_ucsc.fa.fai /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/hg38_canonical.bed
+[?2004lBED_CONTIGS=24 BED_BASES=3088269832 EXCLUDED=171
+[?2004hQ3030$ /fsx/work/pangenome_runtime/20261020/env/bin/bcftools view --no-version -h /fsx/references/genomic_data/organism_references/H_sapiens/panhg38/pop-v20-20260528.vcf.gz | awk '/^##SentieonVcfID=/ {n++; print; if ($0!="##SentieonVcfID=population-hprc-v2.0-20260528") exit 1} END {if (n!=1) exit 1}'
+[?2004l##SentieonVcfID=population-hprc-v2.0-20260528
+[?2004hQ3030$ od -An -N16 -t x4 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.gbz
+[?2004l 205a4247 00000001 00000000 00000000
+[?2004hQ3030$ od -An -N8 -t x4 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl
+[?2004l 4c504148 00000005
+[?2004hQ3030$ od -An -j8 -N40 -t u8 /fsx/work/pangenome_runtime/20261020/assets/hprc-v2.1-mc-grch38.hapl
+[?2004l                  184                   25
+               256958            303638734
+                   29
+[?2004hQ3030$ ar p /fsx/work/pangenome_runtime/20261020/assets/HybridPangenomeIlluminaONT1.0.bundle longreadsv.model | sha256sum
+[?2004l2467ce218f6b9e9bd65f454fb08ba8b90f1eb6cdd7cff051ba964db598471556  -
+[?2004hQ3030$ ar p /fsx/references/runtime_assets/cached_envs/sentieon-genomics-202503.04/bundles/SentieonUltimaPangenomeRealignWGS1.3.bundle minimap2.model | sha256sum
+[?2004l20417e789fea9ff03063ad54cfe171cef5a75f0c1396c8875e3685abdc70ea99  -
+[?2004hQ3030$ jq -e '.cli_tag=="2.0.3" and .cli_commit=="1358db44816e01d20f32856eebbc496d45638060" and .wheel_sha256=="09c0616ecafae37d4ae03abb8700c7d3eda695b13fb2d728a4ca37e61e968517"' /fsx/work/pangenome_runtime/20261020/evidence/env_ready.json
+[?2004l[0;39mtrue[0m
+[?2004hQ3030$ jq -e '.graph_metadata.ref_name=="GRCh38" and .graph_metadata.contig_prefix=="GRCh38#0#" and .graph_metadata.n_paths==195 and .haplotype_metadata.k==29 and .haplotype_metadata.top_level_chains==184 and .population_id=="population-hprc-v2.0-20260528"' /fsx/work/pangenome_runtime/20261020/evidence/asset_ready.json M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kn
+[?2004l[0;39mtrue[0m
+[?2004hQ3030$ printf 'BOUNDED_ASSET_METADATA_QUALIFICATION=PASS\n'
+[?2004lBOUNDED_ASSET_METADATA_QUALIFICATION=PASS
+[?2004hQ3030$ date -u +%Y-%m-%dT%H:%M:%SZ
+[?2004l2026-10-22T05:14:57Z
+[?2004hQ3030$ exit 0
+[?2004lexit
+
+Script done on 2026-10-22 05:14:57+00:00 [COMMAND_EXIT_CODE="0"]
